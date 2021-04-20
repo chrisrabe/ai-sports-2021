@@ -1,18 +1,9 @@
 """
 TEMPLATE for creating your own Agent to compete in
-'Dungeons and Data Structures' at the Coder One AI Sports Challenge 2020.
+'Dungeons and Data Structures' at the Coder One AI Sports Challenge 2021.
 For more info and resources, check out: https://bit.ly/aisportschallenge
 
-BIO compilation:
-helo my name is dongerino pasterino ヽ༼ຈل͜ຈ༽ﾉ, i am 69 year old donger from imaqtmeatloaf’s stream .
-420 years ago i was kidnapped and put into a donger concentration camp for 9001 years.
-1 year ago, imaqtlasagne and imaqtpie invaded the camp and rescued me.
-now i work as teacherino, passing down the wisdom of ( ͡° ͜ʖ ͡°) to young dongers.
-
-“Robots mimic humans but you can't mimic us” ;)
-Developed by a group of young and aspiring developers through hard work and dedication.
-Through many iterations and optimisation, our born-to-beat (BtoB) agent uses many smart strategies to play the game.
-Ours sure will be exciting to watch. Look forward to it. This is the best we can do.
+BIO:
 """
 
 # import time
