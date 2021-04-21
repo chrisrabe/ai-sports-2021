@@ -6,7 +6,7 @@ from .bomb_tracker import BombTracker
 from .enemy_tracker import EnemyTracker
 
 
-class StateManager:
+class Brain:
     def __init__(self):
         self.bomb_tracker = BombTracker()
         self.enemy_tracker = EnemyTracker()

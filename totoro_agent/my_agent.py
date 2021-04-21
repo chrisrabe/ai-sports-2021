@@ -13,13 +13,13 @@ BIO:
 # from .utils import util_functions
 # from datetime import datetime
 from .strategies import RandomStrategy
-from .brain import StateManager
+from .brain import Brain
 
 
 class Agent:
     def __init__(self):
         self.action_queue = []
-        self.state_manager = StateManager()
+        self.brain = Brain()
         self.strategies = {
             'random': RandomStrategy(),
         }
@@ -32,7 +32,7 @@ class Agent:
         # TODO make bot more responsive to changes in game state
 
         if not self.action_queue:
-            strategy_name = self.state_manager.get_next_strategy(game_state)
+            strategy_name = self.brain.get_next_strategy(game_state)
             strategy = self.strategies[strategy_name]
             actions = strategy.execute(game_state)
 
