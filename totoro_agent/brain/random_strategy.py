@@ -2,9 +2,9 @@ import random
 from typing import List
 
 from . import strategy
-from . import utils
+from ..utils import *
 
-ACTIONS = utils.constants.ACTIONS
+ACTIONS = constants.ACTIONS
 
 
 class RandomStrategy(strategy.Strategy):
