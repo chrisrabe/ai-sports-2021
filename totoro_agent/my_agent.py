@@ -19,10 +19,9 @@ Ours sure will be exciting to watch. Look forward to it. This is the best we can
 # import numpy as np
 # import pandas as pd
 # import sklearn
+# from .utils import util_functions
+# from datetime import datetime
 from . import brain
-from datetime import datetime
-
-utils = brain.utils.util_functions
 
 
 class Agent:
