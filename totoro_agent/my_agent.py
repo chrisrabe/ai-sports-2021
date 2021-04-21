@@ -3,16 +3,7 @@ TEMPLATE for creating your own Agent to compete in
 'Dungeons and Data Structures' at the Coder One AI Sports Challenge 2020.
 For more info and resources, check out: https://bit.ly/aisportschallenge
 
-BIO compilation:
-helo my name is dongerino pasterino ヽ༼ຈل͜ຈ༽ﾉ, i am 69 year old donger from imaqtmeatloaf’s stream .
-420 years ago i was kidnapped and put into a donger concentration camp for 9001 years.
-1 year ago, imaqtlasagne and imaqtpie invaded the camp and rescued me.
-now i work as teacherino, passing down the wisdom of ( ͡° ͜ʖ ͡°) to young dongers.
-
-“Robots mimic humans but you can't mimic us” ;)
-Developed by a group of young and aspiring developers through hard work and dedication.
-Through many iterations and optimisation, our born-to-beat (BtoB) agent uses many smart strategies to play the game.
-Ours sure will be exciting to watch. Look forward to it. This is the best we can do.
+BIO:
 """
 
 # import time
@@ -21,28 +12,29 @@ Ours sure will be exciting to watch. Look forward to it. This is the best we can
 # import sklearn
 # from .utils import util_functions
 # from datetime import datetime
-from . import brain
+from .strategies import RandomStrategy
+from .brain import StateManager
 
 
 class Agent:
     def __init__(self):
-        self.strategies = {
-            'random': brain.RandomStrategy(),
-        }
         self.action_queue = []
-
+        self.state_manager = StateManager()
+        self.strategies = {
+            'random': RandomStrategy(),
+        }
         # DEBUG
         self.debug_mode = False
 
     def next_move(self, game_state, player_state):
         """This method is called each time your Agent is required to choose an action"""
-
-        # TODO make this more responsive
+        # TODO add values to game_state
+        # TODO make bot more responsive to changes in game state
 
         if not self.action_queue:
-            strategy_name = "random"
+            strategy_name = self.state_manager.get_next_strategy(game_state)
             strategy = self.strategies[strategy_name]
-            actions = strategy.execute(game_state, player_state)
+            actions = strategy.execute(game_state)
 
             self.action_queue = self.action_queue + actions
 

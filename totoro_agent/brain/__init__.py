@@ -1,6 +1,5 @@
-from . import random_strategy
+"""
+Defines the logic for decision making
+"""
 
-
-def RandomStrategy():
-    return random_strategy.RandomStrategy()
-
+from .state_manager import StateManager
