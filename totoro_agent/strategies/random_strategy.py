@@ -2,13 +2,12 @@ import random
 from typing import List
 
 from . import strategy
-from ..utils import *
-
-ACTIONS = constants.ACTIONS
+from ..utils.constants import ACTIONS
 
 
 class RandomStrategy(strategy.Strategy):
-    def execute(self, game_state: object, player_state: object) -> List[str]:
+
+    def execute(self, game_state: object) -> List[str]:
         # a list of all the actions your Agent can choose from
         actions = [
             ACTIONS["none"],
@@ -23,6 +22,3 @@ class RandomStrategy(strategy.Strategy):
         action = random.choice(actions)
 
         return [action]
-
-    def can_execute(self, game_state: object, player_state: object) -> bool:
-        return True
