@@ -11,7 +11,7 @@ now i work as teacherino, passing down the wisdom of ( ͡° ͜ʖ ͡°) to young 
 
 “Robots mimic humans but you can't mimic us” ;)
 Developed by a group of young and aspiring developers through hard work and dedication.
-Through many iterations and optimisation, our born-to-beat (BtoB) agent uses many smart strategies to play the game.
+Through many iterations and optimisation, our born-to-beat (BtoB) totoro_agent uses many smart strategies to play the game.
 Ours sure will be exciting to watch. Look forward to it. This is the best we can do.
 """
 
