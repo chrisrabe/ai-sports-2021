@@ -14,15 +14,3 @@ services:
             dockerfile: Dockerfile.dev
         volumes:
             - ./python3:/app
-
-    python3-fwd:
-        build:
-            context: python3
-            dockerfile: Dockerfile.fwd
-
-    python3-fwd-dev:
-        build:
-            context: python3
-            dockerfile: Dockerfile.fwd.dev
-        volumes:
-            - ./python3:/app

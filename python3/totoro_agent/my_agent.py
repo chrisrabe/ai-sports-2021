@@ -1,52 +1,32 @@
-from .game_state import GameState
-import asyncio
-import random
 import os
+from .client import Client
+from .strategies import RandomStrategy
+from .brain import Brain
 
 uri = os.environ.get(
-    'GAME_CONNECTION_STRING') or "ws://127.0.0.1:3000/?role=totoro_agent&agentId=agentId&name=defaultName"
+    'GAME_CONNECTION_STRING') or "ws://127.0.0.1:3000/?role=agent&agentId=agentId&name=defaultName"
 
-actions = ["up", "down", "left", "right", "bomb", "detonate"]
-
-
-class Agent():
+class Agent:
     def __init__(self):
-        self._client = GameState(uri)
+        self.brain = Brain()
+        self.strategies = {
+            'random': RandomStrategy()
+        }
+        self.action_queue = []
+        self.prev_tick = -1
 
-        self._client.set_game_tick_callback(self._on_game_tick)
-        loop = asyncio.get_event_loop()
-        connection = loop.run_until_complete(self._client.connect())
-        tasks = [
-            asyncio.ensure_future(self._client._handle_messages(connection)),
-        ]
-        loop.run_until_complete(asyncio.wait(tasks))
+        self.client = Client(uri, self.next_move)
 
-    def _get_bomb_to_detonate(self, game_state) -> [int, int] or None:
-        agent_number = game_state.get("connection").get("agent_number")
-        entities = self._client._state.get("entities")
-        bombs = list(filter(lambda entity: entity.get(
-            "owner") == agent_number and entity.get("type") == "b", entities))
-        bomb = next(iter(bombs or []), None)
-        if bomb != None:
-            return [bomb.get("x"), bomb.get("y")]
-        else:
-            return None
+    def next_move(self, tick_number, game_state):
+        # If it prints this out in console, it means algorithm is performing suboptimally
+        if tick_number - self.prev_tick != 1:
+            print(f'Skipped a Tick: Tick #{tick_number}, skipped {tick_number - self.prev_tick}')
 
-    async def _on_game_tick(self, tick_number, game_state):
-        random_action = self.generate_random_action()
-        if random_action in ["up", "left", "right", "down"]:
-            await self._client.send_move(random_action)
-        elif random_action == "bomb":
-            await self._client.send_bomb()
-        elif random_action == "detonate":
-            bomb_coordinates = self._get_bomb_to_detonate(game_state)
-            if bomb_coordinates != None:
-                x, y = bomb_coordinates
-                await self._client.send_detonate(x, y)
-        else:
-            print(f"Unhandled action: {random_action}")
+        if not self.action_queue:
+            strategy_name = self.brain.get_next_strategy(game_state)
+            strategy = self.strategies.get(strategy_name)
+            actions = strategy.execute(game_state)
 
-    def generate_random_action(self):
-        actions_length = len(actions)
-        return actions[random.randint(0, actions_length - 1)]
+            self.action_queue = self.action_queue + actions
 
+        return self.action_queue.pop(0)

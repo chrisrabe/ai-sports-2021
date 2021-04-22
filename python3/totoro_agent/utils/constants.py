@@ -1,12 +1,13 @@
 ACTIONS = {
-    "up": "u",
-    "down": "d",
-    "left": "l",
-    "right": "r",
-    "bomb": "p",
+    "up": "up",
+    "down": "down",
+    "left": "left",
+    "right": "right",
+    "bomb": "bomb",
+    "detonate": "detonate",
     "none": ""
 }
 
-ACTION_LIST = ['', 'u', 'd', 'l', 'r', 'p']
+ACTION_LIST = list(ACTIONS.values())
 
-BOMB_DURATION = 35
+BOMB_DURATION = 40 # 40 ticks

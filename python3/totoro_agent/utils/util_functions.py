@@ -165,7 +165,7 @@ def is_walkable(tile, game_state):
     """
     Returns true if the tile is walkable
     """
-    collectible = ["a", "t"]
+    collectible = ["a", "bp"]
     return not game_state.is_occupied(tile) or game_state.entity_at(tile) in collectible
 
 

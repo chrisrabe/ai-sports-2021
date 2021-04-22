@@ -1,5 +1,5 @@
 from forward_model import ForwardModel
-from python3.totoro_agent.game_state import GameState
+from python3.totoro_agent.client.game_state import GameState
 import asyncio
 import os
 import random
@@ -8,7 +8,7 @@ fwd_model_uri = os.environ.get(
     "FWD_MODEL_CONNECTION_STRING") or "ws://127.0.0.1:6969/?role=admin"
 
 uri = os.environ.get(
-    "GAME_CONNECTION_STRING") or "ws://127.0.0.1:3000/?role=totoro_agent&agentId=agentId&name=defaultName"
+    "GAME_CONNECTION_STRING") or "ws://127.0.0.1:3000/?role=agent&agentId=agentId&name=defaultName"
 
 actions = ["up", "down", "left", "right", "bomb", "detonate"]
 

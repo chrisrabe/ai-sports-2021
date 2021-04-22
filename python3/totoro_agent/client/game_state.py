@@ -71,7 +71,7 @@ class GameState:
                 self._on_entity_spawned(event)
             elif event_type == "entity_expired":
                 self._on_entity_expired(event)
-            elif event_type == "totoro_agent":
+            elif event_type == "agent":
                 agent_action = event.get("data")
                 self._on_agent_action(agent_action)
             elif event_type == "agent_state":
@@ -123,7 +123,7 @@ class GameState:
             # no - op since this is redudnant info
             pass
         else:
-            print(f"Unhandled totoro_agent action recieved: {action_data}")
+            print(f"Unhandled agent action recieved: {action_data}")
 
     def _get_new_agent_coordinates(self, coordinates, move_action) -> [int, int]:
         [x, y] = coordinates
