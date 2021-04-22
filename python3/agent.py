@@ -1,4 +1,4 @@
-from totoro_agent import Agent
+from totoro_agent import Client
 
 if __name__ == "__main__":
-    Agent()
+    Client()

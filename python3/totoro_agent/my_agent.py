@@ -1,10 +1,6 @@
-import os
-from .client import Client
 from .strategies import RandomStrategy
 from .brain import Brain
 
-uri = os.environ.get(
-    'GAME_CONNECTION_STRING') or "ws://127.0.0.1:3000/?role=agent&agentId=agentId&name=defaultName"
 
 class Agent:
     def __init__(self):
@@ -14,8 +10,6 @@ class Agent:
         }
         self.action_queue = []
         self.prev_tick = -1
-
-        self.client = Client(uri, self.next_move)
 
     def next_move(self, tick_number, game_state):
         # If it prints this out in console, it means algorithm is performing suboptimally

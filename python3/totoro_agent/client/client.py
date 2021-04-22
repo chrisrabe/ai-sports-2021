@@ -1,10 +1,16 @@
 from .game_state import GameState
+from ..my_agent import Agent
 import asyncio
+import os
+
+uri = os.environ.get(
+    'GAME_CONNECTION_STRING') or "ws://127.0.0.1:3000/?role=agent&agentId=agentId&name=defaultName"
+
 
 class Client:
-    def __init__(self, uri, get_next_action):
+    def __init__(self):
         self._client = GameState(uri)
-        self.get_next_action = get_next_action
+        self.agent = Agent()
 
         self._client.set_game_tick_callback(self._on_game_tick)
         loop = asyncio.get_event_loop()
@@ -15,7 +21,7 @@ class Client:
         loop.run_until_complete(asyncio.wait(tasks))
 
     async def _on_game_tick(self, tick_number, game_state):
-        next_action = self.get_next_action(tick_number, game_state)
+        next_action = self.agent.next_move(tick_number, game_state)
         await self.handle_next_action(next_action, game_state)
 
     def get_bomb_to_detonate(self, game_state) -> [int, int] or None:
