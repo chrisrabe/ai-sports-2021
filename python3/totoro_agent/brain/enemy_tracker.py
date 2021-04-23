@@ -16,7 +16,7 @@ class EnemyTracker:
 
 	def update(self, game_state):
 		# TODO Yuv
-		self.player_id = game_state["connection"]["agent_number"]
+		self.player_id = str(game_state["connection"]["agent_number"])
 		# own position
 		# own health
 		# own ammo
@@ -24,8 +24,10 @@ class EnemyTracker:
 		# own invulnerable (we don't worry about our own stuff -- this'll be easily reflected)
 
 
-		self.enemy_id = not self.player_id # Could've just done 'not self.player_id' lol
-		self.enemy_ammo = game_state["agent_state"][self.enemy_id]["inventory"]["bombs"]  
+		self.enemy_id = str((game_state["connection"]["agent_number"]+1)%2) 
+
+		print(self.enemy_id, self.player_id)
+		self.enemy_ammo = game_state["agent_state"][self.enemy_id]["inventory"]["bombs"]
 		self.enemy_pos = game_state["agent_state"][self.enemy_id]["coordinates"]
 		self.enemy_health = game_state["agent_state"][self.enemy_id]["hp"]
 		self.enemy_diameter = game_state["agent_state"][self.enemy_id]["blast_diameter"] # girthy boi
@@ -33,11 +35,11 @@ class EnemyTracker:
 	#	is_invulnerable = #got hit or some shit in the past 5 ticks.? / set the ticks to when he is able to be hit again (similar to the website agent stats)
 	#
 		# Shove them into game_state - Feels like there's a better way to do this but oops. Could also get rid of the above and just shove them in there.
-		game_state.enemy_id = self.enemy_id 
-		game_state.enemy_ammo = self.enemy_ammo 
-		game_state.enemy_pos = self.enemy_pos
-		game_state.enemy_health = self.enemy_health
-		game_state.enemy_diameter = self.enemy_diameter
-		game_state.enemy_invulnerable_until = self.enemy_diameter
+		game_state['enemy_id'] = self.enemy_id 
+		game_state['enemy_ammo'] = self.enemy_ammo 
+		game_state['enemy_pos'] = self.enemy_pos
+		game_state['enemy_health'] = self.enemy_health
+		game_state['enemy_diameter'] = self.enemy_diameter
+		game_state['enemy_invulnerable_until'] = self.enemy_diameter
 
 		pass
