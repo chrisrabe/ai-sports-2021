@@ -8,4 +8,11 @@ class BombTracker:
         self.bombs = []
 
     def update(self, game_state):
+        # TODO Will
+        # bombs and their lifecycle
+
+        # our bombs
+        # enemy bombs
+
+        # future blast areas
         pass
