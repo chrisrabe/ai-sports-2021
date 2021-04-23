@@ -9,10 +9,11 @@ class BombTracker:
 
     def update(self, game_state):
         # TODO Will
+        # Code this on Saturday
         # bombs and their lifecycle
-
+        
         # our bombs
         # enemy bombs
-
+       
         # future blast areas
         pass
