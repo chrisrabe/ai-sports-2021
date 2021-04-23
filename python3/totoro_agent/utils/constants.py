@@ -10,5 +10,6 @@ ACTIONS = {
 
 ACTION_LIST = list(ACTIONS.values())
 
-BOMB_DURATION = 40 # 40 ticks
+BOMB_DURATION = 40  # 40 ticks
 INVULNERABILITY_DURATION = 5
+FIRE_START_TICK = 1800  # when fire starts

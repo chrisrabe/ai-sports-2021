@@ -7,6 +7,10 @@ class Agent:
         self.brain = Brain()
         self.strategies = {
             'random': RandomStrategy()
+            # kill: 3
+            # trap: 4
+            # retreat: 2
+            # pickup: 1
         }
         self.action_queue = []
         self.prev_tick = -1
@@ -17,7 +21,8 @@ class Agent:
             print(f'Skipped a Tick: Tick #{tick_number}, skipped {tick_number - self.prev_tick}')
 
         if not self.action_queue:
-            strategy_name = self.brain.get_next_strategy(game_state) # Gets brain to eval environment, then spit out the strategy chosen (as string)
+            # Gets brain to eval environment, then spit out the strategy chosen (as string)
+            strategy_name = self.brain.get_next_strategy(game_state)
             strategy = self.strategies.get(strategy_name) 
             actions = strategy.execute(game_state)
 
