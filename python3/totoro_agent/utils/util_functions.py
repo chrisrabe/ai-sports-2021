@@ -1,10 +1,42 @@
 from typing import List
 
-from . import constants
-from . import structures
+from .constants import ACTIONS
+from .structures import Node
 
-ACTIONS = constants.ACTIONS
-Node = structures.Node
+
+########################################################################
+#   Game / World helper functions
+########################################################################
+
+
+def is_in_bounds(tile, world_width, world_height) -> bool:
+    """
+    Checks whether the tile is within the world boundaries
+    """
+    return (0 <= tile[0] < world_width) and (0 <= tile[1] < world_height)
+
+
+def entity_at(tile, entities) -> str or None:
+    """
+    Retrieves the entity item at tile
+    """
+    x, y = tile
+    for entity in entities:
+        if entity["x"] == x and entity["y"] == y:
+            return entity["type"]
+    return None
+
+
+def get_world_dimension(world):
+    world_width = world["width"]
+    world_height = world["height"]
+    return world_width, world_height
+
+
+########################################################################
+#   Navigation helpers
+########################################################################
+
 
 def manhattan_distance(start, end):
     """
@@ -15,7 +47,7 @@ def manhattan_distance(start, end):
     return distance
 
 
-def get_surrounding_tiles(location, game_state):
+def get_surrounding_tiles(location, world_width, world_height):
     """Given a tile location as an (x,y) tuple, this function will return the surrounding tiles up, down, left and to
     the right as a list (i.e. [(x1,y1), (x2,y2),...]) as long as they do not cross the edge of the map """
     x = location[0]
@@ -35,48 +67,23 @@ def get_surrounding_tiles(location, game_state):
     valid_surrounding_tiles = []
 
     for tile in all_surrounding_tiles:
-        if game_state.is_in_bounds(tile):
+        if is_in_bounds(tile, world_width, world_height):
             valid_surrounding_tiles.append(tile)
 
     return valid_surrounding_tiles
 
 
-def get_empty_tiles(tiles, game_state):
+def get_empty_tiles(tiles, entities):
     """
     Given a list of tiles, return ones that are actually empty
     """
     empty_tiles = []
 
     for tile in tiles:
-        if is_walkable(tile, game_state):
+        if is_walkable(tile, entities):
             empty_tiles.append(tile)
 
     return empty_tiles
-
-
-def get_safest_tile(location, tiles, bombs):
-    """
-    Given a list of tiles and bombs, find the tile that's safest to move to
-    """
-
-    bomb_distance = 1000
-    closest_bomb = bombs[0]
-
-    for bomb in bombs:
-        new_bomb_distance = manhattan_distance(bomb, location)
-        if new_bomb_distance < bomb_distance:
-            bomb_distance = new_bomb_distance
-            closest_bomb = bomb
-
-    safe_dict = {}
-    for tile in tiles:
-        distance = manhattan_distance(closest_bomb, tile)
-        safe_dict[tile] = distance
-
-    # return the tile with the furthest distance from any bomb
-    safest_tile = max(safe_dict, key=safe_dict.get)
-
-    return safest_tile
 
 
 def move_to_tile(location, tile):
@@ -97,11 +104,25 @@ def move_to_tile(location, tile):
         return ACTIONS["none"]
 
 
-def get_shortest_path(start, end, game_state, blast_tiles = []):
+def can_enqueue(queue, neighbour):
+    """
+    Helper function for the A* search algorithm. Checks if neighbour is in
+    the queue and if it has lower total value
+    """
+    for node in queue:
+        if neighbour == node and neighbour.total_cost >= node.total_cost:
+            return False
+    return True
+
+
+def get_shortest_path(start, end, world, entities, blast_tiles=None):
     """
     Finds the shortest path from the start node to the end node.
     Returns an array of (x,y) tuples. Uses A* search algorithm
     """
+    world_width, world_height = get_world_dimension(world)
+    if blast_tiles is None:
+        blast_tiles = []
     if start is None or end is None:
         return None
 
@@ -135,13 +156,13 @@ def get_shortest_path(start, end, game_state, blast_tiles = []):
             return path[::-1]
 
         # loop through each neighbour
-        neighbours = get_surrounding_tiles(current_node.position, game_state)
+        neighbours = get_surrounding_tiles(current_node.position, world_width, world_height)
 
         for tile in neighbours:
             if tile in blast_tiles:
                 continue  # skip if blast tile
 
-            if not is_walkable(tile, game_state):
+            if not is_walkable(tile, entities):
                 continue  # skip if not walkable
 
             neighbour = Node(tile, current_node)
@@ -161,23 +182,12 @@ def get_shortest_path(start, end, game_state, blast_tiles = []):
     return None  # no path found
 
 
-def is_walkable(tile, game_state):
+def is_walkable(tile, entities):
     """
     Returns true if the tile is walkable
     """
     collectible = ["a", "bp"]
-    return not game_state.is_occupied(tile) or game_state.entity_at(tile) in collectible
-
-
-def can_enqueue(queue, neighbour):
-    """
-    Helper function for the A* search algorithm. Checks if neighbour is in
-    the queue and if it has lower total value
-    """
-    for node in queue:
-        if neighbour == node and neighbour.total_cost >= node.total_cost:
-            return False
-    return True
+    return entity_at(tile, entities) in collectible or entity_at(tile, entities) is None
 
 
 def get_path_action_seq(location: object, path: List) -> List:
@@ -199,29 +209,18 @@ def get_path_action_seq(location: object, path: List) -> List:
     return [ACTIONS["none"]]
 
 
-def get_bombs_in_range(location, bombs):
-    """
-    Retrieves the bombs within the range of the AI
-    """
-    bombs_in_range = []
-    for bomb in bombs:
-        distance = manhattan_distance(location, bomb)
-        # only freak out when bomb is in immediate position
-        if distance <= 6:
-            bombs_in_range.append(bomb)
-    return bombs_in_range
-
-
-def get_blast_zone(bomb, game_state):
+# TODO Need to modify this to account for opponent diameter range
+def get_blast_zone(bomb, entities, world):
     """
     Retrieves the tiles affected by the bomb blast
     """
-    block_tile = ["ib", "sb", "ob"]
+    world_width, world_height = get_world_dimension(world)
+    block_tile = ["o", "m", "w"]
     blast_tiles = [bomb]
-    neighbours = get_surrounding_tiles(bomb, game_state)
+    neighbours = get_surrounding_tiles(bomb, world_width, world_height)
     for tile in neighbours:
         blast_tiles.append(tile)
-        entity = game_state.entity_at(tile)
+        entity = entity_at(tile, entities)
         if entity not in block_tile:
             x = tile[0]
             y = tile[1]
@@ -251,115 +250,52 @@ def get_nearest_tile(location, tiles):
         return None
 
 
-def get_reachable_tiles(location, tiles, game_state):
+def get_reachable_tiles(location, tiles, world, entities, blast_tiles=None):
+    """
+    Returns a list of reachable tiles
+    """
+    if blast_tiles is None:
+        blast_tiles = []
+
     reachable_tiles = []
     for tile in tiles:
-        path = get_shortest_path(location, tile, game_state)
+        path = get_shortest_path(location, tile, world, entities, blast_tiles)
         if path:
             reachable_tiles.append(tile)
     return reachable_tiles
 
 
-def get_surrounding_empty_tiles(location, game_state):
+def get_surrounding_empty_tiles(location, world, entities):
     """
     Retrieves surrounding walkable tile around the location
     """
-    surrounding_tiles = get_surrounding_tiles(location, game_state)
-    empty_tiles = get_empty_tiles(surrounding_tiles, game_state)
+    world_width, world_height = get_world_dimension(world)
+    surrounding_tiles = get_surrounding_tiles(location, world_width, world_height)
+    empty_tiles = get_empty_tiles(surrounding_tiles, entities)
     return empty_tiles
 
 
-def get_empty_locations(tiles, game_state):
+def get_empty_locations(tiles, world):
+    world_width, world_height = get_world_dimension(world)
     empty_locations = []
     for tile in tiles:
-        empty_tiles = get_surrounding_empty_tiles(tile, game_state)
+        empty_tiles = get_surrounding_empty_tiles(tile, world_width, world_height)
         empty_locations = empty_locations + empty_tiles
     return empty_locations
 
 
-def is_opponent_closer(location, opponent_location, block):
+def is_opponent_closer(location, opponent_location, destination):
     """
-    Gets the opponent's distance from the treasure and compare's it to our own distance from the treasure
+    Returns true if the opponent is closer to the destination than us
     """
-    if block is None:
+    if destination is None:
         return False
 
-    opponent_dist = manhattan_distance(opponent_location, block)
-    our_dist = manhattan_distance(location, block)
+    opponent_dist = manhattan_distance(opponent_location, destination)
+    our_dist = manhattan_distance(location, destination)
     if our_dist > opponent_dist:
         return True
     return False
-
-
-def get_opponent(location, opponents):
-    for opponent in opponents:
-        if opponent != location:
-            return opponent
-    return opponents[0]
-
-
-def is_safe_path(location, target_location, bombs, game_state):
-    path = get_shortest_path(location, target_location, game_state)
-    all_blast = []
-    for bomb in bombs:
-        blast_tiles = get_blast_zone(bomb, game_state)
-        all_blast.append(blast_tiles)
-    if path:
-        for coord in path:
-            if coord in all_blast:
-                return False
-    return True
-
-
-def get_safe_tiles(danger_tiles, game_state):
-    """
-    Retrieves all the safe walkable tiles outside of danger zone
-    """
-    safe_tiles = []
-    for tile in danger_tiles:
-        empty_tiles = get_surrounding_empty_tiles(tile, game_state)
-        for empty in empty_tiles:
-            if empty not in danger_tiles:
-                safe_tiles.append(empty)
-    return safe_tiles
-
-
-def safe_escape(location, game_state):
-    all_safe_walkable_tiles = []
-    bombs = game_state.bombs
-    blast_area = []
-    for bomb in bombs:
-        blast_zone = get_blast_zone(bomb, game_state)
-        blast_area = blast_area + blast_zone
-    blast_area = blast_area + get_blast_zone(location, game_state)  # putting the bomb on the bot's current location
-    for row in range(0, 12):
-        for col in range(0, 10):
-            tile = tuple([row, col])
-            if tile not in blast_area:
-                if is_walkable(tile, game_state):
-                    path = get_shortest_path(location, tile, game_state)
-                    if path:
-                        all_safe_walkable_tiles.append(tile)
-
-    nearest_tile = get_nearest_tile(location, all_safe_walkable_tiles)
-    return nearest_tile
-
-
-def get_escape_matrix(game_state):
-    size = game_state.size
-    width = size[0]
-    height = size[1]
-    escape_paths = [0] * (width * height)
-    for y in range(height):
-        for x in range(width):
-            tile = (x, y)
-            idx = width * y + x
-            if is_walkable(tile, game_state):
-                empty_tiles = get_surrounding_empty_tiles(tile, game_state)
-                escape_paths[idx] = len(empty_tiles)
-            else:
-                escape_paths[idx] = -1
-    return escape_paths
 
 
 def get_matrix_val_for_tile(tile, matrix, map_width):

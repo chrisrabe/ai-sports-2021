@@ -23,4 +23,5 @@ class Agent:
 
             self.action_queue = self.action_queue + actions
 
+        self.prev_tick = tick_number
         return self.action_queue.pop(0)
