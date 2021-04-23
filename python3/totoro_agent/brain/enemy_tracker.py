@@ -7,39 +7,33 @@ ammo, etc.
 class EnemyTracker:
 	def __init__(self):
 		#Enemy Tracker. Using enemy_ammo etc. even though it's THIS GUYS AMMO. we're not doubling reverse card. Enemy is OUR enemy. Global english, not relative.
-		self.enemy_pos = [0, 0] 
-		self.enemy_ammo = 3
-		self.enemy_health = 3
-		self.enemy_blast_radius = 2 # -> Not checking # of powerups, so just increase this by 1 whenever we pick up a powerup.
-		self.enemy_invulnerable_until = 0 # Get better var name, number is inclusive.
-
-
+		# Nothing to init because there's no reason to keep track of any objects over time (we just yoink it from the game_state).
+		pass
 	def update(self, game_state):
-		# TODO Yuv
+
+		### US THE HOMEBOIS ###
 		self.player_id = str(game_state["connection"]["agent_number"])
-		# own position
-		# own health
-		# own ammo
-		# own diameter
-		# own invulnerable (we don't worry about our own stuff -- this'll be easily reflected)
+
+		game_state['player_id'] = self.player_id
+		game_state['player_id'] = game_state["agent_state"][self.player_id]["inventory"]["bombs"]
+		game_state['player_pos'] = game_state["agent_state"][self.player_id]["coordinates"]
+		game_state['player_health']  = game_state["agent_state"][self.player_id]["hp"]
+		game_state['player_diameter']  = game_state["agent_state"][self.player_id]["blast_diameter"] # girthy boi
+		game_state['player_invulnerable_until'] = game_state['agent_state'][self.player_id]['invulnerability'] # INCLUSIVE -> Vulnerable @ tick + 1 
 
 
+
+
+		### ENEMY ###
+		#############
 		self.enemy_id = str((game_state["connection"]["agent_number"]+1)%2) 
 
-		print(self.enemy_id, self.player_id)
-		self.enemy_ammo = game_state["agent_state"][self.enemy_id]["inventory"]["bombs"]
-		self.enemy_pos = game_state["agent_state"][self.enemy_id]["coordinates"]
-		self.enemy_health = game_state["agent_state"][self.enemy_id]["hp"]
-		self.enemy_diameter = game_state["agent_state"][self.enemy_id]["blast_diameter"] # girthy boi
-		self.enemy_invulnerable_until = game_state['agent_state'][self.enemy_id]['invulnerability'] # INCLUSIVE -> Vulnerable @ tick + 1 
-	#	is_invulnerable = #got hit or some shit in the past 5 ticks.? / set the ticks to when he is able to be hit again (similar to the website agent stats)
-	#
-		# Shove them into game_state - Feels like there's a better way to do this but oops. Could also get rid of the above and just shove them in there.
-		game_state['enemy_id'] = self.enemy_id 
-		game_state['enemy_ammo'] = self.enemy_ammo 
-		game_state['enemy_pos'] = self.enemy_pos
-		game_state['enemy_health'] = self.enemy_health
-		game_state['enemy_diameter'] = self.enemy_diameter
-		game_state['enemy_invulnerable_until'] = self.enemy_diameter
+		game_state['enemy_id'] = str(game_state["connection"]["agent_number"])
+		game_state['enemy_id'] = game_state["agent_state"][self.enemy_id]["inventory"]["bombs"]
+		game_state['enemy_pos'] = game_state["agent_state"][self.enemy_id]["coordinates"]
+		game_state['enemy_health']  = game_state["agent_state"][self.enemy_id]["hp"]
+		game_state['enemy_diameter']  = game_state["agent_state"][self.enemy_id]["blast_diameter"] # girthy boi
+		game_state['enemy_invulnerable_until'] = game_state['agent_state'][self.enemy_id]['invulnerability'] # INCLUSIVE -> Vulnerable @ tick + 1 
+#	is_invulnerable = #got hit or some shit in the past 5 ticks.? / set the ticks to when he is able to be hit again (similar to the website agent stats)
 
 		pass
