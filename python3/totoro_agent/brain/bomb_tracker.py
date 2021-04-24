@@ -42,4 +42,3 @@ class BombTracker:
         # enemy bombs
        
         # future blast areas
-        pass
