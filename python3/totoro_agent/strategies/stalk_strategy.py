@@ -1,8 +1,7 @@
 from typing import List
 
 from . import strategy
-from ..utils.util_functions import get_shortest_path, get_path_action_seq
-from ..utils.constants import ACTIONS
+from ..utils.util_functions import get_shortest_path, get_path_action_seq, get_blast_zone, get_nearest_tile
 
 
 class StalkStrategy(strategy.Strategy):
@@ -13,11 +12,9 @@ class StalkStrategy(strategy.Strategy):
         world = game_state['world']
         entities = game_state['entities']
 
-        print('Enemy at', enemy_pos)
-        print('Player at', player_pos)
+        # we want to at least be 3 blocks away from player
+        stalk_zone = get_blast_zone(enemy_pos, 5, entities, world)
+        closest_tile = get_nearest_tile(player_pos, stalk_zone)
 
-        # get surrounding empty tile from enemy
-        # go to closest one from player
-
-        path = get_shortest_path(player_pos, enemy_pos, world, entities)
+        path = get_shortest_path(player_pos, closest_tile, world, entities)
         return get_path_action_seq(player_pos, path)
