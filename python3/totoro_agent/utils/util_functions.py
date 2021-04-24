@@ -8,6 +8,11 @@ from .structures import Node
 #   Game / World helper functions
 ########################################################################
 
+def get_entity_coords(entity) -> tuple[int, int]:
+    x = entity.get("x")
+    y = entity.get("y")
+    return x, y
+
 
 def is_in_bounds(tile, world_width, world_height) -> bool:
     """
@@ -209,30 +214,51 @@ def get_path_action_seq(location: object, path: List) -> List:
     return [ACTIONS["none"]]
 
 
-# TODO Need to modify this to account for opponent diameter range
-def get_blast_zone(bomb, entities, world):
+def get_blast_zone(bomb_loc, diameter, entities, world):
     """
     Retrieves the tiles affected by the bomb blast
     """
     world_width, world_height = get_world_dimension(world)
+    radius = diameter / 2
     block_tile = ["o", "m", "w"]
-    blast_tiles = [bomb]
-    neighbours = get_surrounding_tiles(bomb, world_width, world_height)
-    for tile in neighbours:
-        blast_tiles.append(tile)
-        entity = entity_at(tile, entities)
-        if entity not in block_tile:
-            x = tile[0]
-            y = tile[1]
-            blast_dir = move_to_tile(bomb, tile)
-            if blast_dir == ACTIONS["left"]:
-                blast_tiles.append((x - 1, y))
-            elif blast_dir == ACTIONS["right"]:
-                blast_tiles.append((x + 1, y))
-            elif blast_dir == ACTIONS["up"]:
-                blast_tiles.append((x, y + 1))
-            elif blast_dir == ACTIONS["down"]:
-                blast_tiles.append((x, y - 1))
+    blast_tiles = [bomb_loc]
+    cur_loc = bomb_loc
+
+    for i in range(radius):
+        tile = get_tile_from_move(cur_loc, ACTIONS["left"])
+        if is_in_bounds(tile, world_width, world_height) and entity_at(tile, entities) not in block_tile:
+            blast_tiles.append(tile)
+        else:
+            cur_loc = bomb_loc
+            break
+        cur_loc = tile
+
+    for i in range(radius):
+        tile = get_tile_from_move(cur_loc, ACTIONS["right"])
+        if is_in_bounds(tile, world_width, world_height) and entity_at(tile, entities) not in block_tile:
+            blast_tiles.append(tile)
+        else:
+            cur_loc = bomb_loc
+            break
+        cur_loc = tile
+
+    for i in range(radius):
+        tile = get_tile_from_move(cur_loc, ACTIONS["up"])
+        if is_in_bounds(tile, world_width, world_height) and entity_at(tile, entities) not in block_tile:
+            blast_tiles.append(tile)
+        else:
+            cur_loc = bomb_loc
+            break
+        cur_loc = tile
+
+    for i in range(radius):
+        tile = get_tile_from_move(cur_loc, ACTIONS["down"])
+        if is_in_bounds(tile, world_width, world_height) and entity_at(tile, entities) not in block_tile:
+            blast_tiles.append(tile)
+        else:
+            break
+        cur_loc = tile
+
     return blast_tiles
 
 
@@ -306,8 +332,7 @@ def get_matrix_val_for_tile(tile, matrix, map_width):
 
 
 def get_tile_from_move(location, move):
-    x = location[0]
-    y = location[1]
+    x, y = location
 
     if move == ACTIONS["down"]:
         return tuple((x, y - 1))
