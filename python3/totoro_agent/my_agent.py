@@ -1,4 +1,4 @@
-from .strategies import RandomStrategy
+from .strategies import RandomStrategy, PickupStrategy
 from .brain import Brain
 
 
@@ -6,11 +6,11 @@ class Agent:
     def __init__(self):
         self.brain = Brain()
         self.strategies = {
-            'random': RandomStrategy()
+            'random': RandomStrategy(),
+            'pickup': PickupStrategy()
             # kill: 3
             # trap: 4
             # retreat: 2
-            # pickup: 1
         }
         self.action_queue = []
         self.prev_tick = -1
