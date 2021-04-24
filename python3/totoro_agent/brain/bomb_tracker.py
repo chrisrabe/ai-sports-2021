@@ -11,8 +11,8 @@ class BombTracker:
     def update(self, game_state):
         # TODO Will
         # Get own and enemy id
-        own_id = str(game_state['connection']['agent_number'])
-        enemy_id = str(1 - int(own_id))
+        own_id = game_state["player_id"]
+        enemy_id = game_state['enemy_id']
         own_active_bombs = []
         enemy_active_bombs = []
 
@@ -43,4 +43,3 @@ class BombTracker:
         # enemy bombs
        
         # future blast areas
-        pass
