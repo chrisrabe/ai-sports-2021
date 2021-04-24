@@ -1,4 +1,4 @@
-from .strategies import RandomStrategy
+from .strategies import RandomStrategy, StalkStrategy
 from .brain import Brain
 
 
@@ -6,8 +6,8 @@ class Agent:
     def __init__(self):
         self.brain = Brain()
         self.strategies = {
-            'random': RandomStrategy()
-            # kill: 3
+            'random': RandomStrategy(),
+            'kill': StalkStrategy(),
             # trap: 4
             # retreat: 2
             # pickup: 1
