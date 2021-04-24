@@ -23,6 +23,10 @@ class Brain:
 
         # enemy is trapped
 
+        # if player is in immediate danger, GTFO!! (retreat)
+        # - our bomb nearly tick
+        # -
+
         # TODO Make decisions in terms on what strategy to do next
 
-        return "random"
+        return "retreat"
