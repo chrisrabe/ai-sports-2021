@@ -23,9 +23,9 @@ class BombTracker:
         for entity in entities:
             if entity['type'] == ENTITIES['bomb']:
                 if entity['owner'] == own_id:
-                    own_active_bombs.append(entity)
+                    own_active_bombs.append([entity['x'], entity['y']])
                 elif entity['owner'] == enemy_id:
-                    enemy_active_bombs.append(entity)
+                    enemy_active_bombs.append([entity['x'], entity['y']])
 
         # Save values into game state
         game_state['own_active_bombs'] = own_active_bombs
