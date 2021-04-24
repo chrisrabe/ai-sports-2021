@@ -2,7 +2,7 @@
 Used for tracking lifecycle of bombs and explosion areas
 """
 
-from ..utils.util_functions import get_blast_zone, get_entity_coords
+# from ..utils.util_functions import get_blast_zone
 from ..utils.constants import ENTITIES
 
 class BombTracker:
