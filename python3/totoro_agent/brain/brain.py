@@ -25,4 +25,4 @@ class Brain:
 
         # TODO Make decisions in terms on what strategy to do next
 
-        return "stalk"
+        return "kill"
