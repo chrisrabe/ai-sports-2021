@@ -219,7 +219,7 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
     Retrieves the tiles affected by the bomb blast
     """
     world_width, world_height = get_world_dimension(world)
-    radius = diameter / 2
+    radius = int(diameter / 2)
     block_tile = ["o", "m", "w"]
     blast_tiles = [bomb_loc]
     cur_loc = bomb_loc
