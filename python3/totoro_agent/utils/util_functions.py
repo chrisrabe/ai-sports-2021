@@ -374,7 +374,7 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None):
        [ENTITY_TYPE]: number
     }
 
-    pinch points must be an array of (x,y) tuples or is None
+    pinch points must be an array of (x,y) tuples or is None (articulation points)
     """
 
     # TODO are there numpy helper functions to help with these logic?
@@ -396,7 +396,10 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None):
     # re-evaluate for pinch points
     if pinch_points is not None:
         for tile in pinch_points:
-            reward_mask = get_reward_mask(tile, DEFAULT_REWARDS['pinch'], world)
+            pinch_reward = DEFAULT_REWARDS['pinch']
+            if 'pinch' in reward_map:
+                pinch_reward = reward_map['pinch']
+            reward_mask = get_reward_mask(tile, pinch_reward, world)
             value_map = np.add(value_map, reward_mask)
 
     return value_map
