@@ -20,12 +20,13 @@ class BombTracker:
         entities = game_state['entities']
 
         # Get active bombs
+        # Coordinates, expiry
         for entity in entities:
             if entity['type'] == ENTITIES['bomb']:
                 if entity['owner'] == own_id:
-                    own_active_bombs.append([entity['x'], entity['y']])
+                    own_active_bombs.append([entity['x'], entity['y'], entity['expires']])
                 elif entity['owner'] == enemy_id:
-                    enemy_active_bombs.append([entity['x'], entity['y']])
+                    enemy_active_bombs.append([entity['x'], entity['y'], entity['expires']])
 
         # Save values into game state
         game_state['own_active_bombs'] = own_active_bombs
