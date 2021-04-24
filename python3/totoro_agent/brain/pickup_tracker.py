@@ -37,12 +37,11 @@ class PickupTracker:
         # Gets the map width and height.
         map_width, map_height = get_world_dimension(game_state['world'])
 
-        own_id = int(game_state['connection']['agent_number'])
-        enemy_id = int(1 - int(own_id))
-
+        player_diameter = game_state["player_diameter"]
+ 
         # Changes pickup priority depending on 
         pickup_priority = "ammo_powerup"
-        if own_id >= max(map_width, map_height):
+        if player_diameter >= max(map_width, map_height):
         	pickup_priority = "ammo"
 
         # Setting the game_state parameters. 

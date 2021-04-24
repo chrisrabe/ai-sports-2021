@@ -28,6 +28,6 @@ class Agent:
 
             self.action_queue = self.action_queue + actions
 
-        # print(game_state) -> To check if you've added new things to game_state
+        # print(game_state) #-> To check if you've added new things to game_state
         self.prev_tick = tick_number
         return self.action_queue.pop(0)
