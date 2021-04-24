@@ -23,3 +23,9 @@ ENTITIES = {
     'ore': 'o',
     'wood': 'w'
 }
+
+DEFAULT_REWARDS = {
+    'bomb': -1,
+    'pinch': -2,  # articulation point
+    'wall': -10
+}
