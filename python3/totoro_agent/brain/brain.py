@@ -16,8 +16,8 @@ class Brain:
         self.pickup_tracker = PickupTracker()
 
     def get_next_strategy(self, game_state) -> str:
-        self.bomb_tracker.update(game_state)
         self.enemy_tracker.update(game_state)
+        self.bomb_tracker.update(game_state)
         self.map_tracker.update(game_state)
         self.pickup_tracker.update(game_state)
 

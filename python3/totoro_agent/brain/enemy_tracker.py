@@ -12,24 +12,23 @@ class EnemyTracker:
         pass
 
     def update(self, game_state):
-        ### US THE HOMEBOIS ###
-        self.player_id = str(game_state["connection"]["agent_number"])
-        player_state = game_state['agent_state'][self.player_id]
+        # US THE HOMEBOIS
+        player_id = str(game_state["connection"]["agent_number"])
+        player_state = game_state['agent_state'][player_id]
 
-        game_state['player_id'] = self.player_id
-        game_state['player_id'] = player_state["inventory"]["bombs"]
+        game_state['player_id'] = player_id
+        game_state['player_inv_bombs'] = player_state["inventory"]["bombs"]
         game_state['player_pos'] = player_state["coordinates"]
         game_state['player_health'] = player_state["hp"]
         game_state['player_diameter'] = player_state["blast_diameter"]  # girthy boi
         game_state['player_invulnerable_until'] = player_state['invulnerability']  # INCLUSIVE -> Vulnerable @ tick + 1
 
-        ### ENEMY ###
-        #############
-        self.enemy_id = str((game_state["connection"]["agent_number"] + 1) % 2)
-        enemy_state = game_state['agent_state'][self.enemy_id]
+        # ENEMY
+        enemy_id = str(1 - int(player_id))
+        enemy_state = game_state['agent_state'][enemy_id]
 
-        game_state['enemy_id'] = self.enemy_id
-        game_state['enemy_id'] = enemy_state["inventory"]["bombs"]
+        game_state['enemy_id'] = enemy_id
+        game_state['enemy_inv_bombs'] = enemy_state["inventory"]["bombs"]
         game_state['enemy_pos'] = enemy_state["coordinates"]
         game_state['enemy_health'] = enemy_state["hp"]
         game_state['enemy_diameter'] = enemy_state["blast_diameter"]  # girthy boi
