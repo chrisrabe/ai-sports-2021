@@ -1,4 +1,4 @@
-from .strategies import RandomStrategy, StalkStrategy, PickupStrategy
+from .strategies import RandomStrategy, RetreatStrategy, StalkStrategy, PickupStrategy
 from .brain import Brain
 
 
@@ -7,11 +7,10 @@ class Agent:
         self.brain = Brain()
         self.strategies = {
             'random': RandomStrategy(),
+            'retreat': RetreatStrategy(),
             'pickup': PickupStrategy(),
-            # stalk: 3
             'stalk': StalkStrategy()
             # trap: 4
-            # retreat: 2
         }
         self.action_queue = []
         self.prev_tick = -1
@@ -20,6 +19,8 @@ class Agent:
         # If it prints this out in console, it means algorithm is performing suboptimally
         if tick_number - self.prev_tick != 1:
             print(f'Skipped a Tick: Tick #{tick_number}, skipped {tick_number - self.prev_tick}')
+
+        game_state['tick'] = tick_number
 
         if not self.action_queue:
             # Gets brain to eval environment, then spit out the strategy chosen (as string)
