@@ -21,6 +21,7 @@ class Brain:
         self.map_tracker.update(game_state)
         self.pickup_tracker.update(game_state)
 
+
         # enemy is trapped
 
         # TODO Make decisions in terms on what strategy to do next Return string 
@@ -38,11 +39,8 @@ class Brain:
         If there is ammo: go get it -> 'pickup';
         If there is bomb: 'retreat';
         # If 
-        # """
-        # if len(game_state[ammo_list]) == 0: # "Is ammo list empty?"
-        #     return "stalk"
-        #     print(game_state[ammo_list])
-        # else:
-        #     return "random"
-
-        return 'stalk'
+        #"""
+        if len(game_state['ammo_list']) == 0: # "Is ammo list empty?"
+            return 'stalk'
+        else:
+            return "pickup"
