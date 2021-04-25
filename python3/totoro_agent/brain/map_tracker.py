@@ -2,7 +2,7 @@
 Used to track all information about the ores (their HP, etc)
 """
 from ..utils.constants import ENTITIES
-from ..utils.util_functions import convert_entities_to_coords, get_value_map_objects_from_arr
+from ..utils.util_functions import convert_entities_to_coords, get_value_map_objects_from_arr, get_articulation_points
 
 
 class MapTracker:
@@ -33,5 +33,5 @@ class MapTracker:
         game_state["wall_blocks"] = convert_entities_to_coords(ore_blocks + wood_blocks + metal_blocks + blast_blocks)
         game_state["non_wall_blocks"] = get_value_map_objects_from_arr(non_wall_blocks, None, True)
 
-        # TODO me and tony
-        # pinch points of map - floyd warshall (research)
+        art_points = get_articulation_points(game_state["player_pos"], game_state["world"], game_state["entities"])
+        game_state["articulation_points"] = art_points
