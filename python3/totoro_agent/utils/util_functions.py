@@ -217,7 +217,8 @@ def get_path_action_seq(location: object, path: List) -> List:
 
 def get_blast_zone(bomb_loc, diameter, entities, world):
     """
-    Retrieves the tiles affected by the bomb blast
+    Retrieves the tiles that will be affected by the bomb blast
+	Returns a list of (x,y) that will be FIRE when detonated.
     """
     world_width, world_height = get_world_dimension(world)
     radius = int(diameter / 2)
@@ -225,6 +226,7 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
     blast_tiles = [bomb_loc]
     cur_loc = bomb_loc
 
+	# Adds potential blast zones
     for i in range(radius):
         tile = get_tile_from_move(cur_loc, ACTIONS["left"])
         if is_in_bounds(tile, world_width, world_height) and entity_at(tile, entities) not in block_tile:
