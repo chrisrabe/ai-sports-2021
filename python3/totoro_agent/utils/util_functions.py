@@ -499,7 +499,7 @@ def get_move_from_value_map(cur_loc, value_map, world):
     return move_to_tile(cur_loc, new_loc)
 
 
-def get_articulation_points(player_loc, world, entities):
+def get_articulation_points(player_loc, world, entities) -> list[tuple[int, int]]:
     """
     Retrieves the articulation points for the walkable tiles in the map
     relative to the player position
@@ -540,7 +540,7 @@ def get_articulation_points(player_loc, world, entities):
     # Use custom graph node to propagate lowest up to parent
 
     dfs(0, player_loc, -1)
-    return art
+    return list(art)
 
 
 def get_undirected_graph(player_loc, world, entities):
