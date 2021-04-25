@@ -23,6 +23,14 @@ class Brain:
 
         # enemy is trapped
 
-        # TODO Make decisions in terms on what strategy to do next
+        # TODO Make decisions in terms on what strategy to do next Return string 
+
+		# Highest Prio (base state): Collect + Stay away from immediate danger (fire + potential blast zones)
+		# 2nd highest Destroy walls
+		# --> If possible; KILL.
+
+		#For destroy strats:
+		# -> If it's at the highest spot on the value map and there's a destroyable next to it,
+		#kill (then map is update 'oh no bomb!!' and run)
 
         return "stalk"
