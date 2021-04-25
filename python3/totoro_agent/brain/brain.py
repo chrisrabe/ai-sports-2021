@@ -37,7 +37,7 @@ class Brain:
 
 
         ### Basic Decision Making:
-		        """Strats:
+        """Strats:
         Stalk by default -> 'stalk';
         If there is ammo: go get it -> 'pickup';
         If there is bomb: 'retreat'; 
