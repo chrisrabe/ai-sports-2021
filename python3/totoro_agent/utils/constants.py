@@ -23,3 +23,19 @@ ENTITIES = {
     'ore': 'o',
     'wood': 'w'
 }
+
+DEFAULT_REWARDS = {
+    ENTITIES['bomb']: -6,
+    ENTITIES['blast']: -8,
+    ENTITIES['ammo']: 5,
+    ENTITIES['powerup']: 4,
+    # avoid walls
+    ENTITIES['metal']: -10,
+    ENTITIES['ore']: -10,
+    ENTITIES['wood']: -10,
+
+    # special rewards
+    'enemy': -5,
+    'pinch': -2,  # articulation point
+    'wall': -10
+}

@@ -1,6 +1,7 @@
 from typing import List
+import numpy as np
 
-from .constants import ACTIONS
+from .constants import ACTIONS, DEFAULT_REWARDS
 from .structures import Node
 
 
@@ -219,7 +220,7 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
     Retrieves the tiles affected by the bomb blast
     """
     world_width, world_height = get_world_dimension(world)
-    radius = diameter / 2
+    radius = int(diameter / 2)
     block_tile = ["o", "m", "w"]
     blast_tiles = [bomb_loc]
     cur_loc = bomb_loc
@@ -354,3 +355,103 @@ def is_movement(action):
         ACTIONS["left"]
     ]
     return action in actions
+
+
+def get_value_map(world, walls, game_objects, reward_map, pinch_points=None):
+    """
+    Returns a numpy array map representing the values
+
+    walls must be an array of (x,y) tuples
+
+    game objects must be an array of objects with the following schema:
+    {
+       loc: (x, y)
+       type: string
+    }
+
+    reward map must be a dictionary with the following schema
+    {
+       [ENTITY_TYPE]: number
+    }
+
+    pinch points must be an array of (x,y) tuples or is None (articulation points)
+    """
+
+    # TODO are there numpy helper functions to help with these logic?
+
+    # create 2D matrix filled with zeroes
+    value_map = np.zeros(get_world_dimension(world))
+
+    # replace all walls with -10
+    for wall in walls:
+        x, y = wall
+        value_map[y, x] = DEFAULT_REWARDS['wall']
+
+    # get score mask for all non-wall objects
+    for item in game_objects:
+        if item['type'] in reward_map:
+            reward = reward_map[item['type']]
+        else:
+            reward = DEFAULT_REWARDS[item['type']]
+        reward_mask = get_reward_mask(item, reward, world)
+        value_map = np.add(value_map, reward_mask)
+
+    # re-evaluate for pinch points
+    if pinch_points is not None:
+        for tile in pinch_points:
+            pinch_reward = DEFAULT_REWARDS['pinch']
+            if 'pinch' in reward_map:
+                pinch_reward = reward_map['pinch']
+            reward_mask = get_reward_mask(tile, pinch_reward, world)
+            value_map = np.add(value_map, reward_mask)
+
+    return value_map
+
+
+def get_reward_mask(item, reward, world):
+    """
+    Returns reward mask
+    """
+    world_width, world_height = get_world_dimension(world)
+    mask = np.zeros((world_width, world_height))
+
+    abs_reward = abs(reward)
+
+    # modified iterative floodfill algorithm
+    to_fill = set()
+    to_fill.add(item['loc'])
+    while len(to_fill) != 0:
+        cur_tile = to_fill.pop()
+        neighbours = get_surrounding_tiles(cur_tile, world_width, world_height)
+        tile_scores = get_tile_scores_from_mask(neighbours, mask)
+        max_reward = np.amax(tile_scores)
+        cur_tile_x, cur_tile_y = cur_tile
+        if max_reward == 0:  # evaluating starting point
+            mask[cur_tile_y, cur_tile_x] = abs_reward
+        else:
+            mask[cur_tile_y, cur_tile_x] = max_reward - 1
+        if max_reward != 1:
+            for tile in neighbours:
+                x, y = tile
+                if mask[y, x] == 0:  # not visited
+                    to_fill.add(tile)
+
+    # propagation decreases or increases the value of reward by one until it reaches 0
+    # if the reward is a negative number, it will add 1 for each level until reaches 0
+    # the opposite is applied to positive numbers
+    return mask * -1 if reward < 0 else mask
+
+
+def get_value_map_object(x, y, item_type):
+    return {
+        'loc': (x, y),
+        'type': item_type
+    }
+
+
+def get_tile_scores_from_mask(tiles, mask):
+    tile_scores = np.zeros(len(tiles))
+    for i in range(len(tiles)):
+        x, y = tiles[i]
+        tile_scores[i] = mask[y, x]
+    return tile_scores
