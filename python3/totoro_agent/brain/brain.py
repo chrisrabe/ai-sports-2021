@@ -25,22 +25,24 @@ class Brain:
 
         # TODO Make decisions in terms on what strategy to do next Return string 
 
-		# Highest Prio (base state): Collect + Stay away from immediate danger (fire + potential blast zones)
-		# 2nd highest Destroy walls
-		# --> If possible; KILL.
+        # Highest Prio (base state): Collect + Stay away from immediate danger (fire + potential blast zones)
+        # 2nd highest Destroy walls
+        # --> If possible; KILL.
 
-		#For destroy strats:
-		# -> If it's at the highest spot on the value map and there's a destroyable next to it,
-		#kill (then map is update 'oh no bomb!!' and run)
+        #For destroy strats:
+        # -> If it's at the highest spot on the value map and there's a destroyable next to it,
+        #kill (then map is update 'oh no bomb!!' and run)
 
-		"""Strats:
-		Stalk by default -> 'stalk';
-		If there is ammo: go get it -> 'pickup';
-		If there is bomb: 'retreat';
-		If 
-		"""
-		if len(game_state[ammo_list]) == 0: # "Is ammo list empty?"
-			return "stalk"
-			print(game_state[ammo_list])
-		else:
-			return "random"
+        """Strats:
+        Stalk by default -> 'stalk';
+        If there is ammo: go get it -> 'pickup';
+        If there is bomb: 'retreat';
+        # If 
+        # """
+        # if len(game_state[ammo_list]) == 0: # "Is ammo list empty?"
+        #     return "stalk"
+        #     print(game_state[ammo_list])
+        # else:
+        #     return "random"
+
+        return 'stalk'
