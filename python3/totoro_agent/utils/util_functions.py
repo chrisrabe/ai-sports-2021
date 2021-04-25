@@ -382,14 +382,16 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None):
     # create 2D matrix filled with zeroes
     value_map = np.zeros(get_world_dimension(world))
 
-    # replace all walls (ore, wood, metal and blast with default value)
+    # replace all walls with -10
     for wall in walls:
         x, y = wall
         value_map[y, x] = DEFAULT_REWARDS['wall']
 
     # get score mask for all non-wall objects
     for item in game_objects:
-        reward = reward_map[item.type]
+        reward = DEFAULT_REWARDS[item['type']]
+        if item['type'] in reward_map:
+            reward = reward_map[item['type']]
         reward_mask = get_reward_mask(item, reward, world)
         value_map = np.add(value_map, reward_mask)
 
@@ -416,7 +418,7 @@ def get_reward_mask(item, reward, world):
 
     # modified iterative floodfill algorithm
     to_fill = set()
-    to_fill.add(item.loc)
+    to_fill.add(item['loc'])
     while len(to_fill) != 0:
         cur_tile = to_fill.pop()
         neighbours = get_surrounding_tiles(cur_tile, world_width, world_height)
@@ -437,6 +439,13 @@ def get_reward_mask(item, reward, world):
     # if the reward is a negative number, it will add 1 for each level until reaches 0
     # the opposite is applied to positive numbers
     return mask * -1 if reward < 0 else mask
+
+
+def get_value_map_object(x, y, item_type):
+    return {
+        'loc': (x, y),
+        'type': item_type
+    }
 
 
 def get_tile_scores_from_mask(tiles, mask):
