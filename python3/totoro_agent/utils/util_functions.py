@@ -442,6 +442,25 @@ def get_reward_mask(item, reward, world):
     return mask * -1 if reward < 0 else mask
 
 
+def get_value_map_objects_from_arr(tiles, item_type=None, has_xy=False, tile_prop=None):
+    game_objects = []
+    for tile in tiles:
+        # variations of getting x, y values
+        if has_xy:
+            x = tile['x']
+            y = tile['y']
+        elif tile_prop is not None:
+            x, y = tile[tile_prop]
+        else:
+            x, y = tile
+        # if item type not defined, tile has type
+        if item_type is None:
+            game_objects.append(get_value_map_object(x, y, tile['type']))
+        else:
+            game_objects.append(get_value_map_object(x, y, item_type))
+    return game_objects
+
+
 def get_value_map_object(x, y, item_type):
     return {
         'loc': (x, y),
@@ -455,3 +474,24 @@ def get_tile_scores_from_mask(tiles, mask):
         x, y = tiles[i]
         tile_scores[i] = mask[y, x]
     return tile_scores
+
+
+def convert_entities_to_coords(entities):
+    coords = []
+    for entity in entities:
+        coords.append(get_entity_coords(entity))
+    return coords
+
+
+def get_move_from_value_map(cur_loc, value_map, world):
+    world_width, world_height = get_world_dimension(world)
+    neighbours = get_surrounding_tiles(cur_loc, world_width, world_height)
+    max_val = -1
+    new_loc = cur_loc
+    for tile in neighbours:
+        x, y = tile
+        tile_val = value_map[y, x]
+        if tile_val > max_val:
+            max_val = tile_val
+            new_loc = tile
+    return move_to_tile(cur_loc, new_loc)

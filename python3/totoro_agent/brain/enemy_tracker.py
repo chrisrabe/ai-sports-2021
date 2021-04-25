@@ -3,6 +3,7 @@ Used to track all information about the enemy such as its health,
 ammo, etc.
 """
 
+from ..utils.util_functions import get_value_map_object
 
 class EnemyTracker:
     def __init__(self):
@@ -27,6 +28,8 @@ class EnemyTracker:
         enemy_id = str(1 - int(player_id))
         enemy_state = game_state['agent_state'][enemy_id]
 
+        enemy_x, enemy_y = enemy_state["coordinates"]
+        game_state['enemy_obj'] = get_value_map_object(enemy_x, enemy_y, 'enemy')
         game_state['enemy_id'] = enemy_id
         game_state['enemy_inv_bombs'] = enemy_state["inventory"]["bombs"]
         game_state['enemy_pos'] = enemy_state["coordinates"]
