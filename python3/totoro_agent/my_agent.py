@@ -8,8 +8,8 @@ class Agent:
         self.strategies = {
             'random': RandomStrategy(),
             'pickup': PickupStrategy(),
-            # kill: 3
-            'kill': StalkStrategy()
+            # stalk: 3
+            'stalk': StalkStrategy()
             # trap: 4
             # retreat: 2
         }
