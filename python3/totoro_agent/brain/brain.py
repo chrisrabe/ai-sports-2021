@@ -23,7 +23,7 @@ class Brain:
 
         # enemy is trapped
 
-        # TODO Make decisions in terms on what strategy to do next
+        # TODO Make decisions in terms on what strategy to do next: Return string 
 
 		# Highest Prio (base state): Collect + Stay away from immediate danger (fire + potential blast zones)
 		# 2nd highest Destroy walls
@@ -35,6 +35,7 @@ class Brain:
 
 
 		"""By default: 
-		Stalk. If ammo on map, Pickup"""
+		Stalk. 
+		If ammo on map, Pickup"""
 
-        return "kill"
+        return "stalk"

@@ -7,7 +7,7 @@ class Agent:
         self.brain = Brain()
         self.strategies = {
             'random': RandomStrategy(),
-            'kill': StalkStrategy(),
+            'stalk': StalkStrategy(),
             # trap: 4
             # retreat: 2
             # pickup: 1
