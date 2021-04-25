@@ -58,7 +58,8 @@ class Brain:
 
         ### Basic Decision Making
         # Pickup if ammo, stalk if none on map.
-        if len(game_state['ammo_list']) != 0: # "Is there ammo on the map?"
+        if len(game_state['pickup_list']) != 0: # "Any pickups on the map?"
+            print('me gusta I smell some pickups')
             return 'pickup'
 
         else:
