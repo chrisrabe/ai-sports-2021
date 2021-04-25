@@ -24,12 +24,12 @@ class PickupTracker:
             if a['type'] == "a":
                 x = a['x']
                 y = a['y']
-                # ammo_list.append(list((x,y)))
+
                 ammo_list.append([x, y])
             if a['type'] == "bp":
                 x = a['x']
                 y = a['y']
-                # powerup_list.append(list((x,y)))
+
                 powerup_list.append([x, y])
 
         # Player A and B's blast diameter updated tick by tick.'
