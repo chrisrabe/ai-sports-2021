@@ -1,5 +1,5 @@
 from typing import List
-from collections import defaultdict
+from collections import defaultdict, deque
 import numpy as np
 
 from .constants import ACTIONS, DEFAULT_REWARDS
@@ -534,6 +534,10 @@ def get_articulation_points(player_loc, world, entities):
 
         if parents[node] == -1 and num_edges >= 2:  # if root - different condition applies
             art.add(node)
+
+    # TODO stress test!!
+    # if recursive DFS fk's up with stackoverflow, replace with iterative DFS
+    # Use custom graph node to propagate lowest up to parent
 
     dfs(0, player_loc, -1)
     return art
