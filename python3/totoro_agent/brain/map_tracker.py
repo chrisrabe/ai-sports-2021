@@ -33,5 +33,5 @@ class MapTracker:
         game_state["wall_blocks"] = convert_entities_to_coords(ore_blocks + wood_blocks + metal_blocks + blast_blocks)
         game_state["non_wall_blocks"] = get_value_map_objects_from_arr(non_wall_blocks, None, True)
 
-        art_points = get_articulation_points(game_state["player_pos"], game_state["world"], game_state["entities"])
-        game_state["articulation_points"] = art_points
+        pinch_points = get_articulation_points(game_state["player_pos"], game_state["world"], game_state["entities"])
+        game_state["pinch_points"] = pinch_points
