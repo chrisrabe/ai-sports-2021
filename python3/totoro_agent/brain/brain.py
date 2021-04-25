@@ -35,16 +35,13 @@ class Brain:
         # -> If it's at the highest spot on the value map and there's a destroyable next to it,
         #kill (then map is update 'oh no bomb!!' and run)
 
-        """Strats:
+
+        ### Basic Decision Making:
+		        """Strats:
         Stalk by default -> 'stalk';
         If there is ammo: go get it -> 'pickup';
-        If there is bomb: 'retreat';
-        # If 
+        If there is bomb: 'retreat'; 
         #"""
-                # Will need something to check if in potential blast zone (from, enemy bombs), then retreat
-        #
-
-        ### Basic Decision Making
 
         # If you're in the blast tiles, do RETREAT
         for bomb in game_state['enemy_active_bombs']: # Bomb is a dict
