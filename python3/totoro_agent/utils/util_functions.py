@@ -1,5 +1,5 @@
 from typing import List
-from collections import defaultdict, deque
+from collections import defaultdict
 import numpy as np
 
 from .constants import ACTIONS, DEFAULT_REWARDS
