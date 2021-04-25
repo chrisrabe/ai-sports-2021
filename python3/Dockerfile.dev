@@ -1,5 +1,6 @@
 FROM python:3-alpine
-
+RUN apk update
+RUN apk add make automake gcc g++ subversion python3-dev
 COPY ./requirements.txt /app/requirements.txt
 WORKDIR /app
 RUN python -m pip install -r requirements.txt
