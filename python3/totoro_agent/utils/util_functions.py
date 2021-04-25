@@ -389,9 +389,10 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None):
 
     # get score mask for all non-wall objects
     for item in game_objects:
-        reward = DEFAULT_REWARDS[item['type']]
         if item['type'] in reward_map:
             reward = reward_map[item['type']]
+        else:
+            reward = DEFAULT_REWARDS[item['type']]
         reward_mask = get_reward_mask(item, reward, world)
         value_map = np.add(value_map, reward_mask)
 
