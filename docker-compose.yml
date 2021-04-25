@@ -1,0 +1,75 @@
+version: "3"
+services:
+    game-server:
+        extends:
+            file: base-compose.yml
+            service: game-server
+        ports:
+            - 3000:3000
+        environment:
+            - ADMIN_ROLE_ENABLED=0
+            - AGENT_ID_MAPPING=agentA,agentB
+            - INITIAL_AMMUNITION=3
+            - INITIAL_HP=3
+            - PRNG_SEED=1234
+            - SHUTDOWN_ON_GAME_END_ENABLED=1
+            - TELEMETRY_ENABLED=1
+            - TICK_RATE_HZ=10
+            - TRAINING_MODE_ENABLED=0
+            - WORLD_SEED=1234
+        networks:
+            - coderone-tournament
+
+    # UNCOMMENT THE NEXT BLOCK AFTER YOU HAVE CONNECTED AS A HUMAN AGENT PLAYING AGAINST THE RANDOM_AGENT
+
+#    agent-a:
+#         extends:
+#             file: base-compose.yml
+#             # update next line with a service in base-compose.yml to change agent
+#             service: python3-agent-dev
+#         environment:
+#             - GAME_CONNECTION_STRING=ws://game-server:3000/?role=agent&agentId=agentA&name=python3-agent
+#             - FWD_MODEL_CONNECTION_STRING=ws://fwd-server-a:6969/?role=admin
+#         depends_on:
+#             - game-server
+#             - fwd-server-a
+#         networks:
+#             - coderone-tournament
+
+    fwd-server-a:
+        extends:
+            file: base-compose.yml
+            service: game-server
+        environment:
+            - TELEMETRY_ENABLED=0
+            - PORT=6969
+            - WORLD_SEED=1234
+        networks:
+            - coderone-tournament
+
+    agent-b:
+        extends:
+            file: base-compose.yml
+            # update next line with a service in base-compose.yml to change agent
+            service: python3-agent-dev
+        environment:
+            - GAME_CONNECTION_STRING=ws://game-server:3000/?role=agent&agentId=agentB&name=python3-agent
+            - FWD_MODEL_CONNECTION_STRING=ws://fwd-server-b:6969/?role=admin
+        depends_on:
+            - game-server
+            - fwd-server-b
+        networks:
+            - coderone-tournament
+
+    fwd-server-b:
+        extends:
+            file: base-compose.yml
+            service: game-server
+        environment:
+            - TELEMETRY_ENABLED=0
+            - PORT=6969
+            - WORLD_SEED=1234
+        networks:
+            - coderone-tournament
+networks:
+    coderone-tournament:
