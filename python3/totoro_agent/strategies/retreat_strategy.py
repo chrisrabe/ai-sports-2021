@@ -3,7 +3,7 @@ from copy import deepcopy
 
 from . import strategy
 from ..utils.constants import ACTIONS
-from ..utils.util_functions import get_value_map, get_value_map_objects_from_arr, get_blast_zone
+from ..utils.util_functions import get_value_map, get_value_map_objects_from_arr, get_blast_zone, get_move_from_value_map
 
 
 class RetreatStrategy(strategy.Strategy):
@@ -26,7 +26,8 @@ class RetreatStrategy(strategy.Strategy):
             blast_zone = get_blast_zone(bomb['coord'], bomb['blast_diameter'], game_state['entities'], world)
             hazards += blast_zone
         hazard_objects = get_value_map_objects_from_arr(hazards, 'hazard')
+        hazard_objects.append(game_state['enemy_obj'])
         game_objects = hazard_objects + game_state["non_wall_blocks"]
         value_map = get_value_map(world, game_state["wall_blocks"], game_objects, self.reward_map)
-        # get the adjacent tile that has the maximum value
-        return [ACTIONS["none"]]
+        action = get_move_from_value_map(game_state["player_pos"], value_map, world)
+        return [action]

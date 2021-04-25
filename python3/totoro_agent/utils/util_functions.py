@@ -481,3 +481,17 @@ def convert_entities_to_coords(entities):
     for entity in entities:
         coords.append(get_entity_coords(entity))
     return coords
+
+
+def get_move_from_value_map(cur_loc, value_map, world):
+    world_width, world_height = get_world_dimension(world)
+    neighbours = get_surrounding_tiles(cur_loc, world_width, world_height)
+    max_val = -1
+    new_loc = cur_loc
+    for tile in neighbours:
+        x, y = tile
+        tile_val = value_map[y, x]
+        if tile_val > max_val:
+            max_val = tile_val
+            new_loc = tile
+    return move_to_tile(cur_loc, new_loc)

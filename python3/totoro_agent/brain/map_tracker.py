@@ -30,7 +30,7 @@ class MapTracker:
         game_state["ore_blocks"] = ore_blocks
         game_state["wood_blocks"] = wood_blocks
         game_state["metal_blocks"] = metal_blocks
-        game_state["wall_blocks"] = convert_entities_to_coords(ore_blocks + wood_blocks + metal_blocks)
+        game_state["wall_blocks"] = convert_entities_to_coords(ore_blocks + wood_blocks + metal_blocks + blast_blocks)
         game_state["non_wall_blocks"] = get_value_map_objects_from_arr(non_wall_blocks, None, True)
 
         # TODO me and tony
