@@ -218,6 +218,7 @@ def get_path_action_seq(location: object, path: List) -> List:
 def get_blast_zone(bomb_loc, diameter, entities, world):
     """
     Retrieves the tiles affected by the bomb blast
+	Returns list of blast tiles [[x,y],[x2,y2], ...]
     """
     world_width, world_height = get_world_dimension(world)
     radius = int(diameter / 2)

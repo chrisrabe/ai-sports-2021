@@ -6,7 +6,7 @@ from .bomb_tracker import BombTracker
 from .enemy_tracker import EnemyTracker
 from .map_tracker import MapTracker
 from .pickup_tracker import PickupTracker
-
+from ..utils.util_functions import get_blast_zone
 
 class Brain:
     def __init__(self):
@@ -16,6 +16,7 @@ class Brain:
         self.pickup_tracker = PickupTracker()
 
     def get_next_strategy(self, game_state) -> str:
+        """Conditionals to decide which strategy to execute. Returns string"""
         self.enemy_tracker.update(game_state)
         self.bomb_tracker.update(game_state)
         self.map_tracker.update(game_state)
@@ -40,7 +41,25 @@ class Brain:
         If there is bomb: 'retreat';
         # If 
         #"""
-        if len(game_state['ammo_list']) == 0: # "Is ammo list empty?"
-            return 'stalk'
+                # Will need something to check if in potential blast zone (from, enemy bombs), then retreat
+        #
+
+        ### Basic Decision Making
+
+        # If you're in the blast tiles, do RETREAT
+        for bomb in game_state['enemy_active_bombs']: # Bomb is a dict
+            bomb_loc = bomb['coord'] 
+            potential_blast_tiles = get_blast_zone(bomb_loc, bomb['blast_diameter'], game_state['entities'], game_state['world'])
+            print('bomb loc', bomb_loc, 'blast tiles:', potential_blast_tiles, 'player', game_state['player_pos'])
+
+            if tuple(game_state['player_pos']) in potential_blast_tiles:
+                print('HOLY RUN FOR YOUR LIFE YOU ARE GONNA GET RAILED')
+                return 'retreat'
+
+        ### Basic Decision Making
+        # Pickup if ammo, stalk if none on map.
+        if len(game_state['ammo_list']) != 0: # "Is there ammo on the map?"
+            return 'pickup'
+
         else:
-            return "pickup"
+            return 'stalk'
