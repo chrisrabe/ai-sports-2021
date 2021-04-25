@@ -1,4 +1,5 @@
 from typing import List
+from collections import defaultdict
 import numpy as np
 
 from .constants import ACTIONS, DEFAULT_REWARDS
@@ -496,3 +497,67 @@ def get_move_from_value_map(cur_loc, value_map, world):
             max_val = tile_val
             new_loc = tile
     return move_to_tile(cur_loc, new_loc)
+
+
+def get_articulation_points(player_loc, world, entities) -> list[tuple[int, int]]:
+    """
+    Retrieves the articulation points for the walkable tiles in the map
+    relative to the player position
+    """
+    # (x, y) -> set of neighbours
+    graph = get_undirected_graph(player_loc, world, entities)
+    visited = set()
+    art = set()
+    parents = {}
+    low = {}
+
+    # helper dfs
+    def dfs(node_id, node, parent):
+        visited.add(node)
+        parents[node] = parent
+        num_edges = 0
+        low[node] = node_id
+
+        for nei in graph[node]:
+            if nei == parent:
+                continue
+            if nei not in visited:
+                parents[nei] = node
+                num_edges += 1
+                dfs(node_id + 1, nei, node)
+
+            low[node] = min(low[node], low[nei])
+
+            if node_id <= low[nei]:
+                if parents[node] != -1:  # must not be root
+                    art.add(node)
+
+        if parents[node] == -1 and num_edges >= 2:  # if root - different condition applies
+            art.add(node)
+
+    # TODO stress test!!
+    # if recursive DFS fk's up with stackoverflow, replace with iterative DFS
+    # Use custom graph node to propagate lowest up to parent
+
+    dfs(0, player_loc, -1)
+    return list(art)
+
+
+def get_undirected_graph(player_loc, world, entities):
+    """
+    Iteratively creates an undirected graph relative to player location
+    """
+    queue = [player_loc]
+    graph = defaultdict(set)
+    visited = set()
+
+    while len(queue) != 0:
+        node = queue.pop(0)
+        visited.add(node)
+        neighbours = get_surrounding_empty_tiles(node, world, entities)
+        for nei in neighbours:
+            graph[node].add(nei)
+            graph[nei].add(node)
+            if nei not in visited:
+                queue.append(nei)
+    return graph
