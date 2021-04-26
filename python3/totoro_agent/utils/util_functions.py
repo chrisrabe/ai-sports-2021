@@ -359,6 +359,59 @@ def is_movement(action):
     return action in actions
 
 
+def create_value_map(world_dim, OUTER_MAP_VALUES=((-100, -100),(-100, -100))):
+    '''
+    Creates reward value map.
+    Returns a numpy array representing the reward value map.
+    '''
+    pad_dim = (world_dim[0]-1,world_dim[1]-1)
+    map_dim = np.add(world_dim,np.multiply(pad_dim,2))
+
+    # Initialise value map
+    world_map = np.zeros(world_dim)
+    value_map = np.pad(world_map, (pad_dim,pad_dim), 'constant', constant_values=OUTER_MAP_VALUES)
+    reward_value_map = value_map
+    rval_offset = pad_dim[0]-1
+
+    # Initialise base map for reward mask matrix creation
+    base_map = np.zeros(map_dim)
+    
+    return reward_value_map, rval_offset
+
+# Update value map based on reward entities input
+def update_value_map(rval, value_map, rval_offset):
+    '''
+    Updates the reward value map with mask matrix application, based on reward entity.
+    Returns a numpy array representing the updated reward value map.
+    '''
+    reward = rval[2]
+    reward_discount = reward/abs(reward)
+    
+    if reward > 0:
+        # positive reward value
+        for i, value in enumerate(range(0, reward, 1)):
+            xstart= rval[1] + rval_offset - i
+            xend = rval[1] + rval_offset + 1 + i
+            ystart = rval[0] + rval_offset - i
+            yend = rval[0] + rval_offset + 1 + i
+
+            # Updates reward values in the map matrix.
+            value_map[xstart:xend,ystart:yend] = value_map[xstart:xend,ystart:yend] + reward_discount
+            
+    elif reward < 0:
+        # negative reward value
+        for i, value in enumerate(range(0, reward, -1)):
+            xstart= rval[1] + rval_offset - i
+            xend = rval[1] + rval_offset + 1 + i
+            ystart = rval[0] + rval_offset - i
+            yend = rval[0] + rval_offset + 1 + i
+
+            # Updates reward values in the map matrix.
+            value_map[xstart:xend,ystart:yend] = value_map[xstart:xend,ystart:yend] + reward_discount
+    else:
+        # Reward assigned is 0.
+        pass
+
 def get_value_map(world, walls, game_objects, reward_map, pinch_points=None):
     """
     Returns a numpy array map representing the values
