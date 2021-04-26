@@ -41,15 +41,16 @@ class Brain:
         """
 
         # If you're in the blast tiles, do RETREAT
-        if game_state['player_pos'] in game_state['hazard_zones']:
+        if game_state['player_pos'] in game_state['hazard_zones']: # Both tuples (well, hazard zones is a list of tuples)
             print('HOLY RUN FOR YOUR LIFE YOU ARE GONNA GET RAILED')
-            return 'retreat'
+            print("player pos type", type(game_state['player_pos']), "hazard type", type(game_state['hazard_zones'][0]))
+            return 'basic_avoid'
 
-        # Basic Decision Making
-        # Pickup if ammo, stalk if none on map.
-        if len(game_state['pickup_list']) != 0:  # "Any pickups on the map?"
-            print('me gusta I smell some pickups')
-            return 'pickup'
+        # # Basic Decision Making
+        # # Pickup if ammo, stalk if none on map.
+        # if len(game_state['pickup_list']) != 0:  # "Any pickups on the map?"
+        #     print('me gusta I smell some pickups')
+        #     return 'pickup'
 
         else:
             return 'stalk'

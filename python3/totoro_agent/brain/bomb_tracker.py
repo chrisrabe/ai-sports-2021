@@ -11,7 +11,10 @@ class BombTracker:
         self.bombs = []
 
     def update(self, game_state):
-        """ Adds bombs to game_state for player, enemy, and total. game_state['enemy_active_bombs'] is a list of dictionaries."""
+        """ 
+		Adds bombs to game_state for player, enemy, and total. game_state['enemy_active_bombs'] is a list of dictionaries.
+		game_state['hazard_zones'] provides a list of tiles that are dangerous (blast zone for danger bombs)
+		"""
         # Get own and enemy id
         own_id = int(game_state['player_id'])
         enemy_id = int(game_state['enemy_id'])
