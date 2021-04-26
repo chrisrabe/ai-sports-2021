@@ -48,6 +48,8 @@ DEFAULT_REWARDS = {
     ENTITIES['metal']: -10,
     ENTITIES['ore']: -10,
     ENTITIES['wood']: -10,
+    ENTITIES['player']: 0,
+    ENTITIES['enemy']: 0,
     ENTITIES['player_on_bomb']: -20,  # avoid
     ENTITIES['enemy_on_bomb']: 30,  # yes
     # special rewards
