@@ -32,5 +32,4 @@ class AdvKillStrategy(strategy.Strategy):
         targets = [game_state['enemy_obj']]
         value_map = get_value_map(world, game_state['wall_blocks'], targets, self.rewards, game_state['pinch_points'], False)
         action = get_move_from_value_map(player_pos, value_map, world)
-        print(value_map)
         return [action]
