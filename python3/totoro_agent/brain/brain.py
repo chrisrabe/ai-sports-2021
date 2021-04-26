@@ -47,17 +47,15 @@ class Brain:
 
 
 
-        if game_state['player_pos'] in game_state['hazard_zones'] or game_state['player_on_bomb']: # Both tuples (well, hazard zones is a list of tuples)
-            print('HOLY RUN FOR YOUR LIFE YOU ARE GONNA GET RAILED - brain')
+
+
+        # If you're in the blast tiles, do RETREAT
+        if game_state['player_pos'] in game_state['all_hazard_zones'] or game_state['player_on_bomb']:
+            print('HOLY RUN FOR YOUR LIFE YOU ARE GONNA GET RAILED')
             return 'basic_avoid' # Basic avoid vs retreat. Retreat value based, basic avoid is coded.
 
-        # # If you're in the blast tiles, do RETREAT
-        # if game_state['player_pos'] in game_state['all_hazard_zones'] or game_state['player_on_bomb']:
-        #     print('HOLY RUN FOR YOUR LIFE YOU ARE GONNA GET RAILED')
-        #     return 'retreat'
-
-        # Killing strategies
-        if not game_state['enemy_is_invulnerable'] and not game_state['player_on_bomb']:
+        # Killing strategies -> Collides with basic_avoid.
+        elif not game_state['enemy_is_invulnerable'] and not game_state['player_on_bomb']:
             # if enemy is standing in detonation zone
             if game_state['enemy_pos'] in game_state['detonation_zones']:
                 print('Time to detonate!')
@@ -68,7 +66,6 @@ class Brain:
             if game_state['player_inv_bombs'] != 0 and not game_state['enemy_near_bomb']:
                 return 'kill'
 
-        # Basic Decision Making
         # Pickup if ammo, stalk if none on map.
         elif len(game_state['pickup_list']) != 0:  # "Any pickups on the map?"
             print('me gusta I smell some pickups')

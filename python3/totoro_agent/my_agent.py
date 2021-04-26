@@ -11,7 +11,7 @@ class Agent:
             'pickup': PickupStrategy(),
             'stalk': StalkStrategy(),
             'basic_avoid': BasicAvoidStrategy(),
-            'kill': AdvKillStrategy()
+            'kill': AdvKillStrategy(),
             'detonate': DetonateStrategy()
         }
         self.action_queue = []
