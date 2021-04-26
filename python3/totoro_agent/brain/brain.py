@@ -40,6 +40,11 @@ class Brain:
         If there is bomb: 'retreat'; 
         """
 
+        # If you have ammo, just go for the kill
+        # should probably refine this to check opponent vulnerability
+        if game_state['player_inv_bombs'] != 0:
+            return 'kill'
+
         # If you're in the blast tiles, do RETREAT
         if game_state['player_pos'] in game_state['hazard_zones']:
             print('HOLY RUN FOR YOUR LIFE YOU ARE GONNA GET RAILED')
