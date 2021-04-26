@@ -20,8 +20,8 @@ class AdvKillStrategy(strategy.Strategy):
 
         # check if enemy position is trapped
         if death_trap(enemy_pos, world, entities):
-            if game_state['enemy_on_bomb']:
-                print('Totoro laughs at the enemy place a bomb in themself')
+            if game_state['enemy_on_bomb'] or game_state['enemy_near_bomb']:
+                print('Totoro laughs at the enemy\'s fate')
                 return [ACTIONS['none']]
             else:
                 print('Totoro leaves a little present')

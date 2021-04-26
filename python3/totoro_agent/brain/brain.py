@@ -41,9 +41,10 @@ class Brain:
         """
 
         # Killing strategies
-        if not game_state['enemy_is_invulnerable']:
+        if not game_state['enemy_is_invulnerable'] and not game_state['player_on_bomb']:
             # if enemy is standing in detonation zone
             if game_state['enemy_pos'] in game_state['detonation_zones']:
+                print('Time to detonate!')
                 return 'detonate'
 
             # If you have ammo, just go for the kill
@@ -52,7 +53,7 @@ class Brain:
                 return 'kill'
 
         # If you're in the blast tiles, do RETREAT
-        if game_state['player_pos'] in game_state['hazard_zones']:
+        if game_state['player_pos'] in game_state['all_hazard_zones'] or game_state['player_on_bomb']:
             print('HOLY RUN FOR YOUR LIFE YOU ARE GONNA GET RAILED')
             return 'retreat'
 

@@ -605,3 +605,14 @@ def get_detonation_target(target_pos, player_pos, own_bombs, world, entities) ->
         if target_pos in blast_zone:
             return tile
     return None
+
+
+def get_safe_tiles(hazard_tiles, world, entities):
+    world_width, world_height = get_world_dimension(world)
+    safe_tiles = []
+    for y in range(world_height):
+        for x in range(world_width):
+            tile = (x, y)
+            if tile not in hazard_tiles and is_walkable(tile, entities):
+                safe_tiles.append(tile)
+    return safe_tiles
