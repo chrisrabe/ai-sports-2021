@@ -28,13 +28,13 @@ class BombTracker:
         for entity in entities:
             if entity['type'] == ENTITIES['bomb']:
                 bomb = {
-                    'coord': [entity['x'], entity['y']],
+                    'coord': (entity['x'], entity['y']),
                     'expires': entity['expires'],
                     'blast_diameter': entity['blast_diameter']
                 }
                 if entity['owner'] == own_id:
                     ttl = bomb['expires'] - game_state['tick']
-                    if ttl - 1: # it's about to explode! GTFO!
+                    if ttl == 1:  # it's about to explode! GTFO!
                         danger_bombs.append(bomb)
                     own_active_bombs.append(bomb)
                 elif entity['owner'] == enemy_id:
