@@ -73,8 +73,6 @@ class BombTracker:
             blast_zone = get_blast_zone(bomb['coord'], bomb['blast_diameter'], entities, world)
             enemy_hazards += blast_zone
 
-        print(f'own_bombs: {own_active_bombs}, hazards: {enemy_hazards}, enemy_pos: {enemy_pos}')
-
         all_hazards = hazards + enemy_hazards
         safe_zones = get_safe_tiles(hazards + enemy_hazards, world, entities)
 
