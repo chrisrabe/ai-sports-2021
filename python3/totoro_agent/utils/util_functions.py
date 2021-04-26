@@ -359,7 +359,7 @@ def is_movement(action):
     return action in actions
 
 
-def get_value_map(world, walls, game_objects, reward_map, pinch_points=None):
+def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use_default=True):
     """
     Returns a numpy array map representing the values
 
@@ -377,6 +377,8 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None):
     }
 
     pinch points must be an array of (x,y) tuples or is None (articulation points)
+
+    use_default is a boolean to represent whether we should use the default reward map
     """
 
     # TODO are there numpy helper functions to help with these logic?
@@ -391,10 +393,16 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None):
 
     # get score mask for all non-wall objects
     for item in game_objects:
-        if item['type'] in reward_map:
-            reward = reward_map[item['type']]
+        if use_default:
+            if item['type'] in reward_map:
+                reward = reward_map[item['type']]
+            else:
+                reward = DEFAULT_REWARDS[item['type']]
         else:
-            reward = DEFAULT_REWARDS[item['type']]
+            if item['type'] not in reward_map:
+                continue
+            else:
+                reward = reward_map[item['type']]
         reward_mask = get_reward_mask(item, reward, world)
         value_map = np.add(value_map, reward_mask)
 
