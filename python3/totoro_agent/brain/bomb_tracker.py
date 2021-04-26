@@ -20,6 +20,11 @@ class BombTracker:
         all_active_bombs = []
         danger_bombs = []
 
+        player_pos = game_state['player_pos']
+        enemy_pos = game_state['enemy_pos']
+        enemy_on_bomb = False
+        player_on_bomb = False
+
         # Get game entities
         entities = game_state['entities']
         world = game_state['world']
@@ -32,6 +37,12 @@ class BombTracker:
                     'expires': entity['expires'],
                     'blast_diameter': entity['blast_diameter']
                 }
+
+                if bomb['coord'] == player_pos:
+                    player_on_bomb = True
+                elif bomb['coord'] == enemy_pos:
+                    enemy_on_bomb = True
+
                 if entity['owner'] == own_id:
                     ttl = bomb['expires'] - game_state['tick']
                     if ttl == 1:  # it's about to explode! GTFO!
@@ -53,3 +64,34 @@ class BombTracker:
         game_state['enemy_active_bombs'] = enemy_active_bombs
         game_state['all_active_bombs'] = all_active_bombs
         game_state['hazard_zones'] = hazards
+        game_state['player_on_bomb'] = player_on_bomb
+        game_state['enemy_on_bomb'] = enemy_on_bomb
+
+        # append new entities (used for kill strats)
+        player_x, player_y = player_pos
+        if player_on_bomb:
+            game_state['entities'].append({
+                'x': player_x,
+                'y': player_y,
+                'type': ENTITIES['player_on_bomb']
+            })
+        else:
+            game_state['entities'].append({
+                'x': player_x,
+                'y': player_y,
+                'type': ENTITIES['player']
+            })
+
+        enemy_x, enemy_y = enemy_pos
+        if enemy_on_bomb:
+            game_state['entities'].append({
+                'x': enemy_x,
+                'y': enemy_y,
+                'type': ENTITIES['enemy_on_bomb']
+            })
+        else:
+            game_state['entities'].append({
+                'x': enemy_x,
+                'y': enemy_y,
+                'type': ENTITIES['enemy']
+            })
