@@ -6,7 +6,6 @@ from .bomb_tracker import BombTracker
 from .enemy_tracker import EnemyTracker
 from .map_tracker import MapTracker
 from .pickup_tracker import PickupTracker
-from ..utils.util_functions import get_blast_zone
 
 
 class Brain:
