@@ -21,8 +21,23 @@ ENTITIES = {
     'powerup': 'bp',
     'metal': 'm',
     'ore': 'o',
-    'wood': 'w'
+    'wood': 'w',
+    'player': 'p',
+    'enemy': 'e',
+    'enemy_on_bomb': 'eb',
+    'player_on_bomb': 'pb'
 }
+
+BLOCKAGES = [
+    ENTITIES['bomb'],
+    ENTITIES['metal'],
+    ENTITIES['ore'],
+    ENTITIES['wood'],
+    ENTITIES['player'],
+    ENTITIES['player_on_bomb'],
+    ENTITIES['enemy'],
+    ENTITIES['enemy_on_bomb']
+]
 
 DEFAULT_REWARDS = {
     ENTITIES['bomb']: -6,
@@ -33,7 +48,8 @@ DEFAULT_REWARDS = {
     ENTITIES['metal']: -10,
     ENTITIES['ore']: -10,
     ENTITIES['wood']: -10,
-
+    ENTITIES['player_on_bomb']: -20,  # avoid
+    ENTITIES['enemy_on_bomb']: 30,  # yes
     # special rewards
     'enemy': -2,
     'pinch': -2,  # articulation point

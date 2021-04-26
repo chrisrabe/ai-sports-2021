@@ -6,7 +6,7 @@ from .bomb_tracker import BombTracker
 from .enemy_tracker import EnemyTracker
 from .map_tracker import MapTracker
 from .pickup_tracker import PickupTracker
-from ..utils.util_functions import get_blast_zone
+
 
 class Brain:
     def __init__(self):
@@ -22,40 +22,37 @@ class Brain:
         self.map_tracker.update(game_state)
         self.pickup_tracker.update(game_state)
 
-
         # enemy is trapped
-
-        # TODO Make decisions in terms on what strategy to do next Return string 
 
         # Highest Prio (base state): Collect + Stay away from immediate danger (fire + potential blast zones)
         # 2nd highest Destroy walls
         # --> If possible; KILL.
 
-        #For destroy strats:
+        # For destroy strats:
         # -> If it's at the highest spot on the value map and there's a destroyable next to it,
-        #kill (then map is update 'oh no bomb!!' and run)
+        # kill (then map is update 'oh no bomb!!' and run)
 
-
-        ### Basic Decision Making:
-        """Strats:
+        # Basic Decision Making:
+        """
+        Strats:
         Stalk by default -> 'stalk';
         If there is ammo: go get it -> 'pickup';
         If there is bomb: 'retreat'; 
-        #"""
+        """
+
+        # If you have ammo, just go for the kill
+        # should probably refine this to check opponent vulnerability and trappable
+        if game_state['player_inv_bombs'] != 0 and not game_state['enemy_is_invulnerable']:
+            return 'kill'
 
         # If you're in the blast tiles, do RETREAT
-        for bomb in game_state['enemy_active_bombs']: # Bomb is a dict
-            bomb_loc = bomb['coord'] 
-            potential_blast_tiles = get_blast_zone(bomb_loc, bomb['blast_diameter'], game_state['entities'], game_state['world'])
-            print('bomb loc', bomb_loc, 'blast tiles:', potential_blast_tiles, 'player', game_state['player_pos'])
+        if game_state['player_pos'] in game_state['hazard_zones']:
+            print('HOLY RUN FOR YOUR LIFE YOU ARE GONNA GET RAILED')
+            return 'retreat'
 
-            if tuple(game_state['player_pos']) in potential_blast_tiles:
-                print('HOLY RUN FOR YOUR LIFE YOU ARE GONNA GET RAILED')
-                return 'retreat'
-
-        ### Basic Decision Making
+        # Basic Decision Making
         # Pickup if ammo, stalk if none on map.
-        if len(game_state['pickup_list']) != 0: # "Any pickups on the map?"
+        if len(game_state['pickup_list']) != 0:  # "Any pickups on the map?"
             print('me gusta I smell some pickups')
             return 'pickup'
 

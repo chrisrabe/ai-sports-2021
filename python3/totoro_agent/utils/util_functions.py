@@ -2,7 +2,7 @@ from typing import List
 from collections import defaultdict
 import numpy as np
 
-from .constants import ACTIONS, DEFAULT_REWARDS
+from .constants import ACTIONS, DEFAULT_REWARDS, BLOCKAGES
 from .structures import Node
 
 
@@ -194,7 +194,9 @@ def is_walkable(tile, entities):
     Returns true if the tile is walkable
     """
     collectible = ["a", "bp"]
-    return entity_at(tile, entities) in collectible or entity_at(tile, entities) is None
+    player = ['p', 'e', 'eb', 'pb']
+    entity = entity_at(tile, entities)
+    return entity in collectible or entity is None or entity in player
 
 
 def get_path_action_seq(location: object, path: List) -> List:
@@ -358,7 +360,6 @@ def is_movement(action):
     ]
     return action in actions
 
-
 def create_value_map(world_dim, OUTER_MAP_VALUES=((-100, -100),(-100, -100))):
     '''
     Creates reward value map.
@@ -412,7 +413,7 @@ def update_value_map(rval, value_map, rval_offset):
         # Reward assigned is 0.
         pass
 
-def get_value_map(world, walls, game_objects, reward_map, pinch_points=None):
+def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use_default=True):
     """
     Returns a numpy array map representing the values
 
@@ -430,6 +431,8 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None):
     }
 
     pinch points must be an array of (x,y) tuples or is None (articulation points)
+
+    use_default is a boolean to represent whether we should use the default reward map
     """
 
     # TODO are there numpy helper functions to help with these logic?
@@ -444,10 +447,16 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None):
 
     # get score mask for all non-wall objects
     for item in game_objects:
-        if item['type'] in reward_map:
-            reward = reward_map[item['type']]
+        if use_default:
+            if item['type'] in reward_map:
+                reward = reward_map[item['type']]
+            else:
+                reward = DEFAULT_REWARDS[item['type']]
         else:
-            reward = DEFAULT_REWARDS[item['type']]
+            if item['type'] not in reward_map:
+                continue
+            else:
+                reward = reward_map[item['type']]
         reward_mask = get_reward_mask(item, reward, world)
         value_map = np.add(value_map, reward_mask)
 
@@ -457,13 +466,13 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None):
             pinch_reward = DEFAULT_REWARDS['pinch']
             if 'pinch' in reward_map:
                 pinch_reward = reward_map['pinch']
-            reward_mask = get_reward_mask(tile, pinch_reward, world)
+            reward_mask = get_reward_mask(tile, pinch_reward, world, True)
             value_map = np.add(value_map, reward_mask)
 
     return value_map
 
 
-def get_reward_mask(item, reward, world):
+def get_reward_mask(item, reward, world, is_tuple=False):
     """
     Returns reward mask
     """
@@ -474,7 +483,10 @@ def get_reward_mask(item, reward, world):
 
     # modified iterative floodfill algorithm
     to_fill = set()
-    to_fill.add(item['loc'])
+    if is_tuple:
+        to_fill.add(item)
+    else:
+        to_fill.add(item['loc'])
     while len(to_fill) != 0:
         cur_tile = to_fill.pop()
         neighbours = get_surrounding_tiles(cur_tile, world_width, world_height)
@@ -614,3 +626,15 @@ def get_undirected_graph(player_loc, world, entities):
             if nei not in visited:
                 queue.append(nei)
     return graph
+
+
+def death_trap(tile, world, entities):
+    """
+    Checks whether the tile no longer has walkable tiles
+    """
+    world_width, world_height = get_world_dimension(world)
+    neighbours = get_surrounding_tiles(tile, world_width, world_height)
+    for nei in neighbours:
+        if entity_at(nei, entities) not in BLOCKAGES:
+            return False
+    return True
