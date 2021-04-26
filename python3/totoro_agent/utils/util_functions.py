@@ -194,7 +194,9 @@ def is_walkable(tile, entities):
     Returns true if the tile is walkable
     """
     collectible = ["a", "bp"]
-    return entity_at(tile, entities) in collectible or entity_at(tile, entities) is None
+    player = ['p', 'e', 'eb', 'pb']
+    entity = entity_at(tile, entities)
+    return entity in collectible or entity is None or entity in player
 
 
 def get_path_action_seq(location: object, path: List) -> List:
