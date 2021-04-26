@@ -309,11 +309,10 @@ def get_surrounding_empty_tiles(location, world, entities):
     return empty_tiles
 
 
-def get_empty_locations(tiles, world):
-    world_width, world_height = get_world_dimension(world)
+def get_empty_locations(tiles, world, entities):
     empty_locations = []
     for tile in tiles:
-        empty_tiles = get_surrounding_empty_tiles(tile, world_width, world_height)
+        empty_tiles = get_surrounding_empty_tiles(tile, world, entities)
         empty_locations = empty_locations + empty_tiles
     return empty_locations
 

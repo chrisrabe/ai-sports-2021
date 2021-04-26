@@ -1,4 +1,4 @@
-from .strategies import RandomStrategy, RetreatStrategy, StalkStrategy, PickupStrategy, AdvKillStrategy, DetonateStrategy
+from .strategies import RandomStrategy, RetreatStrategy, StalkStrategy, PickupStrategy, AdvKillStrategy, DetonateStrategy, BlockDestroyingStrategy
 from .brain import Brain
 
 
@@ -11,6 +11,7 @@ class Agent:
             'pickup': PickupStrategy(),
             'stalk': StalkStrategy(),
             'kill': AdvKillStrategy(),
+            'block_destroy': BlockDestroyingStrategy(),
             'detonate': DetonateStrategy()
         }
         self.action_queue = []
