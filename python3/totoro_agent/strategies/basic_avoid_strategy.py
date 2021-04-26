@@ -11,8 +11,11 @@ class BasicAvoidStrategy(strategy.Strategy):
         """
         If the player is in a hazard_zones tile:
         move to nearest tile that isn't in hazard_zones
+		OR
+		Move to a random tile that isn't in the hazard_zone
+        Not foolproof, just a good-enough heuristic.
+        Should be mentioned that this sees powerups are a wall (only occurs when in hazard zone). Potentially might fix.
         """
-
         path = None
         player_pos = game_state['player_pos'] # Tuple
         hazard_zones = game_state['hazard_zones'] # List of tuples 
@@ -23,11 +26,7 @@ class BasicAvoidStrategy(strategy.Strategy):
 
        # if player_pos in hazard_zones: # Checks if player is on hazard tile (potential blast zone)
         print("YOU'RE IN DANGER DUDE - basic avoid") 
-        """
-        # Move to the nearest tile that isn't in the hazard_zone
-            Not foolproof, just a good-enough heuristic.
-        Should be mentioned that this sees powerups are a wall (only occurs when in hazard zone). Potentially might fix.
-        """
+
         first_order_surrounding_tiles = get_surrounding_tiles(player_pos, width, height) # List of tiles
 
         safe_tiles = get_empty_locations(first_order_surrounding_tiles, world, entities) # List of empty tiles (big set). Not actually safe yet.
@@ -41,7 +40,6 @@ class BasicAvoidStrategy(strategy.Strategy):
         # min_dist = min(dist_list)
         randomtile = random.choice(safe_tiles)
         path = get_shortest_path(player_pos, randomtile, world, entities)
-        #print(type(first_order_surrounding_tiles), type(safe_tiles))
 
         if path is None:
             print("shat myself inside basic_avoid. This shouldn't ever happen; means you called this when he wasn't in hazard. (Check the brain?)")
