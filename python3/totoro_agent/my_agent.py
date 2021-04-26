@@ -1,4 +1,4 @@
-from .strategies import RandomStrategy, RetreatStrategy, StalkStrategy, PickupStrategy, AdvKillStrategy, BasicAvoidStrategy
+from .strategies import RandomStrategy, RetreatStrategy, StalkStrategy, PickupStrategy, AdvKillStrategy, BasicAvoidStrategy, DetonateStrategy
 from .brain import Brain
 
 
@@ -12,6 +12,7 @@ class Agent:
             'stalk': StalkStrategy(),
             'basic_avoid': BasicAvoidStrategy(),
             'kill': AdvKillStrategy()
+            'detonate': DetonateStrategy()
         }
         self.action_queue = []
         self.prev_tick = -1
@@ -28,7 +29,7 @@ class Agent:
             strategy_name = self.brain.get_next_strategy(game_state)
             strategy = self.strategies.get(strategy_name) 
             actions = strategy.execute(game_state)
-
+            print(f'executing {strategy_name}: {actions}')
             self.action_queue = self.action_queue + actions
 
         # print(game_state) #-> To check if you've added new things to game_state

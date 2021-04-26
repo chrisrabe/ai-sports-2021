@@ -8,3 +8,4 @@ from .pickup_strategy import PickupStrategy
 from .stalk_strategy import StalkStrategy
 from .basic_avoid_strategy import BasicAvoidStrategy
 from .adv_kill_strategy import AdvKillStrategy
+from .detonate_strategy import DetonateStrategy

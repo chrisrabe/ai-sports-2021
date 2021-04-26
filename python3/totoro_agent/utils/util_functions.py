@@ -234,27 +234,30 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
         if is_in_bounds(tile, world_width, world_height) and entity_at(tile, entities) not in block_tile:
             blast_tiles.append(tile)
         else:
-            cur_loc = bomb_loc
             break
     
+
+    cur_loc = bomb_loc
 
     for i in range(radius):
         tile = get_tile_from_move(cur_loc, ACTIONS["right"])
         if is_in_bounds(tile, world_width, world_height) and entity_at(tile, entities) not in block_tile:
             blast_tiles.append(tile)
         else:
-            cur_loc = bomb_loc
             break
 
+
+    cur_loc = bomb_loc
 
     for i in range(radius):
         tile = get_tile_from_move(cur_loc, ACTIONS["up"])
         if is_in_bounds(tile, world_width, world_height) and entity_at(tile, entities) not in block_tile:
             blast_tiles.append(tile)
         else:
-            cur_loc = bomb_loc
             break
 
+
+    cur_loc = bomb_loc
 
     for i in range(radius):
         tile = get_tile_from_move(cur_loc, ACTIONS["down"])
@@ -584,7 +587,7 @@ def get_undirected_graph(player_loc, world, entities):
     return graph
 
 
-def death_trap(tile, world, entities):
+def death_trap(tile, world, entities) -> bool:
     """
     Checks whether the tile no longer has walkable tiles
     """
@@ -594,3 +597,33 @@ def death_trap(tile, world, entities):
         if entity_at(nei, entities) not in BLOCKAGES:
             return False
     return True
+
+
+def get_detonation_target(target_pos, player_pos, own_bombs, world, entities) -> tuple[int, int] or None:
+    """
+    Retrieves the bomb that affects the target
+    """
+    bomb_coords = []
+    bomb_dict = {}
+    for bomb in own_bombs:
+        coord = bomb['coord']
+        bomb_coords.append(coord)
+        bomb_dict[coord] = bomb
+    reachable_bombs = get_reachable_tiles(target_pos, bomb_coords, world, entities)
+    for tile in reachable_bombs:
+        bomb = bomb_dict[tile]
+        blast_zone = get_blast_zone(tile, bomb['blast_diameter'], entities, world)
+        if target_pos in blast_zone:
+            return tile
+    return None
+
+
+def get_safe_tiles(hazard_tiles, world, entities):
+    world_width, world_height = get_world_dimension(world)
+    safe_tiles = []
+    for y in range(world_height):
+        for x in range(world_width):
+            tile = (x, y)
+            if tile not in hazard_tiles and is_walkable(tile, entities):
+                safe_tiles.append(tile)
+    return safe_tiles
