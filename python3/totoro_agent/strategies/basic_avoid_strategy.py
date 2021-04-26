@@ -1,48 +1,51 @@
 from typing import List
 from . import strategy
+from ..utils.util_functions import get_surrounding_tiles, get_empty_locations, get_world_dimension, manhattan_distance, get_shortest_path, get_path_action_seq
+from ..utils.constants import ACTIONS
+import random
+
 
 class BasicAvoidStrategy(strategy.Strategy):
 
     def execute(self, game_state: object) -> List[str]:
         """
-        Execute the strategy
         If the player is in a hazard_zones tile:
         move to nearest tile that isn't in hazard_zones
         """
 
         path = None
-        player_pos = (game_state['player_pos']) # Tuple
+        player_pos = game_state['player_pos'] # Tuple
         hazard_zones = game_state['hazard_zones'] # List of tuples 
+        world = game_state['world']
+        entities = game_state['entities']
+        width, height = get_world_dimension(world)
 
-        # for tile in hazard_zones
-        if player_pos in hazard_zones: # Checks if player is on hazard tile (potential blast zone)
-            # Move to the nearest tile that isn't in the hazard_zone:
 
-            # min value of manhattan distance of tiles?
-            print("YOU'RE IN DANGER DUDE")
+       # if player_pos in hazard_zones: # Checks if player is on hazard tile (potential blast zone)
+        print("YOU'RE IN DANGER DUDE - basic avoid") 
+        """
+        # Move to the nearest tile that isn't in the hazard_zone
+            Not foolproof, just a good-enough heuristic.
+        Should be mentioned that this sees powerups are a wall (only occurs when in hazard zone). Potentially might fix.
+        """
+        first_order_surrounding_tiles = get_surrounding_tiles(player_pos, width, height) # List of tiles
+
+        safe_tiles = get_empty_locations(first_order_surrounding_tiles, world, entities) # List of empty tiles (big set). Not actually safe yet.
+
+        for tile in safe_tiles: # Remove any empty tiles that are in hazard zone.
+            if tile in hazard_zones:
+                safe_tiles.remove(tile) # Safe list of tiles now.
         
+        # Minimum distance tile ... or not lmao 
+        # dist_list = [manhattan_distance(player_pos, tile) for tile in safe_tiles]
+        # min_dist = min(dist_list)
+        randomtile = random.choice(safe_tiles)
+        path = get_shortest_path(player_pos, randomtile, world, entities)
+        #print(type(first_order_surrounding_tiles), type(safe_tiles))
 
-        # if path is None:
-        # print("shat myself inside basic_avoid")
-        # return [ACTIONS['none']]
-
-
-
+        if path is None:
+            print("shat myself inside basic_avoid. This shouldn't ever happen; means you called this when he wasn't in hazard. (Check the brain?)")
+            return [ACTIONS['none']]
+        else:
+            return get_path_action_seq(player_pos, path)
         
-            #print(type(player_pos), print(type_hazard_zones))
-
-        # if ammo_list:
-        #     reachable_ammo = get_reachable_tiles(player_pos, ammo_list, world, entities)
-        #     nearest_ammo = get_nearest_tile(player_pos, reachable_ammo)
-        #     path = get_shortest_path(player_pos, nearest_ammo, world, entities)
-        # elif powerup_list:
-        #     reachable_powerup = get_reachable_tiles(player_pos, powerup_list, world, entities)
-        #     nearest_powerup = get_nearest_tile(player_pos, reachable_powerup)
-        #     path = get_shortest_path(player_pos, nearest_powerup, world, entities)
-
-        # if path is None:
-        #     return [ACTIONS['none']]
-        # else:
-        #     return get_path_action_seq(player_pos, path)
-
-        # pass

@@ -219,7 +219,7 @@ def get_path_action_seq(location: object, path: List) -> List:
 def get_blast_zone(bomb_loc, diameter, entities, world):
     """
     Retrieves the tiles affected by the bomb blast
-	Returns list of blast tiles [[x,y],[x2,y2], ...]
+    Returns list of blast tiles [[x,y],[x2,y2], ...]
     """
     world_width, world_height = get_world_dimension(world)
     radius = int(diameter / 2)
@@ -266,9 +266,9 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
 
 
 def get_nearest_tile(location, tiles):
-	"""
-	Returns nearest tile in a list of tiles
-	"""
+    """
+    Returns nearest tile in a list of tiles
+    """
     if tiles:
         tile_dist = 1000
         closest_tile = tiles[0]
@@ -307,11 +307,13 @@ def get_surrounding_empty_tiles(location, world, entities):
     return empty_tiles
 
 
-def get_empty_locations(tiles, world):
-    world_width, world_height = get_world_dimension(world)
+def get_empty_locations(tiles, world, entities):
+    """
+    Given a list of tiles, returns a list of empty tiles surrounding them
+    """
     empty_locations = []
     for tile in tiles:
-        empty_tiles = get_surrounding_empty_tiles(tile, world_width, world_height)
+        empty_tiles = get_surrounding_empty_tiles(tile, world, entities)
         empty_locations = empty_locations + empty_tiles
     return empty_locations
 

@@ -10,8 +10,7 @@ class Agent:
             'retreat': RetreatStrategy(),
             'pickup': PickupStrategy(),
             'stalk': StalkStrategy(),
-            'basic_avoid': BasicAvoidStrategy()
-            # trap: 4
+            'basic_avoid': BasicAvoidStrategy(),
             'kill': AdvKillStrategy()
         }
         self.action_queue = []
