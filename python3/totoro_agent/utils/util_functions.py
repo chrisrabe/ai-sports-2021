@@ -236,6 +236,7 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
         else:
             cur_loc = bomb_loc
             break
+    
 
     for i in range(radius):
         tile = get_tile_from_move(cur_loc, ACTIONS["right"])

@@ -48,7 +48,7 @@ class BombTracker:
 
                 if entity['owner'] == own_id:
                     ttl = bomb['expires'] - game_state['tick']
-                    if ttl == game_state['player_diameter'] + 1:  # it's about to explode (and you need time to get out)! GTFO!
+                    if ttl == game_state['player_diameter']//2 +  1:  # it's about to explode (and you need time to get out)! GTFO!
                         danger_bombs.append(bomb)
                     own_active_bombs.append(bomb)
                 elif entity['owner'] == enemy_id:

@@ -39,7 +39,7 @@ class BasicAvoidStrategy(strategy.Strategy):
         # dist_list = [manhattan_distance(player_pos, tile) for tile in safe_tiles]
         # min_dist = min(dist_list)
         randomtile = random.choice(safe_tiles)
-        path = get_shortest_path(player_pos, randomtile, world, entities)
+        path = get_shortest_path(player_pos, randomtile, world, entities, game_state['hazard_zones'])
 
         if path is None:
             print("shat myself inside basic_avoid. This shouldn't ever happen; means you called this when he wasn't in hazard. (Check the brain?)")

@@ -16,5 +16,5 @@ class StalkStrategy(strategy.Strategy):
         stalk_zone = get_blast_zone(enemy_pos, 5, entities, world)
         closest_tile = get_nearest_tile(player_pos, stalk_zone)
 
-        path = get_shortest_path(player_pos, closest_tile, world, entities)
+        path = get_shortest_path(player_pos, closest_tile, world, entities, game_state['hazard_zones'])
         return get_path_action_seq(player_pos, path)
