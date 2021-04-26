@@ -42,18 +42,16 @@ class Brain:
         # should probably refine this to check opponent vulnerability and trappable
         # Uncomment after done with basic_avoid
 
-        # if game_state['player_inv_bombs'] != 0 and not game_state['enemy_is_invulnerable']:
-        #     return 'kill'
+       # If you're in the blast tiles, stop being in them loser.
+        print(game_state['tick'], game_state['player_pos'], "\n Game State hazard zones:", game_state['hazard_zones'], game_state['player_pos'] in game_state['hazard_zones'])
+        if game_state['player_pos'] in game_state['hazard_zones']: # Both tuples (well, hazard zones is a list of tuples)
+            print('HOLY RUN FOR YOUR LIFE YOU ARE GONNA GET RAILED - brain')
+            return 'basic_avoid'
 
-        # If you're in the blast tiles, stop being in them loser.
-        # print(game_state['tick'], game_state['player_pos'] in game_state['hazard_zones'])
-        # if game_state['player_pos'] in game_state['hazard_zones']: # Both tuples (well, hazard zones is a list of tuples)
-        #     print('HOLY RUN FOR YOUR LIFE YOU ARE GONNA GET RAILED - brain')
-        #     return 'basic_avoid'
-
-        # Basic Decision Making
+        elif game_state['player_inv_bombs'] != 0 and not game_state['enemy_is_invulnerable']:
+            return 'kill'
         # Pickup if ammo, stalk if none on map.
-        if len(game_state['pickup_list']) != 0:  # "Any pickups on the map?"
+        elif len(game_state['pickup_list']) != 0:  # "Any pickups on the map?"
             print('me gusta I smell some pickups')
             return 'pickup'
 
