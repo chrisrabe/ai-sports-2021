@@ -269,7 +269,6 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
 
     return blast_tiles
 
-
 def get_nearest_tile(location, tiles):
     if tiles:
         tile_dist = 1000
@@ -433,7 +432,9 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
     # TODO are there numpy helper functions to help with these logic?
 
     # create 2D matrix filled with zeroes
-    value_map = np.zeros(get_world_dimension(world))
+    world_dim = get_world_dimension(world)
+    value_map = np.zeros(world_dim)
+    reward_entity = []
 
     # replace all walls with -10
     for wall in walls:
@@ -454,7 +455,7 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
                 reward = reward_map[item['type']]
 
         reward_entity = [item['loc'][0], item['loc'][1], reward]
-        value_map = update_value_map(reward_entity, value_map)
+        value_map = update_value_map(reward_entity, value_map, world_dim)
 
     # re-evaluate for pinch points
     if pinch_points is not None:
@@ -464,7 +465,7 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
                 pinch_reward = reward_map['pinch']
 
             reward_entity = [tile['loc'][0], tile['loc'][1], pinch_reward]
-            value_map = update_value_map(reward_entity, value_map)
+            value_map = update_value_map(reward_entity, value_map, world_dim)
 
     return value_map
 
