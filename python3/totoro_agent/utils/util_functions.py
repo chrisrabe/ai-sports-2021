@@ -584,3 +584,22 @@ def death_trap(tile, world, entities):
         if entity_at(nei, entities) not in BLOCKAGES:
             return False
     return True
+
+
+def get_detonation_target(target_pos, player_pos, own_bombs, world, entities) -> tuple[int, int] or None:
+    """
+    Retrieves the bomb that affects the target
+    """
+    bomb_coords = []
+    bomb_dict = {}
+    for bomb in own_bombs:
+        coord = bomb['coord']
+        bomb_coords.append(coord)
+        bomb_dict[coord] = bomb
+    reachable_bombs = get_reachable_tiles(target_pos, bomb_coords, world, entities)
+    for tile in reachable_bombs:
+        bomb = bomb_dict[tile]
+        blast_zone = get_blast_zone(tile, bomb['blast_diameter'], entities, world)
+        if target_pos in blast_zone:
+            return tile
+    return None

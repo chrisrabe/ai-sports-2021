@@ -59,6 +59,12 @@ class BombTracker:
             blast_zone = get_blast_zone(bomb['coord'], bomb['blast_diameter'], entities, world)
             hazards += blast_zone
 
+        # potential detonation zones
+        enemy_hazards = []
+        for bomb in own_active_bombs:
+            blast_zone = get_blast_zone(bomb['coord'], bomb['blast_diameter'], entities, world)
+            enemy_hazards += blast_zone
+
         # Save values into game state
         game_state['own_active_bombs'] = own_active_bombs
         game_state['enemy_active_bombs'] = enemy_active_bombs
@@ -66,6 +72,7 @@ class BombTracker:
         game_state['hazard_zones'] = hazards
         game_state['player_on_bomb'] = player_on_bomb
         game_state['enemy_on_bomb'] = enemy_on_bomb
+        game_state['detonation_zones'] = enemy_hazards
 
         # append new entities (used for kill strats)
         player_x, player_y = player_pos
