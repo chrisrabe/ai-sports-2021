@@ -60,7 +60,6 @@ class BombTracker:
         hazards = []
         for bomb in danger_bombs:
             blast_zone = get_blast_zone(bomb['coord'], bomb['blast_diameter'], entities, world)
-            print('BOO BITCH', bomb, blast_zone)
             hazards += blast_zone
 
         # Save values into game state
