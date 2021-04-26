@@ -24,7 +24,7 @@ class EnemyTracker:
         game_state['player_pos'] = (player_x, player_y)
         game_state['player_health'] = player_state["hp"]
         game_state['player_diameter'] = player_state["blast_diameter"]  # girthy boi
-        game_state['player_is_invulnerable'] = (player_state['invulnerability'] - tick) > 0
+        game_state['player_is_invulnerable'] = (player_state['invulnerability'] - tick) > 1
 
         # ENEMY
         enemy_id = str(1 - int(player_id))
@@ -37,4 +37,4 @@ class EnemyTracker:
         game_state['enemy_pos'] = (enemy_x, enemy_y)
         game_state['enemy_health'] = enemy_state["hp"]
         game_state['enemy_diameter'] = enemy_state["blast_diameter"]  # girthy boi
-        game_state['enemy_is_invulnerable'] = (enemy_state['invulnerability'] - tick) > 0
+        game_state['enemy_is_invulnerable'] = (enemy_state['invulnerability'] - tick) > 1
