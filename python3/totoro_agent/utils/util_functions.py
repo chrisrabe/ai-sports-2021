@@ -2,7 +2,7 @@ from typing import List
 from collections import defaultdict
 import numpy as np
 
-from .constants import ACTIONS, DEFAULT_REWARDS
+from .constants import ACTIONS, DEFAULT_REWARDS, BLOCKAGES
 from .structures import Node
 
 
@@ -415,13 +415,13 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
             pinch_reward = DEFAULT_REWARDS['pinch']
             if 'pinch' in reward_map:
                 pinch_reward = reward_map['pinch']
-            reward_mask = get_reward_mask(tile, pinch_reward, world)
+            reward_mask = get_reward_mask(tile, pinch_reward, world, True)
             value_map = np.add(value_map, reward_mask)
 
     return value_map
 
 
-def get_reward_mask(item, reward, world):
+def get_reward_mask(item, reward, world, is_tuple=False):
     """
     Returns reward mask
     """
@@ -432,7 +432,10 @@ def get_reward_mask(item, reward, world):
 
     # modified iterative floodfill algorithm
     to_fill = set()
-    to_fill.add(item['loc'])
+    if is_tuple:
+        to_fill.add(item)
+    else:
+        to_fill.add(item['loc'])
     while len(to_fill) != 0:
         cur_tile = to_fill.pop()
         neighbours = get_surrounding_tiles(cur_tile, world_width, world_height)
@@ -572,3 +575,15 @@ def get_undirected_graph(player_loc, world, entities):
             if nei not in visited:
                 queue.append(nei)
     return graph
+
+
+def death_trap(tile, world, entities):
+    """
+    Checks whether the tile no longer has walkable tiles
+    """
+    world_width, world_height = get_world_dimension(world)
+    neighbours = get_surrounding_tiles(tile, world_width, world_height)
+    for nei in neighbours:
+        if entity_at(nei, entities) not in BLOCKAGES:
+            return False
+    return True
