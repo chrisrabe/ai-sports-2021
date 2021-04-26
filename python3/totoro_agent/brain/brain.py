@@ -42,7 +42,7 @@ class Brain:
 
         # If you have ammo, just go for the kill
         # should probably refine this to check opponent vulnerability and trappable
-        if game_state['player_inv_bombs'] != 0 and not game_state['player_is_invulnerable']:
+        if game_state['player_inv_bombs'] != 0 and not game_state['enemy_is_invulnerable']:
             return 'kill'
 
         # If you're in the blast tiles, do RETREAT
