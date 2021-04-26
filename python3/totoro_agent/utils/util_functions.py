@@ -193,8 +193,8 @@ def is_walkable(tile, entities):
     """
     Returns true if the tile is walkable
     """
-    collectible = ["a", "bp"]
-    player = ['p', 'e', 'eb', 'pb']
+    collectible = ["a", "bp"] # Ammo, powerup
+    player = ['p', 'e', 'eb', 'pb'] # Player, enemy, 
     entity = entity_at(tile, entities)
     return entity in collectible or entity is None or entity in player
 

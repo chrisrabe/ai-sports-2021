@@ -44,6 +44,7 @@ class Brain:
 
        # If you're in the blast tiles, stop being in them loser.
         #print(game_state['tick'], "player pos", game_state['player_pos'], "enemy bombs", game_state['enemy_active_bombs'], "\n Game State hazard zones:", game_state['hazard_zones'], game_state['player_pos'] in game_state['hazard_zones'])
+
         if game_state['player_pos'] in game_state['hazard_zones'] or game_state['player_on_bomb']: # Both tuples (well, hazard zones is a list of tuples)
             print('HOLY RUN FOR YOUR LIFE YOU ARE GONNA GET RAILED - brain')
             return 'basic_avoid'

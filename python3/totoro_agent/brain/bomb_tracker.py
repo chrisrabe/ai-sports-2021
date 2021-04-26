@@ -31,9 +31,12 @@ class BombTracker:
         # Get game entities
         entities = game_state['entities']
         world = game_state['world']
-
+        hazards = []
         # Get active bombs - coordinates, expiry, blast diameter
         for entity in entities:
+            if entity['type'] == ENTITIES['blast']: # Adds blast tiles to hazards so he doesn't walk on them. He CANNOT walk on them (from shortest paths)
+                hazards.append((entity['x'], entity['y']))
+
             if entity['type'] == ENTITIES['bomb']:
                 bomb = {
                     'coord': (entity['x'], entity['y']),
@@ -56,11 +59,14 @@ class BombTracker:
                     enemy_active_bombs.append(bomb)
                 all_active_bombs.append(bomb)
 
+
         # calculate hazard zones
-        hazards = []
         for bomb in danger_bombs:
             blast_zone = get_blast_zone(bomb['coord'], bomb['blast_diameter'], entities, world)
             hazards += blast_zone
+        # if len(game_state['blast_blocks']) != 0:
+
+        #     hazards.append(game_state['blast_blocks'])
 
         # Save values into game state
         game_state['own_active_bombs'] = own_active_bombs
