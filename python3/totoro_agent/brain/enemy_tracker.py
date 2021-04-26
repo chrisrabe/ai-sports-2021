@@ -16,6 +16,7 @@ class EnemyTracker:
         # US THE HOMEBOIS
         player_id = str(game_state["connection"]["agent_number"])
         player_state = game_state['agent_state'][player_id]
+        tick = game_state['tick']
 
         player_x, player_y = player_state["coordinates"]
         game_state['player_id'] = player_id
@@ -23,7 +24,7 @@ class EnemyTracker:
         game_state['player_pos'] = (player_x, player_y)
         game_state['player_health'] = player_state["hp"]
         game_state['player_diameter'] = player_state["blast_diameter"]  # girthy boi
-        game_state['player_invulnerable_until'] = player_state['invulnerability']  # INCLUSIVE -> Vulnerable @ tick + 1
+        game_state['player_is_invulnerable'] = (player_state['invulnerability'] - tick) > 0
 
         # ENEMY
         enemy_id = str(1 - int(player_id))
@@ -36,6 +37,4 @@ class EnemyTracker:
         game_state['enemy_pos'] = (enemy_x, enemy_y)
         game_state['enemy_health'] = enemy_state["hp"]
         game_state['enemy_diameter'] = enemy_state["blast_diameter"]  # girthy boi
-        game_state['enemy_invulnerable_until'] = enemy_state['invulnerability']  # INCLUSIVE -> Vulnerable @ tick + 1
-        # is_invulnerable = #got hit or some shit in the past 5 ticks.? / set the ticks to when he is able to be hit
-    # again (similar to the website agent stats)
+        game_state['enemy_is_invulnerable'] = (enemy_state['invulnerability'] - tick) > 0
