@@ -22,8 +22,6 @@ class Brain:
         self.map_tracker.update(game_state)
         self.pickup_tracker.update(game_state)
 
-        # enemy is trapped
-
         # Highest Prio (base state): Collect + Stay away from immediate danger (fire + potential blast zones)
         # 2nd highest Destroy walls
         # --> If possible; KILL.
@@ -40,6 +38,11 @@ class Brain:
         If there is bomb: 'retreat'; 
         """
 
+        # If you're in the blast tiles, do RETREAT
+        if game_state['player_pos'] in game_state['all_hazard_zones'] or game_state['player_on_bomb']:
+            print('HOLY RUN FOR YOUR LIFE YOU ARE GONNA GET RAILED')
+            return 'retreat'
+
         # Killing strategies
         if not game_state['enemy_is_invulnerable'] and not game_state['player_on_bomb']:
             # if enemy is standing in detonation zone
@@ -49,13 +52,8 @@ class Brain:
 
             # If you have ammo, just go for the kill
             # should probably refine this to check opponent vulnerability and trappable
-            if game_state['player_inv_bombs'] != 0:
+            if game_state['player_inv_bombs'] != 0 and not game_state['enemy_near_bomb']:
                 return 'kill'
-
-        # If you're in the blast tiles, do RETREAT
-        if game_state['player_pos'] in game_state['all_hazard_zones'] or game_state['player_on_bomb']:
-            print('HOLY RUN FOR YOUR LIFE YOU ARE GONNA GET RAILED')
-            return 'retreat'
 
         # Basic Decision Making
         # Pickup if ammo, stalk if none on map.

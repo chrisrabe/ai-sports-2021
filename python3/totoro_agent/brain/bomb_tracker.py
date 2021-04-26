@@ -73,8 +73,10 @@ class BombTracker:
             blast_zone = get_blast_zone(bomb['coord'], bomb['blast_diameter'], entities, world)
             enemy_hazards += blast_zone
 
+        print(f'own_bombs: {own_active_bombs}, hazards: {enemy_hazards}, enemy_pos: {enemy_pos}')
+
+        all_hazards = hazards + enemy_hazards
         safe_zones = get_safe_tiles(hazards + enemy_hazards, world, entities)
-        reachable_safe = get_reachable_tiles(player_pos, safe_zones, world, entities)
 
         # Save values into game state
         game_state['own_active_bombs'] = own_active_bombs
@@ -84,9 +86,9 @@ class BombTracker:
         game_state['player_on_bomb'] = player_on_bomb
         game_state['enemy_on_bomb'] = enemy_on_bomb
         game_state['detonation_zones'] = enemy_hazards
-        game_state['safe_zones'] = reachable_safe
+        game_state['safe_zones'] = safe_zones
         game_state['enemy_near_bomb'] = enemy_near_bomb
-        game_state['all_hazard_zones'] = hazards + enemy_hazards
+        game_state['all_hazard_zones'] = all_hazards
 
         # append new entities (used for kill strats)
         player_x, player_y = player_pos

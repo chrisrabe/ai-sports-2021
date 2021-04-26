@@ -234,27 +234,30 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
         if is_in_bounds(tile, world_width, world_height) and entity_at(tile, entities) not in block_tile:
             blast_tiles.append(tile)
         else:
-            cur_loc = bomb_loc
             break
         cur_loc = tile
+
+    cur_loc = bomb_loc
 
     for i in range(radius):
         tile = get_tile_from_move(cur_loc, ACTIONS["right"])
         if is_in_bounds(tile, world_width, world_height) and entity_at(tile, entities) not in block_tile:
             blast_tiles.append(tile)
         else:
-            cur_loc = bomb_loc
             break
         cur_loc = tile
+
+    cur_loc = bomb_loc
 
     for i in range(radius):
         tile = get_tile_from_move(cur_loc, ACTIONS["up"])
         if is_in_bounds(tile, world_width, world_height) and entity_at(tile, entities) not in block_tile:
             blast_tiles.append(tile)
         else:
-            cur_loc = bomb_loc
             break
         cur_loc = tile
+
+    cur_loc = bomb_loc
 
     for i in range(radius):
         tile = get_tile_from_move(cur_loc, ACTIONS["down"])
@@ -576,7 +579,7 @@ def get_undirected_graph(player_loc, world, entities):
     return graph
 
 
-def death_trap(tile, world, entities):
+def death_trap(tile, world, entities) -> bool:
     """
     Checks whether the tile no longer has walkable tiles
     """
