@@ -12,9 +12,9 @@ class BombTracker:
 
     def update(self, game_state):
         """ 
-		Adds bombs to game_state for player, enemy, and total. game_state['enemy_active_bombs'] is a list of dictionaries.
-		game_state['hazard_zones'] provides a list of tiles that are dangerous (blast zone for danger bombs)
-		"""
+        Adds bombs to game_state for player, enemy, and total. game_state['enemy_active_bombs'] is a list of dictionaries.
+        game_state['hazard_zones'] provides a list of tiles that are dangerous (blast zone for danger bombs)
+        """
         # Get own and enemy id
         own_id = int(game_state['player_id'])
         enemy_id = int(game_state['enemy_id'])
@@ -48,7 +48,7 @@ class BombTracker:
 
                 if entity['owner'] == own_id:
                     ttl = bomb['expires'] - game_state['tick']
-                    if ttl == 1:  # it's about to explode! GTFO!
+                    if ttl == game_state['player_diameter'] + 1:  # it's about to explode (and you need time to get out)! GTFO!
                         danger_bombs.append(bomb)
                     own_active_bombs.append(bomb)
                 elif entity['owner'] == enemy_id:
@@ -60,6 +60,7 @@ class BombTracker:
         hazards = []
         for bomb in danger_bombs:
             blast_zone = get_blast_zone(bomb['coord'], bomb['blast_diameter'], entities, world)
+            print('BOO BITCH', bomb, blast_zone)
             hazards += blast_zone
 
         # Save values into game state

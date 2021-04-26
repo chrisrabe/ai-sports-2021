@@ -224,7 +224,7 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
     Returns list of blast tiles [[x,y],[x2,y2], ...]
     """
     world_width, world_height = get_world_dimension(world)
-    radius = int(diameter / 2)
+    radius = diameter//2
     block_tile = ["o", "m", "w"]
     blast_tiles = [bomb_loc]
     cur_loc = bomb_loc
@@ -236,7 +236,6 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
         else:
             cur_loc = bomb_loc
             break
-        cur_loc = tile
 
     for i in range(radius):
         tile = get_tile_from_move(cur_loc, ACTIONS["right"])
@@ -245,7 +244,7 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
         else:
             cur_loc = bomb_loc
             break
-        cur_loc = tile
+
 
     for i in range(radius):
         tile = get_tile_from_move(cur_loc, ACTIONS["up"])
@@ -254,15 +253,15 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
         else:
             cur_loc = bomb_loc
             break
-        cur_loc = tile
+
 
     for i in range(radius):
         tile = get_tile_from_move(cur_loc, ACTIONS["down"])
         if is_in_bounds(tile, world_width, world_height) and entity_at(tile, entities) not in block_tile:
             blast_tiles.append(tile)
         else:
+            cur_loc = bomb_loc
             break
-        cur_loc = tile
 
     return blast_tiles
 
@@ -342,6 +341,9 @@ def get_matrix_val_for_tile(tile, matrix, map_width):
 
 
 def get_tile_from_move(location, move):
+    """
+    Takes in location and an action (string). Returns location of tile moved to. 
+    """
     x, y = location
 
     if move == ACTIONS["down"]:
