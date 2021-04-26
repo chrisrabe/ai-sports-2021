@@ -7,8 +7,8 @@ from ..utils.util_functions import get_shortest_path, get_path_action_seq, get_b
 class StalkStrategy(strategy.Strategy):
 
     def execute(self, game_state: object) -> List[str]:
-        enemy_pos = tuple(game_state['enemy_pos'])
-        player_pos = tuple(game_state['player_pos'])
+        enemy_pos = game_state['enemy_pos']
+        player_pos = game_state['player_pos']
         world = game_state['world']
         entities = game_state['entities']
 
