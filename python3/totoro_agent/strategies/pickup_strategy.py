@@ -15,13 +15,13 @@ class PickupStrategy(strategy.Strategy):
         entities = game_state['entities']
 
         if ammo_list:
-            reachable_ammo = get_reachable_tiles(player_pos, ammo_list, world, entities)
+            reachable_ammo = get_reachable_tiles(player_pos, ammo_list, world, entities,game_state['hazard_zones'])
             nearest_ammo = get_nearest_tile(player_pos, reachable_ammo)
             path = get_shortest_path(player_pos, nearest_ammo, world, entities)
         elif powerup_list:
             reachable_powerup = get_reachable_tiles(player_pos, powerup_list, world, entities)
             nearest_powerup = get_nearest_tile(player_pos, reachable_powerup)
-            path = get_shortest_path(player_pos, nearest_powerup, world, entities)
+            path = get_shortest_path(player_pos, nearest_powerup, world, entities, game_state['hazard_zones'])
 
         if path is None:
             return [ACTIONS['none']]

@@ -54,6 +54,9 @@ def manhattan_distance(start, end):
     return distance
 
 
+    
+
+
 def get_surrounding_tiles(location, world_width, world_height):
     """Given a tile location as an (x,y) tuple, this function will return the surrounding tiles up, down, left and to
     the right as a list (i.e. [(x1,y1), (x2,y2),...]) as long as they do not cross the edge of the map """
@@ -62,8 +65,8 @@ def get_surrounding_tiles(location, world_width, world_height):
 
     # find all the surrounding tiles relative to us
     # location[0] = col index; location[1] = row index
-    tile_up = (x, y - 1)
-    tile_down = (x, y + 1)
+    tile_up = (x, y + 1)
+    tile_down = (x, y - 1)
     tile_left = (x - 1, y)
     tile_right = (x + 1, y)
 
@@ -193,8 +196,8 @@ def is_walkable(tile, entities, ignore_player=True):
     """
     Returns true if the tile is walkable
     """
-    collectible = ["a", "bp"]
-    player = ['p', 'e', 'eb', 'pb']
+    collectible = ["a", "bp"] # Ammo, powerup
+    player = ['p', 'e', 'eb', 'pb'] # Player, enemy, 
     entity = entity_at(tile, entities)
     if ignore_player:
         return entity in collectible or entity is None or entity in player
@@ -274,6 +277,9 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
 
 
 def get_nearest_tile(location, tiles):
+    """
+    Returns nearest tile in a list of tiles
+    """
     if tiles:
         tile_dist = 1000
         closest_tile = tiles[0]
@@ -286,10 +292,22 @@ def get_nearest_tile(location, tiles):
     else:
         return None
 
+def min_distance(start, tiles):
+    """
+    Returns the closest tile given a starting point and a range of tiles (picks the first one)
+    """ 
+    tiles.reverse()
+    distances = []
+    for tile in tiles:
+        cur_tile_dist = manhattan_distance(start, tile)
+        distances.append(cur_tile_dist)
+    mindist = min(distances)# Grabs first item that has the min dist
+    index = distances.index(mindist)
+    return tiles[index]
 
 def get_reachable_tiles(location, tiles, world, entities, blast_tiles=None):
     """
-    Returns a list of reachable tiles
+    Returns a list of reachable tiles (will pick the last one)
     """
     if blast_tiles is None:
         blast_tiles = []
@@ -313,6 +331,9 @@ def get_surrounding_empty_tiles(location, world, entities, ignore_player=True):
 
 
 def get_empty_locations(tiles, world, entities):
+    """
+    Given a list of tiles, returns a list of empty tiles surrounding them
+    """
     empty_locations = []
     for tile in tiles:
         empty_tiles = get_surrounding_empty_tiles(tile, world, entities)
@@ -342,6 +363,9 @@ def get_matrix_val_for_tile(tile, matrix, map_width):
 
 
 def get_tile_from_move(location, move):
+    """
+    Takes in location and an action (string). Returns location of tile moved to. 
+    """
     x, y = location
 
     if move == ACTIONS["down"]:
@@ -593,9 +617,10 @@ def death_trap(tile, world, entities) -> bool:
     return True
 
 
-def get_detonation_target(target_pos, player_pos, own_bombs, world, entities) -> tuple[int, int] or None:
+def get_detonation_target(target_pos, own_bombs, world, entities) -> tuple[int, int] or None:
     """
-    Retrieves the bomb that affects the target
+    Retrieves the bomb that affects the target.
+    Checks if any of our own bomb will have a blast zone at the target position.
     """
     bomb_coords = []
     bomb_dict = {}
@@ -613,6 +638,9 @@ def get_detonation_target(target_pos, player_pos, own_bombs, world, entities) ->
 
 
 def get_safe_tiles(hazard_tiles, world, entities):
+    """
+    Returns every (walkable) tile in the world which isn't in the tiles given
+    """
     world_width, world_height = get_world_dimension(world)
     safe_tiles = []
     for y in range(world_height):

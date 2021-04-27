@@ -1,4 +1,4 @@
-from .strategies import RandomStrategy, RetreatStrategy, StalkStrategy, PickupStrategy, AdvKillStrategy, DetonateStrategy, BlockDestroyingStrategy
+from .strategies import RandomStrategy, RetreatStrategy, StalkStrategy, PickupStrategy, AdvKillStrategy, BasicAvoidStrategy, DetonateStrategy, BombStrategy, BlockDestroyingStrategy
 from .brain import Brain
 
 
@@ -10,9 +10,11 @@ class Agent:
             'retreat': RetreatStrategy(),
             'pickup': PickupStrategy(),
             'stalk': StalkStrategy(),
+            'basic_avoid': BasicAvoidStrategy(),
             'kill': AdvKillStrategy(),
+            'detonate': DetonateStrategy(),
+            'bomb': BombStrategy(),
             'block_destroy': BlockDestroyingStrategy(),
-            'detonate': DetonateStrategy()
         }
         self.action_queue = []
         self.prev_tick = -1
