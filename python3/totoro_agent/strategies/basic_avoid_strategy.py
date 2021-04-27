@@ -24,7 +24,6 @@ class BasicAvoidStrategy(strategy.Strategy):
         width, height = get_world_dimension(world)
 
 
-       # if player_pos in hazard_zones: # Checks if player is on hazard tile (potential blast zone)
         print("YOU'RE IN DANGER DUDE - basic avoid") 
 
         first_order_surrounding_tiles = get_surrounding_tiles(player_pos, width, height) # List of tiles
@@ -39,7 +38,7 @@ class BasicAvoidStrategy(strategy.Strategy):
         # dist_list = [manhattan_distance(player_pos, tile) for tile in safe_tiles]
         # min_dist = min(dist_list)
         randomtile = random.choice(safe_tiles)
-        path = get_shortest_path(player_pos, randomtile, world, entities, game_state['hazard_zones'])
+        path = get_shortest_path(player_pos, random.choice(game_state['safe_zones']), world, entities)
 
         if path is None:
             print("shat myself inside basic_avoid. This shouldn't ever happen; means you called this when he wasn't in hazard. (Check the brain?)")
