@@ -370,11 +370,10 @@ def update_value_map(rval, value_map, world_dim, max_reward_spread=0, OUTER_MAP_
     # Add map padding
     pad_dim = (world_dim[0]-1,world_dim[1]-1)
     value_map = np.pad(value_map, (pad_dim,pad_dim), 'constant', constant_values=OUTER_MAP_VALUES)
-    rval_offset = pad_dim[0]-1
+    rval_offset = pad_dim[0] # padding offset
 
     reward = rval[2]
     reward_discount = reward/abs(reward)
-    rval_offset = 8 # padding offset
     reward_spread=0
     
     # Max reward spread shall not exceed the dimension of the map
