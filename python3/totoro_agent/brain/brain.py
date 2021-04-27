@@ -68,19 +68,6 @@ class Brain:
             #place bomb 
             return "bomb" # literally just fucking bomb them??
             
-
-        # # Killing strategies -> Collides with basic_avoid.
-        # elif not game_state['enemy_is_invulnerable'] and not game_state['player_on_bomb']:
-        #     # if enemy is standing in detonation zone
-        #     if game_state['enemy_pos'] in game_state['detonation_zones']:
-        #         print('Time to detonate!')
-        #         return 'detonate'
-
-            # If you have ammo, just go for the kill
-            # should probably refine this to check opponent vulnerability and trappable
-            # if game_state['player_inv_bombs'] != 0 and not game_state['enemy_near_bomb']:
-            #     return 'kill'
-
         # Pickup if ammo, stalk if none on map.
         elif len(game_state['pickup_list']) != 0:  # "Any pickups on the map?"
             print('me gusta I smell some pickups')

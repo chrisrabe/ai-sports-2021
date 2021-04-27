@@ -85,7 +85,7 @@ class BombTracker:
             enemy_hazards += blast_zone
 
         all_hazards = hazards + enemy_hazards
-        safe_zones = get_safe_tiles(hazards + enemy_hazards, world, entities)
+        safe_zones = get_safe_tiles(all_hazards, world, entities)
 
         # Save values into game state
         game_state['own_active_bombs'] = own_active_bombs
