@@ -227,10 +227,10 @@ def get_path_action_seq(location: object, path: List) -> List:
 def get_blast_zone(bomb_loc, diameter, entities, world):
     """
     Retrieves the tiles affected by the bomb blast
-    Returns list of blast tiles [[x,y],[x2,y2], ...]
+	Returns list of blast tiles [[x,y],[x2,y2], ...]
     """
     world_width, world_height = get_world_dimension(world)
-    radius = diameter//2
+    radius = int(diameter / 2)
     block_tile = ["o", "m", "w"]
     blast_tiles = [bomb_loc]
     cur_loc = bomb_loc
@@ -241,7 +241,7 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
             blast_tiles.append(tile)
         else:
             break
-    
+        cur_loc = tile
 
     cur_loc = bomb_loc
 
@@ -251,7 +251,7 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
             blast_tiles.append(tile)
         else:
             break
-
+        cur_loc = tile
 
     cur_loc = bomb_loc
 
@@ -261,7 +261,7 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
             blast_tiles.append(tile)
         else:
             break
-
+        cur_loc = tile
 
     cur_loc = bomb_loc
 
@@ -270,8 +270,8 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
         if is_in_bounds(tile, world_width, world_height) and entity_at(tile, entities) not in block_tile:
             blast_tiles.append(tile)
         else:
-            cur_loc = bomb_loc
             break
+        cur_loc = tile
 
     return blast_tiles
 
