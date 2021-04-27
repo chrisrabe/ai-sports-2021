@@ -54,9 +54,6 @@ def manhattan_distance(start, end):
     return distance
 
 
-    
-
-
 def get_surrounding_tiles(location, world_width, world_height):
     """Given a tile location as an (x,y) tuple, this function will return the surrounding tiles up, down, left and to
     the right as a list (i.e. [(x1,y1), (x2,y2),...]) as long as they do not cross the edge of the map """
@@ -196,8 +193,8 @@ def is_walkable(tile, entities, ignore_player=True):
     """
     Returns true if the tile is walkable
     """
-    collectible = ["a", "bp"] # Ammo, powerup
-    player = ['p', 'e', 'eb', 'pb'] # Player, enemy, 
+    collectible = ["a", "bp"]  # Ammo, powerup
+    player = ['p', 'e', 'eb', 'pb']  # Player, enemy,
     entity = entity_at(tile, entities)
     if ignore_player:
         return entity in collectible or entity is None or entity in player
@@ -275,6 +272,7 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
 
     return blast_tiles
 
+
 def get_nearest_tile(location, tiles):
     """
     Returns nearest tile in a list of tiles
@@ -291,18 +289,20 @@ def get_nearest_tile(location, tiles):
     else:
         return None
 
+
 def min_distance(start, tiles):
     """
     Returns the closest tile given a starting point and a range of tiles (picks the first one)
-    """ 
+    """
     tiles.reverse()
     distances = []
     for tile in tiles:
         cur_tile_dist = manhattan_distance(start, tile)
         distances.append(cur_tile_dist)
-    mindist = min(distances)# Grabs first item that has the min dist
+    mindist = min(distances)  # Grabs first item that has the min dist
     index = distances.index(mindist)
     return tiles[index]
+
 
 def get_reachable_tiles(location, tiles, world, entities, blast_tiles=None):
     """
@@ -363,7 +363,7 @@ def get_matrix_val_for_tile(tile, matrix, map_width):
 
 def get_tile_from_move(location, move):
     """
-    Takes in location and an action (string). Returns location of tile moved to. 
+    Takes in location and an action (string). Returns location of tile moved to.
     """
     x, y = location
 
@@ -388,58 +388,61 @@ def is_movement(action):
     ]
     return action in actions
 
+
 # Update value map based on reward entities input
-def update_rec_value_map(rval, value_map, world_dim, max_reward_spread=0, OUTER_MAP_VALUES=((-100, -100),(-100, -100))):
+def update_rec_value_map(rval, value_map, world_dim, max_reward_spread=0,
+                         OUTER_MAP_VALUES=((-100, -100), (-100, -100))):
     '''
     Updates the reward value map with mask matrix application, based on reward entity.
     Returns a numpy array representing the updated reward value map.
     '''
     # add map padding
-    pad_dim = (world_dim[0]-1,world_dim[1]-1)
-    value_map = np.pad(value_map, (pad_dim,pad_dim), 'constant', constant_values=OUTER_MAP_VALUES)
-    rval_offset = pad_dim[0] # padding offset
+    pad_dim = (world_dim[0] - 1, world_dim[1] - 1)
+    value_map = np.pad(value_map, (pad_dim, pad_dim), 'constant', constant_values=OUTER_MAP_VALUES)
+    rval_offset = pad_dim[0]  # padding offset
 
     reward = rval[2]
-    reward_discount = reward/abs(reward)
-    reward_spread=0
-    
+    reward_discount = reward / abs(reward)
+    reward_spread = 0
+
     # max reward spread shall not exceed the dimension of the map
     # (mask matrices of +1 or -1 are applied in additive layers that correspond to the magnitude of the reward value)
-    max_reward_spread = min(max_reward_spread, world_dim[0]-1)
-    
+    max_reward_spread = min(max_reward_spread, world_dim[0] - 1)
+
     if reward > 0:
         # positive reward value
         for i, value in enumerate(range(0, reward, 1)):
             if i <= max_reward_spread:
                 reward_spread = i
-            xstart= rval[1] + rval_offset - reward_spread
+            xstart = rval[1] + rval_offset - reward_spread
             xend = rval[1] + rval_offset + 1 + reward_spread
             ystart = rval[0] + rval_offset - reward_spread
             yend = rval[0] + rval_offset + 1 + reward_spread
 
             # Updates reward values in the map matrix.
-            value_map[xstart:xend,ystart:yend] = value_map[xstart:xend,ystart:yend] + reward_discount
-            
+            value_map[xstart:xend, ystart:yend] = value_map[xstart:xend, ystart:yend] + reward_discount
+
     elif reward < 0:
         # negative reward value
         for i, value in enumerate(range(0, reward, -1)):
             if i <= max_reward_spread:
                 reward_spread = i
-            xstart= rval[1] + rval_offset - reward_spread
+            xstart = rval[1] + rval_offset - reward_spread
             xend = rval[1] + rval_offset + 1 + reward_spread
             ystart = rval[0] + rval_offset - reward_spread
             yend = rval[0] + rval_offset + 1 + reward_spread
 
             # Updates reward values in the map matrix.
-            value_map[xstart:xend,ystart:yend] = value_map[xstart:xend,ystart:yend] + reward_discount
+            value_map[xstart:xend, ystart:yend] = value_map[xstart:xend, ystart:yend] + reward_discount
     else:
         # reward assigned is 0
         pass
 
     # remove map padding
-    value_map = value_map[world_dim[0]-1:world_dim[0]+pad_dim[0],world_dim[0]-1:world_dim[0]+pad_dim[0]]
+    value_map = value_map[world_dim[0] - 1:world_dim[0] + pad_dim[0], world_dim[0] - 1:world_dim[0] + pad_dim[0]]
 
     return value_map
+
 
 def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use_default=True):
     """
@@ -468,7 +471,6 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
     # create 2D matrix filled with zeroes
     world_dim = get_world_dimension(world)
     value_map = np.zeros(world_dim)
-    reward_entity = []
 
     # replace all walls with -10
     for wall in walls:
@@ -498,9 +500,9 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
         # update rectangle mask based reward map
         reward_entity = [item['loc'][0], item['loc'][1], reward]
         rec_value_map = update_rec_value_map(reward_entity, rec_value_map, world_dim, max_reward_spread)
-        
+
         # update diamond mask based reward map
-        reward_mask = get_reward_mask((item['loc'][0], item['loc'][1]), reward, world_dim, True)
+        reward_mask = get_reward_mask(item, reward, world)
         dia_value_map = np.add(dia_value_map, reward_mask)
 
     # re-evaluate for pinch points
@@ -511,17 +513,18 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
                 pinch_reward = reward_map['pinch']
 
             # Update rectangle mask based reward map
-            reward_entity = [tile['loc'][0], tile['loc'][1], pinch_reward]
+            reward_entity = [tile[0], tile[1], pinch_reward]
             rec_value_map = update_rec_value_map(reward_entity, rec_value_map, world_dim, max_reward_spread)
 
             # Update diamond mask based reward map
-            reward_mask = get_reward_mask((item['loc'][0], item['loc'][1]), reward, world_dim, True)
+            reward_mask = get_reward_mask(tile, pinch_reward, world, True)
             dia_value_map = np.add(dia_value_map, reward_mask)
 
     # create reward value map as composite of rectangle mask and diamond mask based reward value map
     value_map = np.add(rec_value_map, dia_value_map)
 
     return value_map
+
 
 def get_reward_mask(item, reward, world, is_tuple=False):
     """
