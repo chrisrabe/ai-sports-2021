@@ -40,7 +40,8 @@ class BombTracker:
 
         # Get active bombs - coordinates, expiry, blast diameter
         for entity in entities:
-            if entity['type'] == ENTITIES['blast']: # Adds blast tiles to hazards so he doesn't walk on them. He CANNOT walk on them (from shortest paths)
+            #Adds blast tiles to hazards so he doesn't walk on them. He CANNOT walk on them (from shortest paths)
+            if entity['type'] == ENTITIES['blast']:
                 hazards.append((entity['x'], entity['y']))
 
             if entity['type'] == ENTITIES['bomb']:

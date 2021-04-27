@@ -599,9 +599,10 @@ def death_trap(tile, world, entities) -> bool:
     return True
 
 
-def get_detonation_target(target_pos, player_pos, own_bombs, world, entities) -> tuple[int, int] or None:
+def get_detonation_target(target_pos, own_bombs, world, entities) -> tuple[int, int] or None:
     """
-    Retrieves the bomb that affects the target
+    Retrieves the bomb that affects the target.
+    Checks if any of our own bomb will have a blast zone at the target position.
     """
     bomb_coords = []
     bomb_dict = {}
@@ -619,6 +620,9 @@ def get_detonation_target(target_pos, player_pos, own_bombs, world, entities) ->
 
 
 def get_safe_tiles(hazard_tiles, world, entities):
+    """
+    Returns every (walkable) tile in the world which isn't in the tiles given
+    """
     world_width, world_height = get_world_dimension(world)
     safe_tiles = []
     for y in range(world_height):

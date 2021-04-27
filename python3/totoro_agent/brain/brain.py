@@ -50,21 +50,37 @@ class Brain:
 
 
         # If you're in the blast tiles, do RETREAT
-        if game_state['player_pos'] in game_state['all_hazard_zones'] or game_state['player_on_bomb']:
+        if (game_state['player_pos'] in game_state['all_hazard_zones'] or game_state['player_on_bomb']) and not game_state['player_is_invulnerable']:
             print('HOLY RUN FOR YOUR LIFE YOU ARE GONNA GET RAILED')
             return 'basic_avoid' # Basic avoid vs retreat. Retreat value based, basic avoid is coded.
 
-        # Killing strategies -> Collides with basic_avoid.
-        elif not game_state['enemy_is_invulnerable'] and not game_state['player_on_bomb']:
-            # if enemy is standing in detonation zone
-            if game_state['enemy_pos'] in game_state['detonation_zones']:
-                print('Time to detonate!')
-                return 'detonate'
+
+        # Hard-coding immediate trap (can put in a strategy later)
+        ## Check if enemy is trapped: ->check if player can place a bomb that attacks enemy: -> do it.
+       # print(game_state['enemy_immediate_trapped'])
+        elif game_state['enemy_immediate_trapped']: # Immediate trapped also takes into account whether the player is there.
+            print("I think the retard is trapped so I'm placing a bomb!")
+            #place bomb 
+            return "bomb" # literally just fucking bomb them??
+            
+        # if enemy in detonation zone and we aren't + if they aren't invulnerable (we'll move out of the way via basic_avoid's top priority)
+        if not game_state['enemy_is_invulnerable'] and (game_state['enemy_pos'] in game_state['detonation_zones'] and (game_state['player_pos'] not in game_state['detonation_zones'])):
+            print('KABOOOM!! DETONATION TIME!')
+            return 'detonate'
+
+
+
+        # # Killing strategies -> Collides with basic_avoid.
+        # elif not game_state['enemy_is_invulnerable'] and not game_state['player_on_bomb']:
+        #     # if enemy is standing in detonation zone
+        #     if game_state['enemy_pos'] in game_state['detonation_zones']:
+        #         print('Time to detonate!')
+        #         return 'detonate'
 
             # If you have ammo, just go for the kill
             # should probably refine this to check opponent vulnerability and trappable
-            if game_state['player_inv_bombs'] != 0 and not game_state['enemy_near_bomb']:
-                return 'kill'
+            # if game_state['player_inv_bombs'] != 0 and not game_state['enemy_near_bomb']:
+            #     return 'kill'
 
         # Pickup if ammo, stalk if none on map.
         elif len(game_state['pickup_list']) != 0:  # "Any pickups on the map?"

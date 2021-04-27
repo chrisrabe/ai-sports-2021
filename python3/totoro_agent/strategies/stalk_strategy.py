@@ -13,7 +13,7 @@ class StalkStrategy(strategy.Strategy):
         entities = game_state['entities']
 
         # we want to at least be 3 blocks away from player
-        stalk_zone = get_blast_zone(enemy_pos, 5, entities, world)
+        stalk_zone = get_blast_zone(enemy_pos, 1, entities, world)
         closest_tile = get_nearest_tile(player_pos, stalk_zone)
 
         path = get_shortest_path(player_pos, closest_tile, world, entities, game_state['hazard_zones'])
