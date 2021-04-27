@@ -12,7 +12,10 @@ class BombTracker:
         self.bombs = []
 
     def update(self, game_state):
-        """ Adds bombs to game_state for player, enemy, and total. game_state['enemy_active_bombs'] is a list of dictionaries."""
+        """ 
+        Adds bombs to game_state for player, enemy, and total. game_state['enemy_active_bombs'] is a list of dictionaries.
+        game_state['hazard_zones'] provides a list of tiles that are dangerous (blast zone for danger bombs)
+        """
         # Get own and enemy id
         own_id = int(game_state['player_id'])
         enemy_id = int(game_state['enemy_id'])
@@ -30,12 +33,17 @@ class BombTracker:
         # Get game entities
         entities = game_state['entities']
         world = game_state['world']
+        hazards = []
         world_width, world_height = get_world_dimension(world)
 
         surrounding_enemy_tiles = get_surrounding_tiles(enemy_pos, world_width, world_height)
 
         # Get active bombs - coordinates, expiry, blast diameter
         for entity in entities:
+            #Adds blast tiles to hazards so he doesn't walk on them. He CANNOT walk on them (from shortest paths)
+            if entity['type'] == ENTITIES['blast']:
+                hazards.append((entity['x'], entity['y']))
+
             if entity['type'] == ENTITIES['bomb']:
                 bomb = {
                     'coord': (entity['x'], entity['y']),
@@ -61,11 +69,14 @@ class BombTracker:
                     enemy_active_bombs.append(bomb)
                 all_active_bombs.append(bomb)
 
+
         # calculate hazard zones
-        hazards = []
         for bomb in danger_bombs:
             blast_zone = get_blast_zone(bomb['coord'], bomb['blast_diameter'], entities, world)
             hazards += blast_zone
+        # if len(game_state['blast_blocks']) != 0:
+
+        #     hazards.append(game_state['blast_blocks'])
 
         # potential detonation zones
         enemy_hazards = []
@@ -74,7 +85,7 @@ class BombTracker:
             enemy_hazards += blast_zone
 
         all_hazards = hazards + enemy_hazards
-        safe_zones = get_safe_tiles(hazards + enemy_hazards, world, entities)
+        safe_zones = get_safe_tiles(all_hazards, world, entities)
 
         # Save values into game state
         game_state['own_active_bombs'] = own_active_bombs
@@ -116,3 +127,5 @@ class BombTracker:
                 'y': enemy_y,
                 'type': ENTITIES['enemy']
             })
+
+      #  game_state['enemy_immediate_trapped'] = death_trap(game_state['enemy_pos'], world, entities)

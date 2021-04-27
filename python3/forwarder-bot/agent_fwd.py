@@ -1,5 +1,5 @@
 from forward_model import ForwardModel
-from python3.totoro_agent.client.game_state import GameState
+from python3.agents.totoro_agent.client import GameState
 import asyncio
 import os
 import random

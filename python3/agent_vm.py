@@ -1,4 +1,4 @@
-from vm_totoro_agent import Client
+from agents.vm_totoro_agent import Client
 
 # All about that value maps
 
