@@ -272,6 +272,7 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
 
     return blast_tiles
 
+
 def get_nearest_tile(location, tiles):
     if tiles:
         tile_dist = 1000
@@ -364,58 +365,6 @@ def is_movement(action):
     ]
     return action in actions
 
-# Update value map based on reward entities input
-def update_value_map(rval, value_map, world_dim, max_reward_spread=0, OUTER_MAP_VALUES=((-100, -100),(-100, -100))):
-    '''
-    Updates the reward value map with mask matrix application, based on reward entity.
-    Returns a numpy array representing the updated reward value map.
-    '''
-    # Add map padding
-    pad_dim = (world_dim[0]-1,world_dim[1]-1)
-    value_map = np.pad(value_map, (pad_dim,pad_dim), 'constant', constant_values=OUTER_MAP_VALUES)
-    rval_offset = pad_dim[0] # padding offset
-
-    reward = rval[2]
-    reward_discount = reward/abs(reward)
-    reward_spread=0
-    
-    # Max reward spread shall not exceed the dimension of the map
-    # (mask matrices of +1 or -1 are applied in additive layers that correspond to the magnitude of the reward value)
-    max_reward_spread = min(max_reward_spread, world_dim[0]-1)
-    
-    if reward > 0:
-        # positive reward value
-        for i, value in enumerate(range(0, reward, 1)):
-            if i <= max_reward_spread:
-                reward_spread = i
-            xstart= rval[1] + rval_offset - reward_spread
-            xend = rval[1] + rval_offset + 1 + reward_spread
-            ystart = rval[0] + rval_offset - reward_spread
-            yend = rval[0] + rval_offset + 1 + reward_spread
-
-            # Updates reward values in the map matrix.
-            value_map[xstart:xend,ystart:yend] = value_map[xstart:xend,ystart:yend] + reward_discount
-            
-    elif reward < 0:
-        # negative reward value
-        for i, value in enumerate(range(0, reward, -1)):
-            if i <= max_reward_spread:
-                reward_spread = i
-            xstart= rval[1] + rval_offset - reward_spread
-            xend = rval[1] + rval_offset + 1 + reward_spread
-            ystart = rval[0] + rval_offset - reward_spread
-            yend = rval[0] + rval_offset + 1 + reward_spread
-
-            # Updates reward values in the map matrix.
-            value_map[xstart:xend,ystart:yend] = value_map[xstart:xend,ystart:yend] + reward_discount
-    else:
-        # Reward assigned is 0.
-        pass
-
-    # Remove map padding
-    value_map = value_map[world_dim[0]-1:world_dim[0]+pad_dim[0],world_dim[0]-1:world_dim[0]+pad_dim[0]]
-
-    return value_map
 
 def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use_default=True):
     """
@@ -442,17 +391,12 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
     # TODO are there numpy helper functions to help with these logic?
 
     # create 2D matrix filled with zeroes
-    world_dim = get_world_dimension(world)
-    value_map = np.zeros(world_dim)
-    reward_entity = []
+    value_map = np.zeros(get_world_dimension(world))
 
     # replace all walls with -10
     for wall in walls:
         x, y = wall
         value_map[y, x] = DEFAULT_REWARDS['wall']
-
-    # Sets the reward spread for reward mask application
-    max_reward_spread = world_dim[0] - 1
 
     # get score mask for all non-wall objects
     for item in game_objects:
@@ -466,9 +410,8 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
                 continue
             else:
                 reward = reward_map[item['type']]
-
-        reward_entity = [item['loc'][0], item['loc'][1], reward]
-        value_map = update_value_map(reward_entity, value_map, world_dim, max_reward_spread)
+        reward_mask = get_reward_mask(item, reward, world)
+        value_map = np.add(value_map, reward_mask)
 
     # re-evaluate for pinch points
     if pinch_points is not None:
@@ -476,11 +419,11 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
             pinch_reward = DEFAULT_REWARDS['pinch']
             if 'pinch' in reward_map:
                 pinch_reward = reward_map['pinch']
-
-            reward_entity = [tile['loc'][0], tile['loc'][1], pinch_reward]
-            value_map = update_value_map(reward_entity, value_map, world_dim, max_reward_spread)
+            reward_mask = get_reward_mask(tile, pinch_reward, world, True)
+            value_map = np.add(value_map, reward_mask)
 
     return value_map
+
 
 def get_reward_mask(item, reward, world, is_tuple=False):
     """
