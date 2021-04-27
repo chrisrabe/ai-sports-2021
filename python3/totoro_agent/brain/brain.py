@@ -63,7 +63,7 @@ class Brain:
         # Hard-coding immediate trap (can put in a strategy later)
         ## Check if enemy is trapped: ->check if player can place a bomb that attacks enemy: -> do it.
        # print(game_state['enemy_immediate_trapped'])
-        elif game_state['enemy_immediate_trapped'] and game_state['player_inv_bombs'] > 0: # Immediate trapped also takes into account whether the player is there.
+        elif game_state['enemy_immediate_trapped'] and (game_state['player_inv_bombs'] > 0 and not game_state['enemy_near_bomb']): # Immediate trapped also takes into account whether the player is there.
             print("I think the enemy is trapped so I'm placing a bomb right now!!")
             #place bomb 
             return "bomb" # literally just fucking bomb them??
