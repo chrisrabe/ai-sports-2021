@@ -3,7 +3,7 @@ Used for tracking lifecycle of bombs and explosion areas
 """
 import math
 
-from ..utils.util_functions import get_blast_zone, get_safe_tiles, get_reachable_tiles, get_surrounding_tiles, get_world_dimension
+from ..utils.util_functions import get_blast_zone, get_safe_tiles, get_surrounding_tiles, get_world_dimension
 from ..utils.constants import ENTITIES
 
 
