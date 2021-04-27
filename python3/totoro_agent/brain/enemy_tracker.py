@@ -53,7 +53,7 @@ class EnemyTracker:
         # Return any tiles that are empty around enemy
         enemy_surrounding_tiles = get_surrounding_tiles(game_state['enemy_pos'], world_width, world_height)
         enemy_surrounding_empty_tiles = get_surrounding_empty_tiles(game_state['enemy_pos'], world, entities) # Needs to Include player 
-        print("Length of enem surrounding empty tiles: ",  len(enemy_surrounding_empty_tiles), enemy_surrounding_empty_tiles, print(entities['type']))
+        print("Length of enem surrounding empty tiles: ",  len(enemy_surrounding_empty_tiles), enemy_surrounding_empty_tiles)
         
         if len(enemy_surrounding_empty_tiles) == 0: # Dude can't move. Technically, this 'immediate trapped' isn't the real value. It's actually trapped AND player is one of the tiles.
             #check if our player is in one of the tiles: -> 
