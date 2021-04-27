@@ -128,4 +128,4 @@ class BombTracker:
                 'type': ENTITIES['enemy']
             })
 
-        game_state['enemy_immediate_trapped'] = death_trap(game_state['enemy_pos'], world, entities)
+      #  game_state['enemy_immediate_trapped'] = death_trap(game_state['enemy_pos'], world, entities)
