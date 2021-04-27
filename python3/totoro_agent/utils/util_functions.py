@@ -80,7 +80,7 @@ def get_surrounding_tiles(location, world_width, world_height):
     return valid_surrounding_tiles
 
 
-def get_empty_tiles(tiles, entities):
+def get_empty_tiles(tiles, entities, ignore_player=False):
     """
     Given a list of tiles, return ones that are actually empty
     """
@@ -189,14 +189,17 @@ def get_shortest_path(start, end, world, entities, blast_tiles=None):
     return None  # no path found
 
 
-def is_walkable(tile, entities):
+def is_walkable(tile, entities, ignore_player=True):
     """
     Returns true if the tile is walkable
     """
     collectible = ["a", "bp"]
     player = ['p', 'e', 'eb', 'pb']
     entity = entity_at(tile, entities)
-    return entity in collectible or entity is None or entity in player
+    if ignore_player:
+        return entity in collectible or entity is None or entity in player
+    else:
+        return entity in collectible or entity is None
 
 
 def get_path_action_seq(location: object, path: List) -> List:
@@ -299,13 +302,13 @@ def get_reachable_tiles(location, tiles, world, entities, blast_tiles=None):
     return reachable_tiles
 
 
-def get_surrounding_empty_tiles(location, world, entities):
+def get_surrounding_empty_tiles(location, world, entities, ignore_player=True):
     """
     Retrieves surrounding walkable tile around the location
     """
     world_width, world_height = get_world_dimension(world)
     surrounding_tiles = get_surrounding_tiles(location, world_width, world_height)
-    empty_tiles = get_empty_tiles(surrounding_tiles, entities)
+    empty_tiles = get_empty_tiles(surrounding_tiles, entities, ignore_player)
     return empty_tiles
 
 
