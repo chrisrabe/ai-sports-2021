@@ -46,14 +46,15 @@ class EnemyTracker:
         ## Check if enemy can't move: ->check if player can place a bomb that attacks enemy: -> do it.
         world = game_state['world']
         entities = game_state['entities']
+        #game_state['enemy_immediate_trapped'] = death_trap(game_state['enemy_pos'],world, entities) -> Thinks that position returns True.
         game_state['enemy_immediate_trapped'] = False
         world = game_state['world']
         world_width, world_height = get_world_dimension(world)
-
-        # Return any tiles that are empty around enemy
+ 
+        # # Return any tiles that are empty around enemy
         enemy_surrounding_tiles = get_surrounding_tiles(game_state['enemy_pos'], world_width, world_height)
         enemy_surrounding_empty_tiles = get_surrounding_empty_tiles(game_state['enemy_pos'], world, entities) # Needs to Include player 
-        print("Length of enem surrounding empty tiles: ",  len(enemy_surrounding_empty_tiles), enemy_surrounding_empty_tiles)
+        print("Length of enem surrounding empty tiles: ",  len(enemy_surrounding_empty_tiles), enemy_surrounding_empty_tiles, print(len(enemy_surrounding_empty_tiles) ==0))
         
         if len(enemy_surrounding_empty_tiles) == 0: # Dude can't move. Technically, this 'immediate trapped' isn't the real value. It's actually trapped AND player is one of the tiles.
             #check if our player is in one of the tiles: -> 

@@ -37,7 +37,6 @@ class BasicAvoidStrategy(strategy.Strategy):
         # Minimum distance tile ... or not lmao 
         # dist_list = [manhattan_distance(player_pos, tile) for tile in safe_tiles]
         # min_dist = min(dist_list)
-        randomtile = random.choice(safe_tiles)
         closest_tile = min_distance(player_pos, game_state['safe_zones'])
 
         path = get_shortest_path(player_pos, closest_tile, world, entities)
