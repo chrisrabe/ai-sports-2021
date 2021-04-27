@@ -53,17 +53,7 @@ def manhattan_distance(start, end):
     distance = abs(start[0] - end[0]) + abs(start[1] - end[1])
     return distance
 
-def min_distance(start, tiles):
-    """
-    Returns the closest tile given a starting point and a range of tiles
-    """ 
-    distances = []
-    for tile in tiles:
-        cur_tile_dist = manhattan_distance(start, tile)
-        distances.append(cur_tile_dist)
-    mindist = min(distances)# Grabs first item that has the min dist
-    index = distances.index(mindist)
-    return tiles[index]
+
     
 
 
@@ -75,8 +65,8 @@ def get_surrounding_tiles(location, world_width, world_height):
 
     # find all the surrounding tiles relative to us
     # location[0] = col index; location[1] = row index
-    tile_up = (x, y - 1)
-    tile_down = (x, y + 1)
+    tile_up = (x, y + 1)
+    tile_down = (x, y - 1)
     tile_left = (x - 1, y)
     tile_right = (x + 1, y)
 
@@ -299,10 +289,22 @@ def get_nearest_tile(location, tiles):
     else:
         return None
 
+def min_distance(start, tiles):
+    """
+    Returns the closest tile given a starting point and a range of tiles (picks the first one)
+    """ 
+    tiles.reverse()
+    distances = []
+    for tile in tiles:
+        cur_tile_dist = manhattan_distance(start, tile)
+        distances.append(cur_tile_dist)
+    mindist = min(distances)# Grabs first item that has the min dist
+    index = distances.index(mindist)
+    return tiles[index]
 
 def get_reachable_tiles(location, tiles, world, entities, blast_tiles=None):
     """
-    Returns a list of reachable tiles
+    Returns a list of reachable tiles (will pick the last one)
     """
     if blast_tiles is None:
         blast_tiles = []

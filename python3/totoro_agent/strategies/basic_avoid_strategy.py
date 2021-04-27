@@ -1,6 +1,6 @@
 from typing import List
 from . import strategy
-from ..utils.util_functions import get_surrounding_tiles, get_empty_locations, get_world_dimension, manhattan_distance, get_shortest_path, get_path_action_seq, min_distance
+from ..utils.util_functions import get_surrounding_tiles, get_empty_locations, get_world_dimension, manhattan_distance, get_shortest_path, get_path_action_seq, min_distance, get_nearest_tile
 from ..utils.constants import ACTIONS
 import random
 
@@ -39,6 +39,7 @@ class BasicAvoidStrategy(strategy.Strategy):
         # min_dist = min(dist_list)
         randomtile = random.choice(safe_tiles)
         closest_tile = min_distance(player_pos, game_state['safe_zones'])
+
         path = get_shortest_path(player_pos, closest_tile, world, entities)
 
         if path is None:
