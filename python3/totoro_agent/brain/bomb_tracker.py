@@ -3,7 +3,7 @@ Used for tracking lifecycle of bombs and explosion areas
 """
 import math
 
-from ..utils.util_functions import get_blast_zone, get_safe_tiles, get_reachable_tiles, get_surrounding_tiles, get_world_dimension
+from ..utils.util_functions import get_blast_zone, get_safe_tiles, get_reachable_tiles, get_surrounding_tiles, get_world_dimension, death_trap
 from ..utils.constants import ENTITIES
 
 
@@ -88,6 +88,7 @@ class BombTracker:
         safe_zones = get_safe_tiles(all_hazards, world, entities)
 
         # Save values into game state
+        game_state['enemy_immediate_trapped'] = death_trap(game_state['enemy_pos'], world, entities)
         game_state['own_active_bombs'] = own_active_bombs
         game_state['enemy_active_bombs'] = enemy_active_bombs
         game_state['all_active_bombs'] = all_active_bombs

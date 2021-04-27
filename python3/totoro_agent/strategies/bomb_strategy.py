@@ -15,12 +15,13 @@ class BombStrategy(strategy.Strategy):
         player_pos = game_state['player_pos']
 
         # check if enemy position is trapped
-        if game_state['enemy_on_bomb'] or game_state['enemy_near_bomb']:
-            print('Totoro laughs at the enemy\'s fate: They\'re in blast range and stuck. Goodbye.')
-            return [ACTIONS['none']]
-        else:
-            print('Totoro leaves a little present')
-            return [ACTIONS['bomb']]
+        if death_trap(enemy_pos, world, entities):
+            if game_state['enemy_on_bomb'] or game_state['enemy_near_bomb']:
+                print('Totoro laughs at the enemy\'s fate: They\'re in blast range and stuck. Goodbye.')
+                return [ACTIONS['none']]
+            else:
+                print('Totoro leaves a little present')
+                return [ACTIONS['bomb']]
 
         # # Literally just bomb.
         # return [ACTIONS['bomb']]
