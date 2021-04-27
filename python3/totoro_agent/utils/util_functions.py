@@ -365,12 +365,12 @@ def is_movement(action):
     return action in actions
 
 # Update value map based on reward entities input
-def update_value_map(rval, value_map, world_dim, max_reward_spread=0, OUTER_MAP_VALUES=((-100, -100),(-100, -100))):
+def update_rec_value_map(rval, value_map, world_dim, max_reward_spread=0, OUTER_MAP_VALUES=((-100, -100),(-100, -100))):
     '''
     Updates the reward value map with mask matrix application, based on reward entity.
     Returns a numpy array representing the updated reward value map.
     '''
-    # Add map padding
+    # add map padding
     pad_dim = (world_dim[0]-1,world_dim[1]-1)
     value_map = np.pad(value_map, (pad_dim,pad_dim), 'constant', constant_values=OUTER_MAP_VALUES)
     rval_offset = pad_dim[0] # padding offset
@@ -379,7 +379,7 @@ def update_value_map(rval, value_map, world_dim, max_reward_spread=0, OUTER_MAP_
     reward_discount = reward/abs(reward)
     reward_spread=0
     
-    # Max reward spread shall not exceed the dimension of the map
+    # max reward spread shall not exceed the dimension of the map
     # (mask matrices of +1 or -1 are applied in additive layers that correspond to the magnitude of the reward value)
     max_reward_spread = min(max_reward_spread, world_dim[0]-1)
     
@@ -409,10 +409,10 @@ def update_value_map(rval, value_map, world_dim, max_reward_spread=0, OUTER_MAP_
             # Updates reward values in the map matrix.
             value_map[xstart:xend,ystart:yend] = value_map[xstart:xend,ystart:yend] + reward_discount
     else:
-        # Reward assigned is 0.
+        # reward assigned is 0
         pass
 
-    # Remove map padding
+    # remove map padding
     value_map = value_map[world_dim[0]-1:world_dim[0]+pad_dim[0],world_dim[0]-1:world_dim[0]+pad_dim[0]]
 
     return value_map
@@ -451,8 +451,12 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
         x, y = wall
         value_map[y, x] = DEFAULT_REWARDS['wall']
 
-    # Sets the reward spread for reward mask application
+    # sets the reward spread for reward mask application
     max_reward_spread = world_dim[0] - 1
+
+    # sets up rectangle mask and diamond mask based reward value maps
+    rec_value_map = value_map
+    dia_value_map = value_map
 
     # get score mask for all non-wall objects
     for item in game_objects:
@@ -467,8 +471,13 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
             else:
                 reward = reward_map[item['type']]
 
+        # update rectangle mask based reward map
         reward_entity = [item['loc'][0], item['loc'][1], reward]
-        value_map = update_value_map(reward_entity, value_map, world_dim, max_reward_spread)
+        rec_value_map = update_rec_value_map(reward_entity, rec_value_map, world_dim, max_reward_spread)
+        
+        # update diamond mask based reward map
+        reward_mask = get_reward_mask((item['loc'][0], item['loc'][1]), reward, world_dim, True)
+        dia_value_map = np.add(dia_value_map, reward_mask)
 
     # re-evaluate for pinch points
     if pinch_points is not None:
@@ -477,8 +486,16 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
             if 'pinch' in reward_map:
                 pinch_reward = reward_map['pinch']
 
+            # Update rectangle mask based reward map
             reward_entity = [tile['loc'][0], tile['loc'][1], pinch_reward]
-            value_map = update_value_map(reward_entity, value_map, world_dim, max_reward_spread)
+            rec_value_map = update_rec_value_map(reward_entity, rec_value_map, world_dim, max_reward_spread)
+
+            # Update diamond mask based reward map
+            reward_mask = get_reward_mask((item['loc'][0], item['loc'][1]), reward, world_dim, True)
+            dia_value_map = np.add(dia_value_map, reward_mask)
+
+    # create reward value map as composite of rectangle mask and diamond mask based reward value map
+    value_map = np.add(rec_value_map, dia_value_map)
 
     return value_map
 
