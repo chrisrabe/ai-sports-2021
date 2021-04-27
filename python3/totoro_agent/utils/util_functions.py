@@ -53,6 +53,19 @@ def manhattan_distance(start, end):
     distance = abs(start[0] - end[0]) + abs(start[1] - end[1])
     return distance
 
+def min_distance(start, tiles):
+    """
+    Returns the closest tile given a starting point and a range of tiles
+    """ 
+    distances = []
+    for tile in tiles:
+        cur_tile_dist = manhattan_distance(start, tile)
+        distances.append(cur_tile_dist)
+    mindist = min(distances)# Grabs first item that has the min dist
+    index = distances.index(mindist)
+    return tiles[index]
+    
+
 
 def get_surrounding_tiles(location, world_width, world_height):
     """Given a tile location as an (x,y) tuple, this function will return the surrounding tiles up, down, left and to
