@@ -13,9 +13,8 @@ class Agent:
             'basic_avoid': BasicAvoidStrategy(),
             'kill': AdvKillStrategy(),
             'detonate': DetonateStrategy(),
-            'bomb': BombStrategy()
+            'bomb': BombStrategy(),
             'block_destroy': BlockDestroyingStrategy(),
-            'detonate': DetonateStrategy()
         }
         self.action_queue = []
         self.prev_tick = -1
