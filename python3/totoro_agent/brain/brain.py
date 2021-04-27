@@ -55,6 +55,11 @@ class Brain:
             return 'basic_avoid' # Basic avoid vs retreat. Retreat value based, basic avoid is coded.
 
 
+        # if enemy in detonation zone and we aren't + if they aren't invulnerable (we'll move out of the way via basic_avoid's top priority)
+        if not game_state['enemy_is_invulnerable'] and (game_state['enemy_pos'] in game_state['detonation_zones'] and (game_state['player_pos'] not in game_state['detonation_zones'])):
+            print('KABOOOM!! DETONATION TIME!')
+            return 'detonate'
+
         # Hard-coding immediate trap (can put in a strategy later)
         ## Check if enemy is trapped: ->check if player can place a bomb that attacks enemy: -> do it.
        # print(game_state['enemy_immediate_trapped'])
@@ -63,12 +68,6 @@ class Brain:
             #place bomb 
             return "bomb" # literally just fucking bomb them??
             
-        # if enemy in detonation zone and we aren't + if they aren't invulnerable (we'll move out of the way via basic_avoid's top priority)
-        if not game_state['enemy_is_invulnerable'] and (game_state['enemy_pos'] in game_state['detonation_zones'] and (game_state['player_pos'] not in game_state['detonation_zones'])):
-            print('KABOOOM!! DETONATION TIME!')
-            return 'detonate'
-
-
 
         # # Killing strategies -> Collides with basic_avoid.
         # elif not game_state['enemy_is_invulnerable'] and not game_state['player_on_bomb']:
