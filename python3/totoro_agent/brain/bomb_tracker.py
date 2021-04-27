@@ -88,7 +88,6 @@ class BombTracker:
         safe_zones = get_safe_tiles(all_hazards, world, entities)
 
         # Save values into game state
-        game_state['enemy_immediate_trapped'] = death_trap(game_state['enemy_pos'], world, entities)
         game_state['own_active_bombs'] = own_active_bombs
         game_state['enemy_active_bombs'] = enemy_active_bombs
         game_state['all_active_bombs'] = all_active_bombs
@@ -128,3 +127,5 @@ class BombTracker:
                 'y': enemy_y,
                 'type': ENTITIES['enemy']
             })
+
+        game_state['enemy_immediate_trapped'] = death_trap(game_state['enemy_pos'], world, entities)
