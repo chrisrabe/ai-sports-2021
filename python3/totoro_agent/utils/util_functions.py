@@ -363,7 +363,7 @@ def is_movement(action):
     return action in actions
 
 # Update value map based on reward entities input
-def update_value_map(rval, value_map, world_dim, OUTER_MAP_VALUES=((-100, -100),(-100, -100))):
+def update_value_map(rval, value_map, world_dim, max_reward_spread=0, OUTER_MAP_VALUES=((-100, -100),(-100, -100))):
     '''
     Updates the reward value map with mask matrix application, based on reward entity.
     Returns a numpy array representing the updated reward value map.
@@ -376,14 +376,21 @@ def update_value_map(rval, value_map, world_dim, OUTER_MAP_VALUES=((-100, -100),
     reward = rval[2]
     reward_discount = reward/abs(reward)
     rval_offset = 8 # padding offset
+    reward_spread=0
+    
+    # Max reward spread shall not exceed the dimension of the map
+    # (mask matrices of +1 or -1 are applied in additive layers that correspond to the magnitude of the reward value)
+    max_reward_spread = min(max_reward_spread, world_dim[0]-1)
     
     if reward > 0:
         # positive reward value
         for i, value in enumerate(range(0, reward, 1)):
-            xstart= rval[1] + rval_offset - i
-            xend = rval[1] + rval_offset + 1 + i
-            ystart = rval[0] + rval_offset - i
-            yend = rval[0] + rval_offset + 1 + i
+            if i <= max_reward_spread:
+                reward_spread = i
+            xstart= rval[1] + rval_offset - reward_spread
+            xend = rval[1] + rval_offset + 1 + reward_spread
+            ystart = rval[0] + rval_offset - reward_spread
+            yend = rval[0] + rval_offset + 1 + reward_spread
 
             # Updates reward values in the map matrix.
             value_map[xstart:xend,ystart:yend] = value_map[xstart:xend,ystart:yend] + reward_discount
@@ -391,10 +398,12 @@ def update_value_map(rval, value_map, world_dim, OUTER_MAP_VALUES=((-100, -100),
     elif reward < 0:
         # negative reward value
         for i, value in enumerate(range(0, reward, -1)):
-            xstart= rval[1] + rval_offset - i
-            xend = rval[1] + rval_offset + 1 + i
-            ystart = rval[0] + rval_offset - i
-            yend = rval[0] + rval_offset + 1 + i
+            if i <= max_reward_spread:
+                reward_spread = i
+            xstart= rval[1] + rval_offset - reward_spread
+            xend = rval[1] + rval_offset + 1 + reward_spread
+            ystart = rval[0] + rval_offset - reward_spread
+            yend = rval[0] + rval_offset + 1 + reward_spread
 
             # Updates reward values in the map matrix.
             value_map[xstart:xend,ystart:yend] = value_map[xstart:xend,ystart:yend] + reward_discount
@@ -441,6 +450,9 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
         x, y = wall
         value_map[y, x] = DEFAULT_REWARDS['wall']
 
+    # Sets the reward spread for reward mask application
+    max_reward_spread = world_dim[0] - 1
+
     # get score mask for all non-wall objects
     for item in game_objects:
         if use_default:
@@ -455,7 +467,7 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
                 reward = reward_map[item['type']]
 
         reward_entity = [item['loc'][0], item['loc'][1], reward]
-        value_map = update_value_map(reward_entity, value_map, world_dim)
+        value_map = update_value_map(reward_entity, value_map, world_dim, max_reward_spread)
 
     # re-evaluate for pinch points
     if pinch_points is not None:
@@ -465,7 +477,7 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
                 pinch_reward = reward_map['pinch']
 
             reward_entity = [tile['loc'][0], tile['loc'][1], pinch_reward]
-            value_map = update_value_map(reward_entity, value_map, world_dim)
+            value_map = update_value_map(reward_entity, value_map, world_dim, max_reward_spread)
 
     return value_map
 
