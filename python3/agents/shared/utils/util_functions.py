@@ -727,3 +727,10 @@ def get_safe_tiles(hazard_tiles, world, entities):
             if tile not in hazard_tiles and is_walkable(tile, entities):
                 safe_tiles.append(tile)
     return safe_tiles
+
+
+def dummy_bomb(location, blast_diameter):
+    """
+    Returns a dummy bomb. Useful for determining traps.
+    """
+    return {'coord': location, 'blast_diameter': blast_diameter}

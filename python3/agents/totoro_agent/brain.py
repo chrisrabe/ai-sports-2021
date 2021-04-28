@@ -4,7 +4,6 @@ Tracks the game state and decides on next strategy to execute
 
 from ..shared.trackers import BombTracker, EnemyTracker, MapTracker, PickupTracker
 
-
 class Brain:
     def __init__(self):
         self.bomb_tracker = BombTracker()
@@ -60,7 +59,7 @@ class Brain:
     
         # Hard-coding immediate trap (can put in a strategy later)
         ## Check if enemy is trapped: ->check if player can place a bomb that attacks enemy: -> do it.
-        elif game_state['enemy_immediate_trapped'] and (game_state['player_inv_bombs'] > 0 and not game_state['enemy_near_bomb']):  # Immediate trapped also takes into account whether the player is there.
+        elif (game_state['enemy_immediate_trapped'] or game_state['enemy_onestep_trapped']) and (game_state['player_inv_bombs'] > 0 and not game_state['enemy_near_bomb']):  # Immediate trapped also takes into account whether the player is there.
 
             print("I think the enemy is trapped so I'm placing a bomb right now!!", game_state['tick'])
            # print(game_state['enemy_immediate_trapped'],game_state['player_inv_bombs'] > 0 and not game_state['enemy_near_bomb'])
@@ -74,4 +73,4 @@ class Brain:
         else:
             print("I'ma stalk.")
             return 'stalk'
-        print("Why would you print this? YOu royally fucked up.")
+        print("Why would you print this? YOu royally fucked up. How is this even possible?")
