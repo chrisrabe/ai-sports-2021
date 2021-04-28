@@ -726,3 +726,8 @@ def get_safe_tiles(hazard_tiles, world, entities):
             if tile not in hazard_tiles and is_walkable(tile, entities):
                 safe_tiles.append(tile)
     return safe_tiles
+
+
+def move_results_in_ouchie(location, move, hazards):
+    tile = get_tile_from_move(location, move)
+    return tile in hazards

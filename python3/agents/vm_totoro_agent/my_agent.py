@@ -30,7 +30,7 @@ class Agent:
             strategy_name = self.brain.get_next_strategy(game_state)
             strategy = self.strategies.get(strategy_name) 
             actions = strategy.execute(game_state)
-            print(f'executing {strategy_name}: {actions}')
+            print(f'Tick {tick_number}: executing {strategy_name}: {actions}')
             self.action_queue = self.action_queue + actions
 
         # print(game_state) #-> To check if you've added new things to game_state
