@@ -1,8 +1,8 @@
 from typing import List
 from . import strategy
-from ..utils.util_functions import get_surrounding_tiles, get_empty_locations, get_world_dimension, manhattan_distance, get_shortest_path, get_path_action_seq, min_distance, get_nearest_tile
+from ..utils.util_functions import get_surrounding_tiles, get_empty_locations, get_world_dimension, \
+    get_shortest_path, get_path_action_seq, min_distance
 from ..utils.constants import ACTIONS
-import random
 
 
 class BasicAvoidStrategy(strategy.Strategy):

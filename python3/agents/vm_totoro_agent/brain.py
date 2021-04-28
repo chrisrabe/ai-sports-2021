@@ -2,10 +2,7 @@
 Tracks the game state and decides on next strategy to execute
 """
 
-from .bomb_tracker import BombTracker
-from .enemy_tracker import EnemyTracker
-from .map_tracker import MapTracker
-from .pickup_tracker import PickupTracker
+from ..shared.trackers import BombTracker, EnemyTracker, MapTracker, PickupTracker
 
 
 class Brain:

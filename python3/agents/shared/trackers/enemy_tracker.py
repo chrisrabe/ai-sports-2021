@@ -3,7 +3,8 @@ Used to track all information about the enemy such as its health,
 ammo, etc.
 """
 
-from ..utils.util_functions import get_value_map_object, get_surrounding_empty_tiles, get_world_dimension, get_surrounding_tiles, death_trap
+from ..utils.util_functions import get_value_map_object, get_surrounding_empty_tiles, get_world_dimension, get_surrounding_tiles
+
 
 class EnemyTracker:
     def __init__(self):

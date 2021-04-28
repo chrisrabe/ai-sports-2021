@@ -1,7 +1,6 @@
 """
 Used to track all information about the ores (their HP, etc)
 """
-from ..utils.util_functions import get_world_dimension
 from ..utils.constants import ENTITIES
 
 
