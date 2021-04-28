@@ -44,8 +44,9 @@ class Brain:
 
         # If you're in the blast tiles, do RETREAT
         # print(game_state['enemy_immediate_trapped'], "in brain")
-        if (game_state['player_pos'] in game_state['all_hazard_zones'] or (game_state['player_on_bomb']) and not
-        game_state['player_is_invulnerable']):
+        #print("I am the fucking player!!!", game_state['player_pos'])
+        
+        if game_state['player_pos'] in game_state['all_hazard_zones']:
             print('HOLY RUN FOR YOUR LIFE YOU ARE GONNA GET RAILED')
             return 'basic_avoid'  # Basic avoid vs retreat. Retreat value based, basic avoid is coded.
 

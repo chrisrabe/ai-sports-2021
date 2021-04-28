@@ -60,7 +60,7 @@ class EnemyTracker:
         if game_state['player_pos'] in enemy_surrounding_empty_tiles: 
             enemy_surrounding_empty_tiles.remove(game_state['player_pos']) # Remove player pos from surround (why is he in there lol)
             
-        print("Player pos:", game_state['enemy_pos'], "Length of enem surrounding empty tiles: ",  len(enemy_surrounding_empty_tiles), enemy_surrounding_empty_tiles, print(len(enemy_surrounding_empty_tiles) ==0))
+        print("Player pos:", game_state['enemy_pos'], "Length of enem surrounding empty tiles (from enemy_tracker): ",  len(enemy_surrounding_empty_tiles), enemy_surrounding_empty_tiles, print(len(enemy_surrounding_empty_tiles) ==0))
         
         if len(enemy_surrounding_empty_tiles) == 0: # Dude can't move. Technically, this 'immediate trapped' isn't the real value. It's actually trapped AND player is one of the tiles.
             #check if our player is in one of the tiles: -> 
