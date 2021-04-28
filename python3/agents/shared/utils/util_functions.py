@@ -218,10 +218,7 @@ def get_path_action_seq(location: object, path: List) -> List:
             action = move_to_tile(from_tile, to_tile)
             action_seq.append(action)
             i += 1
-            if [action_seq.pop(0)] is not None:
-                return [action_seq.pop(0)]
-            else:
-                return [ACTIONS["none"]]
+        return action_seq
     return [ACTIONS["none"]]
 
 

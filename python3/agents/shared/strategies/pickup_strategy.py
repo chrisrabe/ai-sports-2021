@@ -36,4 +36,4 @@ class PickupStrategy(strategy.Strategy):
         if path is None:
             return [ACTIONS['none']]
         else:
-            return get_path_action_seq(player_pos, path)
+            return get_path_action_seq(player_pos, path).pop(0)
