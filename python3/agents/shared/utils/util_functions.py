@@ -218,7 +218,7 @@ def get_path_action_seq(location: object, path: List) -> List:
             action = move_to_tile(from_tile, to_tile)
             action_seq.append(action)
             i += 1
-        return action_seq
+        return [action_seq.pop(0)]
     return [ACTIONS["none"]]
 
 
