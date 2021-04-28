@@ -19,7 +19,7 @@ class PickupStrategy(strategy.Strategy):
             if manhattan_distance(player_pos, game_state['enemy_pos']) < 2:
                 if element in powerup_list:
                     powerup_list.remove(element)
-                    
+
                 if element in ammo_list:
                     ammo_list.remove(element)
     
@@ -27,11 +27,11 @@ class PickupStrategy(strategy.Strategy):
         if ammo_list:
             reachable_ammo = get_reachable_tiles(player_pos, ammo_list, world, entities,game_state['hazard_zones'])
             nearest_ammo = get_nearest_tile(player_pos, reachable_ammo)
-            path = get_shortest_path(player_pos, nearest_ammo, world, entities)
+            path = get_shortest_path(player_pos, nearest_ammo, world, entities, game_state['hazard_zones'], game_state['player_is_invulnerable'])
         elif powerup_list:
             reachable_powerup = get_reachable_tiles(player_pos, powerup_list, world, entities)
             nearest_powerup = get_nearest_tile(player_pos, reachable_powerup)
-            path = get_shortest_path(player_pos, nearest_powerup, world, entities, game_state['hazard_zones'])
+            path = get_shortest_path(player_pos, nearest_powerup, world, entities, game_state['hazard_zones'], game_state['player_is_invulnerable'])
 
         if path is None:
             return [ACTIONS['none']]

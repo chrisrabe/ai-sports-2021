@@ -42,10 +42,7 @@ class Brain:
         # If you're in the blast tiles, stop being in them loser.
         # print(game_state['tick'], "player pos", game_state['player_pos'], "enemy bombs", game_state['enemy_active_bombs'], "\n Game State hazard zones:", game_state['hazard_zones'], game_state['player_pos'] in game_state['hazard_zones'])
 
-        # If you're in the blast tiles, do RETREAT
-        # print(game_state['enemy_immediate_trapped'], "in brain")
-        #print("I am the fucking player!!!", game_state['player_pos'])
-        
+        print("I'm the totoro agent algo bot!!")
         if game_state['player_pos'] in game_state['all_hazard_zones']:
             print('HOLY RUN FOR YOUR LIFE YOU ARE GONNA GET RAILED')
             return 'basic_avoid'  # Basic avoid vs retreat. Retreat value based, basic avoid is coded.
@@ -58,11 +55,9 @@ class Brain:
 
         # Hard-coding immediate trap (can put in a strategy later)
         ## Check if enemy is trapped: ->check if player can place a bomb that attacks enemy: -> do it.
-        elif game_state['enemy_immediate_trapped'] and (game_state['player_inv_bombs'] > 0 and not game_state[
-            'enemy_near_bomb']):  # Immediate trapped also takes into account whether the player is there.
+        elif game_state['enemy_immediate_trapped'] and (game_state['player_inv_bombs'] > 0 and not game_state['enemy_near_bomb']):  # Immediate trapped also takes into account whether the player is there.
 
-            print(game_state['enemy_immediate_trapped'],
-                  game_state['player_inv_bombs'] > 0 and not game_state['enemy_near_bomb'])
+           # print(game_state['enemy_immediate_trapped'],game_state['player_inv_bombs'] > 0 and not game_state['enemy_near_bomb'])
             print("I think the enemy is trapped so I'm placing a bomb right now!!", game_state['tick'])
             # place bomb
             return "bomb"  # literally just fucking bomb them??
@@ -73,4 +68,6 @@ class Brain:
             return 'pickup'
 
         else:
+            print("I'ma stalk.")
             return 'stalk'
+        print("Why would you print this? YOu royally fucked up.")

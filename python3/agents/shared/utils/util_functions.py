@@ -122,7 +122,7 @@ def can_enqueue(queue, neighbour):
     return True
 
 
-def get_shortest_path(start, end, world, entities, blast_tiles=None):
+def get_shortest_path(start, end, world, entities, blast_tiles=None, player_invulnerable = False):
     """
     Finds the shortest path from the start node to the end node.
     Returns an array of (x,y) tuples. Uses A* search algorithm
@@ -166,8 +166,9 @@ def get_shortest_path(start, end, world, entities, blast_tiles=None):
         neighbours = get_surrounding_tiles(current_node.position, world_width, world_height)
 
         for tile in neighbours:
-            if tile in blast_tiles:
-                continue  # skip if blast tile
+            if (tile in blast_tiles):
+                if not player_invulnerable:
+                    continue  # skip if blast tile
 
             if not is_walkable(tile, entities):
                 continue  # skip if not walkable
@@ -217,14 +218,14 @@ def get_path_action_seq(location: object, path: List) -> List:
             action = move_to_tile(from_tile, to_tile)
             action_seq.append(action)
             i += 1
-        return action_seq
+        return action_seq.pop
     return [ACTIONS["none"]]
 
 
 def get_blast_zone(bomb_loc, diameter, entities, world):
     """
     Retrieves the tiles affected by the bomb blast
-	Returns list of blast tiles [[x,y],[x2,y2], ...]
+    Returns list of blast tiles [[x,y],[x2,y2], ...]
     """
     world_width, world_height = get_world_dimension(world)
     radius = int(diameter / 2)

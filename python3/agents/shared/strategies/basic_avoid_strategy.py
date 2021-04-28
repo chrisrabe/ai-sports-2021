@@ -39,7 +39,7 @@ class BasicAvoidStrategy(strategy.Strategy):
         # min_dist = min(dist_list)
         closest_tile = min_distance(player_pos, game_state['safe_zones'])
 
-        path = get_shortest_path(player_pos, closest_tile, world, entities)
+        path = get_shortest_path(player_pos, closest_tile, world, entities, player_invulnerable=game_state['player_is_invulnerable'])
 
         if path is None:
             print("shat myself inside basic_avoid. This shouldn't ever happen; means you called this when he wasn't in hazard, or if path can't be found (Check the brain?)")

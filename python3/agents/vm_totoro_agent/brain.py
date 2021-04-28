@@ -36,6 +36,7 @@ class Brain:
         """
 
         # If you're in the blast tiles, do RETREAT
+        print("I'm the vm totoro agent!!")
         if game_state['player_pos'] in game_state['all_hazard_zones'] or game_state['player_on_bomb']:
             print('HOLY RUN FOR YOUR LIFE YOU ARE GONNA GET RAILED')
             return 'retreat'

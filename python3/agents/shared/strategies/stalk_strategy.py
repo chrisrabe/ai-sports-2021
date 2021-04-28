@@ -16,7 +16,7 @@ class StalkStrategy(strategy.Strategy):
         stalk_zone = get_blast_zone(enemy_pos, 1, entities, world)
         closest_tile = get_nearest_tile(player_pos, stalk_zone)
 
-        path = get_shortest_path(player_pos, closest_tile, world, entities, game_state['hazard_zones'])
+        path = get_shortest_path(player_pos, closest_tile, world, entities, game_state['hazard_zones'], game_state['player_is_invulnerable'])
         if path:
             path = path[:-1]  # remove last because it's the enemy_player
         return get_path_action_seq(player_pos, path)
