@@ -1,7 +1,9 @@
 from typing import List
 
 from . import strategy
-from ..utils.util_functions import get_shortest_path, get_path_action_seq, get_blast_zone, get_nearest_tile
+from ..utils.util_functions import get_shortest_path, get_path_action_seq, get_blast_zone, get_nearest_tile, \
+    move_results_in_ouchie
+from ..utils.constants import ACTIONS
 
 
 class StalkStrategy(strategy.Strategy):
@@ -19,4 +21,9 @@ class StalkStrategy(strategy.Strategy):
         path = get_shortest_path(player_pos, closest_tile, world, entities, game_state['hazard_zones'])
         if path:
             path = path[:-1]  # remove last because it's the enemy_player
-        return get_path_action_seq(player_pos, path)
+
+        action_seq = get_path_action_seq(player_pos, path)
+        if len(action_seq) > 0:
+            return [action_seq.pop(0)]
+        else:
+            return action_seq
