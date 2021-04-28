@@ -1,5 +1,5 @@
 import unittest
-from python3.totoro_agent.client.game_state import GameState
+from python3.agents.totoro_agent.client import GameState
 from unittest import IsolatedAsyncioTestCase
 from jsonschema import validate
 import copy

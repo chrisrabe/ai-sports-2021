@@ -24,14 +24,9 @@ class Client:
         next_action = self.agent.next_move(tick_number, game_state)
         await self.handle_next_action(next_action, game_state)
 
-    def get_bomb_to_detonate(self, game_state) -> [int, int] or None:
-        agent_number = game_state.get("connection").get("agent_number")
-        entities = self._client._state.get("entities")
-        bombs = list(filter(lambda entity: entity.get(
-            "owner") == agent_number and entity.get("type") == "b", entities))
-        bomb = next(iter(bombs or []), None)
-        if bomb != None:
-            return [bomb.get("x"), bomb.get("y")]
+    def get_bomb_to_detonate(self, game_state) -> tuple[int, int] or None:
+        if 'detonation_target' in game_state:
+            return game_state['detonation_target']
         else:
             return None
 
@@ -43,7 +38,7 @@ class Client:
             await self._client.send_bomb()
         elif action == "detonate":
             bomb_coordinates = self.get_bomb_to_detonate(game_state)
-            if bomb_coordinates != None:
+            if bomb_coordinates is not None:
                 x, y = bomb_coordinates
                 await self._client.send_detonate(x, y)
         else:

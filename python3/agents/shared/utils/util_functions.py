@@ -1,7 +1,8 @@
 from typing import List
+from collections import defaultdict
 import numpy as np
 
-from .constants import ACTIONS, DEFAULT_REWARDS
+from .constants import ACTIONS, DEFAULT_REWARDS, BLOCKAGES
 from .structures import Node
 
 
@@ -61,8 +62,8 @@ def get_surrounding_tiles(location, world_width, world_height):
 
     # find all the surrounding tiles relative to us
     # location[0] = col index; location[1] = row index
-    tile_up = (x, y - 1)
-    tile_down = (x, y + 1)
+    tile_up = (x, y + 1)
+    tile_down = (x, y - 1)
     tile_left = (x - 1, y)
     tile_right = (x + 1, y)
 
@@ -79,7 +80,7 @@ def get_surrounding_tiles(location, world_width, world_height):
     return valid_surrounding_tiles
 
 
-def get_empty_tiles(tiles, entities):
+def get_empty_tiles(tiles, entities, ignore_player=False):
     """
     Given a list of tiles, return ones that are actually empty
     """
@@ -188,12 +189,17 @@ def get_shortest_path(start, end, world, entities, blast_tiles=None):
     return None  # no path found
 
 
-def is_walkable(tile, entities):
+def is_walkable(tile, entities, ignore_player=True):
     """
     Returns true if the tile is walkable
     """
-    collectible = ["a", "bp"]
-    return entity_at(tile, entities) in collectible or entity_at(tile, entities) is None
+    collectible = ["a", "bp"]  # Ammo, powerup
+    player = ['p', 'e', 'eb', 'pb']  # Player, enemy,
+    entity = entity_at(tile, entities)
+    if ignore_player:
+        return entity in collectible or entity is None or entity in player
+    else:
+        return entity in collectible or entity is None
 
 
 def get_path_action_seq(location: object, path: List) -> List:
@@ -231,27 +237,30 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
         if is_in_bounds(tile, world_width, world_height) and entity_at(tile, entities) not in block_tile:
             blast_tiles.append(tile)
         else:
-            cur_loc = bomb_loc
             break
         cur_loc = tile
+
+    cur_loc = bomb_loc
 
     for i in range(radius):
         tile = get_tile_from_move(cur_loc, ACTIONS["right"])
         if is_in_bounds(tile, world_width, world_height) and entity_at(tile, entities) not in block_tile:
             blast_tiles.append(tile)
         else:
-            cur_loc = bomb_loc
             break
         cur_loc = tile
+
+    cur_loc = bomb_loc
 
     for i in range(radius):
         tile = get_tile_from_move(cur_loc, ACTIONS["up"])
         if is_in_bounds(tile, world_width, world_height) and entity_at(tile, entities) not in block_tile:
             blast_tiles.append(tile)
         else:
-            cur_loc = bomb_loc
             break
         cur_loc = tile
+
+    cur_loc = bomb_loc
 
     for i in range(radius):
         tile = get_tile_from_move(cur_loc, ACTIONS["down"])
@@ -265,6 +274,9 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
 
 
 def get_nearest_tile(location, tiles):
+    """
+    Returns nearest tile in a list of tiles
+    """
     if tiles:
         tile_dist = 1000
         closest_tile = tiles[0]
@@ -278,9 +290,23 @@ def get_nearest_tile(location, tiles):
         return None
 
 
+def min_distance(start, tiles):
+    """
+    Returns the closest tile given a starting point and a range of tiles (picks the first one)
+    """
+    tiles.reverse()
+    distances = []
+    for tile in tiles:
+        cur_tile_dist = manhattan_distance(start, tile)
+        distances.append(cur_tile_dist)
+    mindist = min(distances)  # Grabs first item that has the min dist
+    index = distances.index(mindist)
+    return tiles[index]
+
+
 def get_reachable_tiles(location, tiles, world, entities, blast_tiles=None):
     """
-    Returns a list of reachable tiles
+    Returns a list of reachable tiles (will pick the last one)
     """
     if blast_tiles is None:
         blast_tiles = []
@@ -293,21 +319,23 @@ def get_reachable_tiles(location, tiles, world, entities, blast_tiles=None):
     return reachable_tiles
 
 
-def get_surrounding_empty_tiles(location, world, entities):
+def get_surrounding_empty_tiles(location, world, entities, ignore_player=True):
     """
     Retrieves surrounding walkable tile around the location
     """
     world_width, world_height = get_world_dimension(world)
     surrounding_tiles = get_surrounding_tiles(location, world_width, world_height)
-    empty_tiles = get_empty_tiles(surrounding_tiles, entities)
+    empty_tiles = get_empty_tiles(surrounding_tiles, entities, ignore_player)
     return empty_tiles
 
 
-def get_empty_locations(tiles, world):
-    world_width, world_height = get_world_dimension(world)
+def get_empty_locations(tiles, world, entities):
+    """
+    Given a list of tiles, returns a list of empty tiles surrounding them
+    """
     empty_locations = []
     for tile in tiles:
-        empty_tiles = get_surrounding_empty_tiles(tile, world_width, world_height)
+        empty_tiles = get_surrounding_empty_tiles(tile, world, entities)
         empty_locations = empty_locations + empty_tiles
     return empty_locations
 
@@ -334,6 +362,9 @@ def get_matrix_val_for_tile(tile, matrix, map_width):
 
 
 def get_tile_from_move(location, move):
+    """
+    Takes in location and an action (string). Returns location of tile moved to.
+    """
     x, y = location
 
     if move == ACTIONS["down"]:
@@ -358,7 +389,62 @@ def is_movement(action):
     return action in actions
 
 
-def get_value_map(world, walls, game_objects, reward_map, pinch_points=None):
+# Update value map based on reward entities input
+def update_rec_value_map(rval, value_map, world_dim, max_reward_spread=0,
+                         OUTER_MAP_VALUES=((-100, -100), (-100, -100))):
+    '''
+    Updates the reward value map with mask matrix application, based on reward entity.
+    Returns a numpy array representing the updated reward value map.
+    '''
+    # add map padding
+    pad_dim = (world_dim[0] - 1, world_dim[1] - 1)
+    value_map = np.pad(value_map, (pad_dim, pad_dim), 'constant', constant_values=OUTER_MAP_VALUES)
+    rval_offset = pad_dim[0]  # padding offset
+
+    reward = rval[2]
+    reward_discount = reward / abs(reward)
+    reward_spread = 0
+
+    # max reward spread shall not exceed the dimension of the map
+    # (mask matrices of +1 or -1 are applied in additive layers that correspond to the magnitude of the reward value)
+    max_reward_spread = min(max_reward_spread, world_dim[0] - 1)
+
+    if reward > 0:
+        # positive reward value
+        for i, value in enumerate(range(0, reward, 1)):
+            if i <= max_reward_spread:
+                reward_spread = i
+            xstart = rval[1] + rval_offset - reward_spread
+            xend = rval[1] + rval_offset + 1 + reward_spread
+            ystart = rval[0] + rval_offset - reward_spread
+            yend = rval[0] + rval_offset + 1 + reward_spread
+
+            # Updates reward values in the map matrix.
+            value_map[xstart:xend, ystart:yend] = value_map[xstart:xend, ystart:yend] + reward_discount
+
+    elif reward < 0:
+        # negative reward value
+        for i, value in enumerate(range(0, reward, -1)):
+            if i <= max_reward_spread:
+                reward_spread = i
+            xstart = rval[1] + rval_offset - reward_spread
+            xend = rval[1] + rval_offset + 1 + reward_spread
+            ystart = rval[0] + rval_offset - reward_spread
+            yend = rval[0] + rval_offset + 1 + reward_spread
+
+            # Updates reward values in the map matrix.
+            value_map[xstart:xend, ystart:yend] = value_map[xstart:xend, ystart:yend] + reward_discount
+    else:
+        # reward assigned is 0
+        pass
+
+    # remove map padding
+    value_map = value_map[world_dim[0] - 1:world_dim[0] + pad_dim[0], world_dim[0] - 1:world_dim[0] + pad_dim[0]]
+
+    return value_map
+
+
+def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use_default=True):
     """
     Returns a numpy array map representing the values
 
@@ -376,26 +462,48 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None):
     }
 
     pinch points must be an array of (x,y) tuples or is None (articulation points)
+
+    use_default is a boolean to represent whether we should use the default reward map
     """
 
     # TODO are there numpy helper functions to help with these logic?
 
     # create 2D matrix filled with zeroes
-    value_map = np.zeros(get_world_dimension(world))
+    world_dim = get_world_dimension(world)
+    value_map = np.zeros(world_dim)
 
     # replace all walls with -10
     for wall in walls:
         x, y = wall
         value_map[y, x] = DEFAULT_REWARDS['wall']
 
+    # sets the reward spread for reward mask application
+    max_reward_spread = world_dim[0] - 1
+
+    # sets up rectangle mask and diamond mask based reward value maps
+    rec_value_map = value_map
+    dia_value_map = value_map
+
     # get score mask for all non-wall objects
     for item in game_objects:
-        if item['type'] in reward_map:
-            reward = reward_map[item['type']]
+        if use_default:
+            if item['type'] in reward_map:
+                reward = reward_map[item['type']]
+            else:
+                reward = DEFAULT_REWARDS[item['type']]
         else:
-            reward = DEFAULT_REWARDS[item['type']]
+            if item['type'] not in reward_map:
+                continue
+            else:
+                reward = reward_map[item['type']]
+
+        # update rectangle mask based reward map
+        reward_entity = [item['loc'][0], item['loc'][1], reward]
+        rec_value_map = update_rec_value_map(reward_entity, rec_value_map, world_dim, max_reward_spread)
+
+        # update diamond mask based reward map
         reward_mask = get_reward_mask(item, reward, world)
-        value_map = np.add(value_map, reward_mask)
+        dia_value_map = np.add(dia_value_map, reward_mask)
 
     # re-evaluate for pinch points
     if pinch_points is not None:
@@ -403,13 +511,22 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None):
             pinch_reward = DEFAULT_REWARDS['pinch']
             if 'pinch' in reward_map:
                 pinch_reward = reward_map['pinch']
-            reward_mask = get_reward_mask(tile, pinch_reward, world)
-            value_map = np.add(value_map, reward_mask)
+
+            # Update rectangle mask based reward map
+            reward_entity = [tile[0], tile[1], pinch_reward]
+            rec_value_map = update_rec_value_map(reward_entity, rec_value_map, world_dim, max_reward_spread)
+
+            # Update diamond mask based reward map
+            reward_mask = get_reward_mask(tile, pinch_reward, world, True)
+            dia_value_map = np.add(dia_value_map, reward_mask)
+
+    # create reward value map as composite of rectangle mask and diamond mask based reward value map
+    value_map = np.add(rec_value_map, dia_value_map)
 
     return value_map
 
 
-def get_reward_mask(item, reward, world):
+def get_reward_mask(item, reward, world, is_tuple=False):
     """
     Returns reward mask
     """
@@ -420,7 +537,10 @@ def get_reward_mask(item, reward, world):
 
     # modified iterative floodfill algorithm
     to_fill = set()
-    to_fill.add(item['loc'])
+    if is_tuple:
+        to_fill.add(item)
+    else:
+        to_fill.add(item['loc'])
     while len(to_fill) != 0:
         cur_tile = to_fill.pop()
         neighbours = get_surrounding_tiles(cur_tile, world_width, world_height)
@@ -496,3 +616,113 @@ def get_move_from_value_map(cur_loc, value_map, world):
             max_val = tile_val
             new_loc = tile
     return move_to_tile(cur_loc, new_loc)
+
+
+def get_articulation_points(player_loc, world, entities) -> list[tuple[int, int]]:
+    """
+    Retrieves the articulation points for the walkable tiles in the map
+    relative to the player position
+    """
+    # (x, y) -> set of neighbours
+    graph = get_undirected_graph(player_loc, world, entities)
+    visited = set()
+    art = set()
+    parents = {}
+    low = {}
+
+    # helper dfs
+    def dfs(node_id, node, parent):
+        visited.add(node)
+        parents[node] = parent
+        num_edges = 0
+        low[node] = node_id
+
+        for nei in graph[node]:
+            if nei == parent:
+                continue
+            if nei not in visited:
+                parents[nei] = node
+                num_edges += 1
+                dfs(node_id + 1, nei, node)
+
+            low[node] = min(low[node], low[nei])
+
+            if node_id <= low[nei]:
+                if parents[node] != -1:  # must not be root
+                    art.add(node)
+
+        if parents[node] == -1 and num_edges >= 2:  # if root - different condition applies
+            art.add(node)
+
+    # TODO stress test!!
+    # if recursive DFS fk's up with stackoverflow, replace with iterative DFS
+    # Use custom graph node to propagate lowest up to parent
+
+    dfs(0, player_loc, -1)
+    return list(art)
+
+
+def get_undirected_graph(player_loc, world, entities):
+    """
+    Iteratively creates an undirected graph relative to player location
+    """
+    queue = [player_loc]
+    graph = defaultdict(set)
+    visited = set()
+
+    while len(queue) != 0:
+        node = queue.pop(0)
+        visited.add(node)
+        neighbours = get_surrounding_empty_tiles(node, world, entities)
+        for nei in neighbours:
+            graph[node].add(nei)
+            graph[nei].add(node)
+            if nei not in visited:
+                queue.append(nei)
+    return graph
+
+
+def death_trap(tile, world, entities) -> bool:
+    """
+    Checks whether the tile no longer has walkable tiles
+    """
+    world_width, world_height = get_world_dimension(world)
+    neighbours = get_surrounding_tiles(tile, world_width, world_height)
+    for nei in neighbours:
+        if entity_at(nei, entities) not in BLOCKAGES:
+            return False
+    return True
+
+
+def get_detonation_target(target_pos, own_bombs, world, entities) -> tuple[int, int] or None:
+    """
+    Retrieves the bomb that affects the target.
+    Checks if any of our own bomb will have a blast zone at the target position.
+    """
+    bomb_coords = []
+    bomb_dict = {}
+    for bomb in own_bombs:
+        coord = bomb['coord']
+        bomb_coords.append(coord)
+        bomb_dict[coord] = bomb
+    reachable_bombs = get_reachable_tiles(target_pos, bomb_coords, world, entities)
+    for tile in reachable_bombs:
+        bomb = bomb_dict[tile]
+        blast_zone = get_blast_zone(tile, bomb['blast_diameter'], entities, world)
+        if target_pos in blast_zone:
+            return tile
+    return None
+
+
+def get_safe_tiles(hazard_tiles, world, entities):
+    """
+    Returns every (walkable) tile in the world which isn't in the tiles given
+    """
+    world_width, world_height = get_world_dimension(world)
+    safe_tiles = []
+    for y in range(world_height):
+        for x in range(world_width):
+            tile = (x, y)
+            if tile not in hazard_tiles and is_walkable(tile, entities):
+                safe_tiles.append(tile)
+    return safe_tiles

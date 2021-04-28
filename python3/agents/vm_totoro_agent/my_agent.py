@@ -1,4 +1,4 @@
-from .strategies import RandomStrategy, RetreatStrategy, StalkStrategy, PickupStrategy
+from ..shared.strategies import RandomStrategy, RetreatStrategy, StalkStrategy, PickupStrategy, AdvKillStrategy, DetonateStrategy, BlockDestroyingStrategy, SimpleBombStrategy
 from .brain import Brain
 
 
@@ -9,8 +9,11 @@ class Agent:
             'random': RandomStrategy(),
             'retreat': RetreatStrategy(),
             'pickup': PickupStrategy(),
-            'stalk': StalkStrategy()
-            # trap: 4
+            'stalk': StalkStrategy(),
+            'kill': AdvKillStrategy(),
+            'block_destroy': BlockDestroyingStrategy(),
+            'detonate': DetonateStrategy(),
+            'simple_bomb': SimpleBombStrategy()
         }
         self.action_queue = []
         self.prev_tick = -1
@@ -27,7 +30,7 @@ class Agent:
             strategy_name = self.brain.get_next_strategy(game_state)
             strategy = self.strategies.get(strategy_name) 
             actions = strategy.execute(game_state)
-
+            print(f'executing {strategy_name}: {actions}')
             self.action_queue = self.action_queue + actions
 
         # print(game_state) #-> To check if you've added new things to game_state
