@@ -45,5 +45,7 @@ class BasicAvoidStrategy(strategy.Strategy):
             print("shat myself inside basic_avoid. This shouldn't ever happen; means you called this when he wasn't in hazard, or if path can't be found (Check the brain?)")
             return [ACTIONS['none']]
         else:
-            return get_path_action_seq(player_pos, path).pop(0)
+#            print("path, etc", path, get_path_action_seq(player_pos, path))
+            return [get_path_action_seq(player_pos, path).pop(0)]
+
         
