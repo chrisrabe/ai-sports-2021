@@ -1,9 +1,11 @@
-from typing import List
 from collections import defaultdict
+from typing import List
+
 from . import strategy
-from ..utils.util_functions import get_surrounding_empty_tiles, get_entity_coords, get_reachable_tiles, \
-    get_num_escape_paths, get_nearest_tile, get_shortest_path, get_path_action_seq
 from ..utils.constants import ACTIONS
+from ..utils.util_functions import get_surrounding_empty_tiles, get_entity_coords, get_reachable_tiles, \
+    get_num_escape_paths, get_nearest_tile, get_shortest_path, get_path_action_seq, get_surrounding_tiles, \
+    get_world_dimension, convert_entities_to_coords
 
 
 class BlockDestroyingStrategy(strategy.Strategy):
@@ -25,15 +27,33 @@ class BlockDestroyingStrategy(strategy.Strategy):
         else:
             return tiles.pop()
 
-    def execute(self, game_state: object) -> List[str]:
+    def execute(self, game_state: dict) -> List[str]:
         player_pos = game_state['player_pos']
         enemy_pos = game_state['enemy_pos']
         player_diam = game_state['player_diameter']
         world = game_state['world']
         entities = game_state['entities']
         destroyable_blocks = game_state['destroyable_blocks']
+        own_bombs = game_state['own_active_bombs']
+        destroyable_coords = convert_entities_to_coords(destroyable_blocks)
+
+        world_width, world_height = get_world_dimension(world)
 
         # if any active bombs are next to destroyable blocks, detonate them
+        can_detonate = False
+        for bomb in own_bombs:
+            coord = bomb['coord']
+            surrounding_tiles = get_surrounding_tiles(coord, world_width, world_height)
+            for tile in surrounding_tiles:
+                if tile in destroyable_coords:
+                    can_detonate = True
+                    game_state['detonation_target'] = coord
+                    break
+            if can_detonate:
+                break  # no need to look further
+
+        if can_detonate:
+            return [ACTIONS['detonate']]  # Blow up the bomb
 
         if not destroyable_blocks:
             return [ACTIONS['none']]  # do nothing. No hunt
