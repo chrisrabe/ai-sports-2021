@@ -1,7 +1,7 @@
 from typing import List
 from . import strategy
 from ..utils.util_functions import get_shortest_path, get_path_action_seq, get_nearest_tile, get_reachable_tiles, \
-    move_results_in_ouchie
+    move_results_in_ouchie, manhattan_distance
 from ..utils.constants import ACTIONS
 
 
