@@ -35,6 +35,10 @@ class Brain:
         If there is bomb: 'retreat'; 
         """
 
+        if not game_state['clear_path_to_enemy']:
+            print('Totoro sleeps. Come get us!!')
+            return 'wait'
+
         # If you're in the blast tiles, do RETREAT
         if game_state['player_pos'] in game_state['all_hazard_zones'] or game_state['player_on_bomb']:
             print('HOLY RUN FOR YOUR LIFE YOU ARE GONNA GET RAILED')
@@ -55,7 +59,7 @@ class Brain:
 
             # If you have ammo, just go for the kill
             # should probably refine this to check opponent vulnerability and trappable
-            if game_state['player_inv_bombs'] != 0 and not game_state['enemy_near_bomb']:
+            if game_state['player_inv_bombs'] != 0 and not game_state['enemy_near_bomb'] and game_state['clear_path_to_enemy']:
                 return 'kill'
 
         # Basic Decision Making
@@ -63,7 +67,5 @@ class Brain:
         if len(game_state['pickup_list']) != 0:  # "Any pickups on the map?"
             print('me gusta I smell some pickups')
             return 'pickup'
-        elif not game_state['clear_path_to_enemy']:
-            return 'block_destroy'
         else:
             return 'stalk'
