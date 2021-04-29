@@ -166,9 +166,8 @@ def get_shortest_path(start, end, world, entities, blast_tiles=None, player_invu
         neighbours = get_surrounding_tiles(current_node.position, world_width, world_height)
 
         for tile in neighbours:
-            if (tile in blast_tiles):
-                if not player_invulnerable:
-                    continue  # skip if blast tile
+            if (tile in blast_tiles) and not player_invulnerable:
+                continue  # skip if blast tile
 
             if not is_walkable(tile, entities):
                 continue  # skip if not walkable
