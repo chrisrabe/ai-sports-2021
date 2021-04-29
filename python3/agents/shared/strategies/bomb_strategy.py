@@ -21,5 +21,5 @@ class BombStrategy(strategy.Strategy):
         else:
             print('Totoro leaves a little present')
             return [ACTIONS['bomb']]
-        else:
-            return [ACTIONS['none']]
+        # else:
+        #     return [ACTIONS['none']]
