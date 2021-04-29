@@ -58,4 +58,5 @@ DEFAULT_REWARDS = {
     'pinch': -2,  # articulation point
     'wall': -10,
     'destructibles_plant': 1,
+    'hazard_zone': -10,
 }
