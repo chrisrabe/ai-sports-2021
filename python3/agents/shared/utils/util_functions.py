@@ -87,7 +87,7 @@ def get_empty_tiles(tiles, entities, ignore_player=False):
     empty_tiles = []
 
     for tile in tiles:
-        if is_walkable(tile, entities):
+        if is_walkable(tile, entities, ignore_player):
             empty_tiles.append(tile)
 
     return empty_tiles
@@ -329,13 +329,13 @@ def get_surrounding_empty_tiles(location, world, entities, ignore_player=True):
     return empty_tiles
 
 
-def get_empty_locations(tiles, world, entities):
+def get_empty_locations(tiles, world, entities, ignore_player=True):
     """
     Given a list of tiles, returns a list of empty tiles surrounding them
     """
     empty_locations = []
     for tile in tiles:
-        empty_tiles = get_surrounding_empty_tiles(tile, world, entities)
+        empty_tiles = get_surrounding_empty_tiles(tile, world, entities, ignore_player)
         empty_locations = empty_locations + empty_tiles
     return empty_locations
 
@@ -731,3 +731,15 @@ def get_safe_tiles(hazard_tiles, world, entities):
 def move_results_in_ouchie(location, move, hazards):
     tile = get_tile_from_move(location, move)
     return tile in hazards
+
+
+def get_num_escape_paths(player_pos, tile, blast_diameter, entities, world):
+    """
+    Gets the number of reachable escape paths if a bomb was placed on a specific tile.
+    """
+    # simulate bombing
+    blast_zone = get_blast_zone(tile, blast_diameter, entities, world)
+    safe_tiles = get_safe_tiles(blast_zone, world, entities)
+    # are there safe tiles that player can reach?
+    reachable_tiles = get_reachable_tiles(player_pos, safe_tiles, world, entities)
+    return len(reachable_tiles)

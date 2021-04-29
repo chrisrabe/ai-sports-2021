@@ -4,7 +4,7 @@ ammo, etc.
 """
 
 from ..utils.util_functions import get_value_map_object, get_surrounding_empty_tiles, get_world_dimension, \
-    get_surrounding_tiles
+    get_surrounding_tiles, get_shortest_path
 from ..utils.constants import MAX_STARE_CONTEST_DURATION
 
 
