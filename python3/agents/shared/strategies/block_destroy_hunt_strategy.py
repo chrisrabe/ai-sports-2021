@@ -49,7 +49,7 @@ class BlockDestroyHuntStrategy(strategy.Strategy):
             hazard_zones_targets = {}
             for coord in hazard_zones:
                 hazard_zones_targets['coord'] = coord
-                hazard_zones_targets['type'] = 'hazard_zones'
+                hazard_zones_targets['type'] = 'hazard_zone'
 
             # navigate to target using value map
             value_map = get_value_map(world, walls, hazard_zones_targets, self.rewards, use_default=False)
