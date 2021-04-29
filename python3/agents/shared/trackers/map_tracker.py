@@ -13,29 +13,20 @@ class MapTracker:
         wood_blocks = []
         metal_blocks = []
         non_wall_blocks = []
-        destroyable_blocks = []
 
         for entity in game_state.get("entities"):
             if entity.get("type") == ENTITIES.get("blast"):
                 blast_blocks.append(entity)
             elif entity.get("type") == ENTITIES.get("ore"):
                 ore_blocks.append(entity)
-                ore_x = entity['x']
-                ore_y = entity['y']
-                if entity.get('hp') == 1:
-                    destroyable_blocks.append((ore_x,ore_y))
             elif entity.get("type") == ENTITIES.get("wood"):
                 wood_blocks.append(entity)
-                wood_x = entity['x']
-                wood_y = entity['y']
-                if entity['hp'] == 1:
-                    destroyable_blocks.append((wood_x,wood_y))
             elif entity.get("type") == ENTITIES.get("metal"):
                 metal_blocks.append(entity)
             else:
                 non_wall_blocks.append(entity)
 
-        game_state['destroyable_blocks'] = destroyable_blocks
+        game_state['destroyable_blocks'] = wood_blocks + ore_blocks
         game_state["blast_blocks"] = blast_blocks
         game_state["ore_blocks"] = ore_blocks
         game_state["wood_blocks"] = wood_blocks
