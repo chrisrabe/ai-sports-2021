@@ -733,3 +733,6 @@ def dummy_bomb(location, blast_diameter):
     Returns a dummy bomb. Useful for determining traps.
     """
     return {'coord': location, 'blast_diameter': blast_diameter}
+def move_results_in_ouchie(location, move, hazards):
+    tile = get_tile_from_move(location, move)
+    return tile in hazards

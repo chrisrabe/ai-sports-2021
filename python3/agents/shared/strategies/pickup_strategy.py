@@ -1,6 +1,7 @@
 from typing import List
 from . import strategy
-from ..utils.util_functions import get_shortest_path, get_path_action_seq, get_nearest_tile, get_reachable_tiles, manhattan_distance
+from ..utils.util_functions import get_shortest_path, get_path_action_seq, get_nearest_tile, get_reachable_tiles, \
+    move_results_in_ouchie
 from ..utils.constants import ACTIONS
 
 
@@ -25,7 +26,7 @@ class PickupStrategy(strategy.Strategy):
     
 
         if ammo_list:
-            reachable_ammo = get_reachable_tiles(player_pos, ammo_list, world, entities,game_state['hazard_zones'])
+            reachable_ammo = get_reachable_tiles(player_pos, ammo_list, world, entities, game_state['hazard_zones'])
             nearest_ammo = get_nearest_tile(player_pos, reachable_ammo)
             path = get_shortest_path(player_pos, nearest_ammo, world, entities, game_state['hazard_zones'], game_state['player_is_invulnerable'])
         elif powerup_list:
@@ -33,7 +34,13 @@ class PickupStrategy(strategy.Strategy):
             nearest_powerup = get_nearest_tile(player_pos, reachable_powerup)
             path = get_shortest_path(player_pos, nearest_powerup, world, entities, game_state['hazard_zones'], game_state['player_is_invulnerable'])
 
-        if path is None:
-            return [ACTIONS['none']]
+        # make it more responsive
+        action_seq = get_path_action_seq(player_pos, path)
+        if len(action_seq) > 0:
+            next_action = action_seq.pop(0)
+            if move_results_in_ouchie(player_pos, next_action, game_state['hazard_zones']):
+                return [ACTIONS['none']]  # do nothing
+            else:
+                return [next_action]
         else:
-            return [get_path_action_seq(player_pos, path).pop(0)]
+            return action_seq

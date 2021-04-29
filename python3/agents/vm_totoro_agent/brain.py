@@ -41,6 +41,12 @@ class Brain:
             print('HOLY RUN FOR YOUR LIFE YOU ARE GONNA GET RAILED')
             return 'retreat'
 
+        # Tell enemy to go away by placing bomb down
+        if game_state['tell_enemy_gtfo'] and game_state['player_inv_bombs'] > 0 and not game_state['enemy_near_bomb']:
+            # Tell enemy to GTFO by placing bomb down
+            print('Totoro screams at enemy to GTFO')
+            return 'simple_bomb'
+
         # Killing strategies
         if not game_state['enemy_is_invulnerable'] and not game_state['player_on_bomb']:
             # if enemy is standing in detonation zone
