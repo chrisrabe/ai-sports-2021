@@ -66,7 +66,7 @@ class EnemyTracker:
             if game_state['player_pos'] in enemy_surrounding_tiles: # Make sure 
                 game_state['enemy_immediate_trapped'] = True
         
-
+        # Extended trapping detection.
         # Dummy bomb to see if the enemy would be trapped (for 1 move: Initial + 1 move)
         virtual_bomb = dummy_bomb(game_state['player_pos'], game_state['player_diameter'])
         print(virtual_bomb)
