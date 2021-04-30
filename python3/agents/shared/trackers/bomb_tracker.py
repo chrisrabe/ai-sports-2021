@@ -74,11 +74,6 @@ class BombTracker:
         for bomb in danger_bombs:
             blast_zone = get_blast_zone(bomb['coord'], bomb['blast_diameter'], entities, world)
             hazards += blast_zone
-        # if len(game_state['blast_blocks']) != 0:
-
-        print(f"Tick {game_state['tick']}: Own bombs {own_active_bombs}")
-        print(f"Tick {game_state['tick']}: Danger bombs {danger_bombs}")
-        #     hazards.append(game_state['blast_blocks'])
 
         # potential detonation zones
         enemy_hazards = []

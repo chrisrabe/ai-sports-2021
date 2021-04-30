@@ -41,7 +41,6 @@ class AdvKillStrategy(strategy.Strategy):
         value_map = get_value_map(world, game_state['wall_blocks'], targets, self.rewards, game_state['pinch_points'],
                                   False)
         action = get_move_from_value_map(player_pos, value_map, world)
-        print(f"Tick {game_state['tick']}: Hazards: {game_state['hazard_zones']}")
         if move_results_in_ouchie(player_pos, action, game_state['hazard_zones']):
             return [ACTIONS['none']]  # Nah. Not worth it
         else:
