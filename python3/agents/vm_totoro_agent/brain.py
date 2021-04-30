@@ -19,16 +19,16 @@ class Brain:
         self.map_tracker.update(game_state)
         self.pickup_tracker.update(game_state)
 
-        # Highest Prio (base state): Collect + Stay away from immediate danger (fire + potential blast zones)
-        # 2nd highest Destroy walls
-        # --> If possible; KILL.
-
-        # For destroy strats:
-        # -> If it's at the highest spot on the value map and there's a destroyable next to it,
-        # kill (then map is update 'oh no bomb!!' and run)
-
-        # Basic Decision Making:
         """
+        Highest Prio (base state): Collect + Stay away from immediate danger (fire + potential blast zones)
+        2nd highest Destroy walls
+        --> If possible; KILL.
+
+        For destroy strats:
+        -> If it's at the highest spot on the value map and there's a destroyable next to it,
+        kill (then map is update 'oh no bomb!!' and run)
+
+        Basic Decision Making:
         Strats:
         Stalk by default -> 'stalk';
         If there is ammo: go get it -> 'pickup';
@@ -53,6 +53,10 @@ class Brain:
             if game_state['enemy_pos'] in game_state['detonation_zones']:
                 print('Time to detonate!')
                 return 'detonate'
+
+            if game_state['enemy_onestep_trapped']:
+                print("I think the enemy is trapped s I'm placing the bomb right now!!")
+                return 'bomb'
 
             # If you have ammo, just go for the kill
             # should probably refine this to check opponent vulnerability and trappable
