@@ -122,7 +122,7 @@ def can_enqueue(queue, neighbour):
     return True
 
 
-def get_shortest_path(start, end, world, entities, blast_tiles=None, player_invulnerable = False):
+def get_shortest_path(start, end, world, entities, blast_tiles=None, player_invulnerable=False):
     """
     Finds the shortest path from the start node to the end node.
     Returns an array of (x,y) tuples. Uses A* search algorithm
@@ -733,6 +733,8 @@ def dummy_bomb(location, blast_diameter):
     Returns a dummy bomb. Useful for determining traps.
     """
     return {'coord': location, 'blast_diameter': blast_diameter}
+
+
 def move_results_in_ouchie(location, move, hazards):
     tile = get_tile_from_move(location, move)
     return tile in hazards
@@ -744,7 +746,13 @@ def get_num_escape_paths(player_pos, tile, blast_diameter, entities, world):
     """
     # simulate bombing
     blast_zone = get_blast_zone(tile, blast_diameter, entities, world)
-    safe_tiles = get_safe_tiles(blast_zone, world, entities)
+    # get safe tiles from blast zone
+    safe_tiles = []
+    for blast_tile in blast_zone:
+        empty_tiles = get_surrounding_empty_tiles(blast_tile, world, entities, ignore_player=False)
+        for empty in empty_tiles:
+            if empty not in blast_tile:
+                safe_tiles.append(empty)
     # are there safe tiles that player can reach?
     reachable_tiles = get_reachable_tiles(player_pos, safe_tiles, world, entities)
     return len(reachable_tiles)
