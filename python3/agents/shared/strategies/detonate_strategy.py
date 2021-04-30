@@ -15,6 +15,7 @@ class DetonateStrategy(strategy.Strategy):
 
         target_bomb = get_detonation_target(enemy_pos, own_bombs, world, entities)
         if target_bomb is None:
+            print("Called in detonation. Why? The brain should be decision making -- if you called me, you're doing something wrong.")
             return [ACTIONS["none"]]
         else:
             game_state['detonation_target'] = target_bomb
