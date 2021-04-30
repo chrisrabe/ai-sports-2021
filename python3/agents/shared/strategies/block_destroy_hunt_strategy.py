@@ -5,7 +5,8 @@ from . import strategy
 from ..utils.constants import ACTIONS
 from ..utils.util_functions import get_surrounding_empty_tiles, get_entity_coords, get_reachable_tiles, \
     get_num_escape_paths, get_nearest_tile, get_shortest_path, get_path_action_seq, get_surrounding_tiles, \
-    get_world_dimension, convert_entities_to_coords, get_value_map, get_move_from_value_map, move_results_in_ouchie
+    get_world_dimension, convert_entities_to_coords, get_value_map, get_move_from_value_map, move_results_in_ouchie, \
+    update_rec_value_map
 
 
 class BlockDestroyHuntStrategy(strategy.Strategy):
@@ -53,6 +54,14 @@ class BlockDestroyHuntStrategy(strategy.Strategy):
 
             # navigate to target using value map
             value_map = get_value_map(world, walls, hazard_zones_targets, self.rewards, use_default=False)
+
+            # set wall value with  max spread of 1 to discourage navigating to an enclosed space causing trapping
+            walls_entities = {}
+            for index, wall in enumerate(walls):
+                x, y = wall
+                walls_entities[index] = [x, y, -5]
+
+            value_map = update_rec_value_map(walls_entities, value_map, get_world_dimension(world), max_reward_spread=4)
 
             action = get_move_from_value_map(player_pos, value_map, world)
 
