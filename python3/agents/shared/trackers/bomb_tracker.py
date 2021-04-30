@@ -1,14 +1,13 @@
 """
 Used for tracking lifecycle of bombs and explosion areas
 """
-import math
 
-from ..utils.util_functions import get_blast_zone, get_safe_tiles, get_surrounding_tiles, get_world_dimension, get_surrounding_empty_tiles, dummy_bomb, get_shortest_path
+from ..utils.util_functions import get_blast_zone, get_safe_tiles, get_surrounding_tiles, get_world_dimension, \
+    get_surrounding_empty_tiles, dummy_bomb, get_shortest_path
 from ..utils.constants import ENTITIES
 
+
 class BombTracker:
-    def __init__(self):
-        self.bombs = []
 
     def update(self, game_state):
         """ 
@@ -39,7 +38,7 @@ class BombTracker:
 
         # Get active bombs - coordinates, expiry, blast diameter
         for entity in entities:
-            #Adds blast tiles to hazards so he doesn't walk on them. He CANNOT walk on them (from shortest paths)
+            # Adds blast tiles to hazards so he doesn't walk on them. He CANNOT walk on them (from shortest paths)
             if entity['type'] == ENTITIES['blast']:
                 hazards.append((entity['x'], entity['y']))
 
@@ -67,7 +66,6 @@ class BombTracker:
                     danger_bombs.append(bomb)
                     enemy_active_bombs.append(bomb)
                 all_active_bombs.append(bomb)
-
 
         # calculate hazard zones
         for bomb in danger_bombs:
@@ -124,13 +122,14 @@ class BombTracker:
                 'type': ENTITIES['enemy']
             })
 
-      ###### Trapping Detection #####
+        ###### Trapping Detection #####
         game_state['enemy_immediate_trapped'] = False
         game_state['enemy_onestep_trapped'] = False
 
         # # Return any tiles that are empty around enemy
         enemy_surrounding_tiles = get_surrounding_tiles(game_state['enemy_pos'], world_width, world_height)
-        enemy_surrounding_empty_tiles = get_surrounding_empty_tiles(game_state['enemy_pos'], world, entities, ignore_player = False) # Needs to Include us 
+        enemy_surrounding_empty_tiles = get_surrounding_empty_tiles(game_state['enemy_pos'], world, entities,
+                                                                    ignore_player=False)  # Needs to Include us
         if len(enemy_surrounding_empty_tiles) == 0:  # Dude can't move. Technically, this 'immediate trapped' isn't the real value. It's actually trapped AND player is one of the tiles.
             # check if our player is in one of the tiles: ->
             if game_state['player_pos'] in enemy_surrounding_tiles:  # Make sure
@@ -141,20 +140,15 @@ class BombTracker:
         virtual_bomb = dummy_bomb(game_state['player_pos'], game_state['player_diameter'])
         blast_zone = get_blast_zone(virtual_bomb['coord'], virtual_bomb['blast_diameter'], entities, world)
         if game_state['enemy_pos'] in blast_zone:
-            check =  all(item in blast_zone for item in enemy_surrounding_empty_tiles) # checks if list one contains all elements of list 2
+            check = all(item in blast_zone for item in
+                        enemy_surrounding_empty_tiles)  # checks if list one contains all elements of list 2
             if check:
                 game_state['enemy_onestep_trapped'] = True
 
-
         # Removes player from enemy surround tiles
         if game_state['player_pos'] in enemy_surrounding_empty_tiles:
-            self.stare_contest_duration += 1
-            if self.stare_contest_duration == MAX_STARE_CONTEST_DURATION:
-                game_state['tell_enemy_gtfo'] = True
             enemy_surrounding_empty_tiles.remove(
                 game_state['player_pos'])  # Remove player pos from surround (why is he in there lol)
-        else:
-            self.stare_contest_duration = 0  # reset
 
         print("Player pos:", game_state['enemy_pos'], "Length of enem surrounding empty tiles: ",
               len(enemy_surrounding_empty_tiles), enemy_surrounding_empty_tiles,
