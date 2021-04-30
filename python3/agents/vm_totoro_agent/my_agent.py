@@ -1,6 +1,6 @@
 from .brain import Brain
 from ..shared.strategies import RandomStrategy, RetreatStrategy, StalkStrategy, PickupStrategy, AdvKillStrategy, \
-    DetonateStrategy, BlockDestroyingStrategy, SimpleBombStrategy, WaitStrategy
+    DetonateStrategy, SimpleBombStrategy, WaitStrategy, AdvBlockStrategy
 
 
 class Agent:
@@ -12,7 +12,7 @@ class Agent:
             'pickup': PickupStrategy(),
             'stalk': StalkStrategy(),
             'kill': AdvKillStrategy(),
-            'block_destroy': BlockDestroyingStrategy(),
+            'block_destroy': AdvBlockStrategy(),
             'detonate': DetonateStrategy(),
             'simple_bomb': SimpleBombStrategy(),
             'wait': WaitStrategy()

@@ -1,5 +1,6 @@
-from ..shared.strategies import RandomStrategy, RetreatStrategy, StalkStrategy, PickupStrategy, AdvKillStrategy, BasicAvoidStrategy, DetonateStrategy, BombStrategy, BlockDestroyingStrategy, SimpleBombStrategy
 from .brain import Brain
+from ..shared.strategies import RandomStrategy, RetreatStrategy, StalkStrategy, PickupStrategy, AdvKillStrategy, \
+    BasicAvoidStrategy, DetonateStrategy, BombStrategy, SimpleBombStrategy, AdvBlockStrategy
 
 
 class Agent:
@@ -14,7 +15,7 @@ class Agent:
             'kill': AdvKillStrategy(),
             'detonate': DetonateStrategy(),
             'bomb': BombStrategy(),
-            'block_destroy': BlockDestroyingStrategy(),
+            'block_destroy': AdvBlockStrategy(),
             'simple_bomb': SimpleBombStrategy()
         }
         self.action_queue = []
