@@ -3,9 +3,7 @@ Used to track all information about the enemy such as its health,
 ammo, etc.
 """
 
-from ..utils.util_functions import get_value_map_object, get_surrounding_empty_tiles, get_world_dimension, \
-	get_surrounding_tiles, dummy_bomb, get_blast_zone, get_shortest_path
-
+from ..utils.util_functions import get_value_map_object, get_surrounding_tiles, get_world_dimension
 from ..utils.constants import MAX_STARE_CONTEST_DURATION
 
 
@@ -42,7 +40,13 @@ class EnemyTracker:
         game_state['enemy_diameter'] = enemy_state["blast_diameter"]  # girthy boi
         game_state['enemy_is_invulnerable'] = (enemy_state['invulnerability'] - tick) > 1
 
+        world_width, world_height = get_world_dimension(game_state['world'])
+        player_neighbours = get_surrounding_tiles(game_state['player_pos'], world_width, world_height)
 
+        if self.stare_contest_duration >= MAX_STARE_CONTEST_DURATION:
+            game_state['tell_enemy_gtfo'] = True
 
-
-
+        if game_state['enemy_pos'] in player_neighbours:
+            self.stare_contest_duration += 1
+        else:
+            self.stare_contest_duration = 0  # reset
