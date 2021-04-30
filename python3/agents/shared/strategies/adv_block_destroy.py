@@ -72,7 +72,7 @@ class AdvBlockStrategy(strategy.Strategy):
         # BOMBING ALGORITHM
         # If player is standing on point of interest, put bomb down
         if player_pos in plant_zones:
-            if player_ammo > 0:
+            if player_ammo > 1:  # conserve at least 1 ammo
                 print(f"Player ammo: {player_ammo}. I'm standing where I need to be. I'm gonna plant!")
                 return [ACTIONS['bomb']]
             else:
