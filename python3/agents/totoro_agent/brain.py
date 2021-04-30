@@ -68,7 +68,8 @@ class Brain:
         elif len(game_state['pickup_list']) != 0:  # "Any pickups on the map?"
             print('me gusta I smell some pickups')
             return 'pickup'
-
+        elif not game_state['clear_path_to_enemy']:
+            return 'block_destroy'
         else:
             print("I'ma stalk.")
             return 'stalk'

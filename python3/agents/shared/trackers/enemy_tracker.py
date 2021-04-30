@@ -4,7 +4,8 @@ ammo, etc.
 """
 
 from ..utils.util_functions import get_value_map_object, get_surrounding_empty_tiles, get_world_dimension, \
-    get_surrounding_tiles, dummy_bomb, get_blast_zone
+	get_surrounding_tiles, dummy_bomb, get_blast_zone, get_shortest_path
+
 from ..utils.constants import MAX_STARE_CONTEST_DURATION
 
 
@@ -56,10 +57,6 @@ class EnemyTracker:
         enemy_surrounding_empty_tiles = get_surrounding_empty_tiles(game_state['enemy_pos'], world, entities, ignore_player = False) # Needs to Include us 
         if game_state['player_pos'] in enemy_surrounding_empty_tiles: 
             enemy_surrounding_empty_tiles.remove(game_state['player_pos']) # Remove player pos from surrounding empty (why is he in there lol)
-        if len(enemy_surrounding_empty_tiles) == 0:  # Dude can't move. Technically, this 'immediate trapped' isn't the real value. It's actually trapped AND player is one of the tiles.
-            # check if our player is in one of the tiles: ->
-            if game_state['player_pos'] in enemy_surrounding_tiles:  # Make sure
-                game_state['enemy_immediate_trapped'] = True
 
         ###### Extended trapping detection ######
         # Dummy bomb to see if the enemy would be trapped (for 1 move: Initial + 1 move)
@@ -83,3 +80,12 @@ class EnemyTracker:
         print("Player pos:", game_state['enemy_pos'], "Length of enem surrounding empty tiles: ",
               len(enemy_surrounding_empty_tiles), enemy_surrounding_empty_tiles,
               print(len(enemy_surrounding_empty_tiles) == 0))
+
+        if len(enemy_surrounding_empty_tiles) == 0:  # Dude can't move. Technically, this 'immediate trapped' isn't the real value. It's actually trapped AND player is one of the tiles.
+            # check if our player is in one of the tiles: ->
+            if game_state['player_pos'] in enemy_surrounding_tiles:  # Make sure
+                game_state['enemy_immediate_trapped'] = True
+
+        # check if there's a clear path to the enemy
+        path = get_shortest_path(game_state['player_pos'], game_state['enemy_pos'], world, entities)
+        game_state['clear_path_to_enemy'] = path is not None
