@@ -56,5 +56,5 @@ DEFAULT_REWARDS = {
     # special rewards
     'enemy': -2,
     'pinch': -2,  # articulation point
-    'wall': -10
+    'wall': -10,
 }
