@@ -55,8 +55,9 @@ class AdvBlockStrategy(strategy.Strategy):
         # - ones that are not reachable
         # things to prioritise
         # - closer to enemy
+        destroyable_set = set(destroyable_coords)
         plant_zones = []
-        for coord in destroyable_coords:
+        for coord in destroyable_set:
             empty_neigh = get_surrounding_empty_tiles(coord, world, entities, ignore_player=True)
             reachable_tiles = get_reachable_tiles(player_pos, empty_neigh, world, entities)
             if player_pos in empty_neigh:
@@ -66,8 +67,6 @@ class AdvBlockStrategy(strategy.Strategy):
                 # only add points to ones with escape paths
                 if escape_paths > 0:
                     plant_zones.append(tile)
-
-        print(f'Player pos: {player_pos}, Plant zones: {plant_zones}')
 
         # BOMBING ALGORITHM
         # If player is standing on point of interest, put bomb down
