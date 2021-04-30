@@ -1,7 +1,9 @@
 from typing import List
 
 from . import strategy
-from ..utils.util_functions import get_value_map, get_value_map_objects_from_arr, get_move_from_value_map, get_reachable_tiles
+from ..utils.constants import ACTIONS
+from ..utils.util_functions import get_value_map, get_value_map_objects_from_arr, get_move_from_value_map, \
+    get_reachable_tiles, move_results_in_ouchie
 
 
 class RetreatStrategy(strategy.Strategy):
@@ -10,12 +12,16 @@ class RetreatStrategy(strategy.Strategy):
         self.reward_map = {
             'hazard': -1,
             'safe': 3,
-            'reachable': 1
+            'reachable': 1,
+            'enemy': -2
         }
 
     def execute(self, game_state: dict) -> List[str]:
         world = game_state['world']
         safe_zones = game_state['safe_zones']
+        enemy_pos = game_state['enemy_pos']
+        if enemy_pos in safe_zones:
+            safe_zones.remove(enemy_pos)
         player_pos = game_state['player_pos']
         entities = game_state['entities']
         reachable = get_reachable_tiles(player_pos, safe_zones, world, entities)
@@ -26,4 +32,7 @@ class RetreatStrategy(strategy.Strategy):
         game_objects = hazard_objects + safe_objects + reachable_objects
         value_map = get_value_map(world, game_state["wall_blocks"], game_objects, self.reward_map, use_default=False)
         action = get_move_from_value_map(game_state["player_pos"], value_map, world)
-        return [action]
+        if move_results_in_ouchie(player_pos, action, game_state['hazard_zones']):
+            return [ACTIONS['none']]
+        else:
+            return [action]
