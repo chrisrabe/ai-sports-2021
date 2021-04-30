@@ -61,7 +61,7 @@ class BombTracker:
 
                 if entity['owner'] == own_id:
                     ttl = bomb['expires'] - game_state['tick']
-                    if ttl == (math.floor(game_state['player_diameter'] / 2) + 1):  # it's about to explode! GTFO!
+                    if ttl <= (game_state['player_diameter'] // 2) + 1:  # it's about to explode! GTFO!
                         danger_bombs.append(bomb)
                     own_active_bombs.append(bomb)
                 elif entity['owner'] == enemy_id:
@@ -74,9 +74,6 @@ class BombTracker:
         for bomb in danger_bombs:
             blast_zone = get_blast_zone(bomb['coord'], bomb['blast_diameter'], entities, world)
             hazards += blast_zone
-        # if len(game_state['blast_blocks']) != 0:
-
-        #     hazards.append(game_state['blast_blocks'])
 
         # potential detonation zones
         enemy_hazards = []
