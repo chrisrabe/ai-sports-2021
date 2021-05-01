@@ -123,7 +123,7 @@ def can_enqueue(queue, neighbour):
     return True
 
 
-def get_shortest_path(start, end, world, entities, blast_tiles=None, player_invulnerable=False):
+def get_shortest_path(start, end, world, entities, blast_tiles=None, player_invulnerable=False) -> object:
     """
     Finds the shortest path from the start node to the end node.
     Returns an array of (x,y) tuples. Uses A* search algorithm

@@ -1,10 +1,8 @@
-from collections import defaultdict
 from typing import List
 
 from . import strategy
 from ..utils.constants import ACTIONS
-from ..utils.util_functions import get_surrounding_empty_tiles, get_entity_coords, get_reachable_tiles, \
-    get_num_escape_paths, get_nearest_tile, get_shortest_path, get_path_action_seq, get_surrounding_tiles, \
+from ..utils.util_functions import get_entity_coords, get_nearest_tile, get_surrounding_tiles, \
     get_world_dimension, convert_entities_to_coords, get_value_map, get_move_from_value_map, move_results_in_ouchie, \
     update_rec_value_map
 

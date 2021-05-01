@@ -16,7 +16,7 @@ services:
             - TELEMETRY_ENABLED=1
             - TICK_RATE_HZ=10
             - TRAINING_MODE_ENABLED=0
-            - WORLD_SEED=80867
+            - WORLD_SEED=69420
         networks:
             - coderone-tournament
 

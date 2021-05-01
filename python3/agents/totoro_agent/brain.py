@@ -45,7 +45,7 @@ class Brain:
         print("I'm the totoro agent algo bot!!")
         if game_state['player_pos'] in game_state['all_hazard_zones']:
             print('HOLY RUN FOR YOUR LIFE YOU ARE GONNA GET RAILED')
-            return 'retreat'  # Basic avoid vs retreat. Retreat value based, basic avoid is coded.
+            return 'basic_avoid'  # Basic avoid vs retreat. Retreat value based, basic avoid is coded.
 
         # if enemy in detonation zone and we aren't + if they aren't invulnerable (we'll move out of the way via
         # basic_avoid's top priority) if not game_state['enemy_is_invulnerable'] and (game_state['enemy_pos'] in
@@ -74,7 +74,7 @@ class Brain:
         elif len(game_state['pickup_list']) != 0:  # "Any pickups on the map?"
             print('me gusta I smell some pickups')
             return 'pickup'
-        elif not game_state['clear_path_to_enemy'] and game_state['player_pos'] in game_state['hazard_zones']:
+        elif not game_state['clear_path_to_enemy']:
             return 'block_destroy'
         else:
             print("I'ma stalk.")
