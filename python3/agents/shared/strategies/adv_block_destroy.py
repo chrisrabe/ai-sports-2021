@@ -5,6 +5,7 @@ from ..utils.constants import ACTIONS
 from ..utils.util_functions import get_value_map_objects_from_arr, convert_entities_to_coords, get_surrounding_tiles, \
     get_world_dimension, get_surrounding_empty_tiles, get_reachable_tiles, get_num_escape_paths, get_value_map, \
     get_move_from_value_map, move_results_in_ouchie
+from ..utils.benchmark import Benchmark
 
 
 class AdvBlockStrategy(strategy.Strategy):
@@ -13,8 +14,11 @@ class AdvBlockStrategy(strategy.Strategy):
             'destructible_plant': 5,
             'enemy': 20  # move closer to enemy
         }
+        self.benchmark = Benchmark()
+        self.limit = 70  # limit this strategy to only run for 70 ms
 
     def execute(self, game_state: dict) -> List[str]:
+        self.benchmark.start('block_destroy')
         player_pos = game_state['player_pos']
         player_diam = game_state['player_diameter']
         player_ammo = game_state['player_inv_bombs']
@@ -58,6 +62,10 @@ class AdvBlockStrategy(strategy.Strategy):
         destroyable_set = set(destroyable_coords)
         plant_zones = []
         for coord in destroyable_set:
+            elapsed_time = self.benchmark.get_time('block_destroy')
+            if elapsed_time >= self.limit:
+                self.benchmark.end('block_destroy')
+                return [ACTIONS['none']]  # early exit
             empty_neigh = get_surrounding_empty_tiles(coord, world, entities, ignore_player=True)
             reachable_tiles = get_reachable_tiles(player_pos, empty_neigh, world, entities)
             if player_pos in empty_neigh:

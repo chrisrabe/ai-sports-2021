@@ -1,4 +1,4 @@
-Unhandled action:
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -7,8 +7,8 @@ Timer decision: Ran for 11.074ms
 Tick 438: executing pickup: ['']
 Timer execution: Ran for 2.0149999999999997ms
 Timer move: Ran for 13.176ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -17,8 +17,8 @@ Timer decision: Ran for 13.029ms
 Tick 439: executing pickup: ['']
 Timer execution: Ran for 1.269ms
 Timer move: Ran for 14.386ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -26,8 +26,8 @@ Timer decision: Ran for 9.479ms
 Tick 440: executing stalk: ['']
 Timer execution: Ran for 0.475ms
 Timer move: Ran for 10.052999999999999ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -35,8 +35,8 @@ Timer decision: Ran for 11.350999999999999ms
 Tick 441: executing stalk: ['']
 Timer execution: Ran for 0.132ms
 Timer move: Ran for 11.553ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -44,8 +44,8 @@ Timer decision: Ran for 13.196ms
 Tick 442: executing stalk: ['']
 Timer execution: Ran for 0.244ms
 Timer move: Ran for 13.802999999999999ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -53,8 +53,8 @@ Timer decision: Ran for 9.512ms
 Tick 443: executing stalk: ['']
 Timer execution: Ran for 0.14300000000000002ms
 Timer move: Ran for 9.725ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -62,8 +62,8 @@ Timer decision: Ran for 4.953ms
 Tick 444: executing stalk: ['']
 Timer execution: Ran for 0.726ms
 Timer move: Ran for 5.757ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -71,8 +71,8 @@ Timer decision: Ran for 4.091ms
 Tick 445: executing stalk: ['']
 Timer execution: Ran for 0.417ms
 Timer move: Ran for 4.557ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -80,8 +80,8 @@ Timer decision: Ran for 8.322ms
 Tick 446: executing stalk: ['']
 Timer execution: Ran for 0.12999999999999998ms
 Timer move: Ran for 8.522ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -89,8 +89,8 @@ Timer decision: Ran for 7.941999999999999ms
 Tick 447: executing stalk: ['']
 Timer execution: Ran for 0.156ms
 Timer move: Ran for 8.222999999999999ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -98,8 +98,8 @@ Timer decision: Ran for 8.487ms
 Tick 448: executing stalk: ['']
 Timer execution: Ran for 0.217ms
 Timer move: Ran for 8.765ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -107,8 +107,8 @@ Timer decision: Ran for 8.985ms
 Tick 449: executing stalk: ['']
 Timer execution: Ran for 0.29300000000000004ms
 Timer move: Ran for 9.36ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -116,8 +116,8 @@ Timer decision: Ran for 11.806000000000001ms
 Tick 450: executing stalk: ['']
 Timer execution: Ran for 0.15ms
 Timer move: Ran for 12.048ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -125,8 +125,8 @@ Timer decision: Ran for 12.111ms
 Tick 451: executing stalk: ['']
 Timer execution: Ran for 0.49700000000000005ms
 Timer move: Ran for 12.708ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -134,8 +134,8 @@ Timer decision: Ran for 10.623000000000001ms
 Tick 452: executing stalk: ['']
 Timer execution: Ran for 0.433ms
 Timer move: Ran for 11.143ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -143,8 +143,8 @@ Timer decision: Ran for 12.239999999999998ms
 Tick 453: executing stalk: ['']
 Timer execution: Ran for 0.38ms
 Timer move: Ran for 12.69ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -152,8 +152,8 @@ Timer decision: Ran for 8.854000000000001ms
 Tick 454: executing stalk: ['']
 Timer execution: Ran for 0.125ms
 Timer move: Ran for 9.106ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -161,8 +161,8 @@ Timer decision: Ran for 9.365ms
 Tick 455: executing stalk: ['']
 Timer execution: Ran for 0.124ms
 Timer move: Ran for 9.571ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -170,8 +170,8 @@ Timer decision: Ran for 11.965ms
 Tick 456: executing stalk: ['']
 Timer execution: Ran for 0.199ms
 Timer move: Ran for 12.254ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -179,8 +179,8 @@ Timer decision: Ran for 11.008000000000001ms
 Tick 457: executing stalk: ['']
 Timer execution: Ran for 0.216ms
 Timer move: Ran for 11.285ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -188,8 +188,8 @@ Timer decision: Ran for 9.279ms
 Tick 458: executing stalk: ['']
 Timer execution: Ran for 0.135ms
 Timer move: Ran for 9.473ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -197,8 +197,8 @@ Timer decision: Ran for 10.387ms
 Tick 459: executing stalk: ['']
 Timer execution: Ran for 0.211ms
 Timer move: Ran for 10.661ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -206,8 +206,8 @@ Timer decision: Ran for 10.081ms
 Tick 460: executing stalk: ['']
 Timer execution: Ran for 0.14100000000000001ms
 Timer move: Ran for 10.381ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -215,8 +215,8 @@ Timer decision: Ran for 9.276ms
 Tick 461: executing stalk: ['']
 Timer execution: Ran for 0.132ms
 Timer move: Ran for 9.777ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -224,8 +224,8 @@ Timer decision: Ran for 9.474ms
 Tick 462: executing stalk: ['']
 Timer execution: Ran for 0.156ms
 Timer move: Ran for 9.695ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -233,8 +233,8 @@ Timer decision: Ran for 10.989ms
 Tick 463: executing stalk: ['']
 Timer execution: Ran for 1.034ms
 Timer move: Ran for 12.148000000000001ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -242,8 +242,8 @@ Timer decision: Ran for 9.433ms
 Tick 464: executing stalk: ['']
 Timer execution: Ran for 0.163ms
 Timer move: Ran for 9.658999999999999ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -251,8 +251,8 @@ Timer decision: Ran for 9.034ms
 Tick 465: executing stalk: ['']
 Timer execution: Ran for 0.219ms
 Timer move: Ran for 9.317ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -260,8 +260,8 @@ Timer decision: Ran for 10.673ms
 Tick 466: executing stalk: ['']
 Timer execution: Ran for 0.477ms
 Timer move: Ran for 11.274ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -269,8 +269,8 @@ Timer decision: Ran for 10.705ms
 Tick 467: executing stalk: ['']
 Timer execution: Ran for 0.161ms
 Timer move: Ran for 10.944ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -278,8 +278,8 @@ Timer decision: Ran for 11.436ms
 Tick 468: executing stalk: ['']
 Timer execution: Ran for 0.215ms
 Timer move: Ran for 11.745000000000001ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -287,8 +287,8 @@ Timer decision: Ran for 10.040000000000001ms
 Tick 469: executing stalk: ['']
 Timer execution: Ran for 0.157ms
 Timer move: Ran for 10.267ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -296,8 +296,8 @@ Timer decision: Ran for 11.918ms
 Tick 470: executing stalk: ['']
 Timer execution: Ran for 0.184ms
 Timer move: Ran for 12.174000000000001ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -305,8 +305,8 @@ Timer decision: Ran for 10.324ms
 Tick 471: executing stalk: ['']
 Timer execution: Ran for 0.219ms
 Timer move: Ran for 10.6ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -314,8 +314,8 @@ Timer decision: Ran for 11.521999999999998ms
 Tick 472: executing stalk: ['']
 Timer execution: Ran for 0.13799999999999998ms
 Timer move: Ran for 11.731ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -323,8 +323,8 @@ Timer decision: Ran for 12.042ms
 Tick 473: executing stalk: ['']
 Timer execution: Ran for 0.188ms
 Timer move: Ran for 12.326ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -332,8 +332,8 @@ Timer decision: Ran for 10.326ms
 Tick 474: executing stalk: ['']
 Timer execution: Ran for 0.34099999999999997ms
 Timer move: Ran for 11.159ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -341,8 +341,8 @@ Timer decision: Ran for 12.324ms
 Tick 475: executing stalk: ['']
 Timer execution: Ran for 0.145ms
 Timer move: Ran for 12.555ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -350,8 +350,8 @@ Timer decision: Ran for 12.146ms
 Tick 476: executing stalk: ['']
 Timer execution: Ran for 0.126ms
 Timer move: Ran for 12.383ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -359,8 +359,8 @@ Timer decision: Ran for 12.616ms
 Tick 477: executing stalk: ['']
 Timer execution: Ran for 0.132ms
 Timer move: Ran for 12.814ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -368,8 +368,8 @@ Timer decision: Ran for 11.599ms
 Tick 478: executing stalk: ['']
 Timer execution: Ran for 0.27799999999999997ms
 Timer move: Ran for 11.938ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -377,8 +377,8 @@ Timer decision: Ran for 10.703000000000001ms
 Tick 479: executing stalk: ['']
 Timer execution: Ran for 0.128ms
 Timer move: Ran for 10.89ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -386,8 +386,8 @@ Timer decision: Ran for 10.175ms
 Tick 480: executing stalk: ['']
 Timer execution: Ran for 0.37ms
 Timer move: Ran for 10.605ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -395,8 +395,8 @@ Timer decision: Ran for 15.821000000000002ms
 Tick 481: executing stalk: ['']
 Timer execution: Ran for 0.248ms
 Timer move: Ran for 16.223000000000003ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -404,8 +404,8 @@ Timer decision: Ran for 10.974ms
 Tick 482: executing stalk: ['']
 Timer execution: Ran for 0.6920000000000001ms
 Timer move: Ran for 11.862ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -413,8 +413,8 @@ Timer decision: Ran for 10.822999999999999ms
 Tick 483: executing stalk: ['']
 Timer execution: Ran for 0.13899999999999998ms
 Timer move: Ran for 11.016ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -422,8 +422,8 @@ Timer decision: Ran for 14.048ms
 Tick 484: executing stalk: ['']
 Timer execution: Ran for 0.47800000000000004ms
 Timer move: Ran for 14.616ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -431,8 +431,8 @@ Timer decision: Ran for 13.968ms
 Tick 485: executing stalk: ['']
 Timer execution: Ran for 0.183ms
 Timer move: Ran for 14.217ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -440,8 +440,8 @@ Timer decision: Ran for 12.901ms
 Tick 486: executing stalk: ['']
 Timer execution: Ran for 0.145ms
 Timer move: Ran for 13.15ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -449,8 +449,8 @@ Timer decision: Ran for 14.298ms
 Tick 487: executing stalk: ['']
 Timer execution: Ran for 0.211ms
 Timer move: Ran for 14.587ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -458,8 +458,8 @@ Timer decision: Ran for 12.194999999999999ms
 Tick 488: executing stalk: ['']
 Timer execution: Ran for 0.16699999999999998ms
 Timer move: Ran for 12.423ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -467,8 +467,8 @@ Timer decision: Ran for 13.082999999999998ms
 Tick 489: executing stalk: ['']
 Timer execution: Ran for 0.325ms
 Timer move: Ran for 13.472ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -476,8 +476,8 @@ Timer decision: Ran for 13.421000000000001ms
 Tick 490: executing stalk: ['']
 Timer execution: Ran for 0.12300000000000001ms
 Timer move: Ran for 13.619ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -485,8 +485,8 @@ Timer decision: Ran for 11.703ms
 Tick 491: executing stalk: ['']
 Timer execution: Ran for 0.285ms
 Timer move: Ran for 12.045ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -494,8 +494,8 @@ Timer decision: Ran for 11.417ms
 Tick 492: executing stalk: ['']
 Timer execution: Ran for 0.145ms
 Timer move: Ran for 11.624ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -503,8 +503,8 @@ Timer decision: Ran for 12.118ms
 Tick 493: executing stalk: ['']
 Timer execution: Ran for 0.323ms
 Timer move: Ran for 12.53ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -512,8 +512,8 @@ Timer decision: Ran for 11.134ms
 Tick 494: executing stalk: ['']
 Timer execution: Ran for 0.253ms
 Timer move: Ran for 11.435ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (1, 3) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -540,8 +540,8 @@ Timer decision: Ran for 11.782ms
 Tick 497: executing pickup: ['']
 Timer execution: Ran for 0.037ms
 Timer move: Ran for 11.882ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (2, 2) Length of enem surrounding empty tiles:  1 [(2, 1)] None
 I'm the vm totoro agent!!
@@ -1264,8 +1264,8 @@ Timer decision: Ran for 17.127ms
 Tick 579: executing pickup: ['']
 Timer execution: Ran for 0.046ms
 Timer move: Ran for 17.248ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (4, 7) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -1307,8 +1307,8 @@ Timer decision: Ran for 17.108ms
 Tick 584: executing pickup: ['']
 Timer execution: Ran for 2.939ms
 Timer move: Ran for 20.19ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (4, 7) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -1398,8 +1398,8 @@ Hipity hopity, Totoro is coming fo yo ass
 Tick 594: executing kill: ['']
 Timer execution: Ran for 6.749ms
 Timer move: Ran for 21.764ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (5, 1) Length of enem surrounding empty tiles:  1 [(6, 1)] None
 I'm the vm totoro agent!!
@@ -1426,8 +1426,8 @@ Hipity hopity, Totoro is coming fo yo ass
 Tick 597: executing kill: ['']
 Timer execution: Ran for 7.458ms
 Timer move: Ran for 29.727ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (5, 4) Length of enem surrounding empty tiles:  1 [(6, 4)] None
 I'm the vm totoro agent!!
@@ -1454,8 +1454,8 @@ Hipity hopity, Totoro is coming fo yo ass
 Tick 600: executing kill: ['']
 Timer execution: Ran for 6.103ms
 Timer move: Ran for 23.153ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (5, 2) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -1537,8 +1537,8 @@ Timer decision: Ran for 28.791ms
 Tick 609: executing pickup: ['']
 Timer execution: Ran for 0.121ms
 Timer move: Ran for 28.96ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (5, 3) Length of enem surrounding empty tiles:  1 [(6, 3)] None
 I'm the vm totoro agent!!
@@ -2142,8 +2142,8 @@ Hipity hopity, Totoro is coming fo yo ass
 Tick 676: executing kill: ['']
 Timer execution: Ran for 7.171ms
 Timer move: Ran for 19.064999999999998ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (4, 7) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -2152,8 +2152,8 @@ Hipity hopity, Totoro is coming fo yo ass
 Tick 677: executing kill: ['']
 Timer execution: Ran for 5.513ms
 Timer move: Ran for 17.242ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (4, 7) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -2186,8 +2186,8 @@ No ammo. I'm doing nothing.
 Tick 681: executing block_destroy: ['']
 Timer execution: Ran for 102.854ms
 Timer move: Ran for 118.384ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (4, 7) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -2196,8 +2196,8 @@ No ammo. I'm doing nothing.
 Tick 682: executing block_destroy: ['']
 Timer execution: Ran for 96.951ms
 Timer move: Ran for 111.874ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (4, 7) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -2206,8 +2206,8 @@ No ammo. I'm doing nothing.
 Tick 683: executing block_destroy: ['']
 Timer execution: Ran for 106.649ms
 Timer move: Ran for 122.48ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (4, 7) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -2216,8 +2216,8 @@ No ammo. I'm doing nothing.
 Tick 684: executing block_destroy: ['']
 Timer execution: Ran for 109.197ms
 Timer move: Ran for 124.278ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (4, 7) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -2226,8 +2226,8 @@ No ammo. I'm doing nothing.
 Tick 685: executing block_destroy: ['']
 Timer execution: Ran for 106.75800000000001ms
 Timer move: Ran for 121.85300000000001ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (4, 7) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -2236,8 +2236,8 @@ No ammo. I'm doing nothing.
 Tick 686: executing block_destroy: ['']
 Timer execution: Ran for 101.52ms
 Timer move: Ran for 116.995ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (4, 7) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -2246,8 +2246,8 @@ No ammo. I'm doing nothing.
 Tick 687: executing block_destroy: ['']
 Timer execution: Ran for 90.798ms
 Timer move: Ran for 103.458ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 7) Length of enem surrounding empty tiles:  1 [(4, 6)] None
 I'm the vm totoro agent!!
@@ -2824,8 +2824,8 @@ Timer decision: Ran for 15.328ms
 Tick 753: executing pickup: ['']
 Timer execution: Ran for 2.4979999999999998ms
 Timer move: Ran for 17.902ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (4, 7) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -2834,8 +2834,8 @@ Timer decision: Ran for 14.594ms
 Tick 754: executing pickup: ['']
 Timer execution: Ran for 2.8930000000000002ms
 Timer move: Ran for 17.563ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (4, 7) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -2844,8 +2844,8 @@ Timer decision: Ran for 15.831000000000001ms
 Tick 755: executing pickup: ['']
 Timer execution: Ran for 2.539ms
 Timer move: Ran for 18.435ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (4, 7) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -2854,8 +2854,8 @@ Timer decision: Ran for 15.041ms
 Tick 756: executing pickup: ['']
 Timer execution: Ran for 3.21ms
 Timer move: Ran for 18.405ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (4, 7) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -2864,8 +2864,8 @@ Timer decision: Ran for 17.261ms
 Tick 757: executing pickup: ['']
 Timer execution: Ran for 3.137ms
 Timer move: Ran for 20.549999999999997ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (4, 7) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -2874,8 +2874,8 @@ Timer decision: Ran for 17.77ms
 Tick 758: executing pickup: ['']
 Timer execution: Ran for 3.323ms
 Timer move: Ran for 21.165ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (4, 7) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -2884,8 +2884,8 @@ Timer decision: Ran for 14.266ms
 Tick 759: executing pickup: ['']
 Timer execution: Ran for 2.5709999999999997ms
 Timer move: Ran for 16.912ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (4, 7) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -2894,8 +2894,8 @@ Timer decision: Ran for 16.931ms
 Tick 760: executing pickup: ['']
 Timer execution: Ran for 3.146ms
 Timer move: Ran for 20.148ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (4, 7) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -2904,8 +2904,8 @@ Timer decision: Ran for 17.366ms
 Tick 761: executing pickup: ['']
 Timer execution: Ran for 2.84ms
 Timer move: Ran for 20.352ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (4, 7) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -2914,8 +2914,8 @@ Timer decision: Ran for 16.621ms
 Tick 762: executing pickup: ['']
 Timer execution: Ran for 3.2070000000000003ms
 Timer move: Ran for 19.923ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (4, 7) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -2924,8 +2924,8 @@ Timer decision: Ran for 16.689ms
 Tick 763: executing pickup: ['']
 Timer execution: Ran for 2.949ms
 Timer move: Ran for 19.709999999999997ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 7) Length of enem surrounding empty tiles:  1 [(4, 6)] None
 I'm the vm totoro agent!!
@@ -2934,8 +2934,8 @@ Timer decision: Ran for 18.262ms
 Tick 764: executing pickup: ['']
 Timer execution: Ran for 5.165ms
 Timer move: Ran for 23.511ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 7) Length of enem surrounding empty tiles:  1 [(4, 6)] None
 I'm the vm totoro agent!!
@@ -2944,8 +2944,8 @@ Timer decision: Ran for 16.301ms
 Tick 765: executing pickup: ['']
 Timer execution: Ran for 5.074000000000001ms
 Timer move: Ran for 21.492ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 7) Length of enem surrounding empty tiles:  1 [(4, 6)] None
 I'm the vm totoro agent!!
@@ -2954,8 +2954,8 @@ Timer decision: Ran for 16.117ms
 Tick 766: executing pickup: ['']
 Timer execution: Ran for 5.435ms
 Timer move: Ran for 21.606ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 7) Length of enem surrounding empty tiles:  1 [(4, 6)] None
 I'm the vm totoro agent!!
@@ -2964,8 +2964,8 @@ Timer decision: Ran for 18.625ms
 Tick 767: executing pickup: ['']
 Timer execution: Ran for 4.725ms
 Timer move: Ran for 23.419ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 7) Length of enem surrounding empty tiles:  1 [(4, 6)] None
 I'm the vm totoro agent!!
@@ -2974,8 +2974,8 @@ Timer decision: Ran for 20.54ms
 Tick 768: executing pickup: ['']
 Timer execution: Ran for 4.742ms
 Timer move: Ran for 25.427000000000003ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 7) Length of enem surrounding empty tiles:  1 [(4, 6)] None
 I'm the vm totoro agent!!
@@ -2984,8 +2984,8 @@ Timer decision: Ran for 21.363ms
 Tick 769: executing pickup: ['']
 Timer execution: Ran for 4.836ms
 Timer move: Ran for 26.266000000000002ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 7) Length of enem surrounding empty tiles:  1 [(4, 6)] None
 I'm the vm totoro agent!!
@@ -2994,8 +2994,8 @@ Timer decision: Ran for 19.469ms
 Tick 770: executing pickup: ['']
 Timer execution: Ran for 5.127ms
 Timer move: Ran for 24.663999999999998ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 7) Length of enem surrounding empty tiles:  1 [(4, 6)] None
 I'm the vm totoro agent!!
@@ -3004,8 +3004,8 @@ Timer decision: Ran for 20.775ms
 Tick 771: executing pickup: ['']
 Timer execution: Ran for 4.696ms
 Timer move: Ran for 25.655ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 7) Length of enem surrounding empty tiles:  1 [(4, 6)] None
 I'm the vm totoro agent!!
@@ -3014,8 +3014,8 @@ Timer decision: Ran for 18.076999999999998ms
 Tick 772: executing pickup: ['']
 Timer execution: Ran for 4.678ms
 Timer move: Ran for 22.82ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 7) Length of enem surrounding empty tiles:  1 [(4, 6)] None
 I'm the vm totoro agent!!
@@ -3024,8 +3024,8 @@ Timer decision: Ran for 18.96ms
 Tick 773: executing pickup: ['']
 Timer execution: Ran for 6.709ms
 Timer move: Ran for 25.76ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 7) Length of enem surrounding empty tiles:  1 [(4, 6)] None
 I'm the vm totoro agent!!
@@ -3034,8 +3034,8 @@ Timer decision: Ran for 19.08ms
 Tick 774: executing pickup: ['']
 Timer execution: Ran for 5.297ms
 Timer move: Ran for 24.523ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 7) Length of enem surrounding empty tiles:  1 [(4, 6)] None
 I'm the vm totoro agent!!
@@ -3044,8 +3044,8 @@ Timer decision: Ran for 20.145ms
 Tick 775: executing pickup: ['']
 Timer execution: Ran for 4.759ms
 Timer move: Ran for 25.005ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 7) Length of enem surrounding empty tiles:  1 [(4, 6)] None
 I'm the vm totoro agent!!
@@ -3054,8 +3054,8 @@ Timer decision: Ran for 19.336ms
 Tick 776: executing pickup: ['']
 Timer execution: Ran for 4.971ms
 Timer move: Ran for 24.451ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 7) Length of enem surrounding empty tiles:  1 [(4, 6)] None
 I'm the vm totoro agent!!
@@ -3064,8 +3064,8 @@ Timer decision: Ran for 19.59ms
 Tick 777: executing pickup: ['']
 Timer execution: Ran for 5.305ms
 Timer move: Ran for 25.023ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 7) Length of enem surrounding empty tiles:  1 [(4, 6)] None
 I'm the vm totoro agent!!
@@ -3074,8 +3074,8 @@ Timer decision: Ran for 19.226ms
 Tick 778: executing pickup: ['']
 Timer execution: Ran for 4.585999999999999ms
 Timer move: Ran for 24.079ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 7) Length of enem surrounding empty tiles:  1 [(4, 6)] None
 I'm the vm totoro agent!!
@@ -3084,8 +3084,8 @@ Timer decision: Ran for 18.672ms
 Tick 779: executing pickup: ['']
 Timer execution: Ran for 5.5ms
 Timer move: Ran for 24.249ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 7) Length of enem surrounding empty tiles:  1 [(4, 6)] None
 I'm the vm totoro agent!!
@@ -3094,8 +3094,8 @@ Timer decision: Ran for 20.573ms
 Tick 780: executing pickup: ['']
 Timer execution: Ran for 4.78ms
 Timer move: Ran for 25.477ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 7) Length of enem surrounding empty tiles:  1 [(4, 6)] None
 I'm the vm totoro agent!!
@@ -3104,8 +3104,8 @@ Timer decision: Ran for 19.871ms
 Tick 781: executing pickup: ['']
 Timer execution: Ran for 5.46ms
 Timer move: Ran for 25.398ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 7) Length of enem surrounding empty tiles:  1 [(4, 6)] None
 I'm the vm totoro agent!!
@@ -3132,8 +3132,8 @@ Timer decision: Ran for 16.382ms
 Tick 784: executing pickup: ['']
 Timer execution: Ran for 4.609ms
 Timer move: Ran for 21.069999999999997ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 4) Length of enem surrounding empty tiles:  2 [(4, 3), (5, 4)] None
 I'm the vm totoro agent!!
@@ -3224,8 +3224,8 @@ Timer decision: Ran for 20.323999999999998ms
 Tick 794: executing pickup: ['']
 Timer execution: Ran for 5.292ms
 Timer move: Ran for 25.761ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3234,8 +3234,8 @@ Timer decision: Ran for 19.820999999999998ms
 Tick 795: executing pickup: ['']
 Timer execution: Ran for 5.393ms
 Timer move: Ran for 25.305999999999997ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3244,8 +3244,8 @@ Timer decision: Ran for 20.097ms
 Tick 796: executing pickup: ['']
 Timer execution: Ran for 5.35ms
 Timer move: Ran for 25.527ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3254,8 +3254,8 @@ Timer decision: Ran for 19.269000000000002ms
 Tick 797: executing pickup: ['']
 Timer execution: Ran for 5.124ms
 Timer move: Ran for 24.452ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3264,8 +3264,8 @@ Timer decision: Ran for 20.346ms
 Tick 798: executing pickup: ['']
 Timer execution: Ran for 4.603000000000001ms
 Timer move: Ran for 25.035999999999998ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3274,8 +3274,8 @@ Timer decision: Ran for 18.396ms
 Tick 799: executing pickup: ['']
 Timer execution: Ran for 5.428999999999999ms
 Timer move: Ran for 23.886999999999997ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3284,8 +3284,8 @@ Timer decision: Ran for 19.471ms
 Tick 800: executing pickup: ['']
 Timer execution: Ran for 5.789ms
 Timer move: Ran for 25.333000000000002ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3294,8 +3294,8 @@ Timer decision: Ran for 23.169999999999998ms
 Tick 801: executing pickup: ['']
 Timer execution: Ran for 4.84ms
 Timer move: Ran for 28.074ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3304,8 +3304,8 @@ Timer decision: Ran for 20.538ms
 Tick 802: executing pickup: ['']
 Timer execution: Ran for 5.164000000000001ms
 Timer move: Ran for 25.773ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3314,8 +3314,8 @@ Timer decision: Ran for 19.73ms
 Tick 803: executing pickup: ['']
 Timer execution: Ran for 5.51ms
 Timer move: Ran for 25.296ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3324,8 +3324,8 @@ Timer decision: Ran for 20.32ms
 Tick 804: executing pickup: ['']
 Timer execution: Ran for 5.143ms
 Timer move: Ran for 25.665ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3334,8 +3334,8 @@ Timer decision: Ran for 18.232000000000003ms
 Tick 805: executing pickup: ['']
 Timer execution: Ran for 6.914ms
 Timer move: Ran for 25.213ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3344,8 +3344,8 @@ Timer decision: Ran for 21.485ms
 Tick 806: executing pickup: ['']
 Timer execution: Ran for 5.2909999999999995ms
 Timer move: Ran for 26.91ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3354,8 +3354,8 @@ Timer decision: Ran for 21.166999999999998ms
 Tick 807: executing pickup: ['']
 Timer execution: Ran for 5.301ms
 Timer move: Ran for 26.536ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3364,8 +3364,8 @@ Timer decision: Ran for 21.179ms
 Tick 808: executing pickup: ['']
 Timer execution: Ran for 6.242ms
 Timer move: Ran for 27.485ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3374,8 +3374,8 @@ Timer decision: Ran for 20.025000000000002ms
 Tick 809: executing pickup: ['']
 Timer execution: Ran for 5.547ms
 Timer move: Ran for 25.651ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3384,8 +3384,8 @@ Timer decision: Ran for 18.939ms
 Tick 810: executing pickup: ['']
 Timer execution: Ran for 5.668ms
 Timer move: Ran for 24.677999999999997ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3394,8 +3394,8 @@ Timer decision: Ran for 19.837ms
 Tick 811: executing pickup: ['']
 Timer execution: Ran for 5.652ms
 Timer move: Ran for 25.782ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3404,8 +3404,8 @@ Timer decision: Ran for 20.908ms
 Tick 812: executing pickup: ['']
 Timer execution: Ran for 5.25ms
 Timer move: Ran for 26.243ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3413,8 +3413,8 @@ Timer decision: Ran for 19.997ms
 Tick 813: executing stalk: ['']
 Timer execution: Ran for 2.141ms
 Timer move: Ran for 22.648000000000003ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3422,8 +3422,8 @@ Timer decision: Ran for 19.668000000000003ms
 Tick 814: executing stalk: ['']
 Timer execution: Ran for 0.959ms
 Timer move: Ran for 20.686ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3431,8 +3431,8 @@ Timer decision: Ran for 19.989ms
 Tick 815: executing stalk: ['']
 Timer execution: Ran for 1.427ms
 Timer move: Ran for 21.761ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3440,8 +3440,8 @@ Timer decision: Ran for 19.374ms
 Tick 816: executing stalk: ['']
 Timer execution: Ran for 1.452ms
 Timer move: Ran for 20.903000000000002ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3449,8 +3449,8 @@ Timer decision: Ran for 19.611ms
 Tick 817: executing stalk: ['']
 Timer execution: Ran for 1.1969999999999998ms
 Timer move: Ran for 20.951ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3458,8 +3458,8 @@ Timer decision: Ran for 20.387999999999998ms
 Tick 818: executing stalk: ['']
 Timer execution: Ran for 1.5250000000000001ms
 Timer move: Ran for 21.979ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3467,8 +3467,8 @@ Timer decision: Ran for 22.626ms
 Tick 819: executing stalk: ['']
 Timer execution: Ran for 1.36ms
 Timer move: Ran for 24.049ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3476,8 +3476,8 @@ Timer decision: Ran for 20.447ms
 Tick 820: executing stalk: ['']
 Timer execution: Ran for 1.5579999999999998ms
 Timer move: Ran for 22.572ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3485,8 +3485,8 @@ Timer decision: Ran for 20.562ms
 Tick 821: executing stalk: ['']
 Timer execution: Ran for 1.718ms
 Timer move: Ran for 22.343ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3494,8 +3494,8 @@ Timer decision: Ran for 19.279ms
 Tick 822: executing stalk: ['']
 Timer execution: Ran for 1.59ms
 Timer move: Ran for 20.972ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3503,8 +3503,8 @@ Timer decision: Ran for 22.375ms
 Tick 823: executing stalk: ['']
 Timer execution: Ran for 1.666ms
 Timer move: Ran for 24.121ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3512,8 +3512,8 @@ Timer decision: Ran for 26.119ms
 Tick 824: executing stalk: ['']
 Timer execution: Ran for 1.807ms
 Timer move: Ran for 28.037ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3521,8 +3521,8 @@ Timer decision: Ran for 20.729ms
 Tick 825: executing stalk: ['']
 Timer execution: Ran for 2.275ms
 Timer move: Ran for 23.237000000000002ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3530,8 +3530,8 @@ Timer decision: Ran for 15.802ms
 Tick 826: executing stalk: ['']
 Timer execution: Ran for 1.9120000000000001ms
 Timer move: Ran for 17.811ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3539,8 +3539,8 @@ Timer decision: Ran for 16.495ms
 Tick 827: executing stalk: ['']
 Timer execution: Ran for 0.5559999999999999ms
 Timer move: Ran for 17.166ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3548,8 +3548,8 @@ Timer decision: Ran for 15.976ms
 Tick 828: executing stalk: ['']
 Timer execution: Ran for 0.318ms
 Timer move: Ran for 16.355999999999998ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3557,8 +3557,8 @@ Timer decision: Ran for 16.567ms
 Tick 829: executing stalk: ['']
 Timer execution: Ran for 0.27799999999999997ms
 Timer move: Ran for 16.910999999999998ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3566,8 +3566,8 @@ Timer decision: Ran for 9.194ms
 Tick 830: executing stalk: ['']
 Timer execution: Ran for 0.277ms
 Timer move: Ran for 9.634ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3575,8 +3575,8 @@ Timer decision: Ran for 9.700999999999999ms
 Tick 831: executing stalk: ['']
 Timer execution: Ran for 0.386ms
 Timer move: Ran for 10.138ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3584,8 +3584,8 @@ Timer decision: Ran for 9.495999999999999ms
 Tick 832: executing stalk: ['']
 Timer execution: Ran for 0.34400000000000003ms
 Timer move: Ran for 9.908999999999999ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3593,8 +3593,8 @@ Timer decision: Ran for 10.386ms
 Tick 833: executing stalk: ['']
 Timer execution: Ran for 0.5599999999999999ms
 Timer move: Ran for 11.071ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3602,8 +3602,8 @@ Timer decision: Ran for 8.869ms
 Tick 834: executing stalk: ['']
 Timer execution: Ran for 0.33399999999999996ms
 Timer move: Ran for 9.263ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3611,8 +3611,8 @@ Timer decision: Ran for 10.161999999999999ms
 Tick 835: executing stalk: ['']
 Timer execution: Ran for 0.33399999999999996ms
 Timer move: Ran for 10.658000000000001ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3620,8 +3620,8 @@ Timer decision: Ran for 7.856999999999999ms
 Tick 836: executing stalk: ['']
 Timer execution: Ran for 0.428ms
 Timer move: Ran for 8.506ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3629,8 +3629,8 @@ Timer decision: Ran for 10.526ms
 Tick 837: executing stalk: ['']
 Timer execution: Ran for 0.5339999999999999ms
 Timer move: Ran for 11.188ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3638,8 +3638,8 @@ Timer decision: Ran for 10.009ms
 Tick 838: executing stalk: ['']
 Timer execution: Ran for 0.47100000000000003ms
 Timer move: Ran for 10.543999999999999ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  2 [(6, 3), (6, 1)] None
 I'm the vm totoro agent!!
@@ -3647,8 +3647,8 @@ Timer decision: Ran for 10.056000000000001ms
 Tick 839: executing stalk: ['']
 Timer execution: Ran for 0.479ms
 Timer move: Ran for 10.599ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  3 [(6, 3), (6, 1), (5, 2)] None
 I'm the vm totoro agent!!
@@ -4205,8 +4205,8 @@ Timer decision: Ran for 16.872ms
 Tick 908: executing pickup: ['']
 Timer execution: Ran for 0.049ms
 Timer move: Ran for 16.992ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 4) Length of enem surrounding empty tiles:  1 [(4, 3)] None
 I'm the vm totoro agent!!
@@ -4405,8 +4405,8 @@ Timer decision: Ran for 14.938ms
 Tick 930: executing pickup: ['']
 Timer execution: Ran for 0.136ms
 Timer move: Ran for 15.142ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (5, 1) Length of enem surrounding empty tiles:  1 [(6, 1)] None
 I'm the vm totoro agent!!
@@ -4479,8 +4479,8 @@ Timer decision: Ran for 21.72ms
 Tick 938: executing pickup: ['']
 Timer execution: Ran for 0.063ms
 Timer move: Ran for 21.852ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 1) Length of enem surrounding empty tiles:  2 [(4, 0), (3, 1)] None
 I'm the vm totoro agent!!
@@ -4745,8 +4745,8 @@ Timer decision: Ran for 20.307ms
 Tick 969: executing pickup: ['']
 Timer execution: Ran for 1.138ms
 Timer move: Ran for 21.572999999999997ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 1) Length of enem surrounding empty tiles:  2 [(4, 0), (3, 1)] None
 I'm the vm totoro agent!!
@@ -4755,8 +4755,8 @@ Timer decision: Ran for 20.923000000000002ms
 Tick 970: executing pickup: ['']
 Timer execution: Ran for 1.095ms
 Timer move: Ran for 22.091ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 1) Length of enem surrounding empty tiles:  2 [(4, 0), (3, 1)] None
 I'm the vm totoro agent!!
@@ -4765,8 +4765,8 @@ Timer decision: Ran for 17.455ms
 Tick 971: executing pickup: ['']
 Timer execution: Ran for 1.155ms
 Timer move: Ran for 18.683000000000003ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 1) Length of enem surrounding empty tiles:  2 [(4, 0), (3, 1)] None
 I'm the vm totoro agent!!
@@ -4775,8 +4775,8 @@ Timer decision: Ran for 18.366ms
 Tick 972: executing pickup: ['']
 Timer execution: Ran for 1.138ms
 Timer move: Ran for 19.575ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 1) Length of enem surrounding empty tiles:  1 [(4, 0)] None
 I'm the vm totoro agent!!
@@ -4785,8 +4785,8 @@ Timer decision: Ran for 11.030999999999999ms
 Tick 973: executing pickup: ['']
 Timer execution: Ran for 1.045ms
 Timer move: Ran for 12.141ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 1) Length of enem surrounding empty tiles:  1 [(4, 0)] None
 I'm the vm totoro agent!!
@@ -4795,8 +4795,8 @@ Timer decision: Ran for 13.785ms
 Tick 974: executing pickup: ['']
 Timer execution: Ran for 0.964ms
 Timer move: Ran for 14.876000000000001ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 1) Length of enem surrounding empty tiles:  1 [(4, 0)] None
 I'm the vm totoro agent!!
@@ -4805,8 +4805,8 @@ Timer decision: Ran for 11.568999999999999ms
 Tick 975: executing pickup: ['']
 Timer execution: Ran for 1.489ms
 Timer move: Ran for 13.169ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (4, 1) Length of enem surrounding empty tiles:  1 [(4, 0)] None
 I'm the vm totoro agent!!
@@ -4815,8 +4815,8 @@ Timer decision: Ran for 16.62ms
 Tick 976: executing pickup: ['']
 Timer execution: Ran for 1.0219999999999998ms
 Timer move: Ran for 17.712ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (5, 1) Length of enem surrounding empty tiles:  1 [(6, 1)] None
 I'm the vm totoro agent!!
@@ -4825,8 +4825,8 @@ Timer decision: Ran for 18.668ms
 Tick 977: executing pickup: ['']
 Timer execution: Ran for 0.93ms
 Timer move: Ran for 19.675ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (6, 1) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -4835,8 +4835,8 @@ Timer decision: Ran for 16.919ms
 Tick 978: executing pickup: ['']
 Timer execution: Ran for 0.768ms
 Timer move: Ran for 17.746000000000002ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 2) Length of enem surrounding empty tiles:  1 [(6, 3)] None
 I'm the vm totoro agent!!
@@ -4845,8 +4845,8 @@ Timer decision: Ran for 17.817ms
 Tick 979: executing pickup: ['']
 Timer execution: Ran for 1.2149999999999999ms
 Timer move: Ran for 19.101ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (6, 3) Length of enem surrounding empty tiles:  2 [(7, 3), (5, 3)] None
 I'm the vm totoro agent!!
@@ -4855,8 +4855,8 @@ Timer decision: Ran for 17.607000000000003ms
 Tick 980: executing pickup: ['']
 Timer execution: Ran for 1.751ms
 Timer move: Ran for 19.913ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (7, 3) Length of enem surrounding empty tiles:  2 [(7, 4), (8, 3)] None
 I'm the vm totoro agent!!
@@ -4865,8 +4865,8 @@ Timer decision: Ran for 18.548ms
 Tick 981: executing pickup: ['']
 Timer execution: Ran for 1.7429999999999999ms
 Timer move: Ran for 20.35ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (8, 3) Length of enem surrounding empty tiles:  1 [(8, 4)] None
 I'm the vm totoro agent!!
@@ -4875,8 +4875,8 @@ Timer decision: Ran for 17.653ms
 Tick 982: executing pickup: ['']
 Timer execution: Ran for 1.5230000000000001ms
 Timer move: Ran for 19.243ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 True
 Player pos: (8, 2) Length of enem surrounding empty tiles:  0 [] None
 I'm the vm totoro agent!!
@@ -4921,8 +4921,8 @@ Timer decision: Ran for 21.162ms
 Tick 987: executing pickup: ['']
 Timer execution: Ran for 0.051ms
 Timer move: Ran for 21.274ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 False
 Player pos: (5, 4) Length of enem surrounding empty tiles:  2 [(5, 3), (6, 4)] None
 I'm the vm totoro agent!!
@@ -4977,8 +4977,8 @@ Timer decision: Ran for 8.542ms
 Tick 993: executing retreat: ['']
 Timer execution: Ran for 65.844ms
 Timer move: Ran for 74.45599999999999ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 unknown packet "endgame_state": {'type': 'endgame_state', 'payload': {'initial_state': {'agent_state': {'0': {'coordinates': [8, 2], 'hp': 3, 'inventory': {'bombs': 3}, 'blast_diameter': 3, 'number': 0, 'invulnerability': 0}, '1': {'coordinates': [0, 2], 'hp': 3, 'inventory': {'bombs': 3}, 'blast_diameter': 3, 'number': 1, 'invulnerability': 0}}, 'entities': [{'x': 6, 'y': 0, 'type': 'm'}, {'x': 2, 'y': 0, 'type': 'm'}, {'x': 8, 'y': 7, 'type': 'm'}, {'x': 0, 'y': 7, 'type': 'm'}, {'x': 7, 'y': 2, 'type': 'm'}, {'x': 1, 'y': 2, 'type': 'm'}, {'x': 8, 'y': 5, 'type': 'm'}, {'x': 0, 'y': 5, 'type': 'm'}, {'x': 1, 'y': 0, 'type': 'm'}, {'x': 7, 'y': 0, 'type': 'm'}, {'x': 7, 'y': 8, 'type': 'm'}, {'x': 1, 'y': 8, 'type': 'm'}, {'x': 5, 'y': 5, 'type': 'm'}, {'x': 3, 'y': 5, 'type': 'm'}, {'x': 8, 'y': 0, 'type': 'm'}, {'x': 0, 'y': 0, 'type': 'm'}, {'x': 2, 'y': 5, 'type': 'm'}, {'x': 6, 'y': 5, 'type': 'm'}, {'x': 5, 'y': 6, 'type': 'w', 'hp': 1}, {'x': 3, 'y': 6, 'type': 'w', 'hp': 1}, {'x': 7, 'y': 1, 'type': 'w', 'hp': 1}, {'x': 1, 'y': 1, 'type': 'w', 'hp': 1}, {'x': 5, 'y': 4, 'type': 'w', 'hp': 1}, {'x': 3, 'y': 4, 'type': 'w', 'hp': 1}, {'x': 8, 'y': 1, 'type': 'w', 'hp': 1}, {'x': 0, 'y': 1, 'type': 'w', 'hp': 1}, {'x': 3, 'y': 3, 'type': 'w', 'hp': 1}, {'x': 5, 'y': 3, 'type': 'w', 'hp': 1}, {'x': 6, 'y': 6, 'type': 'w', 'hp': 1}, {'x': 2, 'y': 6, 'type': 'w', 'hp': 1}, {'x': 1, 'y': 5, 'type': 'w', 'hp': 1}, {'x': 7, 'y': 5, 'type': 'w', 'hp': 1}, {'x': 6, 'y': 8, 'type': 'w', 'hp': 1}, {'x': 2, 'y': 8, 'type': 'w', 'hp': 1}, {'x': 2, 'y': 1, 'type': 'w', 'hp': 1}, {'x': 6, 'y': 1, 'type': 'w', 'hp': 1}, {'x': 3, 'y': 7, 'type': 'w', 'hp': 1}, {'x': 5, 'y': 7, 'type': 'w', 'hp': 1}, {'x': 3, 'y': 8, 'type': 'o', 'hp': 3}, {'x': 5, 'y': 8, 'type': 'o', 'hp': 3}, {'x': 3, 'y': 0, 'type': 'o', 'hp': 3}, {'x': 5, 'y': 0, 'type': 'o', 'hp': 3}, {'x': 1, 'y': 7, 'type': 'o', 'hp': 3}, {'x': 7, 'y': 7, 'type': 'o', 'hp': 3}], 'world': {'width': 9, 'height': 9}, 'tick': 0, 'config': {'tick_rate_hz': 10, 'game_duration_ticks': 1800, 'fire_spawn_interval_ticks': 5}}, 'history': [{'tick': 2, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 3, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 4, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 5, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 6, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 7, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 19, 'events': [{'type': 'entity_spawned', 'data': {'x': 4, 'y': 0, 'type': 'a', 'expires': 59, 'hp': 1}}]}, {'tick': 58, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 2, 'type': 'b', 'owner': 0, 'expires': 98, 'hp': 1, 'blast_diameter': 3}}, {'type': 'agent_state', 'data': {'coordinates': [5, 2], 'hp': 3, 'inventory': {'bombs': 2}, 'blast_diameter': 3, 'number': 0, 'invulnerability': 0}}]}, {'tick': 59, 'events': [{'type': 'entity_expired', 'data': [4, 0]}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 60, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 61, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'b', 'owner': 0, 'expires': 101, 'hp': 1, 'blast_diameter': 3}}, {'type': 'agent_state', 'data': {'coordinates': [4, 3], 'hp': 3, 'inventory': {'bombs': 1}, 'blast_diameter': 3, 'number': 0, 'invulnerability': 0}}]}, {'tick': 62, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 63, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 64, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 65, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 66, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 67, 'events': [{'type': 'entity_spawned', 'data': {'x': 4, 'y': 0, 'type': 'bp', 'expires': 107, 'hp': 1}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 68, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 69, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 70, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 71, 'events': [{'type': 'agent_state', 'data': {'coordinates': [4, 0], 'hp': 3, 'inventory': {'bombs': 3}, 'blast_diameter': 5, 'number': 1, 'invulnerability': 0}}, {'type': 'entity_expired', 'data': [4, 0]}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 72, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 73, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 74, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 75, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 76, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 77, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 78, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 79, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 80, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 81, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 82, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 83, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 84, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 85, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 86, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 87, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 88, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 89, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 90, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 91, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 92, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 93, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 94, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 95, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 96, 'events': [{'type': 'entity_spawned', 'data': {'x': 0, 'y': 2, 'type': 'a', 'expires': 136, 'hp': 1}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 97, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 98, 'events': [{'type': 'entity_expired', 'data': [5, 2]}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 108}}, {'type': 'entity_state', 'coordinates': [5, 3], 'updated_entity': {'x': 5, 'y': 3, 'type': 'w', 'hp': 0}}, {'type': 'entity_expired', 'data': [5, 3]}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 1, 'type': 'x', 'owner': 0, 'expires': 108}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 108}}, {'type': 'entity_spawned', 'data': {'x': 6, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 108}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 99, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 100, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 101, 'events': [{'type': 'entity_expired', 'data': [4, 3]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 111}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 111}}, {'type': 'entity_expired', 'data': [4, 2]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 111}}, {'type': 'entity_state', 'coordinates': [3, 3], 'updated_entity': {'x': 3, 'y': 3, 'type': 'w', 'hp': 0}}, {'type': 'entity_expired', 'data': [3, 3]}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 111}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 102, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 103, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 104, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 105, 'events': [{'type': 'agent_state', 'data': {'coordinates': [0, 2], 'hp': 3, 'inventory': {'bombs': 4}, 'blast_diameter': 5, 'number': 1, 'invulnerability': 0}}, {'type': 'entity_expired', 'data': [0, 2]}]}, {'tick': 106, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 108, 'events': [{'type': 'entity_expired', 'data': [5, 2]}, {'type': 'entity_expired', 'data': [5, 1]}, {'type': 'entity_expired', 'data': [6, 2]}]}, {'tick': 111, 'events': [{'type': 'entity_expired', 'data': [4, 3]}, {'type': 'entity_expired', 'data': [4, 4]}, {'type': 'entity_expired', 'data': [4, 2]}, {'type': 'entity_expired', 'data': [5, 3]}]}, {'tick': 112, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 113, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 114, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 115, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 116, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'b', 'owner': 0, 'expires': 156, 'hp': 1, 'blast_diameter': 3}}, {'type': 'agent_state', 'data': {'coordinates': [4, 3], 'hp': 3, 'inventory': {'bombs': 0}, 'blast_diameter': 3, 'number': 0, 'invulnerability': 0}}]}, {'tick': 117, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 118, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 119, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 120, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 121, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 122, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 123, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 124, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 125, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 126, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 1, 'type': 'b', 'owner': 1, 'expires': 166, 'hp': 1, 'blast_diameter': 5}}, {'type': 'agent_state', 'data': {'coordinates': [4, 1], 'hp': 3, 'inventory': {'bombs': 3}, 'blast_diameter': 5, 'number': 1, 'invulnerability': 0}}]}, {'tick': 127, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 128, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'detonate', 'coordinates': [4, 3]}}, {'type': 'entity_expired', 'data': [4, 3]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 138}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 138}}, {'type': 'agent_state', 'data': {'coordinates': [4, 2], 'hp': 2, 'inventory': {'bombs': 3}, 'blast_diameter': 5, 'number': 1, 'invulnerability': 133}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 138}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 138}}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 138}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 129, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 130, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 131, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 132, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 133, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 134, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 135, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 136, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 137, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 138, 'events': [{'type': 'entity_expired', 'data': [4, 3]}, {'type': 'entity_expired', 'data': [4, 4]}, {'type': 'entity_expired', 'data': [4, 2]}, {'type': 'entity_expired', 'data': [3, 3]}, {'type': 'entity_expired', 'data': [5, 3]}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 139, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 140, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 141, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 142, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 143, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 144, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 145, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 146, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 147, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 148, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 149, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 150, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 151, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 152, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 153, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 154, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 155, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 156, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 157, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 158, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 159, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 160, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 161, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 162, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 163, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 164, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 166, 'events': [{'type': 'entity_expired', 'data': [4, 1]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 1, 'type': 'x', 'owner': 1, 'expires': 176}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 2, 'type': 'x', 'owner': 1, 'expires': 176}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'x', 'owner': 1, 'expires': 176}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 0, 'type': 'x', 'owner': 1, 'expires': 176}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 1, 'type': 'x', 'owner': 1, 'expires': 176}}, {'type': 'entity_state', 'coordinates': [2, 1], 'updated_entity': {'x': 2, 'y': 1, 'type': 'w', 'hp': 0}}, {'type': 'entity_expired', 'data': [2, 1]}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 1, 'type': 'x', 'owner': 1, 'expires': 176}}, {'type': 'entity_state', 'coordinates': [6, 1], 'updated_entity': {'x': 6, 'y': 1, 'type': 'w', 'hp': 0}}, {'type': 'entity_expired', 'data': [6, 1]}, {'type': 'entity_spawned', 'data': {'x': 8, 'y': 2, 'type': 'a', 'expires': 206, 'hp': 1}}]}, {'tick': 167, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 168, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 169, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 170, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 171, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 172, 'events': [{'type': 'agent_state', 'data': {'coordinates': [8, 2], 'hp': 3, 'inventory': {'bombs': 1}, 'blast_diameter': 3, 'number': 0, 'invulnerability': 0}}, {'type': 'entity_expired', 'data': [8, 2]}]}, {'tick': 173, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 174, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 175, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 176, 'events': [{'type': 'entity_expired', 'data': [4, 1]}, {'type': 'entity_expired', 'data': [4, 2]}, {'type': 'entity_expired', 'data': [4, 3]}, {'type': 'entity_expired', 'data': [4, 0]}, {'type': 'entity_expired', 'data': [3, 1]}, {'type': 'entity_expired', 'data': [5, 1]}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 177, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 178, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'b', 'owner': 0, 'expires': 218, 'hp': 1, 'blast_diameter': 3}}, {'type': 'agent_state', 'data': {'coordinates': [4, 3], 'hp': 3, 'inventory': {'bombs': 0}, 'blast_diameter': 3, 'number': 0, 'invulnerability': 0}}]}, {'tick': 179, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 180, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 181, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 182, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 183, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 184, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 185, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 186, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 2, 'y': 1, 'type': 'b', 'owner': 1, 'expires': 226, 'hp': 1, 'blast_diameter': 5}}, {'type': 'agent_state', 'data': {'coordinates': [2, 1], 'hp': 2, 'inventory': {'bombs': 2}, 'blast_diameter': 5, 'number': 1, 'invulnerability': 133}}]}, {'tick': 187, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 188, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 189, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 190, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 191, 'events': [{'type': 'entity_spawned', 'data': {'x': 8, 'y': 3, 'type': 'bp', 'expires': 231, 'hp': 1}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 192, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 193, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 194, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 195, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 196, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 197, 'events': [{'type': 'agent_state', 'data': {'coordinates': [8, 3], 'hp': 3, 'inventory': {'bombs': 0}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 0}}, {'type': 'entity_expired', 'data': [8, 3]}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 198, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 199, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 200, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 201, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 202, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 203, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 204, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 205, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 206, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 207, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 208, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 209, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 210, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 211, 'events': [{'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'a', 'expires': 251, 'hp': 1}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 212, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 213, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 214, 'events': [{'type': 'entity_spawned', 'data': {'x': 7, 'y': 4, 'type': 'a', 'expires': 254, 'hp': 1}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 215, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 216, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 217, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 218, 'events': [{'type': 'entity_expired', 'data': [4, 3]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 228}}, {'type': 'entity_state', 'coordinates': [4, 4], 'updated_entity': {'x': 4, 'y': 4, 'type': 'a', 'expires': 251, 'hp': 0}}, {'type': 'entity_expired', 'data': [4, 4]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 228}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 228}}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 228}}, {'type': 'agent_state', 'data': {'coordinates': [7, 4], 'hp': 3, 'inventory': {'bombs': 1}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 0}}, {'type': 'entity_expired', 'data': [7, 4]}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 219, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 220, 'events': [{'type': 'entity_spawned', 'data': {'x': 4, 'y': 5, 'type': 'a', 'expires': 260, 'hp': 1}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 221, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 222, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 223, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 224, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 225, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 226, 'events': [{'type': 'entity_expired', 'data': [2, 1]}, {'type': 'entity_spawned', 'data': {'x': 2, 'y': 1, 'type': 'x', 'owner': 1, 'expires': 236}}, {'type': 'entity_spawned', 'data': {'x': 2, 'y': 2, 'type': 'x', 'owner': 1, 'expires': 236}}, {'type': 'entity_spawned', 'data': {'x': 2, 'y': 3, 'type': 'x', 'owner': 1, 'expires': 236}}, {'type': 'entity_state', 'coordinates': [1, 1], 'updated_entity': {'x': 1, 'y': 1, 'type': 'w', 'hp': 0}}, {'type': 'entity_expired', 'data': [1, 1]}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 1, 'type': 'x', 'owner': 1, 'expires': 236}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 1, 'type': 'x', 'owner': 1, 'expires': 236}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 227, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 228, 'events': [{'type': 'entity_expired', 'data': [4, 3]}, {'type': 'entity_expired', 'data': [4, 2]}, {'type': 'entity_expired', 'data': [3, 3]}, {'type': 'entity_expired', 'data': [5, 3]}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 229, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 230, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 231, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 232, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 233, 'events': [{'type': 'agent_state', 'data': {'coordinates': [4, 5], 'hp': 3, 'inventory': {'bombs': 2}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 0}}, {'type': 'entity_expired', 'data': [4, 5]}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 234, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 235, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 236, 'events': [{'type': 'entity_expired', 'data': [2, 1]}, {'type': 'entity_expired', 'data': [2, 2]}, {'type': 'entity_expired', 'data': [2, 3]}, {'type': 'entity_expired', 'data': [3, 1]}, {'type': 'entity_expired', 'data': [4, 1]}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 237, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 238, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 239, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'b', 'owner': 0, 'expires': 279, 'hp': 1, 'blast_diameter': 5}}, {'type': 'agent_state', 'data': {'coordinates': [4, 3], 'hp': 3, 'inventory': {'bombs': 1}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 0}}]}, {'tick': 240, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 241, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 242, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 2, 'type': 'b', 'owner': 1, 'expires': 282, 'hp': 1, 'blast_diameter': 5}}, {'type': 'agent_state', 'data': {'coordinates': [3, 2], 'hp': 2, 'inventory': {'bombs': 1}, 'blast_diameter': 5, 'number': 1, 'invulnerability': 133}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 243, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 244, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 245, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'detonate', 'coordinates': [4, 3]}}, {'type': 'entity_expired', 'data': [4, 3]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 255}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 255}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 5, 'type': 'x', 'owner': 0, 'expires': 255}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 255}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 1, 'type': 'x', 'owner': 0, 'expires': 255}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 255}}, {'type': 'agent_state', 'data': {'coordinates': [2, 3], 'hp': 1, 'inventory': {'bombs': 1}, 'blast_diameter': 5, 'number': 1, 'invulnerability': 250}}, {'type': 'entity_spawned', 'data': {'x': 2, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 255}}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 255}}, {'type': 'entity_spawned', 'data': {'x': 6, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 255}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 246, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 247, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 248, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 249, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 255, 'events': [{'type': 'entity_expired', 'data': [4, 3]}, {'type': 'entity_expired', 'data': [4, 4]}, {'type': 'entity_expired', 'data': [4, 5]}, {'type': 'entity_expired', 'data': [4, 2]}, {'type': 'entity_expired', 'data': [4, 1]}, {'type': 'entity_expired', 'data': [3, 3]}, {'type': 'entity_expired', 'data': [2, 3]}, {'type': 'entity_expired', 'data': [5, 3]}, {'type': 'entity_expired', 'data': [6, 3]}]}, {'tick': 256, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 257, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 258, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 259, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 260, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 261, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 262, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 263, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 264, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 265, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 266, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 267, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 268, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 269, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 270, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 271, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 272, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 273, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 274, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 275, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 276, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 277, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 278, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 279, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 280, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 282, 'events': [{'type': 'entity_expired', 'data': [3, 2]}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 2, 'type': 'x', 'owner': 1, 'expires': 292}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 3, 'type': 'x', 'owner': 1, 'expires': 292}}, {'type': 'entity_state', 'coordinates': [3, 4], 'updated_entity': {'x': 3, 'y': 4, 'type': 'w', 'hp': 0}}, {'type': 'entity_expired', 'data': [3, 4]}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 1, 'type': 'x', 'owner': 1, 'expires': 292}}, {'type': 'entity_state', 'coordinates': [3, 0], 'updated_entity': {'x': 3, 'y': 0, 'type': 'o', 'hp': 2}}, {'type': 'entity_spawned', 'data': {'x': 2, 'y': 2, 'type': 'x', 'owner': 1, 'expires': 292}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 2, 'type': 'x', 'owner': 1, 'expires': 292}}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 2, 'type': 'x', 'owner': 1, 'expires': 292}}]}, {'tick': 283, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 284, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 285, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 286, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'bomb'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'b', 'owner': 0, 'expires': 326, 'hp': 1, 'blast_diameter': 5}}, {'type': 'agent_state', 'data': {'coordinates': [4, 3], 'hp': 3, 'inventory': {'bombs': 0}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 0}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'b', 'owner': 1, 'expires': 326, 'hp': 1, 'blast_diameter': 5}}, {'type': 'agent_state', 'data': {'coordinates': [4, 4], 'hp': 1, 'inventory': {'bombs': 0}, 'blast_diameter': 5, 'number': 1, 'invulnerability': 250}}]}, {'tick': 287, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 288, 'events': [{'type': 'entity_spawned', 'data': {'x': 6, 'y': 1, 'type': 'a', 'expires': 328, 'hp': 1}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 289, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 290, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 291, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 292, 'events': [{'type': 'entity_expired', 'data': [3, 2]}, {'type': 'entity_expired', 'data': [3, 3]}, {'type': 'entity_expired', 'data': [3, 1]}, {'type': 'entity_expired', 'data': [2, 2]}, {'type': 'entity_expired', 'data': [4, 2]}, {'type': 'entity_expired', 'data': [5, 2]}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 293, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 294, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 295, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 296, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 297, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 298, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 299, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 300, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 301, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 302, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 303, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 304, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 305, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 306, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 307, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 308, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 309, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 310, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 311, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 312, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 313, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 314, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 315, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 316, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 317, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 318, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 319, 'events': [{'type': 'entity_spawned', 'data': {'x': 4, 'y': 8, 'type': 'a', 'expires': 359, 'hp': 1}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 320, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 321, 'events': [{'type': 'agent_state', 'data': {'coordinates': [4, 8], 'hp': 1, 'inventory': {'bombs': 1}, 'blast_diameter': 5, 'number': 1, 'invulnerability': 250}}, {'type': 'entity_expired', 'data': [4, 8]}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 322, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 323, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 326, 'events': [{'type': 'entity_expired', 'data': [4, 3]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 336}}, {'type': 'entity_state', 'coordinates': [4, 4], 'updated_entity': {'x': 4, 'y': 4, 'type': 'b', 'owner': 1, 'expires': 326, 'hp': 0, 'blast_diameter': 5}}, {'type': 'entity_expired', 'data': [4, 4]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 336}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 5, 'type': 'x', 'owner': 1, 'expires': 336}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 6, 'type': 'x', 'owner': 1, 'expires': 336}}, {'type': 'entity_expired', 'data': [4, 3]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'x', 'owner': 1, 'expires': 336}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 2, 'type': 'x', 'owner': 1, 'expires': 336}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 336}}, {'type': 'entity_spawned', 'data': {'x': 2, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 336}}, {'type': 'entity_state', 'coordinates': [5, 4], 'updated_entity': {'x': 5, 'y': 4, 'type': 'w', 'hp': 0}}, {'type': 'entity_expired', 'data': [5, 4]}, {'type': 'entity_expired', 'data': [4, 2]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 336}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 1, 'type': 'x', 'owner': 0, 'expires': 336}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 336}}, {'type': 'entity_spawned', 'data': {'x': 2, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 336}}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 336}}, {'type': 'entity_spawned', 'data': {'x': 6, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 336}}]}, {'tick': 328, 'events': [{'type': 'entity_expired', 'data': [6, 1]}]}, {'tick': 329, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 336, 'events': [{'type': 'entity_expired', 'data': [4, 4]}, {'type': 'entity_expired', 'data': [4, 5]}, {'type': 'entity_expired', 'data': [4, 6]}, {'type': 'entity_expired', 'data': [4, 3]}, {'type': 'entity_expired', 'data': [3, 4]}, {'type': 'entity_expired', 'data': [2, 4]}, {'type': 'entity_expired', 'data': [4, 2]}, {'type': 'entity_expired', 'data': [4, 1]}, {'type': 'entity_expired', 'data': [3, 3]}, {'type': 'entity_expired', 'data': [2, 3]}, {'type': 'entity_expired', 'data': [5, 3]}, {'type': 'entity_expired', 'data': [6, 3]}]}, {'tick': 337, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 338, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 339, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 388, 'events': [{'type': 'entity_spawned', 'data': {'x': 6, 'y': 1, 'type': 'a', 'expires': 428, 'hp': 1}}]}, {'tick': 389, 'events': [{'type': 'entity_spawned', 'data': {'x': 3, 'y': 3, 'type': 'a', 'expires': 429, 'hp': 1}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 390, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 391, 'events': [{'type': 'agent_state', 'data': {'coordinates': [3, 3], 'hp': 3, 'inventory': {'bombs': 1}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 0}}, {'type': 'entity_expired', 'data': [3, 3]}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 392, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 393, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 394, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 395, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 396, 'events': [{'type': 'agent_state', 'data': {'coordinates': [6, 1], 'hp': 1, 'inventory': {'bombs': 2}, 'blast_diameter': 5, 'number': 1, 'invulnerability': 250}}, {'type': 'entity_expired', 'data': [6, 1]}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 1, 'type': 'b', 'owner': 0, 'expires': 436, 'hp': 1, 'blast_diameter': 5}}, {'type': 'agent_state', 'data': {'coordinates': [4, 1], 'hp': 3, 'inventory': {'bombs': 0}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 0}}]}, {'tick': 398, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 399, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 400, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 6, 'y': 3, 'type': 'b', 'owner': 1, 'expires': 440, 'hp': 1, 'blast_diameter': 5}}, {'type': 'agent_state', 'data': {'coordinates': [6, 3], 'hp': 1, 'inventory': {'bombs': 1}, 'blast_diameter': 5, 'number': 1, 'invulnerability': 250}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 401, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 402, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 403, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 404, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'b', 'owner': 1, 'expires': 444, 'hp': 1, 'blast_diameter': 5}}, {'type': 'agent_state', 'data': {'coordinates': [4, 4], 'hp': 1, 'inventory': {'bombs': 0}, 'blast_diameter': 5, 'number': 1, 'invulnerability': 250}}]}, {'tick': 405, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 406, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 407, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 408, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 430, 'events': [{'type': 'entity_spawned', 'data': {'x': 5, 'y': 3, 'type': 'bp', 'expires': 470, 'hp': 1}}]}, {'tick': 436, 'events': [{'type': 'entity_expired', 'data': [4, 1]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 1, 'type': 'x', 'owner': 0, 'expires': 446}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 446}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 446}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 0, 'type': 'x', 'owner': 0, 'expires': 446}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 1, 'type': 'x', 'owner': 0, 'expires': 446}}, {'type': 'entity_spawned', 'data': {'x': 2, 'y': 1, 'type': 'x', 'owner': 0, 'expires': 446}}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 1, 'type': 'x', 'owner': 0, 'expires': 446}}, {'type': 'entity_spawned', 'data': {'x': 6, 'y': 1, 'type': 'x', 'owner': 0, 'expires': 446}}]}, {'tick': 440, 'events': [{'type': 'entity_expired', 'data': [6, 3]}, {'type': 'entity_spawned', 'data': {'x': 6, 'y': 3, 'type': 'x', 'owner': 1, 'expires': 450}}, {'type': 'entity_spawned', 'data': {'x': 6, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 450}}, {'type': 'entity_spawned', 'data': {'x': 6, 'y': 2, 'type': 'x', 'owner': 1, 'expires': 450}}, {'type': 'entity_expired', 'data': [6, 1]}, {'type': 'entity_spawned', 'data': {'x': 6, 'y': 1, 'type': 'x', 'owner': 1, 'expires': 450}}, {'type': 'entity_state', 'coordinates': [5, 3], 'updated_entity': {'x': 5, 'y': 3, 'type': 'bp', 'expires': 470, 'hp': 0}}, {'type': 'entity_expired', 'data': [5, 3]}, {'type': 'entity_spawned', 'data': {'x': 7, 'y': 3, 'type': 'x', 'owner': 1, 'expires': 450}}, {'type': 'entity_spawned', 'data': {'x': 8, 'y': 3, 'type': 'x', 'owner': 1, 'expires': 450}}]}, {'tick': 444, 'events': [{'type': 'entity_expired', 'data': [4, 4]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 454}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 5, 'type': 'x', 'owner': 1, 'expires': 454}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 6, 'type': 'x', 'owner': 1, 'expires': 454}}, {'type': 'entity_expired', 'data': [4, 3]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'x', 'owner': 1, 'expires': 454}}, {'type': 'entity_expired', 'data': [4, 2]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 2, 'type': 'x', 'owner': 1, 'expires': 454}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 454}}, {'type': 'entity_spawned', 'data': {'x': 2, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 454}}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 454}}, {'type': 'entity_expired', 'data': [6, 4]}, {'type': 'entity_spawned', 'data': {'x': 6, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 454}}]}, {'tick': 446, 'events': [{'type': 'entity_expired', 'data': [4, 1]}, {'type': 'entity_expired', 'data': [4, 0]}, {'type': 'entity_expired', 'data': [3, 1]}, {'type': 'entity_expired', 'data': [2, 1]}, {'type': 'entity_expired', 'data': [5, 1]}]}, {'tick': 450, 'events': [{'type': 'entity_expired', 'data': [6, 3]}, {'type': 'entity_expired', 'data': [6, 2]}, {'type': 'entity_expired', 'data': [6, 1]}, {'type': 'entity_expired', 'data': [7, 3]}, {'type': 'entity_expired', 'data': [8, 3]}]}, {'tick': 454, 'events': [{'type': 'entity_expired', 'data': [4, 4]}, {'type': 'entity_expired', 'data': [4, 5]}, {'type': 'entity_expired', 'data': [4, 6]}, {'type': 'entity_expired', 'data': [4, 3]}, {'type': 'entity_expired', 'data': [4, 2]}, {'type': 'entity_expired', 'data': [3, 4]}, {'type': 'entity_expired', 'data': [2, 4]}, {'type': 'entity_expired', 'data': [5, 4]}, {'type': 'entity_expired', 'data': [6, 4]}]}, {'tick': 495, 'events': [{'type': 'entity_spawned', 'data': {'x': 3, 'y': 2, 'type': 'a', 'expires': 535, 'hp': 1}}]}, {'tick': 496, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 497, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 498, 'events': [{'type': 'agent_state', 'data': {'coordinates': [3, 2], 'hp': 3, 'inventory': {'bombs': 1}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 0}}, {'type': 'entity_expired', 'data': [3, 2]}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 529, 'events': [{'type': 'entity_spawned', 'data': {'x': 4, 'y': 6, 'type': 'a', 'expires': 569, 'hp': 1}}]}, {'tick': 530, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 531, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 532, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 533, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 534, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 535, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 536, 'events': [{'type': 'agent_state', 'data': {'coordinates': [4, 6], 'hp': 1, 'inventory': {'bombs': 1}, 'blast_diameter': 5, 'number': 1, 'invulnerability': 250}}, {'type': 'entity_expired', 'data': [4, 6]}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'b', 'owner': 0, 'expires': 576, 'hp': 1, 'blast_diameter': 5}}, {'type': 'agent_state', 'data': {'coordinates': [4, 4], 'hp': 3, 'inventory': {'bombs': 0}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 0}}]}, {'tick': 537, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 538, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 539, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 540, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 541, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 542, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 543, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 544, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 545, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 546, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 547, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 548, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 549, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 551, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 552, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 553, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 554, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 555, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 556, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 557, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 558, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 559, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 560, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 562, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 563, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 564, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 565, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 566, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 567, 'events': [{'type': 'entity_spawned', 'data': {'x': 6, 'y': 2, 'type': 'a', 'expires': 607, 'hp': 1}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 569, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 570, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 571, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 572, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 573, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 574, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 575, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 576, 'events': [{'type': 'entity_expired', 'data': [4, 4]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 586}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 5, 'type': 'x', 'owner': 0, 'expires': 586}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 6, 'type': 'x', 'owner': 0, 'expires': 586}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 586}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 586}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 586}}, {'type': 'entity_spawned', 'data': {'x': 2, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 586}}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 586}}, {'type': 'entity_spawned', 'data': {'x': 6, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 586}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 577, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 578, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 579, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 580, 'events': [{'type': 'agent_state', 'data': {'coordinates': [6, 2], 'hp': 3, 'inventory': {'bombs': 1}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 0}}, {'type': 'entity_expired', 'data': [6, 2]}]}, {'tick': 582, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 583, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 584, 'events': [{'type': 'agent_state', 'data': {'coordinates': [4, 2], 'hp': 2, 'inventory': {'bombs': 1}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 589}}, {'type': 'entity_spawned', 'data': {'x': 1, 'y': 4, 'type': 'a', 'expires': 624, 'hp': 1}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 585, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 586, 'events': [{'type': 'entity_expired', 'data': [4, 4]}, {'type': 'entity_expired', 'data': [4, 5]}, {'type': 'entity_expired', 'data': [4, 6]}, {'type': 'entity_expired', 'data': [4, 3]}, {'type': 'entity_expired', 'data': [4, 2]}, {'type': 'entity_expired', 'data': [3, 4]}, {'type': 'entity_expired', 'data': [2, 4]}, {'type': 'entity_expired', 'data': [5, 4]}, {'type': 'entity_expired', 'data': [6, 4]}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 587, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 588, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 589, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 590, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'b', 'owner': 1, 'expires': 630, 'hp': 1, 'blast_diameter': 5}}, {'type': 'agent_state', 'data': {'coordinates': [4, 4], 'hp': 1, 'inventory': {'bombs': 0}, 'blast_diameter': 5, 'number': 1, 'invulnerability': 250}}]}, {'tick': 591, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 592, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 593, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 594, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 595, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 596, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 597, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 598, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 599, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 600, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 601, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 602, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 2, 'type': 'b', 'owner': 0, 'expires': 642, 'hp': 1, 'blast_diameter': 5}}, {'type': 'agent_state', 'data': {'coordinates': [3, 2], 'hp': 2, 'inventory': {'bombs': 0}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 589}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 604, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 606, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 607, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 608, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'detonate', 'coordinates': [4, 4]}}, {'type': 'entity_expired', 'data': [4, 4]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 618}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 5, 'type': 'x', 'owner': 1, 'expires': 618}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 6, 'type': 'x', 'owner': 1, 'expires': 618}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'x', 'owner': 1, 'expires': 618}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 2, 'type': 'x', 'owner': 1, 'expires': 618}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 618}}, {'type': 'agent_state', 'data': {'coordinates': [2, 4], 'hp': 1, 'inventory': {'bombs': 0}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 613}}, {'type': 'entity_spawned', 'data': {'x': 2, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 618}}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 618}}, {'type': 'entity_spawned', 'data': {'x': 6, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 618}}]}, {'tick': 609, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 610, 'events': [{'type': 'agent_state', 'data': {'coordinates': [1, 4], 'hp': 1, 'inventory': {'bombs': 1}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 613}}, {'type': 'entity_expired', 'data': [1, 4]}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 611, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 612, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 613, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 614, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 615, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 616, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 617, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 618, 'events': [{'type': 'entity_expired', 'data': [4, 4]}, {'type': 'entity_expired', 'data': [4, 5]}, {'type': 'entity_expired', 'data': [4, 6]}, {'type': 'entity_expired', 'data': [4, 3]}, {'type': 'entity_expired', 'data': [4, 2]}, {'type': 'entity_expired', 'data': [3, 4]}, {'type': 'entity_expired', 'data': [2, 4]}, {'type': 'entity_expired', 'data': [5, 4]}, {'type': 'entity_expired', 'data': [6, 4]}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 620, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 621, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 622, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 623, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 625, 'events': [{'type': 'entity_spawned', 'data': {'x': 1, 'y': 3, 'type': 'a', 'expires': 665, 'hp': 1}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 626, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 628, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 629, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 630, 'events': [{'type': 'agent_state', 'data': {'coordinates': [1, 3], 'hp': 1, 'inventory': {'bombs': 2}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 613}}, {'type': 'entity_expired', 'data': [1, 3]}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 631, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 632, 'events': [{'type': 'entity_spawned', 'data': {'x': 4, 'y': 6, 'type': 'bp', 'expires': 672, 'hp': 1}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 633, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 634, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 635, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 636, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 637, 'events': [{'type': 'agent_state', 'data': {'coordinates': [4, 6], 'hp': 1, 'inventory': {'bombs': 0}, 'blast_diameter': 7, 'number': 1, 'invulnerability': 250}}, {'type': 'entity_expired', 'data': [4, 6]}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 638, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'b', 'owner': 0, 'expires': 678, 'hp': 1, 'blast_diameter': 5}}, {'type': 'agent_state', 'data': {'coordinates': [4, 4], 'hp': 1, 'inventory': {'bombs': 1}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 613}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 639, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 640, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 641, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 642, 'events': [{'type': 'entity_expired', 'data': [3, 2]}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 652}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 652}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 652}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 1, 'type': 'x', 'owner': 0, 'expires': 652}}, {'type': 'entity_state', 'coordinates': [3, 0], 'updated_entity': {'x': 3, 'y': 0, 'type': 'o', 'hp': 1}}, {'type': 'entity_spawned', 'data': {'x': 2, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 652}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 652}}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 652}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 643, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 644, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 645, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 646, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 647, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 648, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 649, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 650, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 651, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 652, 'events': [{'type': 'entity_expired', 'data': [3, 2]}, {'type': 'entity_expired', 'data': [3, 3]}, {'type': 'entity_expired', 'data': [3, 4]}, {'type': 'entity_expired', 'data': [3, 1]}, {'type': 'entity_expired', 'data': [2, 2]}, {'type': 'entity_expired', 'data': [4, 2]}, {'type': 'entity_expired', 'data': [5, 2]}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 653, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 654, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 655, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 656, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 657, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 658, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 659, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 660, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 661, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 662, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 663, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 664, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 665, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 666, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 667, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 668, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 669, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 670, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 671, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 672, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 673, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 674, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 675, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 676, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 678, 'events': [{'type': 'entity_expired', 'data': [4, 4]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 688}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 5, 'type': 'x', 'owner': 0, 'expires': 688}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 6, 'type': 'x', 'owner': 0, 'expires': 688}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 688}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 688}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 688}}, {'type': 'entity_spawned', 'data': {'x': 2, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 688}}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 688}}, {'type': 'entity_spawned', 'data': {'x': 6, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 688}}]}, {'tick': 680, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 681, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 688, 'events': [{'type': 'entity_expired', 'data': [4, 4]}, {'type': 'entity_expired', 'data': [4, 5]}, {'type': 'entity_expired', 'data': [4, 6]}, {'type': 'entity_expired', 'data': [4, 3]}, {'type': 'entity_expired', 'data': [4, 2]}, {'type': 'entity_expired', 'data': [3, 4]}, {'type': 'entity_expired', 'data': [2, 4]}, {'type': 'entity_expired', 'data': [5, 4]}, {'type': 'entity_expired', 'data': [6, 4]}]}, {'tick': 689, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 690, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 691, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 692, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 711, 'events': [{'type': 'entity_spawned', 'data': {'x': 4, 'y': 6, 'type': 'a', 'expires': 751, 'hp': 1}}]}, {'tick': 712, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 713, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 714, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'b', 'owner': 0, 'expires': 754, 'hp': 1, 'blast_diameter': 5}}, {'type': 'agent_state', 'data': {'coordinates': [4, 4], 'hp': 1, 'inventory': {'bombs': 0}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 613}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 715, 'events': [{'type': 'agent_state', 'data': {'coordinates': [4, 6], 'hp': 1, 'inventory': {'bombs': 1}, 'blast_diameter': 7, 'number': 1, 'invulnerability': 250}}, {'type': 'entity_expired', 'data': [4, 6]}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 716, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 717, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 718, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 719, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 720, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 721, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 723, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 724, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 726, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 727, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 729, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 730, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 731, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 732, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 733, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 734, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 735, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 736, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 738, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 739, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 740, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 741, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 743, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 744, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 745, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 746, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 748, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 749, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 750, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 751, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 752, 'events': [{'type': 'entity_spawned', 'data': {'x': 6, 'y': 7, 'type': 'a', 'expires': 792, 'hp': 1}}]}, {'tick': 753, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 754, 'events': [{'type': 'entity_expired', 'data': [4, 4]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 764}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 5, 'type': 'x', 'owner': 0, 'expires': 764}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 6, 'type': 'x', 'owner': 0, 'expires': 764}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 764}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 764}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 764}}, {'type': 'entity_spawned', 'data': {'x': 2, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 764}}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 764}}, {'type': 'entity_spawned', 'data': {'x': 6, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 764}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 764, 'events': [{'type': 'entity_expired', 'data': [4, 4]}, {'type': 'entity_expired', 'data': [4, 5]}, {'type': 'entity_expired', 'data': [4, 6]}, {'type': 'entity_expired', 'data': [4, 3]}, {'type': 'entity_expired', 'data': [4, 2]}, {'type': 'entity_expired', 'data': [3, 4]}, {'type': 'entity_expired', 'data': [2, 4]}, {'type': 'entity_expired', 'data': [5, 4]}, {'type': 'entity_expired', 'data': [6, 4]}]}, {'tick': 773, 'events': [{'type': 'entity_spawned', 'data': {'x': 1, 'y': 6, 'type': 'bp', 'expires': 813, 'hp': 1}}]}, {'tick': 782, 'events': [{'type': 'entity_spawned', 'data': {'x': 3, 'y': 4, 'type': 'a', 'expires': 822, 'hp': 1}}]}, {'tick': 783, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 784, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 785, 'events': [{'type': 'agent_state', 'data': {'coordinates': [3, 4], 'hp': 1, 'inventory': {'bombs': 1}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 613}}, {'type': 'entity_expired', 'data': [3, 4]}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 786, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'b', 'owner': 1, 'expires': 826, 'hp': 1, 'blast_diameter': 7}}, {'type': 'agent_state', 'data': {'coordinates': [4, 4], 'hp': 1, 'inventory': {'bombs': 0}, 'blast_diameter': 7, 'number': 1, 'invulnerability': 250}}]}, {'tick': 787, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 788, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 789, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 790, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 2, 'type': 'b', 'owner': 0, 'expires': 830, 'hp': 1, 'blast_diameter': 5}}, {'type': 'agent_state', 'data': {'coordinates': [3, 2], 'hp': 1, 'inventory': {'bombs': 0}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 613}}]}, {'tick': 791, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 792, 'events': [{'type': 'entity_expired', 'data': [6, 7]}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 794, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 813, 'events': [{'type': 'entity_expired', 'data': [1, 6]}]}, {'tick': 826, 'events': [{'type': 'entity_expired', 'data': [4, 4]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 836}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 5, 'type': 'x', 'owner': 1, 'expires': 836}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 6, 'type': 'x', 'owner': 1, 'expires': 836}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 7, 'type': 'x', 'owner': 1, 'expires': 836}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'x', 'owner': 1, 'expires': 836}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 2, 'type': 'x', 'owner': 1, 'expires': 836}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 1, 'type': 'x', 'owner': 1, 'expires': 836}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 836}}, {'type': 'entity_spawned', 'data': {'x': 2, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 836}}, {'type': 'entity_spawned', 'data': {'x': 1, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 836}}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 836}}, {'type': 'entity_spawned', 'data': {'x': 6, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 836}}, {'type': 'entity_spawned', 'data': {'x': 7, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 836}}]}, {'tick': 830, 'events': [{'type': 'entity_expired', 'data': [3, 2]}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 840}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 840}}, {'type': 'entity_expired', 'data': [3, 4]}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 840}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 1, 'type': 'x', 'owner': 0, 'expires': 840}}, {'type': 'entity_state', 'coordinates': [3, 0], 'updated_entity': {'x': 3, 'y': 0, 'type': 'o', 'hp': 0}}, {'type': 'entity_expired', 'data': [3, 0]}, {'type': 'entity_spawned', 'data': {'x': 2, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 840}}, {'type': 'entity_expired', 'data': [4, 2]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 840}}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 840}}]}, {'tick': 836, 'events': [{'type': 'entity_expired', 'data': [4, 4]}, {'type': 'entity_expired', 'data': [4, 5]}, {'type': 'entity_expired', 'data': [4, 6]}, {'type': 'entity_expired', 'data': [4, 7]}, {'type': 'entity_expired', 'data': [4, 3]}, {'type': 'entity_expired', 'data': [4, 1]}, {'type': 'entity_expired', 'data': [2, 4]}, {'type': 'entity_expired', 'data': [1, 4]}, {'type': 'entity_expired', 'data': [5, 4]}, {'type': 'entity_expired', 'data': [6, 4]}, {'type': 'entity_expired', 'data': [7, 4]}]}, {'tick': 840, 'events': [{'type': 'entity_expired', 'data': [3, 2]}, {'type': 'entity_expired', 'data': [3, 3]}, {'type': 'entity_expired', 'data': [3, 4]}, {'type': 'entity_expired', 'data': [3, 1]}, {'type': 'entity_expired', 'data': [2, 2]}, {'type': 'entity_expired', 'data': [4, 2]}, {'type': 'entity_expired', 'data': [5, 2]}]}, {'tick': 841, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 842, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 843, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 844, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 845, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 846, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 847, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 848, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 849, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 850, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 851, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 852, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 853, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 854, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 855, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 856, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 857, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 858, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 859, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 860, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 861, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 862, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 863, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 864, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 865, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 866, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 867, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 868, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 869, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 870, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 871, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 872, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 873, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 874, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 875, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 876, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 877, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 878, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 879, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 880, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 881, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 882, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 883, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 884, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 885, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 886, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 887, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 888, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 889, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 890, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 891, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 892, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 893, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 894, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 895, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 896, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 897, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 898, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 899, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 900, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 901, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 902, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 903, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 904, 'events': [{'type': 'entity_spawned', 'data': {'x': 4, 'y': 5, 'type': 'a', 'expires': 944, 'hp': 1}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 905, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 906, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 907, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 908, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 909, 'events': [{'type': 'agent_state', 'data': {'coordinates': [4, 5], 'hp': 1, 'inventory': {'bombs': 1}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 613}}, {'type': 'entity_expired', 'data': [4, 5]}]}, {'tick': 910, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 5, 'type': 'b', 'owner': 0, 'expires': 950, 'hp': 1, 'blast_diameter': 5}}, {'type': 'agent_state', 'data': {'coordinates': [4, 5], 'hp': 1, 'inventory': {'bombs': 0}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 613}}]}, {'tick': 912, 'events': [{'type': 'entity_spawned', 'data': {'x': 8, 'y': 4, 'type': 'a', 'expires': 952, 'hp': 1}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 913, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 914, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 915, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 917, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 918, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 919, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 920, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 921, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 922, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 923, 'events': [{'type': 'entity_spawned', 'data': {'x': 3, 'y': 3, 'type': 'a', 'expires': 963, 'hp': 1}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 924, 'events': [{'type': 'agent_state', 'data': {'coordinates': [8, 4], 'hp': 1, 'inventory': {'bombs': 1}, 'blast_diameter': 7, 'number': 1, 'invulnerability': 250}}, {'type': 'entity_expired', 'data': [8, 4]}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 925, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 926, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 7, 'y': 3, 'type': 'b', 'owner': 1, 'expires': 966, 'hp': 1, 'blast_diameter': 7}}, {'type': 'agent_state', 'data': {'coordinates': [7, 3], 'hp': 1, 'inventory': {'bombs': 0}, 'blast_diameter': 7, 'number': 1, 'invulnerability': 250}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 927, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 928, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 929, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 930, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 931, 'events': [{'type': 'agent_state', 'data': {'coordinates': [3, 3], 'hp': 1, 'inventory': {'bombs': 1}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 613}}, {'type': 'entity_expired', 'data': [3, 3]}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 932, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 933, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 2, 'type': 'b', 'owner': 0, 'expires': 973, 'hp': 1, 'blast_diameter': 5}}, {'type': 'agent_state', 'data': {'coordinates': [3, 2], 'hp': 1, 'inventory': {'bombs': 0}, 'blast_diameter': 5, 'number': 0, 'invulnerability': 613}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 934, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 935, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 937, 'events': [{'type': 'entity_spawned', 'data': {'x': 1, 'y': 3, 'type': 'bp', 'expires': 977, 'hp': 1}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 938, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 939, 'events': [{'type': 'agent_state', 'data': {'coordinates': [1, 3], 'hp': 1, 'inventory': {'bombs': 0}, 'blast_diameter': 7, 'number': 0, 'invulnerability': 613}}, {'type': 'entity_expired', 'data': [1, 3]}]}, {'tick': 940, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 941, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 943, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 944, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 945, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 946, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 948, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 949, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 950, 'events': [{'type': 'entity_expired', 'data': [4, 5]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 5, 'type': 'x', 'owner': 0, 'expires': 960}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 6, 'type': 'x', 'owner': 0, 'expires': 960}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 7, 'type': 'x', 'owner': 0, 'expires': 960}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 960}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 960}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 951, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 953, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 954, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 955, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 956, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 958, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 959, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 960, 'events': [{'type': 'entity_expired', 'data': [4, 5]}, {'type': 'entity_expired', 'data': [4, 6]}, {'type': 'entity_expired', 'data': [4, 7]}, {'type': 'entity_expired', 'data': [4, 4]}, {'type': 'entity_expired', 'data': [4, 3]}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 961, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 962, 'events': [{'type': 'entity_spawned', 'data': {'x': 4, 'y': 6, 'type': 'a', 'expires': 1002, 'hp': 1}}]}, {'tick': 963, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 964, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 965, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 966, 'events': [{'type': 'entity_expired', 'data': [7, 3]}, {'type': 'entity_spawned', 'data': {'x': 7, 'y': 3, 'type': 'x', 'owner': 1, 'expires': 976}}, {'type': 'entity_spawned', 'data': {'x': 7, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 976}}, {'type': 'entity_state', 'coordinates': [7, 5], 'updated_entity': {'x': 7, 'y': 5, 'type': 'w', 'hp': 0}}, {'type': 'entity_expired', 'data': [7, 5]}, {'type': 'entity_spawned', 'data': {'x': 6, 'y': 3, 'type': 'x', 'owner': 1, 'expires': 976}}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 3, 'type': 'x', 'owner': 1, 'expires': 976}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'x', 'owner': 1, 'expires': 976}}, {'type': 'entity_spawned', 'data': {'x': 8, 'y': 3, 'type': 'x', 'owner': 1, 'expires': 976}}]}, {'tick': 967, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 968, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 969, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 971, 'events': [{'type': 'entity_spawned', 'data': {'x': 2, 'y': 2, 'type': 'a', 'expires': 1011, 'hp': 1}}]}, {'tick': 973, 'events': [{'type': 'entity_expired', 'data': [3, 2]}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 983}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 983}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 983}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 1, 'type': 'x', 'owner': 0, 'expires': 983}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 0, 'type': 'x', 'owner': 0, 'expires': 983}}, {'type': 'entity_state', 'coordinates': [2, 2], 'updated_entity': {'x': 2, 'y': 2, 'type': 'a', 'expires': 1011, 'hp': 0}}, {'type': 'entity_expired', 'data': [2, 2]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 983}}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 983}}]}, {'tick': 976, 'events': [{'type': 'entity_expired', 'data': [7, 3]}, {'type': 'entity_expired', 'data': [7, 4]}, {'type': 'entity_expired', 'data': [6, 3]}, {'type': 'entity_expired', 'data': [5, 3]}, {'type': 'entity_expired', 'data': [4, 3]}, {'type': 'entity_expired', 'data': [8, 3]}]}, {'tick': 977, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 978, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 979, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 980, 'events': [{'type': 'entity_spawned', 'data': {'x': 8, 'y': 2, 'type': 'a', 'expires': 1020, 'hp': 1}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 981, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 982, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 983, 'events': [{'type': 'entity_expired', 'data': [3, 2]}, {'type': 'entity_expired', 'data': [3, 3]}, {'type': 'entity_expired', 'data': [3, 4]}, {'type': 'entity_expired', 'data': [3, 1]}, {'type': 'entity_expired', 'data': [3, 0]}, {'type': 'entity_expired', 'data': [4, 2]}, {'type': 'entity_expired', 'data': [5, 2]}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 984, 'events': [{'type': 'agent_state', 'data': {'coordinates': [8, 2], 'hp': 1, 'inventory': {'bombs': 1}, 'blast_diameter': 7, 'number': 1, 'invulnerability': 250}}, {'type': 'entity_expired', 'data': [8, 2]}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 985, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'right'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'up'}}]}, {'tick': 986, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 987, 'events': [{'type': 'entity_spawned', 'data': {'x': 6, 'y': 4, 'type': 'bp', 'expires': 1027, 'hp': 1}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'up'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 988, 'events': [{'type': 'agent_state', 'data': {'coordinates': [4, 6], 'hp': 1, 'inventory': {'bombs': 1}, 'blast_diameter': 7, 'number': 0, 'invulnerability': 613}}, {'type': 'entity_expired', 'data': [4, 6]}, {'type': 'agent_state', 'data': {'coordinates': [6, 4], 'hp': 1, 'inventory': {'bombs': 1}, 'blast_diameter': 9, 'number': 1, 'invulnerability': 250}}, {'type': 'entity_expired', 'data': [6, 4]}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 989, 'events': [{'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}, {'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'left'}}]}, {'tick': 990, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'bomb'}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'bomb'}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'b', 'owner': 1, 'expires': 1030, 'hp': 1, 'blast_diameter': 9}}, {'type': 'agent_state', 'data': {'coordinates': [4, 4], 'hp': 1, 'inventory': {'bombs': 0}, 'blast_diameter': 9, 'number': 1, 'invulnerability': 250}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 5, 'type': 'b', 'owner': 0, 'expires': 1030, 'hp': 1, 'blast_diameter': 7}}, {'type': 'agent_state', 'data': {'coordinates': [4, 5], 'hp': 1, 'inventory': {'bombs': 0}, 'blast_diameter': 7, 'number': 0, 'invulnerability': 613}}]}, {'tick': 991, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'down'}}]}, {'tick': 992, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'move', 'move': 'right'}}]}, {'tick': 993, 'events': [{'type': 'agent', 'agent_number': 1, 'data': {'type': 'detonate', 'coordinates': [4, 4]}}, {'type': 'entity_expired', 'data': [4, 4]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 1003}}, {'type': 'agent_state', 'data': {'coordinates': [4, 5], 'hp': 0, 'inventory': {'bombs': 0}, 'blast_diameter': 7, 'number': 0, 'invulnerability': 998}}, {'type': 'entity_state', 'coordinates': [4, 5], 'updated_entity': {'x': 4, 'y': 5, 'type': 'b', 'owner': 0, 'expires': 1030, 'hp': 0, 'blast_diameter': 7}}, {'type': 'entity_expired', 'data': [4, 5]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 5, 'type': 'x', 'owner': 0, 'expires': 1003}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 6, 'type': 'x', 'owner': 0, 'expires': 1003}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 7, 'type': 'x', 'owner': 0, 'expires': 1003}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 8, 'type': 'x', 'owner': 0, 'expires': 1003}}, {'type': 'entity_expired', 'data': [4, 4]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 4, 'type': 'x', 'owner': 0, 'expires': 1003}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'x', 'owner': 0, 'expires': 1003}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 2, 'type': 'x', 'owner': 0, 'expires': 1003}}, {'type': 'entity_expired', 'data': [4, 3]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 3, 'type': 'x', 'owner': 1, 'expires': 1003}}, {'type': 'entity_expired', 'data': [4, 2]}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 2, 'type': 'x', 'owner': 1, 'expires': 1003}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 1, 'type': 'x', 'owner': 1, 'expires': 1003}}, {'type': 'entity_spawned', 'data': {'x': 4, 'y': 0, 'type': 'x', 'owner': 1, 'expires': 1003}}, {'type': 'entity_spawned', 'data': {'x': 3, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 1003}}, {'type': 'entity_spawned', 'data': {'x': 2, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 1003}}, {'type': 'entity_spawned', 'data': {'x': 1, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 1003}}, {'type': 'entity_spawned', 'data': {'x': 0, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 1003}}, {'type': 'entity_spawned', 'data': {'x': 5, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 1003}}, {'type': 'entity_spawned', 'data': {'x': 6, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 1003}}, {'type': 'entity_spawned', 'data': {'x': 7, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 1003}}, {'type': 'entity_spawned', 'data': {'x': 8, 'y': 4, 'type': 'x', 'owner': 1, 'expires': 1003}}, {'type': 'agent', 'agent_number': 0, 'data': {'type': 'move', 'move': 'down'}}]}], 'winning_agent_number': 1}}
 False
 Player pos: (5, 3) Length of enem surrounding empty tiles:  1 [(5, 2)] None
@@ -4988,6 +4988,6 @@ Timer decision: Ran for 10.212ms
 Tick 994: executing retreat: ['']
 Timer execution: Ran for 67.729ms
 Timer move: Ran for 78.003ms
-Next action
-Unhandled action:
+Next action 
+Unhandled action: 
 Connection with server closed
