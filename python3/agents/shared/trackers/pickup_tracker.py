@@ -2,6 +2,7 @@
 Used to track all information about the ores (their HP, etc)
 """
 from ..utils.constants import ENTITIES
+from ..utils.util_functions import death_trap, get_surrounding_empty_tiles
 
 
 class PickupTracker:
@@ -18,6 +19,8 @@ class PickupTracker:
         # Making empty lists for ammo and powerups. Will modify tick by tick.
         ammo_list = []
         powerup_list = []
+        world = game_state['world']
+        entities = game_state['entities']
 
         # For loops for adding stuff to ammo_list and powerup_list 
         for entity in game_state['entities']:
@@ -38,3 +41,15 @@ class PickupTracker:
         game_state['ammo_list'] = ammo_list
         game_state['powerup_list'] = powerup_list
         game_state['pickup_list'] = ammo_list + powerup_list
+        
+        # List of dangerous pickups
+        
+        dangerous_pickups = []
+        for pickup in game_state['pickup_list']:
+            if len(get_surrounding_empty_tiles(pickup, world, entities)) <2:
+                dangerous_pickups.append(pickup)
+           # print("THIS IS THE ITEMS IN THE PICKUP LIST YOU FUCKING PERSON", entity, len(get_surrounding_empty_tiles(pickup, world, entities)) <2, "\n", dangerous_pickups)
+        game_state['dangerous_pickups'] = dangerous_pickups 
+            # if len(get_surrounding_empty_tiles(entity, world, entities)) <= 1:
+            #     print(entity)
+            #     print('LOOK HJERE NIGGA')
