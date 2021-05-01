@@ -3,12 +3,13 @@ Used for tracking lifecycle of bombs and explosion areas
 """
 
 from ..utils.util_functions import get_blast_zone, get_safe_tiles, get_surrounding_tiles, get_world_dimension, \
-    get_surrounding_empty_tiles, dummy_bomb, get_shortest_path, get_nearest_tile
+    get_surrounding_empty_tiles, dummy_bomb, get_shortest_path, get_nearest_tile, get_reachable_tiles
 from ..utils.constants import ENTITIES
 
 
 class BombTracker:
-
+    def __init__(self):
+        self.enemy_reachable_tiles = 6
     def update(self, game_state):
         """ 
         Adds bombs to game_state for player, enemy, and total. game_state['enemy_active_bombs'] is a list of dictionaries.
@@ -132,11 +133,7 @@ class BombTracker:
         enemy_surrounding_empty_tiles = get_surrounding_empty_tiles(game_state['enemy_pos'], world, entities,
                                                                     ignore_player=False)  # Needs to Include us
         
-        # Removes dangerous tiles (for enemy)  from the list of tiles the enemy can walk on.
-        # for tile in enemy_surrounding_empty_tiles:
-        #     if tile in enemy_hazards:
-        #         enemy_surrounding_empty_tiles.remove(tile) 
-        
+
         if len(enemy_surrounding_empty_tiles) == 0:  # Dude can't move. Technically, this 'immediate trapped' isn't the real value. It's actually trapped AND player is one of the tiles.
             # check if our player is in one of the tiles: ->
             if game_state['player_pos'] in enemy_surrounding_tiles:  # Make sure
@@ -146,6 +143,9 @@ class BombTracker:
         # Dummy bomb to see if the enemy would be trapped (for 1 move: Initial + 1 move)
         virtual_bomb = dummy_bomb(game_state['player_pos'], game_state['player_diameter'])
         blast_zone = get_blast_zone(virtual_bomb['coord'], virtual_bomb['blast_diameter'], entities, world)
+        # if game_state['player_pos'] in enemy_surrounding_empty_tiles:
+        #     enemy_surrounding_empty_tiles.remove(
+        #         game_state['player_pos'])  # Remove player pos from surround (why is he in there lol)
         if game_state['enemy_pos'] in blast_zone:
             check = all(item in blast_zone for item in
                         enemy_surrounding_empty_tiles)  # checks if blast zone contains all elements of enemy surrounding tiles
@@ -153,7 +153,11 @@ class BombTracker:
                 game_state['enemy_onestep_trapped'] = True # Enemy can't move out of the way in the next tick
 
         ## Zoning:
-        # If dummy bomb placed here;
+        # If place a bomb here, check reachable tiles length < self.enemy_tiles
+        # # If dummy bomb placed here;
+        # enemy_reachable_tiles = get_reachable_tiles(enemy_pos,)
+        # if len(enemy_reachable_tiles) < self.enemy_reachable_tiles:
+        #     game_state['constrict'] = True
         if enemy_surrounding_empty_tiles in blast_zone:
             game_state['zoning'] = True
 
@@ -162,12 +166,10 @@ class BombTracker:
         # Finds potential tiles to place our bombs that will kaboom the eney
         virt_bomb_on_enemy = dummy_bomb(enemy_pos, game_state['player_diameter'])
         potential_place_tiles = get_blast_zone(virt_bomb_on_enemy['coord'], virt_bomb_on_enemy['blast_diameter'], entities, world)
-        closest_bomb_tile = get_nearest_tile(player_pos, potential_place_tiles)
+        reachable_tiles = get_reachable_tiles(player_pos, potential_place_tiles, world, entities, all_hazards)
+        closest_bomb_tile = get_nearest_tile(player_pos, reachable_tiles)
         game_state['closest_bomb_tile'] = closest_bomb_tile
         # # Removes player from enemy surround tiles
-        # if game_state['player_pos'] in enemy_surrounding_empty_tiles:
-        #     enemy_surrounding_empty_tiles.remove(
-        #         game_state['player_pos'])  # Remove player pos from surround (why is he in there lol)
 
         print("Player pos:", game_state['enemy_pos'], "Length of enem surrounding empty tiles: ",
               len(enemy_surrounding_empty_tiles), enemy_surrounding_empty_tiles,
