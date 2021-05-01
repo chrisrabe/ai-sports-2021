@@ -141,7 +141,7 @@ class BombTracker:
         blast_zone = get_blast_zone(virtual_bomb['coord'], virtual_bomb['blast_diameter'], entities, world)
         if game_state['enemy_pos'] in blast_zone:
             check = all(item in blast_zone for item in
-                        enemy_surrounding_empty_tiles)  # checks if list one contains all elements of list 2
+                        enemy_surrounding_empty_tiles)  # checks if blast zone contains all elements of enemy surrounding tiles
             if check:
                 game_state['enemy_onestep_trapped'] = True
 
@@ -157,3 +157,11 @@ class BombTracker:
         # check if there's a clear path to the enemy
         path = get_shortest_path(game_state['player_pos'], game_state['enemy_pos'], world, entities)
         game_state['clear_path_to_enemy'] = path is not None
+
+
+		## Zoning:
+		# If dummy bomb placed here;
+		#if game_state['enemy_pos']
+		#Check if: The enemy surrounding empty tiles UP and (right or left) or DOWN and (right or left) in blast_zone: --> This means it'll  only work if he's 1 (x,y) away from us max.
+		# place bomb 
+		

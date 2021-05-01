@@ -42,7 +42,7 @@ class Brain:
             return 'retreat'
 
         # Tell enemy to go away by placing bomb down
-        if game_state['tell_enemy_gtfo'] and game_state['player_inv_bombs'] > 0 and not game_state['enemy_near_bomb']:
+        if (game_state['tell_enemy_gtfo'] or game_state['enemy_onestep_trapped']) and (game_state['player_inv_bombs'] > 0 and not game_state['enemy_near_bomb']):
             # Tell enemy to GTFO by placing bomb down
             print('Totoro screams at enemy to GTFO')
             return 'simple_bomb'
