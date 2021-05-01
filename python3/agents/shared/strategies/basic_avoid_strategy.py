@@ -1,7 +1,7 @@
 from typing import List
 from . import strategy
 from ..utils.util_functions import get_surrounding_tiles, get_empty_locations, get_world_dimension, \
-    get_shortest_path, get_path_action_seq, min_distance
+    get_shortest_path, get_path_action_seq, get_nearest_tile
 from ..utils.constants import ACTIONS
 
 
@@ -26,18 +26,18 @@ class BasicAvoidStrategy(strategy.Strategy):
 
         print("YOU'RE IN DANGER DUDE - basic avoid") 
 
-        first_order_surrounding_tiles = get_surrounding_tiles(player_pos, width, height) # List of tiles
+        # first_order_surrounding_tiles = get_surrounding_tiles(player_pos, width, height) # List of tiles
 
-        safe_tiles = get_empty_locations(first_order_surrounding_tiles, world, entities) # List of empty tiles (big set). Not actually safe yet.
+        # safe_tiles = get_empty_locations(first_order_surrounding_tiles, world, entities) # List of empty tiles (big set). Not actually safe yet.
 
-        for tile in safe_tiles: # Remove any empty tiles that are in hazard zone.
-            if tile in hazard_zones:
-                safe_tiles.remove(tile) # Safe list of tiles now.
+        # for tile in safe_tiles: # Remove any empty tiles that are in hazard zone.
+        #     if tile in hazard_zones:
+        #         safe_tiles.remove(tile) # Safe list of tiles now.
         
         # Minimum distance tile ... or not lmao 
         # dist_list = [manhattan_distance(player_pos, tile) for tile in safe_tiles]
         # min_dist = min(dist_list)
-        closest_tile = min_distance(player_pos, game_state['safe_zones'])
+        closest_tile = get_nearest_tile(player_pos, game_state['safe_zones'])
 
         path = get_shortest_path(player_pos, closest_tile, world, entities, player_invulnerable=game_state['player_is_invulnerable'])
 

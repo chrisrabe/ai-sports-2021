@@ -88,6 +88,7 @@ def get_empty_tiles(tiles, entities, ignore_player=False):
 
     for tile in tiles:
         if is_walkable(tile, entities, ignore_player):
+            #print("Entity, tile", entities, tile)
             empty_tiles.append(tile)
 
     return empty_tiles

@@ -58,13 +58,17 @@ class Brain:
                 print("KABOOM!!! Detonation Time!")
                 return 'detonate'
 
+        elif game_state['zoning'] and (game_state['player_inv_bombs'] > 3 and not game_state['enemy_near_bomb']):
+            print("I'm gonna zone the bot!!")
+            return "simple_bomb"
+            
         # Hard-coding immediate trap (can put in a strategy later)
         ## Check if enemy is trapped: ->check if player can place a bomb that attacks enemy: -> do it.
         elif game_state['enemy_onestep_trapped'] and (game_state['player_inv_bombs'] > 0 and not game_state[
             'enemy_near_bomb']):  # Immediate trapped also takes into account whether the player is there.
             print("I think the enemy is trapped so I'm placing a bomb right now!!", game_state['tick'])
             # print(game_state['enemy_immediate_trapped'],game_state['player_inv_bombs'] > 0 and not game_state['enemy_near_bomb'])
-            return "bomb"  # place bomb
+            return "simple_bomb"  # place bomb
 
         # Pickup if ammo, stalk if none on map.
         elif len(game_state['pickup_list']) != 0:  # "Any pickups on the map?"

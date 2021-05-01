@@ -1,6 +1,6 @@
 from .brain import Brain
 from ..shared.strategies import RandomStrategy, RetreatStrategy, StalkStrategy, PickupStrategy, AdvKillStrategy, \
-    DetonateStrategy, SimpleBombStrategy, WaitStrategy, AdvBlockStrategy, BombStrategy
+    DetonateStrategy, SimpleBombStrategy, WaitStrategy, AdvBlockStrategy, BombStrategy, StalkTwoStrategy
 from ..shared.utils.benchmark import Benchmark
 
 
