@@ -3,7 +3,7 @@ Used for tracking lifecycle of bombs and explosion areas
 """
 
 from ..utils.util_functions import get_blast_zone, get_safe_tiles, get_surrounding_tiles, get_world_dimension, \
-    get_surrounding_empty_tiles, dummy_bomb, get_shortest_path
+    get_surrounding_empty_tiles, dummy_bomb, get_shortest_path, get_nearest_tile
 from ..utils.constants import ENTITIES
 
 
@@ -125,11 +125,18 @@ class BombTracker:
         ###### Trapping Detection #####
         game_state['enemy_immediate_trapped'] = False
         game_state['enemy_onestep_trapped'] = False
+        game_state['zoning'] = False
 
         # # Return any tiles that are empty around enemy
         enemy_surrounding_tiles = get_surrounding_tiles(game_state['enemy_pos'], world_width, world_height)
         enemy_surrounding_empty_tiles = get_surrounding_empty_tiles(game_state['enemy_pos'], world, entities,
                                                                     ignore_player=False)  # Needs to Include us
+        
+        # Removes dangerous tiles (for enemy)  from the list of tiles the enemy can walk on.
+        # for tile in enemy_surrounding_empty_tiles:
+        #     if tile in enemy_hazards:
+        #         enemy_surrounding_empty_tiles.remove(tile) 
+        
         if len(enemy_surrounding_empty_tiles) == 0:  # Dude can't move. Technically, this 'immediate trapped' isn't the real value. It's actually trapped AND player is one of the tiles.
             # check if our player is in one of the tiles: ->
             if game_state['player_pos'] in enemy_surrounding_tiles:  # Make sure
@@ -143,12 +150,24 @@ class BombTracker:
             check = all(item in blast_zone for item in
                         enemy_surrounding_empty_tiles)  # checks if blast zone contains all elements of enemy surrounding tiles
             if check:
-                game_state['enemy_onestep_trapped'] = True
+                game_state['enemy_onestep_trapped'] = True # Enemy can't move out of the way in the next tick
 
-        # Removes player from enemy surround tiles
-        if game_state['player_pos'] in enemy_surrounding_empty_tiles:
-            enemy_surrounding_empty_tiles.remove(
-                game_state['player_pos'])  # Remove player pos from surround (why is he in there lol)
+        ## Zoning:
+        # If dummy bomb placed here;
+        if enemy_surrounding_empty_tiles in blast_zone:
+            game_state['zoning'] = True
+
+        #Check if: The enemy surrounding empty tiles UP and (right or left) or DOWN and (right or left) in blast_zone: --> This means it'll  only work if he's 1 (x,y) away from us max.
+        # place bomb 
+        # Finds potential tiles to place our bombs that will kaboom the eney
+        virt_bomb_on_enemy = dummy_bomb(enemy_pos, game_state['player_diameter'])
+        potential_place_tiles = get_blast_zone(virt_bomb_on_enemy['coord'], virt_bomb_on_enemy['blast_diameter'], entities, world)
+        closest_bomb_tile = get_nearest_tile(player_pos, potential_place_tiles)
+        game_state['closest_bomb_tile'] = closest_bomb_tile
+        # # Removes player from enemy surround tiles
+        # if game_state['player_pos'] in enemy_surrounding_empty_tiles:
+        #     enemy_surrounding_empty_tiles.remove(
+        #         game_state['player_pos'])  # Remove player pos from surround (why is he in there lol)
 
         print("Player pos:", game_state['enemy_pos'], "Length of enem surrounding empty tiles: ",
               len(enemy_surrounding_empty_tiles), enemy_surrounding_empty_tiles,
@@ -159,9 +178,3 @@ class BombTracker:
         game_state['clear_path_to_enemy'] = path is not None
 
 
-		## Zoning:
-		# If dummy bomb placed here;
-		#if game_state['enemy_pos']
-		#Check if: The enemy surrounding empty tiles UP and (right or left) or DOWN and (right or left) in blast_zone: --> This means it'll  only work if he's 1 (x,y) away from us max.
-		# place bomb 
-		

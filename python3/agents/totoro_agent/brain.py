@@ -64,8 +64,12 @@ class Brain:
             'enemy_near_bomb']):  # Immediate trapped also takes into account whether the player is there.
             print("I think the enemy is trapped so I'm placing a bomb right now!!", game_state['tick'])
             # print(game_state['enemy_immediate_trapped'],game_state['player_inv_bombs'] > 0 and not game_state['enemy_near_bomb'])
-            return "bomb"  # place bomb
+            return "simple_bomb"  # place bomb
 
+        elif game_state['zoning'] and (game_state['player_inv_bombs'] > 2 and not game_state['enemy_near_bomb']):
+            print("I'm gonna zone the bot!!")
+            return "simple_bomb"
+            
         # Pickup if ammo, stalk if none on map.
         elif len(game_state['pickup_list']) != 0:  # "Any pickups on the map?"
             print('me gusta I smell some pickups')

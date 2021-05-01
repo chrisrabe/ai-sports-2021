@@ -1,6 +1,6 @@
 from .brain import Brain
 from ..shared.strategies import RandomStrategy, RetreatStrategy, StalkStrategy, PickupStrategy, AdvKillStrategy, \
-    BasicAvoidStrategy, DetonateStrategy, BombStrategy, SimpleBombStrategy, AdvBlockStrategy
+    BasicAvoidStrategy, DetonateStrategy, BombStrategy, SimpleBombStrategy, AdvBlockStrategy, StalkTwoStrategy
 from ..shared.utils.benchmark import Benchmark
 
 
@@ -11,7 +11,7 @@ class Agent:
             'random': RandomStrategy(),
             'retreat': RetreatStrategy(),
             'pickup': PickupStrategy(),
-            'stalk': StalkStrategy(),
+            'stalk': StalkTwoStrategy(),
             'basic_avoid': BasicAvoidStrategy(),
             'kill': AdvKillStrategy(),
             'detonate': DetonateStrategy(),
