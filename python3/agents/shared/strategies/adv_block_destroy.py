@@ -4,7 +4,7 @@ from . import strategy
 from ..utils.constants import ACTIONS
 from ..utils.util_functions import get_value_map_objects_from_arr, convert_entities_to_coords, get_surrounding_tiles, \
     get_world_dimension, get_surrounding_empty_tiles, get_reachable_tiles, get_num_escape_paths, get_value_map, \
-    get_move_from_value_map, move_results_in_ouchie
+    get_move_from_value_map, move_results_in_ouchie, get_value_map_algo, get_value_map_numpy
 from ..utils.benchmark import Benchmark
 
 
@@ -91,7 +91,8 @@ class AdvBlockStrategy(strategy.Strategy):
         # Get highest value
         targets = get_value_map_objects_from_arr(plant_zones, 'destructible_plant')
         targets.append(game_state['enemy_obj'])
-        value_map = get_value_map(world, walls, targets, self.rewards, use_default=False)
+        # value_map = get_value_map(world, walls, targets, self.rewards, use_default=False)
+        value_map = get_value_map_numpy(world, walls, targets, self.rewards, use_default=False)
         action = get_move_from_value_map(player_pos, value_map, world)
 
         # If next move results in stepping into a hazard zone or blast tile, do absolutely nothing

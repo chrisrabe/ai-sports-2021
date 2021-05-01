@@ -526,6 +526,139 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
     return value_map
 
 
+def get_value_map_numpy(world, walls, game_objects, reward_map, pinch_points=None, use_default=True):
+    """
+    Returns a numpy array map representing the values
+
+    walls must be an array of (x,y) tuples
+
+    game objects must be an array of objects with the following schema:
+    {
+       loc: (x, y)
+       type: string
+    }
+
+    reward map must be a dictionary with the following schema
+    {
+       [ENTITY_TYPE]: number
+    }
+
+    pinch points must be an array of (x,y) tuples or is None (articulation points)
+
+    use_default is a boolean to represent whether we should use the default reward map
+    """
+
+    # TODO are there numpy helper functions to help with these logic?
+
+    # create 2D matrix filled with zeroes
+    world_dim = get_world_dimension(world)
+    value_map = np.zeros(world_dim)
+
+    # replace all walls with -10
+    for wall in walls:
+        x, y = wall
+        value_map[y, x] = DEFAULT_REWARDS['wall']
+
+    # sets the reward spread for reward mask application
+    max_reward_spread = world_dim[0] - 1
+
+    # get score mask for all non-wall objects
+    for item in game_objects:
+        if use_default:
+            if item['type'] in reward_map:
+                reward = reward_map[item['type']]
+            else:
+                reward = DEFAULT_REWARDS[item['type']]
+        else:
+            if item['type'] not in reward_map:
+                continue
+            else:
+                reward = reward_map[item['type']]
+
+        # update rectangle mask based reward map
+        reward_entity = [item['loc'][0], item['loc'][1], reward]
+        value_map = update_rec_value_map(reward_entity, value_map, world_dim, max_reward_spread)
+
+    # re-evaluate for pinch points
+    if pinch_points is not None:
+        for tile in pinch_points:
+            pinch_reward = DEFAULT_REWARDS['pinch']
+            if 'pinch' in reward_map:
+                pinch_reward = reward_map['pinch']
+
+            # Update rectangle mask based reward map
+            reward_entity = [tile[0], tile[1], pinch_reward]
+            value_map = update_rec_value_map(reward_entity, value_map, world_dim, max_reward_spread)
+
+    return value_map
+
+
+def get_value_map_algo(world, walls, game_objects, reward_map, pinch_points=None, use_default=True):
+    """
+    Returns a numpy array map representing the values
+
+    walls must be an array of (x,y) tuples
+
+    game objects must be an array of objects with the following schema:
+    {
+       loc: (x, y)
+       type: string
+    }
+
+    reward map must be a dictionary with the following schema
+    {
+       [ENTITY_TYPE]: number
+    }
+
+    pinch points must be an array of (x,y) tuples or is None (articulation points)
+
+    use_default is a boolean to represent whether we should use the default reward map
+    """
+
+    # TODO are there numpy helper functions to help with these logic?
+
+    # create 2D matrix filled with zeroes
+    world_dim = get_world_dimension(world)
+    value_map = np.zeros(world_dim)
+
+    # replace all walls with -10
+    for wall in walls:
+        x, y = wall
+        value_map[y, x] = DEFAULT_REWARDS['wall']
+
+    # sets the reward spread for reward mask application
+    max_reward_spread = world_dim[0] - 1
+
+    # get score mask for all non-wall objects
+    for item in game_objects:
+        if use_default:
+            if item['type'] in reward_map:
+                reward = reward_map[item['type']]
+            else:
+                reward = DEFAULT_REWARDS[item['type']]
+        else:
+            if item['type'] not in reward_map:
+                continue
+            else:
+                reward = reward_map[item['type']]
+
+        # update diamond mask based reward map
+        reward_mask = get_reward_mask(item, reward, world)
+        value_map = np.add(value_map, reward_mask)
+
+    # re-evaluate for pinch points
+    if pinch_points is not None:
+        for tile in pinch_points:
+            pinch_reward = DEFAULT_REWARDS['pinch']
+            if 'pinch' in reward_map:
+                pinch_reward = reward_map['pinch']
+
+            # Update diamond mask based reward map
+            reward_mask = get_reward_mask(tile, pinch_reward, world, True)
+            value_map = np.add(value_map, reward_mask)
+
+    return value_map
+
 def get_reward_mask(item, reward, world, is_tuple=False):
     """
     Returns reward mask

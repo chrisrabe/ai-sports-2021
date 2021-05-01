@@ -3,7 +3,7 @@ from typing import List
 from . import strategy
 from ..utils.constants import ACTIONS
 from ..utils.util_functions import get_value_map, get_value_map_objects_from_arr, get_move_from_value_map, \
-    get_reachable_tiles, move_results_in_ouchie, convert_entities_to_coords
+    get_reachable_tiles, move_results_in_ouchie, convert_entities_to_coords, get_value_map_numpy, get_value_map_algo
 
 
 class RetreatStrategy(strategy.Strategy):
@@ -45,7 +45,8 @@ class RetreatStrategy(strategy.Strategy):
         hazard_objects = get_value_map_objects_from_arr(game_state['hazard_zones'], 'hazard')
         hazard_objects.append(game_state['enemy_obj'])
         game_objects = hazard_objects + safe_objects + reachable_objects
-        value_map = get_value_map(world, game_state["wall_blocks"], game_objects, self.reward_map, use_default=False)
+        # value_map = get_value_map(world, game_state["wall_blocks"], game_objects, self.reward_map, use_default=False)
+        value_map = get_value_map_numpy(world, game_state["wall_blocks"], game_objects, self.reward_map, use_default=False)
         action = get_move_from_value_map(game_state["player_pos"], value_map, world)
         if move_results_in_ouchie(player_pos, action, blast_zones):
             return [ACTIONS['none']]

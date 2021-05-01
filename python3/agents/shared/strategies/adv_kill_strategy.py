@@ -3,7 +3,7 @@ from typing import List
 from . import strategy
 from ..utils.constants import ACTIONS
 from ..utils.util_functions import get_value_map, death_trap, get_move_from_value_map, move_results_in_ouchie, \
-    get_shortest_path, get_value_map_objects_from_arr
+    get_shortest_path, get_value_map_objects_from_arr, get_value_map_algo, get_value_map_numpy
 
 
 class AdvKillStrategy(strategy.Strategy):
@@ -38,7 +38,9 @@ class AdvKillStrategy(strategy.Strategy):
 
         targets = get_value_map_objects_from_arr(shortest_path, 'safe')
         targets.append(game_state['enemy_obj'])
-        value_map = get_value_map(world, game_state['wall_blocks'], targets, self.rewards, game_state['pinch_points'],
+        # value_map = get_value_map(world, game_state['wall_blocks'], targets, self.rewards, game_state['pinch_points'],
+        #                           False)
+        value_map = get_value_map_numpy(world, game_state['wall_blocks'], targets, self.rewards, game_state['pinch_points'],
                                   False)
         action = get_move_from_value_map(player_pos, value_map, world)
         if move_results_in_ouchie(player_pos, action, game_state['hazard_zones']):
