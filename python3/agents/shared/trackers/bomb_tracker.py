@@ -142,12 +142,12 @@ class BombTracker:
         ###### Extended trapping detection ######
         # Dummy bomb to see if the enemy would be trapped (for 1 move: Initial + 1 move)
         virtual_bomb = dummy_bomb(game_state['player_pos'], game_state['player_diameter'])
-        blast_zone = get_blast_zone(virtual_bomb['coord'], virtual_bomb['blast_diameter'], entities, world)
+        blast_zone_virt = get_blast_zone(virtual_bomb['coord'], virtual_bomb['blast_diameter'], entities, world)
         # if game_state['player_pos'] in enemy_surrounding_empty_tiles:
         #     enemy_surrounding_empty_tiles.remove(
         #         game_state['player_pos'])  # Remove player pos from surround (why is he in there lol)
-        if game_state['enemy_pos'] in blast_zone:
-            check = all(item in blast_zone for item in
+        if game_state['enemy_pos'] in blast_zone_virt:
+            check = all(item in blast_zone_virt for item in
                         enemy_surrounding_empty_tiles)  # checks if blast zone contains all elements of enemy surrounding tiles
             if check:
                 game_state['enemy_onestep_trapped'] = True # Enemy can't move out of the way in the next tick
@@ -158,7 +158,7 @@ class BombTracker:
         # enemy_reachable_tiles = get_reachable_tiles(enemy_pos,)
         # if len(enemy_reachable_tiles) < self.enemy_reachable_tiles:
         #     game_state['constrict'] = True
-        if enemy_surrounding_empty_tiles in blast_zone:
+        if enemy_surrounding_empty_tiles in blast_zone_virt:
             game_state['zoning'] = True
 
         #Check if: The enemy surrounding empty tiles UP and (right or left) or DOWN and (right or left) in blast_zone: --> This means it'll  only work if he's 1 (x,y) away from us max.
@@ -171,9 +171,9 @@ class BombTracker:
         game_state['closest_bomb_tile'] = closest_bomb_tile
         # # Removes player from enemy surround tiles
 
-        print("Player pos:", game_state['enemy_pos'], "Length of enem surrounding empty tiles: ",
+        print("Player pos:", game_state['player_pos'], "Length of enem surrounding empty tiles: ",
               len(enemy_surrounding_empty_tiles), enemy_surrounding_empty_tiles,
-              print(len(enemy_surrounding_empty_tiles) == 0))
+              len(enemy_surrounding_empty_tiles) == 0, "\n Enemy pos:", enemy_pos, enemy_surrounding_tiles, get_surrounding_empty_tiles(enemy_pos, world, entities, False))
 
         # check if there's a clear path to the enemy
         path = get_shortest_path(game_state['player_pos'], game_state['enemy_pos'], world, entities)
