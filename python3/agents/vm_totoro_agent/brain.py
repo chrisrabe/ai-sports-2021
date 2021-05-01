@@ -54,7 +54,7 @@ class Brain:
                 print('Time to detonate!')
                 return 'detonate'
 
-            if game_state['enemy_onestep_trapped']:
+            if game_state['enemy_onestep_trapped'] and game_state['player_inv_bombs'] != 0:
                 print("I think the enemy is trapped s I'm placing the bomb right now!!")
                 return 'bomb'
 
