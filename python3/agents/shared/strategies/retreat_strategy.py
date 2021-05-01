@@ -25,6 +25,20 @@ class RetreatStrategy(strategy.Strategy):
             safe_zones.remove(enemy_pos)
         player_pos = game_state['player_pos']
         entities = game_state['entities']
+        enemy_hp = game_state['enemy_health']
+        player_hp = game_state['player_health']
+
+        # Bomb or sacrificial body block
+        if game_state['enemy_immediate_trapped'] and game_state['enemy_near_bomb']:
+            if game_state['player_inv_bombs'] > 0:
+                print('You just played yourself!')
+                return [ACTIONS['bomb']]
+
+            if (player_hp - enemy_hp) >= 1:
+                print('I shall sacrifice myself for the win!')
+                return [ACTIONS['none']]
+
+        # RUN AWAYY!
         reachable = get_reachable_tiles(player_pos, safe_zones, world, entities)
         reachable_objects = get_value_map_objects_from_arr(reachable, 'reachable')
         safe_objects = get_value_map_objects_from_arr(safe_zones, 'safe')
