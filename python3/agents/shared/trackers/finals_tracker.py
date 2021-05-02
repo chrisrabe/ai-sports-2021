@@ -1,6 +1,6 @@
 from ..utils.constants import ENTITIES
 from ..utils.util_functions import is_dangerous, get_entity_coords, get_blast_zone, get_surrounding_tiles, \
-    get_world_dimension, get_safe_tiles
+    get_world_dimension, get_safe_tiles, get_shortest_path
 
 
 class FinalsTracker:
@@ -57,6 +57,7 @@ class FinalsTracker:
         # map blocks
         destroyable_blocks = []
         wall_blocks = []
+        blast_blocks = []
 
         # bombs
         player_on_bomb = False
@@ -77,6 +78,7 @@ class FinalsTracker:
                 all_hazards.append(coord)
                 player_hazards.append(coord)
                 wall_blocks.append(entity)
+                blast_blocks.append(entity)
             elif entity_type == ENTITIES['ore'] or entity_type == ENTITIES['wood']:
                 destroyable_blocks.append(entity)
             elif entity_type == ENTITIES['metal']:
@@ -99,7 +101,7 @@ class FinalsTracker:
                     'blast_diameter': entity['blast_diameter']
                 }
                 blast_zone = get_blast_zone(bomb_coords, bomb['blast_diameter'], entities, game_state['world'])
-                if entity['owner'] == player_id:
+                if entity['owner'] == int(player_id):
                     if bomb_coords == player_pos:
                         player_on_bomb = True
                     own_bombs.append(bomb)
@@ -111,7 +113,7 @@ class FinalsTracker:
                 # append blast zone
                 for tile in blast_zone:
                     all_hazards.append(tile)
-                    if entity['owner'] == player_id:
+                    if entity['owner'] == int(player_id):
                         ttl = bomb['expires'] - game_state['tick']
                         if ttl <= (game_state['player_diameter'] // 2) + 1:
                             player_hazards.append(tile)
@@ -132,4 +134,9 @@ class FinalsTracker:
         game_state['all_hazard_zones'] = all_hazards
         game_state['wall_blocks'] = wall_blocks
         game_state['destroyable_blocks'] = destroyable_blocks
+        game_state['blast_blocks'] = blast_blocks
 
+    def update_path(self, game_state: dict):
+        path = get_shortest_path(game_state['player_pos'], game_state['enemy_pos'], game_state['world'],
+                                 game_state['entities'])
+        game_state['clear_path_to_enemy'] = path is not None

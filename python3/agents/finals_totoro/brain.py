@@ -17,4 +17,16 @@ class Brain:
 
         print("I am totoro finals bot")
 
-        return 'stalk'
+        if game_state['player_pos'] in game_state['all_hazard_zones']:
+            return 'retreat'
+
+        self.benchmark.start('path')
+        self.finals_tracker.update_path(game_state)
+        self.benchmark.end('path')
+
+        if len(game_state['pickup_list']) != 0:
+            return 'pickup'
+        elif not game_state['clear_path_to_enemy']:
+            return 'block_destroy'
+        else:
+            return 'stalk'
