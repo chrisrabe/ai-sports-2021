@@ -1,6 +1,6 @@
 from ..utils.constants import ENTITIES
 from ..utils.util_functions import is_dangerous, get_entity_coords, get_blast_zone, get_surrounding_tiles, \
-    get_world_dimension
+    get_world_dimension, get_safe_tiles
 
 
 class FinalsTracker:
@@ -119,6 +119,7 @@ class FinalsTracker:
                     else:
                         player_hazards.append(tile)
 
+        game_state['safe_zones'] = get_safe_tiles(all_hazards, game_state['world'], game_state['entities'])
         game_state['player_on_bomb'] = player_on_bomb
         game_state['enemy_on_bomb'] = enemy_on_bomb
         game_state['enemy_near_bomb'] = enemy_near_bomb
