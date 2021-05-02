@@ -270,7 +270,7 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
             break
         cur_loc = tile
 
-    return set(blast_tiles)
+    return blast_tiles
 
 
 def get_nearest_tile(location, tiles):

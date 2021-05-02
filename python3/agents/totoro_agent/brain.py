@@ -3,21 +3,25 @@ Tracks the game state and decides on next strategy to execute
 """
 
 from ..shared.trackers import BombTracker, EnemyTracker, MapTracker, PickupTracker
+from ..shared.utils.benchmark import Benchmark
 
 
 class Brain:
     def __init__(self):
+        self.benchmark = Benchmark()
         self.bomb_tracker = BombTracker()
         self.enemy_tracker = EnemyTracker()
         self.map_tracker = MapTracker()
         self.pickup_tracker = PickupTracker()
 
     def get_next_strategy(self, game_state) -> str:
+        self.benchmark.start('tracker')
         """Conditionals to decide which strategy to execute. Returns string"""
         self.enemy_tracker.update(game_state)
         self.bomb_tracker.update(game_state)
         self.map_tracker.update(game_state)
         self.pickup_tracker.update(game_state)
+        self.benchmark.end('tracker')
 
         """
         # Highest Prio (base state): Collect + Stay away from immediate danger (fire + potential blast zones)

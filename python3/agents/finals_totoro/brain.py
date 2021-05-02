@@ -14,4 +14,7 @@ class Brain:
         self.benchmark.start('tracker')
         self.finals_tracker.update(game_state)
         self.benchmark.end('tracker')
+
+        print("I am totoro finals bot")
+
         return 'stalk'
