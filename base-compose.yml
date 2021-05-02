@@ -14,6 +14,11 @@ services:
             dockerfile: Dockerfile.dev
         volumes:
             - ./python3:/app
+        deploy:
+            resources:
+                limits:
+                    cpus: 2
+                    memory: 1024m
 
     python3-vm-agent-dev:
         build:
@@ -21,3 +26,8 @@ services:
             dockerfile: Dockerfile.vm.dev
         volumes:
             - ./python3:/app
+        deploy:
+            resources:
+                limits:
+                    cpus: 2
+                    memory: 1024m
