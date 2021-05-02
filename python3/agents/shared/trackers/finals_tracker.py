@@ -129,4 +129,6 @@ class FinalsTracker:
         game_state['hazard_zones'] = player_hazards
         game_state['detonation_zones'] = detonation_zone
         game_state['all_hazard_zones'] = all_hazards
+        game_state['wall_blocks'] = wall_blocks
+        game_state['destroyable_blocks'] = destroyable_blocks
 
