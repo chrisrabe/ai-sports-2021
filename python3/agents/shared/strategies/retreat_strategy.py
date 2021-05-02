@@ -3,7 +3,7 @@ from typing import List
 from . import strategy
 from ..utils.constants import ACTIONS
 from ..utils.util_functions import get_value_map, get_value_map_objects_from_arr, get_move_from_value_map, \
-    get_reachable_tiles, move_results_in_ouchie, convert_entities_to_coords
+    get_reachable_tiles, move_results_in_ouchie, convert_entities_to_coords, death_trap, get_value_map_object
 
 
 class RetreatStrategy(strategy.Strategy):
@@ -15,6 +15,12 @@ class RetreatStrategy(strategy.Strategy):
             'reachable': 1,
             'enemy': -2
         }
+
+    def update(self, game_state: dict):
+        game_state['enemy_immediate_trapped'] = death_trap(game_state['enemy_pos'], game_state['world'], game_state['entities'])
+        enemy_x, enemy_y = game_state['enemy_pos']
+        game_state['enemy_obj'] = get_value_map_object(enemy_x, enemy_y, 'enemy')
+        game_state['wall_blocks'] = convert_entities_to_coords(game_state['wall_blocks'] + game_state['destroyable_blocks'])
 
     def execute(self, game_state: dict) -> List[str]:
         world = game_state['world']
