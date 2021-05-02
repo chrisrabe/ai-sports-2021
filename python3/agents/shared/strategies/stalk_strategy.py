@@ -1,9 +1,7 @@
 from typing import List
 
 from . import strategy
-from ..utils.util_functions import get_shortest_path, get_path_action_seq, get_blast_zone, get_nearest_tile, \
-    move_results_in_ouchie
-from ..utils.constants import ACTIONS
+from ..utils.util_functions import get_shortest_path, get_path_action_seq, get_blast_zone, get_nearest_tile
 
 
 class StalkStrategy(strategy.Strategy):
@@ -18,7 +16,8 @@ class StalkStrategy(strategy.Strategy):
         stalk_zone = get_blast_zone(enemy_pos, 1, entities, world)
         closest_tile = get_nearest_tile(player_pos, stalk_zone)
 
-        path = get_shortest_path(player_pos, closest_tile, world, entities, game_state['hazard_zones'], game_state['player_is_invulnerable'])
+        path = get_shortest_path(player_pos, closest_tile, world, entities, game_state['hazard_zones'],
+                                 game_state['player_is_invulnerable'])
         if path:
             path = path[:-1]  # remove last because it's the enemy_player
 
@@ -38,9 +37,10 @@ class StalkTwoStrategy(strategy.Strategy):
         entities = game_state['entities']
 
         # we want to at least be 3 blocks away from player
-        closest_tile =  game_state['closest_bomb_tile']
+        closest_tile = game_state['closest_bomb_tile']
 
-        path = get_shortest_path(player_pos, closest_tile, world, entities, game_state['hazard_zones'], game_state['player_is_invulnerable'])
+        path = get_shortest_path(player_pos, closest_tile, world, entities, game_state['hazard_zones'],
+                                 game_state['player_is_invulnerable'])
         # if path:
         #     path = path[:-1]  # remove last because it's the enemy_player
 
@@ -49,4 +49,3 @@ class StalkTwoStrategy(strategy.Strategy):
             return [action_seq.pop(0)]
         else:
             return action_seq
-

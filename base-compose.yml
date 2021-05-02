@@ -31,3 +31,15 @@ services:
                 limits:
                     cpus: 2
                     memory: 1024m
+
+    python3-finals-agent-dev:
+        build:
+            context: python3
+            dockerfile: Dockerfile.finals.dev
+        volumes:
+            - ./python3:/app
+        deploy:
+            resources:
+                limits:
+                    cpus: 2
+                    memory: 1024m
