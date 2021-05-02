@@ -88,7 +88,6 @@ def get_empty_tiles(tiles, entities, ignore_player=False):
 
     for tile in tiles:
         if is_walkable(tile, entities, ignore_player):
-            #print("Entity, tile", entities, tile)
             empty_tiles.append(tile)
 
     return empty_tiles
@@ -271,7 +270,7 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
             break
         cur_loc = tile
 
-    return blast_tiles
+    return set(blast_tiles)
 
 
 def get_nearest_tile(location, tiles):
@@ -757,3 +756,12 @@ def get_num_escape_paths(player_pos, tile, blast_diameter, entities, world):
     # are there safe tiles that player can reach?
     reachable_tiles = get_reachable_tiles(player_pos, safe_tiles, world, entities)
     return len(reachable_tiles)
+
+
+def is_trappable(tile, world, entities):
+    return len(get_surrounding_empty_tiles(tile, world, entities, ignore_player=False)) < 2
+
+
+def is_dangerous(entity, player_pos, enemy_pos, world, entities):
+    x, y = get_entity_coords(entity)
+    return manhattan_distance(player_pos, enemy_pos) < 2 and is_trappable((x, y), world, entities)
