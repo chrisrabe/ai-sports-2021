@@ -512,6 +512,77 @@ def update_dia_value_map(rval, value_map, world_dim, max_reward_spread=0,
     return value_map
 
 
+def update_combo_value_map(rval, value_map, world_dim, max_reward_spread=0,
+                         OUTER_MAP_VALUES=((-100, -100), (-100, -100))):
+    '''
+    Updates the reward value map with mask matrix application, based on reward entity.
+    Returns a numpy array representing the updated reward value map.
+    '''
+    # add map padding
+    pad_dim = (world_dim[0] - 1, world_dim[1] - 1)
+    value_map = np.pad(value_map, (pad_dim, pad_dim), 'constant', constant_values=OUTER_MAP_VALUES)
+    rval_offset = pad_dim[0]  # padding offset
+
+    reward = rval[2]
+    reward_discount = reward/abs(reward)
+    reward_spread=0
+    decay = 0
+
+    # max reward spread shall not exceed the dimension of the map
+    max_spread = min(abs(reward), max_reward_spread, world_dim[0] - 1)
+
+    xo = rval[1] + rval_offset
+    yo = rval[0] + rval_offset
+
+    value_map_mask1 = value_map
+    value_map_mask2 = value_map
+    
+    if reward > 0:
+        # positive reward value
+        for i, value in enumerate(range(0, reward, 1)):
+            if i <= max_spread:
+                spread = i
+            
+            xs = xo - spread
+            xe = xo + 1 + spread
+            ys = yo - spread
+            ye = yo + 1 + spread
+            
+            # decay effect applied on each concentric value dispersion
+            decay = 1-(i/abs(reward))
+            value_map_mask1[xs:xe,ys:ye] = value_map_mask1[xs:xe,ys:ye] + decay*reward_discount
+            value_map[xs:xe, yo-max_spread:yo+max_spread+1] = value_map[xs:xe, yo-max_spread:yo+max_spread+1] + reward_discount*decay
+            value_map[xo-max_spread:xo+max_spread+1, ys:ye] = value_map[xo-max_spread:xo+max_spread+1, ys:ye] + reward_discount*decay
+        
+    elif reward < 0:
+        # negative reward value
+        for i, value in enumerate(range(0, reward, -1)):
+            if i <= max_spread:
+                spread = i 
+                
+            xs = xo - spread
+            xe = xo + 1 + spread
+            ys = yo - spread
+            ye = yo + 1 + spread
+            
+            # decay effect applied on each concentric value dispersion
+            decay = 1-(i/abs(reward))
+            value_map_mask1[xs:xe,ys:ye] = value_map_mask1[xs:xe,ys:ye] + decay*reward_discount
+            value_map[xs:xe, yo-max_spread:yo+max_spread+1] = value_map[xs:xe, yo-max_spread:yo+max_spread+1] + reward_discount*decay
+            value_map[xo-max_spread:xo+max_spread+1, ys:ye] = value_map[xo-max_spread:xo+max_spread+1, ys:ye] + reward_discount*decay
+        
+    else:
+        # Reward assigned is 0.
+        pass
+
+    value_map = np.add(value_map_mask1, value_map_mask2)
+
+    # remove map padding
+    value_map = value_map[world_dim[0] - 1:world_dim[0] + pad_dim[0], world_dim[0] - 1:world_dim[0] + pad_dim[0]]
+
+    return value_map
+
+
 def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use_default=True):
     """
     Returns a numpy array map representing the values
@@ -563,7 +634,7 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
 
         # update mask based reward map
         reward_entity = [item['loc'][0], item['loc'][1], reward]
-        value_map = update_dia_value_map(reward_entity, value_map, world_dim, max_reward_spread)
+        value_map = update_combo_value_map(reward_entity, value_map, world_dim, max_reward_spread)
 
     # re-evaluate for pinch points
     if pinch_points is not None:
@@ -574,7 +645,7 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
 
             # Update mask based reward map
             reward_entity = [tile[0], tile[1], pinch_reward]
-            value_map = update_dia_value_map(reward_entity, value_map, world_dim, max_reward_spread)
+            value_map = update_combo_value_map(reward_entity, value_map, world_dim, max_reward_spread)
 
     return value_map
 
