@@ -325,12 +325,8 @@ def get_surrounding_empty_tiles(location, world, entities, ignore_player=True):
     """
     Retrieves surrounding walkable tile around the location
     """
-    empty_tiles = []
     world_width, world_height = get_world_dimension(world)
     surrounding_tiles = get_surrounding_tiles(location, world_width, world_height)
-    # for tile in surrounding_tiles:
-    #     if is_walkable(tile, entities, False):
-    #         empty_tiles.append(tile)
     empty_tiles = get_empty_tiles(surrounding_tiles, entities, ignore_player)
     return empty_tiles
 
@@ -817,9 +813,6 @@ def get_num_escape_paths(player_pos, tile, blast_diameter, entities, world):
 
 def is_trappable(tile, world, entities):
     return len(get_surrounding_empty_tiles(tile, world, entities, ignore_player=False)) < 2
-
-def trapped(tile, world, entities):
-    return len(get_surrounding_empty_tiles(tile, world, entities, ignore_player=False)) < 1
 
 
 def is_dangerous(entity, player_pos, enemy_pos, world, entities):
