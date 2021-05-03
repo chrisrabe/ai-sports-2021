@@ -180,8 +180,8 @@ class FinalsTracker:
         enemy_empty_area = []
         for empty_tile in enemy_empty_neighbours:
             empty_surround = get_surrounding_empty_tiles(empty_tile, world, entities, False)
-            empty_surround_uniques = [tile for tile in empty_surround if tile not in enemy_empty_area]
-            for tile in empty_surround_uniques:
-                enemy_empty_area.append(tile)
+            for tile in empty_surround:
+                if tile not in enemy_empty_area:
+                    enemy_empty_area.append(tile)
         
         game_state['enemy_free_space'] = len(enemy_empty_area)
