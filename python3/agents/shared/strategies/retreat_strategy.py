@@ -17,7 +17,7 @@ class RetreatStrategy(strategy.Strategy):
         }
 
     def update(self, game_state: dict):
-        game_state['enemy_immediate_trapped'] = death_trap(game_state['enemy_pos'], game_state['world'], game_state['entities'])
+        game_state['enemy_immediate_trapped'] = death_trap(game_state['enemy_pos'], game_state['world'], game_state['entities']) and game_state['enemy_near_player']
         enemy_x, enemy_y = game_state['enemy_pos']
         game_state['enemy_obj'] = get_value_map_object(enemy_x, enemy_y, 'enemy')
         game_state['wall_blocks'] = convert_entities_to_coords(game_state['wall_blocks'] + game_state['destroyable_blocks'])
@@ -35,7 +35,7 @@ class RetreatStrategy(strategy.Strategy):
         player_hp = game_state['player_health']
 
         # Bomb or sacrificial body block
-        if game_state['enemy_immediate_trapped'] and game_state['enemy_near_bomb']:
+        if game_state['enemy_immediate_trapped'] and (game_state['enemy_near_bomb'] or game_state['enemy_on_bomb']):
             if game_state['player_inv_bombs'] > 0:
                 print('You just played yourself!')
                 return [ACTIONS['bomb']]
