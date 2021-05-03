@@ -155,6 +155,7 @@ class FinalsTracker:
         num_escape = get_num_escape_paths(player_pos, player_pos, player_diameter, entities, world)
         if num_escape <= 1:
             game_state['enemy_onestep_trapped'] = False  # not worth it trapping yourself
+            return
         enemy_pos = game_state['enemy_pos']
         virt_blast_zone = get_blast_zone(player_pos, player_diameter, entities, world)
         enemy_empty_neighbours = get_surrounding_empty_tiles(enemy_pos, world, entities, False)
