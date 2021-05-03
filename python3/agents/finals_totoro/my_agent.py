@@ -2,7 +2,7 @@ from .brain import Brain
 from ..shared.strategies import RandomStrategy, RetreatStrategy, StalkStrategy, PickupStrategy, AdvKillStrategy, \
     BasicAvoidStrategy, DetonateStrategy, BombStrategy, SimpleBombStrategy, AdvBlockStrategy, StalkTwoStrategy
 from ..shared.utils.benchmark import Benchmark
-from copy import deepcopy
+
 
 class Agent:
     def __init__(self):
@@ -25,7 +25,6 @@ class Agent:
 
     def next_move(self, tick_number, game_state):
         # If it prints this out in console, it means algorithm is performing suboptimally
-        game_state = deepcopy(game_state)
         if tick_number - self.prev_tick != 1:
             print(f'Skipped a Tick: Tick #{tick_number}, skipped {tick_number - self.prev_tick}')
         self.benchmark.start('move')
