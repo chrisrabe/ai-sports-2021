@@ -1,6 +1,6 @@
 from ..utils.constants import ENTITIES
 from ..utils.util_functions import is_dangerous, get_entity_coords, get_blast_zone, get_surrounding_tiles, \
-    get_world_dimension, get_safe_tiles, get_shortest_path, death_trap, get_surrounding_empty_tiles
+    get_world_dimension, get_safe_tiles, get_shortest_path, death_trap, get_surrounding_empty_tiles, trapped
 
 
 class FinalsTracker:
@@ -143,8 +143,10 @@ class FinalsTracker:
         game_state['clear_path_to_enemy'] = path is not None
 
     def update_trap(self, game_state: dict):
+        world_width, world_height = get_world_dimension(game_state['world'])
+        print(world_width, world_height)
         game_state['enemy_immediate_trapped'] = death_trap(game_state['enemy_pos'], game_state['world'], game_state['entities']) and game_state['enemy_near_player']
-
+        print("Enemy immediate trapped property:", game_state['enemy_immediate_trapped'], get_surrounding_empty_tiles(game_state['player_pos'],  game_state['world'], game_state['entities'], False), get_surrounding_tiles(game_state['player_pos'], world_width, world_height ), game_state['player_pos'])
     def update_onestep(self, game_state: dict):
         entities = game_state['entities']
         world = game_state['world']

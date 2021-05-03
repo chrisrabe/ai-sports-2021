@@ -761,6 +761,9 @@ def get_num_escape_paths(player_pos, tile, blast_diameter, entities, world):
 def is_trappable(tile, world, entities):
     return len(get_surrounding_empty_tiles(tile, world, entities, ignore_player=False)) < 2
 
+def trapped(tile, world, entities):
+    return len(get_surrounding_empty_tiles(tile, world, entities, ignore_player=False)) < 1
+
 
 def is_dangerous(entity, player_pos, enemy_pos, world, entities):
     x, y = get_entity_coords(entity)
