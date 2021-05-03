@@ -17,7 +17,7 @@ class Brain:
         self.finals_tracker.update(game_state)
         self.benchmark.end('tracker')
 
-        print("I'm the totoro agent algo bot!!")
+        print("I'm the totoro agent agro bot!!")
 
         if game_state['player_pos'] in game_state['all_hazard_zones']:
             print("Basic avoiding! Not getting me today, I'm FUCKING ORBITAL TOTORO")
