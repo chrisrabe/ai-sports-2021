@@ -29,6 +29,7 @@ class Agent:
             print(f'Skipped a Tick: Tick #{tick_number}, skipped {tick_number - self.prev_tick}')
         self.benchmark.start('move')
         game_state['tick'] = tick_number
+        print(f'Starting tick #{tick_number}')
 
         if not self.action_queue:
             # Gets brain to eval environment, then spit out the strategy chosen (as string)

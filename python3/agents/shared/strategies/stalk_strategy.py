@@ -18,8 +18,6 @@ class StalkStrategy(strategy.Strategy):
 
         path = get_shortest_path(player_pos, closest_tile, world, entities, game_state['hazard_zones'],
                                  game_state['player_is_invulnerable'])
-        if path:
-            path = path[:-1]  # remove last because it's the enemy_player
 
         action_seq = get_path_action_seq(player_pos, path)
         if len(action_seq) > 0:
@@ -31,7 +29,6 @@ class StalkStrategy(strategy.Strategy):
 class StalkTwoStrategy(strategy.Strategy):
 
     def execute(self, game_state: object) -> List[str]:
-        enemy_pos = game_state['enemy_pos']
         player_pos = game_state['player_pos']
         world = game_state['world']
         entities = game_state['entities']

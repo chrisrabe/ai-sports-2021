@@ -37,7 +37,7 @@ class AdvBlockStrategy(strategy.Strategy):
         # DETONATION ALGORITHM
         # If there's one active bomb that's next to a destroy block, blow it up
         # if any active bombs are next to destroyable blocks, detonate them
-        print(f'Block destroy {own_bombs}, destroyables: {destroyable_coords}')
+        # print(f'Block destroy {own_bombs}, destroyables: {destroyable_coords}')
         can_detonate = False
         for bomb in own_bombs:
             coord = bomb['coord']
