@@ -1,6 +1,7 @@
 from ..utils.constants import ENTITIES
 from ..utils.util_functions import is_dangerous, get_entity_coords, get_blast_zone, get_surrounding_tiles, \
-    get_world_dimension, get_safe_tiles, get_shortest_path, death_trap, get_surrounding_empty_tiles
+    get_world_dimension, get_safe_tiles, get_shortest_path, death_trap, get_surrounding_empty_tiles, \
+    get_num_escape_paths
 
 
 class FinalsTracker:
@@ -143,13 +144,20 @@ class FinalsTracker:
         game_state['clear_path_to_enemy'] = path is not None
 
     def update_trap(self, game_state: dict):
-        game_state['enemy_immediate_trapped'] = death_trap(game_state['enemy_pos'], game_state['world'], game_state['entities']) and game_state['enemy_near_player']
+        game_state['enemy_immediate_trapped'] = death_trap(game_state['enemy_pos'], game_state['world'],
+                                                           game_state['entities']) and game_state['enemy_near_player']
 
     def update_onestep(self, game_state: dict):
+        player_pos = game_state['player_pos']
+        player_diameter = game_state['player_diameter']
         entities = game_state['entities']
         world = game_state['world']
+        num_escape = get_num_escape_paths(player_pos, player_pos, player_diameter, entities, world)
+        if num_escape <= 1:
+            game_state['enemy_onestep_trapped'] = False  # not worth it trapping yourself
+            return
         enemy_pos = game_state['enemy_pos']
-        virt_blast_zone = get_blast_zone(game_state['player_pos'], game_state['player_diameter'], entities, world)
+        virt_blast_zone = get_blast_zone(player_pos, player_diameter, entities, world)
         enemy_empty_neighbours = get_surrounding_empty_tiles(enemy_pos, world, entities, False)
         if enemy_empty_neighbours:
             game_state['enemy_onestep_trapped'] = all(item in virt_blast_zone for item in enemy_empty_neighbours)

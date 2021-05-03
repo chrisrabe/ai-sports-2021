@@ -122,7 +122,7 @@ def can_enqueue(queue, neighbour):
     return True
 
 
-def get_shortest_path(start, end, world, entities, blast_tiles=None, player_invulnerable=False) -> object:
+def get_shortest_path(start, end, world, entities, blast_tiles=None, player_invulnerable=False, ignore_bomb=False) -> object:
     """
     Finds the shortest path from the start node to the end node.
     Returns an array of (x,y) tuples. Uses A* search algorithm
@@ -169,7 +169,7 @@ def get_shortest_path(start, end, world, entities, blast_tiles=None, player_invu
             if (tile in blast_tiles) and not player_invulnerable:
                 continue  # skip if blast tile
 
-            if not is_walkable(tile, entities):
+            if not is_walkable(tile, entities, ignore_bomb=ignore_bomb):
                 continue  # skip if not walkable
 
             neighbour = Node(tile, current_node)
@@ -189,12 +189,14 @@ def get_shortest_path(start, end, world, entities, blast_tiles=None, player_invu
     return None  # no path found
 
 
-def is_walkable(tile, entities, ignore_player=True):
+def is_walkable(tile, entities, ignore_player=True, ignore_bomb=False):
     """
     Returns true if the tile is walkable
     """
     collectible = ["a", "bp"]  # Ammo, powerup
     player = ['p', 'e', 'eb', 'pb']  # Player, enemy,
+    if ignore_bomb:
+        collectible.append("b")
     entity = entity_at(tile, entities)
     if ignore_player:
         return entity in collectible or entity is None or entity in player
@@ -304,7 +306,7 @@ def min_distance(start, tiles):
     return tiles[index]
 
 
-def get_reachable_tiles(location, tiles, world, entities, blast_tiles=None):
+def get_reachable_tiles(location, tiles, world, entities, blast_tiles=None, ignore_bomb=False):
     """
     Returns a list of reachable tiles (will pick the last one)
     """
@@ -313,7 +315,7 @@ def get_reachable_tiles(location, tiles, world, entities, blast_tiles=None):
 
     reachable_tiles = []
     for tile in tiles:
-        path = get_shortest_path(location, tile, world, entities, blast_tiles)
+        path = get_shortest_path(location, tile, world, entities, blast_tiles, ignore_bomb=ignore_bomb)
         if path:
             reachable_tiles.append(tile)
     return reachable_tiles
@@ -756,7 +758,7 @@ def get_detonation_target(target_pos, own_bombs, world, entities) -> tuple[int, 
         coord = bomb['coord']
         bomb_coords.append(coord)
         bomb_dict[coord] = bomb
-    reachable_bombs = get_reachable_tiles(target_pos, bomb_coords, world, entities)
+    reachable_bombs = get_reachable_tiles(target_pos, bomb_coords, world, entities, ignore_bomb=True)
     for tile in reachable_bombs:
         bomb = bomb_dict[tile]
         blast_zone = get_blast_zone(tile, bomb['blast_diameter'], entities, world)
