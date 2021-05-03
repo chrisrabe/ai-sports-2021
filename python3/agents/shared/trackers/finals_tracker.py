@@ -148,8 +148,9 @@ class FinalsTracker:
     def update_onestep(self, game_state: dict):
         entities = game_state['entities']
         world = game_state['world']
+        enemy_pos = game_state['enemy_pos']
         virt_blast_zone = get_blast_zone(game_state['player_pos'], game_state['player_diameter'], entities, world)
-        enemy_empty_neighbours = get_surrounding_empty_tiles(game_state['enemy_pos'], world, entities, False)
+        enemy_empty_neighbours = get_surrounding_empty_tiles(enemy_pos, world, entities, False)
         if enemy_empty_neighbours:
             game_state['enemy_onestep_trapped'] = all(item in virt_blast_zone for item in enemy_empty_neighbours)
         else:
