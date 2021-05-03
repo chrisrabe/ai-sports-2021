@@ -16,9 +16,18 @@ class Brain:
         self.benchmark.start('tracker')
         self.finals_tracker.update(game_state)
         self.benchmark.end('tracker')
+        
+        self.benchmark.start('path')
         self.finals_tracker.update_path(game_state)
+        self.benchmark.end('path')
+        
+        self.benchmark.start('onestep')
         self.finals_tracker.update_onestep(game_state)
+        self.benchmark.end('onestep')
+
+        self.benchmark.start('trap')
         self.finals_tracker.update_trap(game_state)
+        self.benchmark.end('trap')
 
   
         print("I'm the totoro agent algo bot!!")
@@ -35,16 +44,14 @@ class Brain:
 
         # # Killing strategies
         if game_state['player_inv_bombs'] > 0:
-            self.benchmark.start('trap')
             #self.finals_tracker.update_trap(game_state)
-            self.benchmark.end('trap')
             if game_state['enemy_immediate_trapped']:
                 print("I think the enemy's immediately trapped.")
                 return 'simple_bomb'
 
-            self.benchmark.start('onestep')
+            #self.benchmark.start('onestep')
            # self.finals_tracker.update_onestep(game_state)
-            self.benchmark.end('onestep')
+            #self.benchmark.end('onestep')
             if game_state['enemy_onestep_trapped']:
                 print("I think the enemy is onestep trapped!")
                 return 'simple_bomb'
