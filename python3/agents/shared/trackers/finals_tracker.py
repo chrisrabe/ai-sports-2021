@@ -146,7 +146,8 @@ class FinalsTracker:
         world_width, world_height = get_world_dimension(game_state['world'])
         print(world_width, world_height)
         game_state['enemy_immediate_trapped'] = death_trap(game_state['enemy_pos'], game_state['world'], game_state['entities']) and game_state['enemy_near_player']
-        print("Enemy immediate trapped property:", game_state['enemy_immediate_trapped'], get_surrounding_empty_tiles(game_state['player_pos'],  game_state['world'], game_state['entities'], False), get_surrounding_tiles(game_state['player_pos'], world_width, world_height ), game_state['player_pos'])
+        print("Enemy immediate trapped property:", game_state['enemy_immediate_trapped'], 
+        "Empty surrounding, then surrounding tiles for enemy", get_surrounding_empty_tiles(game_state['enemy_pos'],  game_state['world'], game_state['entities'], False), get_surrounding_tiles(game_state['enemy_pos'], world_width, world_height ),"enemy pos",game_state['enemy_pos'])
     def update_onestep(self, game_state: dict):
         entities = game_state['entities']
         world = game_state['world']

@@ -323,8 +323,12 @@ def get_surrounding_empty_tiles(location, world, entities, ignore_player=True):
     """
     Retrieves surrounding walkable tile around the location
     """
+    empty_tiles = []
     world_width, world_height = get_world_dimension(world)
     surrounding_tiles = get_surrounding_tiles(location, world_width, world_height)
+    # for tile in surrounding_tiles:
+    #     if is_walkable(tile, entities, False):
+    #         empty_tiles.append(tile)
     empty_tiles = get_empty_tiles(surrounding_tiles, entities, ignore_player)
     return empty_tiles
 
