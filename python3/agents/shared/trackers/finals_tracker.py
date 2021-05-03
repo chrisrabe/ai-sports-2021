@@ -1,7 +1,6 @@
 from ..utils.constants import ENTITIES
 from ..utils.util_functions import is_dangerous, get_entity_coords, get_blast_zone, get_surrounding_tiles, \
-    get_world_dimension, get_safe_tiles, get_shortest_path, death_trap, get_surrounding_empty_tiles, \
-    get_num_escape_paths
+    get_world_dimension, get_safe_tiles, get_shortest_path, death_trap, get_surrounding_empty_tiles, get_empty_tiles, get_num_escape_paths
 
 
 class FinalsTracker:
@@ -146,8 +145,13 @@ class FinalsTracker:
     def update_trap(self, game_state: dict):
         game_state['enemy_immediate_trapped'] = death_trap(game_state['enemy_pos'], game_state['world'],
                                                            game_state['entities']) and game_state['enemy_near_player']
-
+                                                           
     def update_onestep(self, game_state: dict):
+        """
+        Onestep trapping: Returns true if there is an escape path, and placing a bomb at 
+        player position will mean the enemy can't escape its blast zone in the next tick
+        """
+        
         player_pos = game_state['player_pos']
         player_diameter = game_state['player_diameter']
         entities = game_state['entities']

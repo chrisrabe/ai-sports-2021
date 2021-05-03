@@ -25,7 +25,7 @@ class Brain:
             return 'detonate'
         self.benchmark.end('detonate')
 
-        # Killing strategies
+        # # Killing strategies
         if game_state['player_inv_bombs'] > 0:
             self.benchmark.start('trap')
             self.finals_tracker.update_trap(game_state)
