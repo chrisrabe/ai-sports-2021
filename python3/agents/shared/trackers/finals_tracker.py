@@ -115,6 +115,8 @@ class FinalsTracker:
                 for tile in blast_zone:
                     all_hazards.append(tile)
                     if entity['owner'] == int(player_id):
+                        if bomb_coords == player_pos:
+                            player_hazards.append(tile)
                         ttl = bomb['expires'] - game_state['tick']
                         if ttl <= (game_state['player_diameter'] // 2) + 1:
                             player_hazards.append(tile)
