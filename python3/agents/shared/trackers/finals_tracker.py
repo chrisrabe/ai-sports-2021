@@ -193,7 +193,10 @@ class FinalsTracker:
                                     manhattan_distance(enemy_pos, world_corners[2]), 
                                     manhattan_distance(enemy_pos, world_corners[3]))
 
-        if min_player_corner_dist > min_enemy_corner_dist:
+        player_enemy_dist = manhattan_distance(player_pos, enemy_pos)
+
+        # get number of empty tiles in the enemy surrounding that meets the condition for attack engagement
+        if min_player_corner_dist > min_enemy_corner_dist and player_enemy_dist <= 2:
             enemy_empty_neighbours = get_surrounding_empty_tiles(enemy_pos, world, entities, False)
             enemy_empty_area = []
             for empty_tile in enemy_empty_neighbours:
