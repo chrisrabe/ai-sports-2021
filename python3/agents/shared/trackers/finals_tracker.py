@@ -1,5 +1,5 @@
 from ..utils.constants import ENTITIES
-from ..utils.util_functions import is_dangerous, get_entity_coords, get_blast_zone, get_surrounding_tiles, \
+from ..utils.util_functions import manhattan_distance, is_dangerous, get_entity_coords, get_blast_zone, get_surrounding_tiles, \
     get_world_dimension, get_safe_tiles, get_shortest_path, death_trap, get_surrounding_empty_tiles, get_empty_tiles, get_num_escape_paths
 
 
@@ -147,7 +147,7 @@ class FinalsTracker:
     def update_trap(self, game_state: dict):
         game_state['enemy_immediate_trapped'] = death_trap(game_state['enemy_pos'], game_state['world'],
                                                            game_state['entities']) and game_state['enemy_near_player']
-                                                           
+
     def update_onestep(self, game_state: dict):
         """
         Onestep trapping: Returns true if there is an escape path, and placing a bomb at 
@@ -169,3 +169,44 @@ class FinalsTracker:
             game_state['enemy_onestep_trapped'] = all(item in virt_blast_zone for item in enemy_empty_neighbours)
         else:
             game_state['enemy_onestep_trapped'] = False
+
+    def update_enemy_control_zone(self, game_state: dict):
+        """
+        Return number of empty tiles in enemy surrounding area (as proxy of its future movement limitation)
+        """
+        world = game_state['world']
+        player_pos = game_state['player_pos']
+        enemy_pos = game_state['enemy_pos']
+        entities = game_state['entities']
+        world = game_state['world']
+        enemy_pos = game_state['enemy_pos']
+
+        world_width, world_height = get_world_dimension(world)
+        world_corners = [(0,0), (world_width-1, 0), (0, world_height-1), (world_width-1, world_height-1)]
+
+        # check if enemy is closer to world edge than player
+        min_player_corner_dist = min(manhattan_distance(player_pos, world_corners[0]), 
+                                     manhattan_distance(player_pos, world_corners[1]), 
+                                     manhattan_distance(player_pos, world_corners[2]), 
+                                     manhattan_distance(player_pos, world_corners[3]))
+
+        min_enemy_corner_dist = min(manhattan_distance(enemy_pos, world_corners[0]), 
+                                    manhattan_distance(enemy_pos, world_corners[1]), 
+                                    manhattan_distance(enemy_pos, world_corners[2]), 
+                                    manhattan_distance(enemy_pos, world_corners[3]))
+
+        player_enemy_dist = manhattan_distance(player_pos, enemy_pos)
+
+        # get number of empty tiles in the enemy surrounding that meets the condition for attack engagement
+        if min_player_corner_dist > min_enemy_corner_dist and player_enemy_dist <= 2:
+            enemy_empty_neighbours = get_surrounding_empty_tiles(enemy_pos, world, entities, False)
+            enemy_empty_area = []
+            for empty_tile in enemy_empty_neighbours:
+                empty_surround = get_surrounding_empty_tiles(empty_tile, world, entities, False)
+                for tile in empty_surround:
+                    if tile not in enemy_empty_area:
+                        enemy_empty_area.append(tile)
+            
+            game_state['enemy_control_zone'] = len(enemy_empty_area)
+        else:
+            game_state['enemy_control_zone'] = 100
