@@ -18,7 +18,7 @@ class Brain:
         print("I am totoro finals bot")
 
         if game_state['player_pos'] in game_state['all_hazard_zones']:
-            return 'retreat'
+            return 'basic_avoid'
 
         self.benchmark.start('detonate')
         if not game_state['enemy_is_invulnerable'] and game_state['enemy_pos'] in game_state['detonation_zones']:
