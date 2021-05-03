@@ -11,7 +11,7 @@ class Agent:
             'random': RandomStrategy(),
             'retreat': RetreatStrategy(),
             'pickup': PickupStrategy(),
-            'stalk': StalkTwoStrategy(),
+            'stalk': StalkStrategy(),
             'basic_avoid': BasicAvoidStrategy(),
             'kill': AdvKillStrategy(),
             'detonate': DetonateStrategy(),
@@ -38,6 +38,7 @@ class Agent:
             self.benchmark.end('decision')
             self.benchmark.start('execution')
             strategy = self.strategies.get(strategy_name) 
+            strategy.update(game_state)
             actions = strategy.execute(game_state)
             self.benchmark.end('execution')
             print(f'Tick {tick_number}: executing {strategy_name}: {actions}')
