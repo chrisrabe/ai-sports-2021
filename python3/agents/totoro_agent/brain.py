@@ -54,7 +54,7 @@ class Brain:
         if len(game_state['pickup_list']) != 0:
             print("Shiny pickup! Me collect!")
             return 'pickup'
-        elif not game_state['clear_path_to_enemy'] and game_state['player_inv_bombs'] > 2:
+        elif not game_state['clear_path_to_enemy']:
             print("Eh.. There's no clear victory here, so I'm just gonna kill some blocks")
             return 'block_destroy'
         else:

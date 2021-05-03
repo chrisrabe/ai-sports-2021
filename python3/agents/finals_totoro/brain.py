@@ -45,7 +45,7 @@ class Brain:
 
         if len(game_state['pickup_list']) != 0:
             return 'pickup'
-        elif not game_state['clear_path_to_enemy'] and game_state['player_inv_bombs'] > 2:
+        elif not game_state['clear_path_to_enemy']:
             return 'block_destroy'
         else:
             return 'stalk'
