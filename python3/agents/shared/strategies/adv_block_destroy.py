@@ -58,6 +58,15 @@ class AdvBlockStrategy(strategy.Strategy):
             print("Nothing to destroy. Gonna stand here.")
             return [ACTIONS['none']]  # Nothing to destroy
 
+        if game_state['enemy_in_danger']:
+            # Wait here until enemy fucks themself
+            # They're probably standing on their own bomb or trapped themself and can't get out
+            return [ACTIONS['none']]
+
+        if player_ammo < 1:
+            print("No ammo. What's the point?")
+            return [ACTIONS['none']]
+
         # POINTS OF INTEREST
         # get all empty tiles next to destroyable tiles
         # things to avoid:

@@ -42,6 +42,9 @@ class Brain:
         self.benchmark.start('path')
         self.finals_tracker.update_path(game_state)
         self.benchmark.end('path')
+        self.benchmark.start('danger')
+        self.finals_tracker.update_danger(game_state)
+        self.benchmark.end('danger')
 
         if len(game_state['pickup_list']) != 0:
             return 'pickup'
