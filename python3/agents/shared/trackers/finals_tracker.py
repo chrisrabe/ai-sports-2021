@@ -145,7 +145,7 @@ class FinalsTracker:
     def update_trap(self, game_state: dict):
         game_state['enemy_immediate_trapped'] = death_trap(game_state['enemy_pos'], game_state['world'],
                                                            game_state['entities']) and game_state['enemy_near_player']
-                                                           
+
     def update_onestep(self, game_state: dict):
         """
         Onestep trapping: Returns true if there is an escape path, and placing a bomb at 
@@ -167,3 +167,21 @@ class FinalsTracker:
             game_state['enemy_onestep_trapped'] = all(item in virt_blast_zone for item in enemy_empty_neighbours)
         else:
             game_state['enemy_onestep_trapped'] = False
+
+    def update_enemy_free_space(self, game_state: dict):
+        """
+        Return number of empty tiles in enemy surrounding area (as proxy of its future movement limitation)
+        """
+        entities = game_state['entities']
+        world = game_state['world']
+        enemy_pos = game_state['enemy_pos']
+
+        enemy_empty_neighbours = get_surrounding_empty_tiles(enemy_pos, world, entities, False)
+        enemy_empty_area = []
+        for empty_tile in enemy_empty_neighbours:
+            empty_surround = get_surrounding_empty_tiles(empty_tile, world, entities, False)
+            empty_surround_uniques = [tile for tile in empty_surround if tile not in enemy_empty_area]
+            for tile in empty_surround_uniques:
+                enemy_empty_area.append(tile)
+        
+        game_state['enemy_free_space'] = len(enemy_empty_area)
