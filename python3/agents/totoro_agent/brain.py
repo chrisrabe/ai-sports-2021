@@ -47,6 +47,13 @@ class Brain:
                 print("I think the enemy is onestep trapped!")
                 return 'simple_bomb'
 
+            self.benchmark.start('controlzone')
+            self.finals_tracker.update_enemy_control_zone(game_state)
+            self.benchmark.end('controlzone')
+            if game_state['enemy_control_zone'] <= 5:
+                print("I think the enemy is running out of space to move.")
+                return 'simple_bomb'
+
         self.benchmark.start('path')
         self.finals_tracker.update_path(game_state)
         self.benchmark.end('path')
