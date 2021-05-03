@@ -139,6 +139,9 @@ class FinalsTracker:
         game_state['destroyable_blocks'] = destroyable_blocks
         game_state['blast_blocks'] = blast_blocks
 
+    def update_danger(self, game_state: dict):
+        game_state['enemy_in_danger'] = game_state['enemy_on_bomb'] or game_state['enemy_pos'] in game_state['all_hazard_zones']
+
     def update_path(self, game_state: dict):
         path = get_shortest_path(game_state['player_pos'], game_state['enemy_pos'], game_state['world'],
                                  game_state['entities'])
