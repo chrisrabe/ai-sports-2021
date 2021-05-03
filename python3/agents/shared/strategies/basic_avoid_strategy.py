@@ -30,7 +30,7 @@ class BasicAvoidStrategy(strategy.Strategy):
 
         # Bomb or sacrificial body block
         if game_state['enemy_immediate_trapped'] and game_state['enemy_near_bomb']:
-            if game_state['player_inv_bombs'] > 0:
+            if game_state['player_inv_bombs'] > 0 and not game_state['player_on_bomb']:
                 print('You just played yourself!')
                 return [ACTIONS['bomb']]
 
