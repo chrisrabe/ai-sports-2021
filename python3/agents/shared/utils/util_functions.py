@@ -275,11 +275,14 @@ def get_blast_zone(bomb_loc, diameter, entities, world):
     return blast_tiles
 
 
-def get_nearest_tile(location, tiles):
+def get_nearest_tile(location, tiles, exclude_tiles=None):
     """
     Returns nearest tile in a list of tiles
     """
-    if tiles:
+    if exclude_tiles is None:
+        exclude_tiles = []
+    iter_tiles = [tile for tile in tiles if tile not in exclude_tiles]
+    if iter_tiles:
         tile_dist = 1000
         closest_tile = tiles[0]
         for tile in tiles:

@@ -1,8 +1,9 @@
+from collections import defaultdict, OrderedDict
 from typing import List
 
 from . import strategy
 from ..utils.constants import ACTIONS
-from ..utils.util_functions import get_shortest_path, get_path_action_seq, get_nearest_tile, death_trap, convert_entities_to_coords
+from ..utils.util_functions import get_shortest_path, get_path_action_seq, death_trap, manhattan_distance
 
 
 class BasicAvoidStrategy(strategy.Strategy):
@@ -38,9 +39,26 @@ class BasicAvoidStrategy(strategy.Strategy):
                 return [ACTIONS['none']]
 
         print("YOU'RE IN DANGER DUDE - basic avoid")
-        closest_tile = get_nearest_tile(player_pos, game_state['safe_zones'])
+
+        # distance -> array of tiles
+        dist_map = defaultdict(list)
+        for tile in game_state['safe_zones']:
+            distance = manhattan_distance(player_pos, tile)
+            dist_map[distance].append(tile)
+
+        # Order them from smallest distance to largest
+        od = OrderedDict(sorted(dist_map.items()))
+        min_dist = list(od.keys())[0]
+        min_dist_tiles = dist_map[min_dist]
+
         blast_tiles = [enemy_pos]
-        path = get_shortest_path(player_pos, closest_tile, world, entities, blast_tiles, game_state['player_is_invulnerable'])
+        path = None
+
+        # Grab the first reachable
+        for tile in min_dist_tiles:
+            path = get_shortest_path(player_pos, tile, world, entities, blast_tiles, game_state['player_is_invulnerable'])
+            if path is not None:
+                break
 
         if path is None:
             print(
