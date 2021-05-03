@@ -1,5 +1,6 @@
 from .game_state import GameState
 from ..my_agent import Agent
+from copy import deepcopy
 import asyncio
 import os
 
@@ -21,6 +22,7 @@ class Client:
         loop.run_until_complete(asyncio.wait(tasks))
 
     async def _on_game_tick(self, tick_number, game_state):
+        game_state = deepcopy(game_state)
         next_action = self.agent.next_move(tick_number, game_state)
         await self.handle_next_action(next_action, game_state)
 
