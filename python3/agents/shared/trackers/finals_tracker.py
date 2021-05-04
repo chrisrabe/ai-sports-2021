@@ -177,9 +177,7 @@ class FinalsTracker:
         """
         Return number of empty tiles in enemy surrounding area (as proxy of its future movement limitation)
         """
-        world = game_state['world']
         player_pos = game_state['player_pos']
-        enemy_pos = game_state['enemy_pos']
         entities = game_state['entities']
         world = game_state['world']
         enemy_pos = game_state['enemy_pos']

@@ -8,6 +8,8 @@ from ..utils.constants import ACTIONS
 class PickupStrategy(strategy.Strategy):
 
     def update(self, game_state: dict):
+        # finding articulation points
+        # finding player and enemy map control
         game_state['dangerous_pickups'] = []  # no need to check this for finals
         game_state['ammo_list'] = convert_entities_to_coords(game_state['ammo_list'])
         game_state['powerup_list'] = convert_entities_to_coords(game_state['powerup_list'])
@@ -19,6 +21,10 @@ class PickupStrategy(strategy.Strategy):
         powerup_list = game_state['powerup_list']
         world = game_state['world']
         entities = game_state['entities']
+
+        # if we're not standing on the bomb and we have bomb
+        #    if player has more map control than enemy and we're standing on an articulation point
+        #       place bomb down
 
         # Removes any ammo that is dangerous from pathfinding --> If enemy is too close, don't bother getting it.
         for element in game_state['dangerous_pickups']:
