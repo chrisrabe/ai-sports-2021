@@ -14,3 +14,4 @@ from .bomb_strategy import BombStrategy
 from .simple_bomb import SimpleBombStrategy
 from .wait_strategy import WaitStrategy
 from .adv_block_destroy import AdvBlockStrategy
+from .lurk_strategy import LurkStrategy
