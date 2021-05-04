@@ -10,6 +10,7 @@ class Brain:
     def __init__(self):
         self.benchmark = Benchmark()
         self.finals_tracker = FinalsTracker()
+        self.has_seen_enemy = False
 
     def get_next_strategy(self, game_state) -> str:
         """Conditionals to decide which strategy to execute. Returns string"""
@@ -61,10 +62,17 @@ class Brain:
         self.finals_tracker.update_danger(game_state)
         self.benchmark.end('danger')
 
+        # Toggle this so we don't run block destroy after seeing enemy for first time
+        # The goal of block destroy was to just get ourselves our of the prison
+        if game_state['clear_path_to_enemy']:
+            self.has_seen_enemy = True
+
         if len(game_state['pickup_list']) != 0:
             print("Shiny pickup! Me collect!")
             return 'pickup'
-        elif not game_state['clear_path_to_enemy']:
+        elif not game_state['clear_path_to_enemy'] and self.has_seen_enemy:
+            return 'lurk'
+        elif not game_state['clear_path_to_enemy'] and not self.has_seen_enemy:
             print("Eh.. There's no clear victory here, so I'm just gonna kill some blocks")
             return 'block_destroy'
         else:
