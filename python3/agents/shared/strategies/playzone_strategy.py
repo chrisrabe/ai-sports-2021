@@ -3,7 +3,7 @@ from typing import List
 
 from . import strategy
 from ..utils.constants import ACTIONS
-from ..utils.util_functions import get_playzone, manhattan_distance, get_shortest_path, is_in_bounds, \
+from ..utils.util_functions import manhattan_distance, get_shortest_path, player_in_playzone, \
     get_path_action_seq, move_results_in_ouchie
 
 
@@ -12,7 +12,6 @@ class PlayzoneStrategy(strategy.Strategy):
     def execute(self, game_state: object) -> List[str]:
         player_pos = game_state['player_pos']
         enemy_pos = game_state['enemy_pos']
-        playzone = get_playzone(game_state['tick'])
 
         # find the nearest reachable safe tile from the enemy and go to it
         dist_map = defaultdict(list)
@@ -32,7 +31,7 @@ class PlayzoneStrategy(strategy.Strategy):
         for dist in od.keys():
             tiles = dist_map[dist]
             for tile in tiles:
-                if is_in_bounds(tile, playzone[0], playzone[1]):
+                if player_in_playzone(tile, game_state['tick']):
                     path = get_shortest_path(player_pos, tile, world, entities, blast_tiles, player_invulnerable)
                     if path is not None:
                         break  # found reachable tile already. Break out of loop
