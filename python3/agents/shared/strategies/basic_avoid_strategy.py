@@ -1,11 +1,16 @@
+from collections import defaultdict, OrderedDict
 from typing import List
 
 from . import strategy
 from ..utils.constants import ACTIONS
-from ..utils.util_functions import get_shortest_path, get_path_action_seq, get_nearest_tile
+from ..utils.util_functions import get_shortest_path, get_path_action_seq, death_trap, manhattan_distance
 
 
 class BasicAvoidStrategy(strategy.Strategy):
+
+    def update(self, game_state: dict):
+        game_state['enemy_immediate_trapped'] = death_trap(game_state['enemy_pos'], game_state['world'],
+                                                           game_state['entities']) and game_state['enemy_near_player']
 
     def execute(self, game_state: object) -> List[str]:
         """
@@ -25,7 +30,7 @@ class BasicAvoidStrategy(strategy.Strategy):
 
         # Bomb or sacrificial body block
         if game_state['enemy_immediate_trapped'] and game_state['enemy_near_bomb']:
-            if game_state['player_inv_bombs'] > 0:
+            if game_state['player_inv_bombs'] > 0 and not game_state['player_on_bomb']:
                 print('You just played yourself!')
                 return [ACTIONS['bomb']]
 
@@ -33,28 +38,34 @@ class BasicAvoidStrategy(strategy.Strategy):
                 print('I shall sacrifice myself for the win!')
                 return [ACTIONS['none']]
 
-
         print("YOU'RE IN DANGER DUDE - basic avoid")
 
-        # first_order_surrounding_tiles = get_surrounding_tiles(player_pos, width, height) # List of tiles
+        # distance -> array of tiles
+        dist_map = defaultdict(list)
+        for tile in game_state['safe_zones']:
+            distance = manhattan_distance(player_pos, tile)
+            dist_map[distance].append(tile)
 
-        # safe_tiles = get_empty_locations(first_order_surrounding_tiles, world, entities) # List of empty tiles (big set). Not actually safe yet.
+        # Order them from smallest distance to largest
+        od = OrderedDict(sorted(dist_map.items()))
 
-        # for tile in safe_tiles: # Remove any empty tiles that are in hazard zone.
-        #     if tile in hazard_zones:
-        #         safe_tiles.remove(tile) # Safe list of tiles now.
-
-        # Minimum distance tile ... or not lmao 
-        # dist_list = [manhattan_distance(player_pos, tile) for tile in safe_tiles]
-        # min_dist = min(dist_list)
-        closest_tile = get_nearest_tile(player_pos, game_state['safe_zones'])
         blast_tiles = [enemy_pos]
-        path = get_shortest_path(player_pos, closest_tile, world, entities, blast_tiles, game_state['player_is_invulnerable'])
+        path = None
+
+        for dist in od.keys():
+            tiles = dist_map[dist]
+            for tile in tiles:
+                path = get_shortest_path(player_pos, tile, world, entities, blast_tiles,
+                                         game_state['player_is_invulnerable'])
+                if path is not None:
+                    break  # found reachable tile already. Break out inner loop
+            else:
+                continue
+            break  # found reachable tile. Break out outer loop
 
         if path is None:
             print(
                 "shat myself inside basic_avoid. This shouldn't ever happen; means you called this when he wasn't in hazard, or if path can't be found (Check the brain?)")
             return [ACTIONS['none']]
         else:
-            #            print("path, etc", path, get_path_action_seq(player_pos, path))
             return [get_path_action_seq(player_pos, path).pop(0)]

@@ -26,7 +26,7 @@ services:
          extends:
              file: base-compose.yml
              # update next line with a service in base-compose.yml to change agent
-             service: python3-vm-agent-dev
+             service: python3-agro-agent-dev
          environment:
              - GAME_CONNECTION_STRING=ws://game-server:3000/?role=agent&agentId=agentA&name=python3-agent
              - FWD_MODEL_CONNECTION_STRING=ws://fwd-server-a:6969/?role=admin

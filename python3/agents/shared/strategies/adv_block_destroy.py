@@ -4,7 +4,7 @@ from . import strategy
 from ..utils.constants import ACTIONS
 from ..utils.util_functions import get_value_map_objects_from_arr, convert_entities_to_coords, get_surrounding_tiles, \
     get_world_dimension, get_surrounding_empty_tiles, get_reachable_tiles, get_num_escape_paths, get_value_map, \
-    get_move_from_value_map, move_results_in_ouchie
+    get_move_from_value_map, move_results_in_ouchie, get_value_map_object
 from ..utils.benchmark import Benchmark
 
 
@@ -16,6 +16,11 @@ class AdvBlockStrategy(strategy.Strategy):
         }
         self.benchmark = Benchmark()
         self.limit = 70  # limit this strategy to only run for 70 ms
+
+    def update(self, game_state: dict):
+        game_state['wall_blocks'] = convert_entities_to_coords(game_state['wall_blocks'])
+        enemy_x, enemy_y = game_state['enemy_pos']
+        game_state['enemy_obj'] = get_value_map_object(enemy_x, enemy_y, 'enemy')
 
     def execute(self, game_state: dict) -> List[str]:
         self.benchmark.start('block_destroy')
@@ -32,6 +37,7 @@ class AdvBlockStrategy(strategy.Strategy):
         # DETONATION ALGORITHM
         # If there's one active bomb that's next to a destroy block, blow it up
         # if any active bombs are next to destroyable blocks, detonate them
+        # print(f'Block destroy {own_bombs}, destroyables: {destroyable_coords}')
         can_detonate = False
         for bomb in own_bombs:
             coord = bomb['coord']
@@ -51,6 +57,15 @@ class AdvBlockStrategy(strategy.Strategy):
         if not destroyable_coords:
             print("Nothing to destroy. Gonna stand here.")
             return [ACTIONS['none']]  # Nothing to destroy
+
+        if game_state['enemy_in_danger']:
+            # Wait here until enemy fucks themself
+            # They're probably standing on their own bomb or trapped themself and can't get out
+            return [ACTIONS['none']]
+
+        if player_ammo < 1:
+            print("No ammo. What's the point?")
+            return [ACTIONS['none']]
 
         # POINTS OF INTEREST
         # get all empty tiles next to destroyable tiles

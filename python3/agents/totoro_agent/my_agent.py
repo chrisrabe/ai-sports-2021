@@ -1,6 +1,6 @@
 from .brain import Brain
 from ..shared.strategies import RandomStrategy, RetreatStrategy, StalkStrategy, PickupStrategy, AdvKillStrategy, \
-    BasicAvoidStrategy, DetonateStrategy, BombStrategy, SimpleBombStrategy, AdvBlockStrategy, StalkTwoStrategy
+    BasicAvoidStrategy, DetonateStrategy, BombStrategy, SimpleBombStrategy, AdvBlockStrategy, LurkStrategy, PlayzoneStrategy, WaitStrategy
 from ..shared.utils.benchmark import Benchmark
 
 
@@ -11,13 +11,16 @@ class Agent:
             'random': RandomStrategy(),
             'retreat': RetreatStrategy(),
             'pickup': PickupStrategy(),
-            'stalk': StalkTwoStrategy(),
+            'stalk': StalkStrategy(),
             'basic_avoid': BasicAvoidStrategy(),
             'kill': AdvKillStrategy(),
             'detonate': DetonateStrategy(),
             'bomb': BombStrategy(),
             'block_destroy': AdvBlockStrategy(),
-            'simple_bomb': SimpleBombStrategy()
+            'simple_bomb': SimpleBombStrategy(),
+            'lurk': LurkStrategy(),
+            'playzone': PlayzoneStrategy(),
+            'wait': WaitStrategy()
         }
         self.action_queue = []
         self.prev_tick = -1
@@ -29,6 +32,7 @@ class Agent:
             print(f'Skipped a Tick: Tick #{tick_number}, skipped {tick_number - self.prev_tick}')
         self.benchmark.start('move')
         game_state['tick'] = tick_number
+        print(f'Starting tick #{tick_number}')
 
         if not self.action_queue:
             # Gets brain to eval environment, then spit out the strategy chosen (as string)
@@ -37,6 +41,7 @@ class Agent:
             self.benchmark.end('decision')
             self.benchmark.start('execution')
             strategy = self.strategies.get(strategy_name) 
+            strategy.update(game_state)
             actions = strategy.execute(game_state)
             self.benchmark.end('execution')
             print(f'Tick {tick_number}: executing {strategy_name}: {actions}')

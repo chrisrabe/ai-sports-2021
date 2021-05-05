@@ -26,6 +26,12 @@ https://www.gocoder.one/aisports
    
 ## Architecture
 
+## High-level architecture
+
+![bot-variation](docs/overall-arch.png)
+
+## Architecture for each agent
+
 ![architecture](docs/architecture.png)
 
 Agent is separated into three categories:

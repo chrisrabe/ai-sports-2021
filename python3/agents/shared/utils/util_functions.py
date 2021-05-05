@@ -88,7 +88,6 @@ def get_empty_tiles(tiles, entities, ignore_player=False):
 
     for tile in tiles:
         if is_walkable(tile, entities, ignore_player):
-            #print("Entity, tile", entities, tile)
             empty_tiles.append(tile)
 
     return empty_tiles
@@ -123,7 +122,8 @@ def can_enqueue(queue, neighbour):
     return True
 
 
-def get_shortest_path(start, end, world, entities, blast_tiles=None, player_invulnerable=False) -> object:
+def get_shortest_path(start, end, world, entities, blast_tiles=None, player_invulnerable=False,
+                      ignore_bomb=False) -> object:
     """
     Finds the shortest path from the start node to the end node.
     Returns an array of (x,y) tuples. Uses A* search algorithm
@@ -170,7 +170,7 @@ def get_shortest_path(start, end, world, entities, blast_tiles=None, player_invu
             if (tile in blast_tiles) and not player_invulnerable:
                 continue  # skip if blast tile
 
-            if not is_walkable(tile, entities):
+            if not is_walkable(tile, entities, ignore_bomb=ignore_bomb):
                 continue  # skip if not walkable
 
             neighbour = Node(tile, current_node)
@@ -190,12 +190,14 @@ def get_shortest_path(start, end, world, entities, blast_tiles=None, player_invu
     return None  # no path found
 
 
-def is_walkable(tile, entities, ignore_player=True):
+def is_walkable(tile, entities, ignore_player=True, ignore_bomb=False):
     """
     Returns true if the tile is walkable
     """
     collectible = ["a", "bp"]  # Ammo, powerup
     player = ['p', 'e', 'eb', 'pb']  # Player, enemy,
+    if ignore_bomb:
+        collectible.append("b")
     entity = entity_at(tile, entities)
     if ignore_player:
         return entity in collectible or entity is None or entity in player
@@ -305,7 +307,7 @@ def min_distance(start, tiles):
     return tiles[index]
 
 
-def get_reachable_tiles(location, tiles, world, entities, blast_tiles=None):
+def get_reachable_tiles(location, tiles, world, entities, blast_tiles=None, ignore_bomb=False):
     """
     Returns a list of reachable tiles (will pick the last one)
     """
@@ -314,7 +316,7 @@ def get_reachable_tiles(location, tiles, world, entities, blast_tiles=None):
 
     reachable_tiles = []
     for tile in tiles:
-        path = get_shortest_path(location, tile, world, entities, blast_tiles)
+        path = get_shortest_path(location, tile, world, entities, blast_tiles, ignore_bomb=ignore_bomb)
         if path:
             reachable_tiles.append(tile)
     return reachable_tiles
@@ -445,6 +447,76 @@ def update_rec_value_map(rval, value_map, world_dim, max_reward_spread=0,
     return value_map
 
 
+def update_dia_value_map(rval, value_map, world_dim, max_reward_spread=0,
+                         OUTER_MAP_VALUES=((-100, -100), (-100, -100))):
+    '''
+    Updates the reward value map with mask matrix application, based on reward entity.
+    Returns a numpy array representing the updated reward value map.
+    '''
+    # add map padding
+    pad_dim = (world_dim[0] - 1, world_dim[1] - 1)
+    value_map = np.pad(value_map, (pad_dim, pad_dim), 'constant', constant_values=OUTER_MAP_VALUES)
+    rval_offset = pad_dim[0]  # padding offset
+
+    reward = rval[2]
+    reward_discount = reward / abs(reward)
+    reward_spread = 0
+    decay = 0
+
+    # max reward spread shall not exceed the dimension of the map
+    max_spread = min(abs(reward), max_reward_spread, world_dim[0] - 1)
+
+    xo = rval[1] + rval_offset
+    yo = rval[0] + rval_offset
+
+    if reward > 0:
+        # positive reward value
+        for i, value in enumerate(range(0, reward, 1)):
+            if i <= max_spread:
+                spread = i
+
+            xs = xo - spread
+            xe = xo + 1 + spread
+            ys = yo - spread
+            ye = yo + 1 + spread
+
+            # decay effect applied on each concentric value dispersion
+            decay = 1 - (i / abs(reward))
+
+            value_map[xs:xe, yo - max_spread:yo + max_spread + 1] = value_map[xs:xe,
+                                                                    yo - max_spread:yo + max_spread + 1] + reward_discount * decay
+            value_map[xo - max_spread:xo + max_spread + 1, ys:ye] = value_map[xo - max_spread:xo + max_spread + 1,
+                                                                    ys:ye] + reward_discount * decay
+
+    elif reward < 0:
+        # negative reward value
+        for i, value in enumerate(range(0, reward, -1)):
+            if i <= max_spread:
+                spread = i
+
+            xs = xo - spread
+            xe = xo + 1 + spread
+            ys = yo - spread
+            ye = yo + 1 + spread
+
+            # decay effect applied on each concentric value dispersion
+            decay = 1 - (i / abs(reward))
+
+            value_map[xs:xe, yo - max_spread:yo + max_spread + 1] = value_map[xs:xe,
+                                                                    yo - max_spread:yo + max_spread + 1] + reward_discount * decay
+            value_map[xo - max_spread:xo + max_spread + 1, ys:ye] = value_map[xo - max_spread:xo + max_spread + 1,
+                                                                    ys:ye] + reward_discount * decay
+
+    else:
+        # Reward assigned is 0.
+        pass
+
+    # remove map padding
+    value_map = value_map[world_dim[0] - 1:world_dim[0] + pad_dim[0], world_dim[0] - 1:world_dim[0] + pad_dim[0]]
+
+    return value_map
+
+
 def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use_default=True):
     """
     Returns a numpy array map representing the values
@@ -481,7 +553,6 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
     # sets the reward spread for reward mask application
     max_reward_spread = world_dim[0] - 1
 
-    # sets up rectangle mask and diamond mask based reward value maps
     rec_value_map = value_map
     dia_value_map = value_map
 
@@ -498,11 +569,9 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
             else:
                 reward = reward_map[item['type']]
 
-        # update rectangle mask based reward map
+        # update mask based reward map
         reward_entity = [item['loc'][0], item['loc'][1], reward]
         rec_value_map = update_rec_value_map(reward_entity, rec_value_map, world_dim, max_reward_spread)
-
-        # update diamond mask based reward map
         reward_mask = get_reward_mask(item, reward, world)
         dia_value_map = np.add(dia_value_map, reward_mask)
 
@@ -513,15 +582,12 @@ def get_value_map(world, walls, game_objects, reward_map, pinch_points=None, use
             if 'pinch' in reward_map:
                 pinch_reward = reward_map['pinch']
 
-            # Update rectangle mask based reward map
+            # Update mask based reward map
             reward_entity = [tile[0], tile[1], pinch_reward]
             rec_value_map = update_rec_value_map(reward_entity, rec_value_map, world_dim, max_reward_spread)
-
-            # Update diamond mask based reward map
             reward_mask = get_reward_mask(tile, pinch_reward, world, True)
             dia_value_map = np.add(dia_value_map, reward_mask)
 
-    # create reward value map as composite of rectangle mask and diamond mask based reward value map
     value_map = np.add(rec_value_map, dia_value_map)
 
     return value_map
@@ -619,6 +685,30 @@ def get_move_from_value_map(cur_loc, value_map, world):
     return move_to_tile(cur_loc, new_loc)
 
 
+def player_has_control(player_pos, enemy_pos, world) -> bool:
+    """
+    Compares the distance of the player and enemy position from the corner of the map.
+    If the player is further from the corner of the map, it means that they have map control.
+    Returns true if player has control of the map
+    """
+    world_width, world_height = get_world_dimension(world)
+    world_corners = [(0, 0), (world_width - 1, 0), (0, world_height - 1), (world_width - 1, world_height - 1)]
+
+    # check if enemy is closer to world edge than player
+    min_player_corner_dist = min(manhattan_distance(player_pos, world_corners[0]),
+                                 manhattan_distance(player_pos, world_corners[1]),
+                                 manhattan_distance(player_pos, world_corners[2]),
+                                 manhattan_distance(player_pos, world_corners[3]))
+
+    min_enemy_corner_dist = min(manhattan_distance(enemy_pos, world_corners[0]),
+                                manhattan_distance(enemy_pos, world_corners[1]),
+                                manhattan_distance(enemy_pos, world_corners[2]),
+                                manhattan_distance(enemy_pos, world_corners[3]))
+
+    # get number of empty tiles in the enemy surrounding that meets the condition for attack engagement
+    return min_player_corner_dist > min_enemy_corner_dist
+
+
 def get_articulation_points(player_loc, world, entities) -> list[tuple[int, int]]:
     """
     Retrieves the articulation points for the walkable tiles in the map
@@ -706,7 +796,7 @@ def get_detonation_target(target_pos, own_bombs, world, entities) -> tuple[int, 
         coord = bomb['coord']
         bomb_coords.append(coord)
         bomb_dict[coord] = bomb
-    reachable_bombs = get_reachable_tiles(target_pos, bomb_coords, world, entities)
+    reachable_bombs = get_reachable_tiles(target_pos, bomb_coords, world, entities, ignore_bomb=True)
     for tile in reachable_bombs:
         bomb = bomb_dict[tile]
         blast_zone = get_blast_zone(tile, bomb['blast_diameter'], entities, world)
@@ -757,3 +847,53 @@ def get_num_escape_paths(player_pos, tile, blast_diameter, entities, world):
     # are there safe tiles that player can reach?
     reachable_tiles = get_reachable_tiles(player_pos, safe_tiles, world, entities)
     return len(reachable_tiles)
+
+
+def is_trappable(tile, world, entities):
+    return len(get_surrounding_empty_tiles(tile, world, entities, ignore_player=False)) < 2
+
+
+def is_dangerous(entity, player_pos, enemy_pos, world, entities):
+    x, y = get_entity_coords(entity)
+    return manhattan_distance(player_pos, enemy_pos) <= 2 and is_trappable((x, y), world, entities)
+
+
+def get_playzone(tick) -> tuple[int, int, int, int]:
+    """
+    Retrieves the world dimension at certain tick range. WARNING: HARDCODED
+    Returns tuple
+    world_width, world_height, x_offset, y_offset
+    """
+    if tick < 1800:
+        return 9, 9, 0, 0
+    elif 1800 < tick < 1855:
+        return 9, 7, 0, 1  # top and bottom tiles gone
+    elif 1855 < tick < 1890:
+        return 7, 7, 1, 1  # sides gone
+    elif 1890 < tick < 1925:
+        return 7, 5, 1, 2  # second layer gone
+    elif 1925 < tick < 1950:
+        return 5, 5, 2, 2  # etc
+    elif 1950 < tick < 1975:
+        return 5, 3, 2, 3
+    elif 1975 < tick < 1990:
+        return 3, 3, 3, 3
+    elif 1990 < tick < 2005:
+        return 3, 1, 3, 4
+    else:
+        return 1, 1, 4, 4
+
+
+def player_in_playzone(player_pos, tick) -> bool:
+    """
+    Checks if the player is within the area
+    """
+    world_width, world_height, x_offset, y_offset = get_playzone(tick)
+
+    zone_start_x = 0 + x_offset
+    zone_start_y = 0 + y_offset
+    zone_end_x = world_width - x_offset
+    zone_end_y = world_height - y_offset
+
+    player_x, player_y = player_pos
+    return zone_start_x <= player_x < zone_end_x and zone_start_y <= player_y < zone_end_y
