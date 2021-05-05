@@ -118,7 +118,7 @@ class FinalsTracker:
                         if bomb_coords == player_pos:
                             player_hazards.append(tile)
                         ttl = bomb['expires'] - game_state['tick']
-                        if ttl <= (game_state['player_diameter'] // 2) + 1:
+                        if ttl <= (game_state['player_diameter'] // 2) + 2:
                             player_hazards.append(tile)
                         detonation_zone.append(tile)
                     else:

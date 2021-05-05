@@ -3,7 +3,7 @@ from collections import defaultdict, OrderedDict
 
 from . import strategy
 from ..utils.constants import ACTIONS
-from ..utils.util_functions import manhattan_distance, get_shortest_path, get_path_action_seq
+from ..utils.util_functions import manhattan_distance, get_shortest_path, get_path_action_seq, move_results_in_ouchie
 
 
 class LurkStrategy(strategy.Strategy):
@@ -48,4 +48,8 @@ class LurkStrategy(strategy.Strategy):
             return [ACTIONS['none']]
         else:
             action_seq = get_path_action_seq(player_pos, path)
-            return [action_seq.pop(0)]
+            next_move = action_seq.pop(0)
+            if move_results_in_ouchie(player_pos, next_move, game_state['all_hazard_zones']):
+                return [ACTIONS['none']]  # not worth it
+            else:
+                return [next_move]

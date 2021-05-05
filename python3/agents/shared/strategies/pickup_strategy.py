@@ -1,15 +1,14 @@
 from typing import List
 from . import strategy
 from ..utils.util_functions import get_shortest_path, get_path_action_seq, get_nearest_tile, get_reachable_tiles, \
-    move_results_in_ouchie, manhattan_distance, convert_entities_to_coords
+    move_results_in_ouchie, manhattan_distance, convert_entities_to_coords, player_has_control, get_articulation_points
 from ..utils.constants import ACTIONS
 
 
 class PickupStrategy(strategy.Strategy):
 
     def update(self, game_state: dict):
-        # finding articulation points
-        # finding player and enemy map control
+        game_state['player_has_control'] = player_has_control(game_state['player_pos'], game_state['enemy_pos'], game_state['world'])
         game_state['dangerous_pickups'] = []  # no need to check this for finals
         game_state['ammo_list'] = convert_entities_to_coords(game_state['ammo_list'])
         game_state['powerup_list'] = convert_entities_to_coords(game_state['powerup_list'])
@@ -22,9 +21,10 @@ class PickupStrategy(strategy.Strategy):
         world = game_state['world']
         entities = game_state['entities']
 
-        # if we're not standing on the bomb and we have bomb
-        #    if player has more map control than enemy and we're standing on an articulation point
-        #       place bomb down
+        if not game_state['player_on_bomb'] and game_state['player_inv_bombs'] > 0 and game_state['player_has_control'] and game_state['enemy_near_player']:
+            pinch_points = get_articulation_points(player_pos, world, entities)
+            if player_pos in pinch_points:
+                return [ACTIONS['bomb']]
 
         # Removes any ammo that is dangerous from pathfinding --> If enemy is too close, don't bother getting it.
         for element in game_state['dangerous_pickups']:
