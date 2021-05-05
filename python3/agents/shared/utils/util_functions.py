@@ -685,6 +685,30 @@ def get_move_from_value_map(cur_loc, value_map, world):
     return move_to_tile(cur_loc, new_loc)
 
 
+def player_has_control(player_pos, enemy_pos, world) -> bool:
+    """
+    Compares the distance of the player and enemy position from the corner of the map.
+    If the player is further from the corner of the map, it means that they have map control.
+    Returns true if player has control of the map
+    """
+    world_width, world_height = get_world_dimension(world)
+    world_corners = [(0, 0), (world_width - 1, 0), (0, world_height - 1), (world_width - 1, world_height - 1)]
+
+    # check if enemy is closer to world edge than player
+    min_player_corner_dist = min(manhattan_distance(player_pos, world_corners[0]),
+                                 manhattan_distance(player_pos, world_corners[1]),
+                                 manhattan_distance(player_pos, world_corners[2]),
+                                 manhattan_distance(player_pos, world_corners[3]))
+
+    min_enemy_corner_dist = min(manhattan_distance(enemy_pos, world_corners[0]),
+                                manhattan_distance(enemy_pos, world_corners[1]),
+                                manhattan_distance(enemy_pos, world_corners[2]),
+                                manhattan_distance(enemy_pos, world_corners[3]))
+
+    # get number of empty tiles in the enemy surrounding that meets the condition for attack engagement
+    return min_player_corner_dist > min_enemy_corner_dist
+
+
 def get_articulation_points(player_loc, world, entities) -> list[tuple[int, int]]:
     """
     Retrieves the articulation points for the walkable tiles in the map

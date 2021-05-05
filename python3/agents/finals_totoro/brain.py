@@ -18,10 +18,15 @@ class Brain:
         print("I am totoro finals bot")
 
         if game_state['player_pos'] in game_state['all_hazard_zones']:
+            print("Hell no! I'm basically gonna avoid you SKKRRRTT")
             return 'basic_avoid'
+
+        # if game_state['enemy_pos'] in game_state['enemy_hazard_zones'] and game_state['enemy_onestep_trapped']:
+        #     return 'wait'
 
         self.benchmark.start('detonate')
         if not game_state['enemy_is_invulnerable'] and game_state['enemy_pos'] in game_state['detonation_zones']:
+            print("Detonate!!")
             return 'detonate'
         self.benchmark.end('detonate')
 
@@ -31,12 +36,14 @@ class Brain:
             self.finals_tracker.update_trap(game_state)
             self.benchmark.end('trap')
             if game_state['enemy_immediate_trapped']:
+                print("Enemy immediately trapped I think.")
                 return 'simple_bomb'
 
             self.benchmark.start('onestep')
             self.finals_tracker.update_onestep(game_state)
             self.benchmark.end('onestep')
             if game_state['enemy_onestep_trapped']:
+                print("I think the enemy is onestep trapped!")
                 return 'simple_bomb'
 
         self.benchmark.start('path')
@@ -47,8 +54,10 @@ class Brain:
         self.benchmark.end('danger')
 
         if len(game_state['pickup_list']) != 0:
+            print("You know what? I'm going for some pickups")
             return 'pickup'
-        elif not game_state['clear_path_to_enemy']:
+        elif not game_state['clear_path_to_enemy'] and game_state['player_inv_bombs'] > 2:
+            print("Eh.. Let's destroy some blocks. block destroy.")
             return 'block_destroy'
         else:
             return 'stalk'
