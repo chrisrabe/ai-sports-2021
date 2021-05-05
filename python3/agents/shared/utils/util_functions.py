@@ -122,7 +122,8 @@ def can_enqueue(queue, neighbour):
     return True
 
 
-def get_shortest_path(start, end, world, entities, blast_tiles=None, player_invulnerable=False, ignore_bomb=False) -> object:
+def get_shortest_path(start, end, world, entities, blast_tiles=None, player_invulnerable=False,
+                      ignore_bomb=False) -> object:
     """
     Finds the shortest path from the start node to the end node.
     Returns an array of (x,y) tuples. Uses A* search algorithm
@@ -458,8 +459,8 @@ def update_dia_value_map(rval, value_map, world_dim, max_reward_spread=0,
     rval_offset = pad_dim[0]  # padding offset
 
     reward = rval[2]
-    reward_discount = reward/abs(reward)
-    reward_spread=0
+    reward_discount = reward / abs(reward)
+    reward_spread = 0
     decay = 0
 
     # max reward spread shall not exceed the dimension of the map
@@ -467,41 +468,45 @@ def update_dia_value_map(rval, value_map, world_dim, max_reward_spread=0,
 
     xo = rval[1] + rval_offset
     yo = rval[0] + rval_offset
-    
+
     if reward > 0:
         # positive reward value
         for i, value in enumerate(range(0, reward, 1)):
             if i <= max_spread:
                 spread = i
-            
+
             xs = xo - spread
             xe = xo + 1 + spread
             ys = yo - spread
             ye = yo + 1 + spread
-            
-            # decay effect applied on each concentric value dispersion
-            decay = 1-(i/abs(reward))
 
-            value_map[xs:xe, yo-max_spread:yo+max_spread+1] = value_map[xs:xe, yo-max_spread:yo+max_spread+1] + reward_discount*decay
-            value_map[xo-max_spread:xo+max_spread+1, ys:ye] = value_map[xo-max_spread:xo+max_spread+1, ys:ye] + reward_discount*decay
-        
+            # decay effect applied on each concentric value dispersion
+            decay = 1 - (i / abs(reward))
+
+            value_map[xs:xe, yo - max_spread:yo + max_spread + 1] = value_map[xs:xe,
+                                                                    yo - max_spread:yo + max_spread + 1] + reward_discount * decay
+            value_map[xo - max_spread:xo + max_spread + 1, ys:ye] = value_map[xo - max_spread:xo + max_spread + 1,
+                                                                    ys:ye] + reward_discount * decay
+
     elif reward < 0:
         # negative reward value
         for i, value in enumerate(range(0, reward, -1)):
             if i <= max_spread:
-                spread = i 
-                
+                spread = i
+
             xs = xo - spread
             xe = xo + 1 + spread
             ys = yo - spread
             ye = yo + 1 + spread
-            
+
             # decay effect applied on each concentric value dispersion
-            decay = 1-(i/abs(reward))
-            
-            value_map[xs:xe, yo-max_spread:yo+max_spread+1] = value_map[xs:xe, yo-max_spread:yo+max_spread+1] + reward_discount*decay
-            value_map[xo-max_spread:xo+max_spread+1, ys:ye] = value_map[xo-max_spread:xo+max_spread+1, ys:ye] + reward_discount*decay
-        
+            decay = 1 - (i / abs(reward))
+
+            value_map[xs:xe, yo - max_spread:yo + max_spread + 1] = value_map[xs:xe,
+                                                                    yo - max_spread:yo + max_spread + 1] + reward_discount * decay
+            value_map[xo - max_spread:xo + max_spread + 1, ys:ye] = value_map[xo - max_spread:xo + max_spread + 1,
+                                                                    ys:ye] + reward_discount * decay
+
     else:
         # Reward assigned is 0.
         pass
@@ -678,25 +683,26 @@ def get_move_from_value_map(cur_loc, value_map, world):
             max_val = tile_val
             new_loc = tile
     return move_to_tile(cur_loc, new_loc)
+
+
 def player_has_control(player_pos, enemy_pos, world) -> bool:
-        world_width, world_height = get_world_dimension(world)
-        world_corners = [(0,0), (world_width-1, 0), (0, world_height-1), (world_width-1, world_height-1)]
+    world_width, world_height = get_world_dimension(world)
+    world_corners = [(0, 0), (world_width - 1, 0), (0, world_height - 1), (world_width - 1, world_height - 1)]
 
-        # check if enemy is closer to world edge than player
-        min_player_corner_dist = min(manhattan_distance(player_pos, world_corners[0]), 
-                                     manhattan_distance(player_pos, world_corners[1]), 
-                                     manhattan_distance(player_pos, world_corners[2]), 
-                                     manhattan_distance(player_pos, world_corners[3]))
+    # check if enemy is closer to world edge than player
+    min_player_corner_dist = min(manhattan_distance(player_pos, world_corners[0]),
+                                 manhattan_distance(player_pos, world_corners[1]),
+                                 manhattan_distance(player_pos, world_corners[2]),
+                                 manhattan_distance(player_pos, world_corners[3]))
 
-        min_enemy_corner_dist = min(manhattan_distance(enemy_pos, world_corners[0]), 
-                                    manhattan_distance(enemy_pos, world_corners[1]), 
-                                    manhattan_distance(enemy_pos, world_corners[2]), 
-                                    manhattan_distance(enemy_pos, world_corners[3]))
+    min_enemy_corner_dist = min(manhattan_distance(enemy_pos, world_corners[0]),
+                                manhattan_distance(enemy_pos, world_corners[1]),
+                                manhattan_distance(enemy_pos, world_corners[2]),
+                                manhattan_distance(enemy_pos, world_corners[3]))
 
-        player_enemy_dist = manhattan_distance(player_pos, enemy_pos)
+    # get number of empty tiles in the enemy surrounding that meets the condition for attack engagement
+    return min_player_corner_dist > min_enemy_corner_dist
 
-        # get number of empty tiles in the enemy surrounding that meets the condition for attack engagement
-        return min_player_corner_dist > min_enemy_corner_dist
 
 def get_articulation_points(player_loc, world, entities) -> list[tuple[int, int]]:
     """
