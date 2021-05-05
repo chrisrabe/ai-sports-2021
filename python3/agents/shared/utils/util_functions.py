@@ -855,7 +855,7 @@ def is_trappable(tile, world, entities):
 
 def is_dangerous(entity, player_pos, enemy_pos, world, entities):
     x, y = get_entity_coords(entity)
-    return manhattan_distance(player_pos, enemy_pos) < 2 and is_trappable((x, y), world, entities)
+    return manhattan_distance(player_pos, enemy_pos) <= 2 and is_trappable((x, y), world, entities)
 
 
 def get_playzone(tick) -> tuple[int, int]:

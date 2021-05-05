@@ -8,6 +8,3 @@ class WaitStrategy(strategy.Strategy):
 
     def execute(self, game_state: object) -> List[str]:
         return [ACTIONS['none']]
-    
-    def update(self, game_state):
-        pass

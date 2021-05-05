@@ -6,6 +6,7 @@ from ..shared.trackers import FinalsTracker
 from ..shared.utils.benchmark import Benchmark
 from ..shared.utils.util_functions import player_in_playzone
 
+
 class Brain:
     def __init__(self):
         self.benchmark = Benchmark()
@@ -54,6 +55,9 @@ class Brain:
             if game_state['enemy_control_zone'] <= 4:
                 print("I think the enemy is running out of space to move.")
                 return 'simple_bomb'
+        else:
+            if game_state['enemy_immediate_trapped'] and game_state['enemy_near_player'] and game_state['enemy_near_bomb']:
+                return 'wait'  # stand there until enemy bombs themself
 
         self.benchmark.start('path')
         self.finals_tracker.update_path(game_state)
