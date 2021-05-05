@@ -858,33 +858,42 @@ def is_dangerous(entity, player_pos, enemy_pos, world, entities):
     return manhattan_distance(player_pos, enemy_pos) <= 2 and is_trappable((x, y), world, entities)
 
 
-def get_playzone(tick) -> tuple[int, int]:
+def get_playzone(tick) -> tuple[int, int, int, int]:
     """
     Retrieves the world dimension at certain tick range. WARNING: HARDCODED
+    Returns tuple
+    world_width, world_height, x_offset, y_offset
     """
     if tick < 1800:
-        return 9, 9
+        return 9, 9, 0, 0
     elif 1800 < tick < 1855:
-        return 9, 8  # top and bottom tiles gone
+        return 9, 7, 0, 1  # top and bottom tiles gone
     elif 1855 < tick < 1890:
-        return 7, 7  # sides gone
+        return 7, 7, 1, 1  # sides gone
     elif 1890 < tick < 1925:
-        return 7, 5  # second layer gone
+        return 7, 5, 1, 2  # second layer gone
     elif 1925 < tick < 1950:
-        return 5, 5  # etc
+        return 5, 5, 2, 2  # etc
     elif 1950 < tick < 1975:
-        return 5, 3
+        return 5, 3, 2, 3
     elif 1975 < tick < 1990:
-        return 3, 3
+        return 3, 3, 3, 3
     elif 1990 < tick < 2005:
-        return 3, 1
+        return 3, 1, 3, 4
     else:
-        return 1, 1
+        return 1, 1, 4, 4
 
 
 def player_in_playzone(player_pos, tick) -> bool:
     """
     Checks if the player is within the area
     """
-    world_width, world_height = get_playzone(tick)
-    return is_in_bounds(player_pos, world_width, world_height)
+    world_width, world_height, x_offset, y_offset = get_playzone(tick)
+
+    zone_start_x = 0 + x_offset
+    zone_start_y = 0 + y_offset
+    zone_end_x = world_width - x_offset
+    zone_end_y = world_height - y_offset
+
+    player_x, player_y = player_pos
+    return zone_start_x <= player_x < zone_end_x and zone_start_y <= player_y < zone_end_y

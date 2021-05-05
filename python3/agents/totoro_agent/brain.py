@@ -52,10 +52,11 @@ class Brain:
             self.benchmark.start('controlzone')
             self.finals_tracker.update_enemy_control_zone(game_state)
             self.benchmark.end('controlzone')
-            if game_state['enemy_control_zone'] <= 4:
+            if game_state['enemy_control_zone'] <= 5:
                 print("I think the enemy is running out of space to move.")
                 return 'simple_bomb'
         else:
+            self.finals_tracker.update_trap(game_state)
             if game_state['enemy_immediate_trapped'] and game_state['enemy_near_player'] and game_state['enemy_near_bomb']:
                 return 'wait'  # stand there until enemy bombs themself
 
