@@ -4,7 +4,7 @@ Tracks the game state and decides on next strategy to execute
 
 from ..shared.trackers import FinalsTracker
 from ..shared.utils.benchmark import Benchmark
-
+from ..shared.utils.util_functions import player_in_playzone
 
 class Brain:
     def __init__(self):
@@ -51,7 +51,7 @@ class Brain:
             self.benchmark.start('controlzone')
             self.finals_tracker.update_enemy_control_zone(game_state)
             self.benchmark.end('controlzone')
-            if game_state['enemy_control_zone'] <= 5:
+            if game_state['enemy_control_zone'] <= 4:
                 print("I think the enemy is running out of space to move.")
                 return 'simple_bomb'
 
@@ -61,6 +61,9 @@ class Brain:
         self.benchmark.start('danger')
         self.finals_tracker.update_danger(game_state)
         self.benchmark.end('danger')
+
+        if not player_in_playzone(game_state['player_pos'], game_state['tick']):
+            return 'playzone'
 
         # Toggle this so we don't run block destroy after seeing enemy for first time
         # The goal of block destroy was to just get ourselves our of the prison
