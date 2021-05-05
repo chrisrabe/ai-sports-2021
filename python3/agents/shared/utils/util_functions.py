@@ -686,6 +686,11 @@ def get_move_from_value_map(cur_loc, value_map, world):
 
 
 def player_has_control(player_pos, enemy_pos, world) -> bool:
+    """
+    Compares the distance of the player and enemy position from the corner of the map.
+    If the player is further from the corner of the map, it means that they have map control.
+    Returns true if player has control of the map
+    """
     world_width, world_height = get_world_dimension(world)
     world_corners = [(0, 0), (world_width - 1, 0), (0, world_height - 1), (world_width - 1, world_height - 1)]
 
