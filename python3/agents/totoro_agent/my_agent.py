@@ -1,6 +1,6 @@
 from .brain import Brain
 from ..shared.strategies import RandomStrategy, RetreatStrategy, StalkStrategy, PickupStrategy, AdvKillStrategy, \
-    BasicAvoidStrategy, DetonateStrategy, BombStrategy, SimpleBombStrategy, AdvBlockStrategy, LurkStrategy, PlayzoneStrategy, WaitStrategy
+    BasicAvoidStrategy, DetonateStrategy, BombStrategy, SimpleBombStrategy, AdvBlockStrategy, LurkStrategy, PlayzoneStrategy, WaitStrategy, DodgeFlameStrategy
 from ..shared.utils.benchmark import Benchmark
 
 
@@ -20,7 +20,8 @@ class Agent:
             'simple_bomb': SimpleBombStrategy(),
             'lurk': LurkStrategy(),
             'playzone': PlayzoneStrategy(),
-            'wait': WaitStrategy()
+            'wait': WaitStrategy(),
+            'dodge_flame': DodgeFlameStrategy()
         }
         self.action_queue = []
         self.prev_tick = -1
