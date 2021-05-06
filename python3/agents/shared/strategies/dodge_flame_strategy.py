@@ -26,8 +26,10 @@ class DodgeFlameStrategy(strategy.Strategy):
         closest_dist = 1000
 
         for tile in player_empty_tiles:
-            if manhattan_distance(tile, center_map) < closest_dist:
+            tile_dist = manhattan_distance(tile, center_map)
+            if tile_dist < closest_dist:
                 closest_tile_center = tile
+                closest_dist = tile_dist
 
         if closest_tile_center == player_pos:
             # We shall accept our fate. Trapped and death is looming over our heads
