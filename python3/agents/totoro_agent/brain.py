@@ -69,6 +69,7 @@ class Brain:
         self.benchmark.end('danger')
 
         if game_state['player_near_flame']:
+			print("I think a flame's near me so ima dodge_flame")
             return 'dodge_flame'  # move away from flame if we next to them
 
         # Toggle this so we don't run block destroy after seeing enemy for first time
