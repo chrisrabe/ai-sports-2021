@@ -1,6 +1,8 @@
 from ..utils.constants import ENTITIES
-from ..utils.util_functions import manhattan_distance, is_dangerous, get_entity_coords, get_blast_zone, get_surrounding_tiles, \
-    get_world_dimension, get_safe_tiles, get_shortest_path, death_trap, get_surrounding_empty_tiles, player_has_control, get_num_escape_paths
+from ..utils.util_functions import manhattan_distance, is_dangerous, get_entity_coords, get_blast_zone, \
+    get_surrounding_tiles, \
+    get_world_dimension, get_safe_tiles, get_shortest_path, death_trap, get_surrounding_empty_tiles, player_has_control, \
+    get_num_escape_paths
 
 
 class FinalsTracker:
@@ -65,7 +67,8 @@ class FinalsTracker:
         enemy_on_bomb = False
         enemy_near_bomb = False
         own_bombs = []
-        player_hazards = []
+        player_hazards = []  # all hazards including bomb that player standing on
+        actual_player_hazards = [enemy_pos]  # enemy bomb blast zones + immediate bombs
         detonation_zone = []
         all_hazards = []
 
@@ -78,6 +81,7 @@ class FinalsTracker:
                 coord = get_entity_coords(entity)
                 all_hazards.append(coord)
                 player_hazards.append(coord)
+                actual_player_hazards.append(coord)
                 wall_blocks.append(entity)
                 blast_blocks.append(entity)
             elif entity_type == ENTITIES['ore'] or entity_type == ENTITIES['wood']:
@@ -119,9 +123,11 @@ class FinalsTracker:
                             player_hazards.append(tile)
                         ttl = bomb['expires'] - game_state['tick']
                         if ttl <= (game_state['player_diameter'] // 2) + 2:
+                            actual_player_hazards.append(tile)
                             player_hazards.append(tile)
                         detonation_zone.append(tile)
                     else:
+                        actual_player_hazards.append(tile)
                         player_hazards.append(tile)
 
         game_state['safe_zones'] = get_safe_tiles(all_hazards, game_state['world'], game_state['entities'])
@@ -133,6 +139,7 @@ class FinalsTracker:
         game_state['pickup_list'] = pickup_list
         game_state['own_active_bombs'] = own_bombs
         game_state['hazard_zones'] = player_hazards
+        game_state['danger_zones'] = actual_player_hazards
         game_state['detonation_zones'] = detonation_zone
         game_state['all_hazard_zones'] = all_hazards
         game_state['wall_blocks'] = wall_blocks
@@ -140,7 +147,8 @@ class FinalsTracker:
         game_state['blast_blocks'] = blast_blocks
 
     def update_danger(self, game_state: dict):
-        game_state['enemy_in_danger'] = game_state['enemy_on_bomb'] or game_state['enemy_pos'] in game_state['all_hazard_zones']
+        game_state['enemy_in_danger'] = game_state['enemy_on_bomb'] or game_state['enemy_pos'] in game_state[
+            'all_hazard_zones']
 
     def update_path(self, game_state: dict):
         path = get_shortest_path(game_state['player_pos'], game_state['enemy_pos'], game_state['world'],
@@ -156,7 +164,7 @@ class FinalsTracker:
         Onestep trapping: Returns true if there is an escape path, and placing a bomb at 
         player position will mean the enemy can't escape its blast zone in the next tick
         """
-        
+
         player_pos = game_state['player_pos']
         player_diameter = game_state['player_diameter']
         entities = game_state['entities']
@@ -193,7 +201,7 @@ class FinalsTracker:
                 for tile in empty_surround:
                     if tile not in enemy_empty_area:
                         enemy_empty_area.append(tile)
-            
+
             game_state['enemy_control_zone'] = len(enemy_empty_area)
         else:
             game_state['enemy_control_zone'] = 100

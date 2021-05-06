@@ -1,6 +1,5 @@
 from collections import defaultdict, OrderedDict
 from typing import List
-
 from . import strategy
 from ..utils.constants import ACTIONS
 from ..utils.util_functions import get_shortest_path, get_path_action_seq, death_trap, manhattan_distance
@@ -48,14 +47,12 @@ class BasicAvoidStrategy(strategy.Strategy):
 
         # Order them from smallest distance to largest
         od = OrderedDict(sorted(dist_map.items()))
-
-        blast_tiles = [enemy_pos]
         path = None
 
         for dist in od.keys():
             tiles = dist_map[dist]
             for tile in tiles:
-                path = get_shortest_path(player_pos, tile, world, entities, blast_tiles,
+                path = get_shortest_path(player_pos, tile, world, entities, game_state['danger_zones'],
                                          game_state['player_is_invulnerable'])
                 if path is not None:
                     break  # found reachable tile already. Break out inner loop
