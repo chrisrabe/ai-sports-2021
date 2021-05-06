@@ -183,8 +183,9 @@ class FinalsTracker:
         enemy_pos = game_state['enemy_pos']
         virt_blast_zone = get_blast_zone(player_pos, player_diameter, entities, world)
         enemy_empty_neighbours = get_surrounding_empty_tiles(enemy_pos, world, entities, False)
+        enemy_empty_neighbours.append(enemy_pos)
         if enemy_empty_neighbours:
-            game_state['enemy_onestep_trapped'] = all(item in virt_blast_zone for item in enemy_empty_neighbours) and (enemy_pos in virt_blast_zone)
+            game_state['enemy_onestep_trapped'] = all(item in virt_blast_zone for item in enemy_empty_neighbours)
         else:
             game_state['enemy_onestep_trapped'] = False
 
