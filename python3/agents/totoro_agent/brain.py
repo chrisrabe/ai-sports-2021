@@ -4,7 +4,6 @@ Tracks the game state and decides on next strategy to execute
 
 from ..shared.trackers import FinalsTracker
 from ..shared.utils.benchmark import Benchmark
-from ..shared.utils.util_functions import player_in_playzone
 
 
 class Brain:
@@ -57,7 +56,8 @@ class Brain:
                 return 'simple_bomb'
         else:
             self.finals_tracker.update_trap(game_state)
-            if game_state['enemy_immediate_trapped'] and game_state['enemy_near_player'] and game_state['enemy_near_bomb']:
+            if game_state['enemy_immediate_trapped'] and game_state['enemy_near_player'] and game_state[
+                'enemy_near_bomb']:
                 return 'wait'  # stand there until enemy bombs themself
 
         self.benchmark.start('path')
@@ -67,8 +67,8 @@ class Brain:
         self.finals_tracker.update_danger(game_state)
         self.benchmark.end('danger')
 
-        if not player_in_playzone(game_state['player_pos'], game_state['tick']):
-            return 'playzone'
+        if game_state['player_near_flame']:
+            return 'dodge_flame'  # move away from flame if we next to them
 
         # Toggle this so we don't run block destroy after seeing enemy for first time
         # The goal of block destroy was to just get ourselves our of the prison
