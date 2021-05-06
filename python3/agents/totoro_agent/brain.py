@@ -52,13 +52,14 @@ class Brain:
             self.benchmark.start('controlzone')
             self.finals_tracker.update_enemy_control_zone(game_state)
             self.benchmark.end('controlzone')
-            if game_state['enemy_control_zone'] <= 5:
+            if game_state['enemy_control_zone'] <= 5 and game_state['player_inv_bombs'] > 2:
                 print("I think the enemy is running out of space to move.")
                 return 'simple_bomb'
         else:
             self.finals_tracker.update_trap(game_state)
             if game_state['enemy_immediate_trapped'] and game_state['enemy_near_player'] and game_state[
                 'enemy_near_bomb']:
+                print("I'm gonna just wait lol")
                 return 'wait'  # stand there until enemy bombs themself
 
         self.benchmark.start('path')
@@ -69,7 +70,7 @@ class Brain:
         self.benchmark.end('danger')
 
         if game_state['player_near_flame']:
-			print("I think a flame's near me so ima dodge_flame")
+            print("I think a flame's near me so ima dodge_flame")
             return 'dodge_flame'  # move away from flame if we next to them
 
         # Toggle this so we don't run block destroy after seeing enemy for first time
