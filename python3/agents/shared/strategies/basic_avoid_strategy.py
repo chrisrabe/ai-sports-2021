@@ -48,12 +48,12 @@ class BasicAvoidStrategy(strategy.Strategy):
         # Order them from smallest distance to largest
         od = OrderedDict(sorted(dist_map.items()))
         path = None
+        blast_tiles = [enemy_pos]
 
         for dist in od.keys():
             tiles = dist_map[dist]
             for tile in tiles:
-                path = get_shortest_path(player_pos, tile, world, entities, game_state['danger_zones'],
-                                         game_state['player_is_invulnerable'])
+                path = get_shortest_path(player_pos, tile, world, entities, blast_tiles, game_state['player_is_invulnerable'])
                 if path is not None:
                     break  # found reachable tile already. Break out inner loop
             else:
