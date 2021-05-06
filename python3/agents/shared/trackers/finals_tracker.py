@@ -22,6 +22,7 @@ class FinalsTracker:
 
         world_width, world_height = get_world_dimension(game_state['world'])
         enemy_surrounding_tiles = get_surrounding_tiles(enemy_pos, world_width, world_height)
+        player_surrounding_tiles = get_surrounding_tiles(player_pos, world_width, world_height)
 
         # Flatten agent states
 
@@ -64,6 +65,7 @@ class FinalsTracker:
 
         # bombs
         player_on_bomb = False
+        player_near_flame = False
         enemy_on_bomb = False
         enemy_near_bomb = False
         own_bombs = []
@@ -84,6 +86,9 @@ class FinalsTracker:
                 actual_player_hazards.append(coord)
                 wall_blocks.append(entity)
                 blast_blocks.append(entity)
+                if 'expires' not in entity:  # It's flame
+                    if coord in player_surrounding_tiles:
+                        player_near_flame = True
             elif entity_type == ENTITIES['ore'] or entity_type == ENTITIES['wood']:
                 destroyable_blocks.append(entity)
             elif entity_type == ENTITIES['metal']:
@@ -145,6 +150,7 @@ class FinalsTracker:
         game_state['wall_blocks'] = wall_blocks
         game_state['destroyable_blocks'] = destroyable_blocks
         game_state['blast_blocks'] = blast_blocks
+        game_state['player_near_flame'] = player_near_flame
 
     def update_danger(self, game_state: dict):
         game_state['enemy_in_danger'] = game_state['enemy_on_bomb'] or game_state['enemy_pos'] in game_state[
