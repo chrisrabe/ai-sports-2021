@@ -4,7 +4,6 @@ Tracks the game state and decides on next strategy to execute
 
 from ..shared.trackers import FinalsTracker
 from ..shared.utils.benchmark import Benchmark
-from ..shared.utils.util_functions import player_in_playzone
 
 
 class Brain:
