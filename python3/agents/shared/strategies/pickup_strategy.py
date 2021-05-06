@@ -21,7 +21,7 @@ class PickupStrategy(strategy.Strategy):
         world = game_state['world']
         entities = game_state['entities']
 
-        if not game_state['player_on_bomb'] and game_state['player_inv_bombs'] > 0 and game_state['player_has_control'] and game_state['enemy_near_player']:
+        if not game_state['player_on_bomb'] and game_state['player_inv_bombs'] > 2 and game_state['player_has_control'] and game_state['enemy_near_player']:
             pinch_points = get_articulation_points(player_pos, world, entities)
             if player_pos in pinch_points:
                 return [ACTIONS['bomb']]
